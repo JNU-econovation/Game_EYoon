@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         targetPosition = GameObject.FindWithTag("target").GetComponent<Transform>();
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, speed * Time.deltaTime);
-
+        transform.LookAt(targetPosition);
 
 
 
