@@ -348,7 +348,6 @@ GameObject:
   - component: {fileID: 544116981}
   - component: {fileID: 544116980}
   - component: {fileID: 544116979}
-  - component: {fileID: 544116978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -356,32 +355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &544116978
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544116977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!61 &544116979
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -442,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePosition: {fileID: 134860787}
-  bullet: {fileID: 1761067866317295538, guid: f1509df80c538454db6d5f36ba7c880b, type: 3}
+  bullet: {fileID: 3456283863724848275, guid: d13506da89b553d4cbcdb45d907fcf6e, type: 3}
   target: {fileID: 6574796759239099459, guid: ca576ede780df3f4f8874fa68e4cc0f4, type: 3}
   speed: 5
   attackDelay: 0.5
@@ -475,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544116977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.669716, y: 2.146601, z: -0.0146484375}
+  m_LocalPosition: {x: 0, y: -0.18, z: -0.0146484375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1651953746}
@@ -588,7 +561,7 @@ Transform:
   m_GameObject: {fileID: 733489286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: 9.64, z: 0}
-  m_LocalScale: {x: 9, y: 11, z: 1}
+  m_LocalScale: {x: 9, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1141065140}
   m_RootOrder: 3
@@ -851,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 1573335935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: 9.64, z: 0}
-  m_LocalScale: {x: 9, y: 11, z: 1}
+  m_LocalScale: {x: 9, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1738748956}
   m_RootOrder: 3
@@ -1014,8 +987,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1468627223
-  m_SortingLayer: 2
+  m_SortingLayerID: 837700409
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 055cefc4f604d534e9a3c60ad2b3e398, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1037,7 +1010,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651953740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9697161, y: -1.496601, z: 0.0146484375}
+  m_LocalPosition: {x: 0, y: -1.496601, z: 0.0146484375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 544116983}
@@ -1069,7 +1042,7 @@ Transform:
   m_GameObject: {fileID: 1696532220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: 9.64, z: 0}
-  m_LocalScale: {x: 9, y: 11, z: 1}
+  m_LocalScale: {x: 9, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1530292717}
   m_RootOrder: 3
@@ -1524,8 +1497,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1468627223
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1281f0018a0770642819dc6c8628403e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1546,8 +1519,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064159494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.528, y: 3.513, z: 1}
+  m_LocalPosition: {x: -0.1, y: -2, z: 0}
+  m_LocalScale: {x: 9.487399, y: 3.513, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
