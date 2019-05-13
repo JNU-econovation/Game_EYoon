@@ -21,11 +21,6 @@ public class Collision : MonoBehaviour
             beforeWindow.SetActive(false);     
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
 
    
 }

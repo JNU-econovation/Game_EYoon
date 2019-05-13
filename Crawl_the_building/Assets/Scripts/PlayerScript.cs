@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float sideMove;
-    public float forwardSpeed;
-    public float itemDelay;
-    public float moveDistance;
-    public float weatherDelay;
-    public float slowSpeed;
-    public int HP;
-    public int bulletAmount;
-    public int heatDamage;
-    int upDown = 1;
+    [SerializeField] float sideMove;
+    [SerializeField] float forwardSpeed;
+    [SerializeField] float itemDelay;
+    [SerializeField] float moveDistance;
+    [SerializeField] float weatherDelay;
+    [SerializeField] float slowSpeed;
+    [SerializeField] int HP;
+    [SerializeField] int bulletAmount;
+    [SerializeField] int heatDamage;
 
   
     void Update()
@@ -34,12 +33,7 @@ public class PlayerScript : MonoBehaviour
            
         }
      
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            forwardSpeed = -forwardSpeed;
-            upDown = upDown + 1;
-
-        }
+      
 
         if (HP <= 0)
         {
@@ -49,12 +43,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "buildingMoverDown"&& upDown % 2 == 0)
-        {
-            other.transform.parent.Translate(0, -moveDistance, 0);
-            
-        }
-        else if(other.gameObject.tag == "buildingMover"&& upDown % 2 == 1)
+        if(other.gameObject.tag == "buildingMover")
         {
             other.transform.parent.Translate(0, moveDistance, 0);
         }
@@ -65,7 +54,6 @@ public class PlayerScript : MonoBehaviour
         if(other.gameObject.tag == "Cleaner")
         {
             transform.Translate(0,-forwardSpeed,0);
-         
         }
     }
 

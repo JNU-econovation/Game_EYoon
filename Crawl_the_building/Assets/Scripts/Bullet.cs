@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public int speed;
-    Transform targetPosition;
+    private void Start()
+    {
+        Destroy(gameObject, 10f);
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        targetPosition = GameObject.FindWithTag("target").GetComponent<Transform>();
-
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, speed * Time.deltaTime);
-        //transform.LookAt(targetPosition);
-
-
-
+        transform.Translate(Vector3.up);
     }
 }

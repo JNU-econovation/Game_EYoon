@@ -4,43 +4,45 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    Vector3 mousePosition;
+    public Vector3 mousePosition;
     public Transform firePosition;
+    [SerializeField]
     Camera Camera;
     public GameObject bullet;
     public GameObject target;
     Transform bulletPosition;
     public int speed;
     public float attackDelay;
-    bool attackable = true;
+    bool isHit;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        Camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && attackable)
-        {
-            StartCoroutine(attack());
-
-            
-        }
         
+        if (Input.GetMouseButtonDown(0) )
+        {
+
+            attack();
+        }
+
+
 
     }
 
-    IEnumerator attack()
+   void attack()
     {
-        attackable = false;
-        Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.ScreenToWorldPoint(mousePosition);
-        Instantiate(target, mousePosition, Rotation);
+        
+        mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        float dx = mousePosition.x - transform.position.x;
+        float dy = mousePosition.y - transform.position.y;
+        float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
+        Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
         Instantiate(bullet, firePosition.position, Rotation);
-        yield return new WaitForSeconds(attackDelay);
-        attackable = true;
+       
+        
+        
     }
+
 }
