@@ -4,15 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MapController
-  - buildingMover
-  - first
-  - second
-  - third
-  - buildingMoverDown
-  - brokenWindow
   - bullet
   - target
+  - brokenWindow
+  - buildingMover
+  - targetWindow
+  - Window
   layers:
   - Default
   - TransparentFX
@@ -22,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - player
-  - bullet
-  - windows
+  - Window
+  - Player
+  - 
   - 
   - 
   - 
@@ -49,19 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 1
-    uniqueID: 1257401077
-    locked: 0
-  - name: 2
-    uniqueID: 1468627223
-    locked: 0
-  - name: 3
-    uniqueID: 837700409
-    locked: 0
-  - name: 4
-    uniqueID: 4276193263
-    locked: 0
-  - name: 5
-    uniqueID: 3043256195
     locked: 0

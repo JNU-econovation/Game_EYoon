@@ -8,28 +8,53 @@ public class Attack : MonoBehaviour
     public Transform firePosition;
     [SerializeField]
     Camera Camera;
-    public GameObject bullet;
-    public GameObject target;
+    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject windowBullet;
+    [SerializeField] GameObject target;
     Transform bulletPosition;
-    public int speed;
-    public float attackDelay;
-    bool isHit;
+    [SerializeField] int speed;
+    
 
     // Start is called before the first frame update
 
-    // Update is called once per frame
-    void Update()
+    // Update is called once per fram
+    void FixedUpdate()
+
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            CastRay();
+        }
+    }
+
+
+
+    void CastRay() 
+
+    {
+        target = null;
         
-        if (Input.GetMouseButtonDown(0) )
+        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+        
+        if (hit.collider != null)
         {
 
-            attack();
+            target = hit.collider.gameObject;
+            if (target.tag == "Window")
+            {
+                target.tag = "targetWindow";
+                Debug.Log(target.tag);
+                windowAttack();
+            }
+
         }
-
-
+        else
+            attack();
 
     }
+
 
    void attack()
     {
@@ -41,8 +66,16 @@ public class Attack : MonoBehaviour
         Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
         Instantiate(bullet, firePosition.position, Rotation);
        
-        
-        
     }
+    void windowAttack()
+    {
+        mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        float dx = mousePosition.x - transform.position.x;
+        float dy = mousePosition.y - transform.position.y;
+        float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
+        Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+        Instantiate(windowBullet, firePosition.position, Rotation);
+    }
+
 
 }
