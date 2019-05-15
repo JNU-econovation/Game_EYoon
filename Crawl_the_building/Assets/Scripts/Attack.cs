@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
     Camera Camera;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject windowBullet;
-    [SerializeField] GameObject target;
+    GameObject target;
     Transform bulletPosition;
     [SerializeField] int speed;
     
@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per fram
-    void FixedUpdate()
+    void Update()
 
     {
         if (Input.GetMouseButtonDown(0))
@@ -36,22 +36,23 @@ public class Attack : MonoBehaviour
         
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 10f);
         
         if (hit.collider != null)
         {
 
             target = hit.collider.gameObject;
-            if (target.tag == "Window")
+            if (target.tag == "Window" && target.GetComponent<SpriteRenderer>().sortingOrder == 2)
             {
                 target.tag = "targetWindow";
                 Debug.Log(target.tag);
                 windowAttack();
             }
+            else
+                attack();
 
         }
-        else
-            attack();
+       
 
     }
 
