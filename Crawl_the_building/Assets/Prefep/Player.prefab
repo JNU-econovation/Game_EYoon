@@ -41,8 +41,9 @@ GameObject:
   - component: {fileID: 7124940547724886658}
   - component: {fileID: 7124940547724886659}
   - component: {fileID: 7124940547724886656}
-  - component: {fileID: 7124940547724886657}
   - component: {fileID: 7124940547724886669}
+  - component: {fileID: 1709969469121294801}
+  - component: {fileID: 7124940547724886657}
   - component: {fileID: 7124940547724886662}
   - component: {fileID: 7124940547724886663}
   m_Layer: 8
@@ -105,9 +106,42 @@ MonoBehaviour:
   firePosition: {fileID: 7124940547047562630}
   Camera: {fileID: 0}
   bullet: {fileID: 5652700512136192587, guid: d13506da89b553d4cbcdb45d907fcf6e, type: 3}
-  target: {fileID: 6574796759239099459, guid: ca576ede780df3f4f8874fa68e4cc0f4, type: 3}
+  windowBullet: {fileID: 0}
   speed: 10
-  attackDelay: 0.5
+--- !u!114 &7124940547724886669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124940547724886660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc925f65bc53714f8dcaca78eac34ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backGrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  firstSpanwn: 67
+  moveDistance: 136
+  delayTime: 0.5
+--- !u!114 &1709969469121294801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124940547724886660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43477a09416ce3428e4882dcddb12a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 0}
+  offset: {x: 0, y: 5, z: 0}
+  player: {fileID: 0}
 --- !u!50 &7124940547724886657
 Rigidbody2D:
   serializedVersion: 4
@@ -129,25 +163,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7124940547724886669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124940547724886660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc925f65bc53714f8dcaca78eac34ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backGrounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  firstSpanwn: 67
-  moveDistance: 136
-  delayTime: 0.5
 --- !u!61 &7124940547724886662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -269,7 +284,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 837700409
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 055cefc4f604d534e9a3c60ad2b3e398, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

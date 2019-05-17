@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BackgroundCtrl : MonoBehaviour
 {
     public GameObject[] backGrounds;
@@ -10,10 +10,11 @@ public class BackgroundCtrl : MonoBehaviour
     public float firstSpanwn;
     public float moveDistance;
     bool Spawnable =  true;
-    public float delayTime; 
+    public float delayTime;
+
     private void Update()
     {
-        spawnPosition = new Vector3(0, height * moveDistance + firstSpanwn, 0);
+        spawnPosition = new Vector3(0, height * moveDistance + firstSpanwn, 0);    
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

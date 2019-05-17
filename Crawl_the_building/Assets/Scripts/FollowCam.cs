@@ -12,7 +12,7 @@ public class FollowCam : MonoBehaviour
     void LateUpdate()
     {
 
-       transform.position = new Vector3(0, targetTr.position.y- dist, -10);
+       transform.position = new Vector3(targetTr.position.x, targetTr.position.y- dist, -10);
                                  
         
     }
