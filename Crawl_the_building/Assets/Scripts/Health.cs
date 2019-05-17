@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    public Vector3 offset; //캐릭터와 체력바의 간격
+    //public Transform target;
+    public Image HP;
+    public Transform headUp;
+   
     void Awake()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, 0) + offset; 
+        HP.transform.position = headUp.position;
     }
-   
 }
+
+
