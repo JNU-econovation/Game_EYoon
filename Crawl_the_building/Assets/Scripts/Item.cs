@@ -14,7 +14,6 @@ public class Item : MonoBehaviour
     {
         NewBullet.transform.position = transform.position;
         Instantiate(NewBullet);
-        Debug.Log(11);
     }
     
    

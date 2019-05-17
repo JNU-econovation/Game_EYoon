@@ -41,8 +41,8 @@ GameObject:
   - component: {fileID: 7124940547724886658}
   - component: {fileID: 7124940547724886659}
   - component: {fileID: 7124940547724886656}
-  - component: {fileID: 7124940547724886669}
   - component: {fileID: 1709969469121294801}
+  - component: {fileID: 7124940547724886669}
   - component: {fileID: 7124940547724886657}
   - component: {fileID: 7124940547724886662}
   - component: {fileID: 7124940547724886663}
@@ -88,8 +88,8 @@ MonoBehaviour:
   weatherDelay: 0
   slowSpeed: 0
   HP: 100
-  bulletAmount: 0
   heatDamage: 0
+  NofBullet: 30
 --- !u!114 &7124940547724886656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,25 +108,6 @@ MonoBehaviour:
   bullet: {fileID: 5652700512136192587, guid: d13506da89b553d4cbcdb45d907fcf6e, type: 3}
   windowBullet: {fileID: 0}
   speed: 10
---- !u!114 &7124940547724886669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124940547724886660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc925f65bc53714f8dcaca78eac34ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backGrounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  firstSpanwn: 67
-  moveDistance: 136
-  delayTime: 0.5
 --- !u!114 &1709969469121294801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +123,25 @@ MonoBehaviour:
   HP: {fileID: 0}
   offset: {x: 0, y: 5, z: 0}
   player: {fileID: 0}
+--- !u!114 &7124940547724886669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124940547724886660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc925f65bc53714f8dcaca78eac34ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backGrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  firstSpanwn: 67
+  moveDistance: 136
+  delayTime: 0.5
 --- !u!50 &7124940547724886657
 Rigidbody2D:
   serializedVersion: 4

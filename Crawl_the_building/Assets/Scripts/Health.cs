@@ -5,18 +5,11 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Image HP;
+    [SerializeField] Transform target;
     public Vector3 offset; //캐릭터와 체력바의 간격
-    public Transform player;
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        HP.transform.position = player.position + offset;
+        transform.position = new Vector3(target.position.x, target.position.y, 0) + offset; 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
