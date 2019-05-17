@@ -14,10 +14,6 @@ public class Attack : MonoBehaviour
     Transform bulletPosition;
     [SerializeField] int speed;
     
-
-    // Start is called before the first frame update
-
-    // Update is called once per fram
     void Update()
 
     {
@@ -34,7 +30,8 @@ public class Attack : MonoBehaviour
 
     {
         target = null;
-        
+       
+
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 10f);
@@ -43,6 +40,7 @@ public class Attack : MonoBehaviour
         {
 
             target = hit.collider.gameObject;
+            
             if (target.tag == "Window" && target.GetComponent<SpriteRenderer>().sortingOrder == 2)
             {
                 target.tag = "targetWindow";
@@ -51,7 +49,7 @@ public class Attack : MonoBehaviour
             }
             else
                 attack();
-
+            Debug.Log(target.name);
         }
        
 

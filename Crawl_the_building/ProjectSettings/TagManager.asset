@@ -21,7 +21,7 @@ TagManager:
   - 
   - Window
   - Player
-  - 
+  - Disturb
   - 
   - 
   - 
@@ -46,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 3621086971
+    locked: 0
+  - name: 2
+    uniqueID: 119475897
+    locked: 0
+  - name: 3
+    uniqueID: 2640536407
+    locked: 0
+  - name: 4
+    uniqueID: 4011269353
     locked: 0

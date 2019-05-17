@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    public GameObject beforeWindow;
-    public GameObject afterWindow;
+    public bool isBroken;
    
     void Start()
     {
@@ -13,14 +12,5 @@ public class Collision : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "bullet")
-        {     
-            afterWindow.SetActive(true);
-            beforeWindow.SetActive(false);     
-        }
-    }
-
-   
+    
 }

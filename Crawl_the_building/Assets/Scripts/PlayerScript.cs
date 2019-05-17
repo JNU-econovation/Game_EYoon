@@ -11,10 +11,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] float weatherDelay;
     [SerializeField] float slowSpeed;
     [SerializeField] int HP;
-    [SerializeField] int bulletAmount;
     [SerializeField] int heatDamage;
-
-  
+    [SerializeField] int NofBullet = 30; // 초기 총알 개수 
     void Update()
     {
         transform.Translate(0, forwardSpeed, 0);
@@ -23,14 +21,14 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D) )
         {
             transform.Translate(sideMove*Time.deltaTime, 0, 0);
-            
+            Debug.Log(1);
           
         }
 
         if(Input.GetKey(KeyCode.A))
         {
             transform.Translate(-sideMove*Time.deltaTime, 0, 0);
-           
+            Debug.Log(1);
         }
      
       
