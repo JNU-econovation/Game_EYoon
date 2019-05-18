@@ -47,12 +47,12 @@ public class Attack : MonoBehaviour
                 Debug.Log(target.tag);
                 windowAttack();
             }
-            else
-                attack();
+           
             Debug.Log(target.name);
         }
-       
 
+        else
+            attack();
     }
 
 

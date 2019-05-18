@@ -5,6 +5,8 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public GameObject NewBullet;
+    public int hitCount = 0;
+   
    
     void Start()
     {

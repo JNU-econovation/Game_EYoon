@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] int HP;
     [SerializeField] int heatDamage;
     [SerializeField] int NofBullet = 30; // 초기 총알 개수 
+    GameObject[] window;
     void Update()
     {
         transform.Translate(0, forwardSpeed, 0);
