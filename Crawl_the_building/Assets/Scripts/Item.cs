@@ -8,15 +8,25 @@ public class Item : MonoBehaviour
     public int hitCount = 0;
    
    
+
+    public GameObject HealTem;
+ 
+
     void Start()
     {
         
     }
-    public void Break()
+    public void Bullet()
     {
         NewBullet.transform.position = transform.position;
         Instantiate(NewBullet);
-        Debug.Log(11);
+        
+    }
+    public void Heal()
+    {
+        HealTem.transform.position = transform.position;
+        Instantiate(HealTem);
+
     }
     
    

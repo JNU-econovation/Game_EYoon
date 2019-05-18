@@ -13,12 +13,19 @@ public class Attack : MonoBehaviour
     GameObject target;
     Transform bulletPosition;
     [SerializeField] int speed;
+    public int NumberOfBullet;
     
+    void Start()
+    {
+        NumberOfBullet = 30;
+    }
+
     void Update()
 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && NumberOfBullet > 0)
         {
+            NumberOfBullet--;
             CastRay();
         }
     
@@ -48,7 +55,7 @@ public class Attack : MonoBehaviour
                 windowAttack();
             }
            
-            Debug.Log(target.name);
+
         }
 
         else

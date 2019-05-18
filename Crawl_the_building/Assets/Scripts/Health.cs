@@ -5,18 +5,14 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    //public Transform target;
     public Image HP;
-    public Vector3 offset; //캐릭터와 체력바의 간격
-    public Transform player;
+    public Transform headUp;
+   
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        HP.transform.position = player.position + offset;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        HP.transform.position = headUp.position;
     }
 }
+
+
