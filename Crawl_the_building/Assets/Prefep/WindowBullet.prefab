@@ -71,6 +71,9 @@ MonoBehaviour:
   bullet: {fileID: 0}
   brokenWindow:
   - {fileID: 21300000, guid: 33ba01b2f2ea2494fb3cdb73fa8d91af, type: 3}
+  - {fileID: 21300000, guid: ffa25f3e07e401d4aa3efbee6de2d67c, type: 3}
+  - {fileID: 21300000, guid: 82efff94481be1e47b27c8460f391b74, type: 3}
+  - {fileID: 21300000, guid: 1281f0018a0770642819dc6c8628403e, type: 3}
 --- !u!61 &3263795965625833699
 BoxCollider2D:
   m_ObjectHideFlags: 0

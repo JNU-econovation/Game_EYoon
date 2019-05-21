@@ -7,11 +7,17 @@ public class UI : MonoBehaviour
     public Text NOBullet; //총알 개수
     public Text HPValue;
     public GameObject player;
+    Attack playerAttack;
     public int temp;
+    private void Start()
+    {
+
+        playerAttack = player.GetComponent<Attack>();
+    }
     void Update()
     {
 
-        temp = player.GetComponent<Attack>().NumberOfBullet;
+        temp = playerAttack.NumberOfBullet;
         NOBullet.text = temp.ToString();
     }
 

@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public GameObject NewBullet;
-    public int hitCount = 0;
+    public int Hp;
    
    
 
     public GameObject HealTem;
- 
+
 
     void Start()
     {
@@ -28,6 +28,6 @@ public class Item : MonoBehaviour
         Instantiate(HealTem);
 
     }
-    
+
    
 }

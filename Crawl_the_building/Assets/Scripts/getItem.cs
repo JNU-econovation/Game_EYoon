@@ -19,24 +19,28 @@ public class getItem : MonoBehaviour
         switch (i)
         {
             case 0:
-                bullet(); break;
+                Bullet(collider.gameObject);
+                break;
             case 1:
-                heal(); break;
+                Heal(collider.gameObject); 
+                break;
         }
-       
-       
+
+        
     }
 
     
-    private void bullet()
+    void Bullet(GameObject gameObject)
     {
         temp = gameObject.GetComponent<UI>().temp + 3;
         gameObject.GetComponent<UI>().NOBullet.text = temp.ToString();
+        Destroy(gameObject);
     }
-    private void heal()
+    void Heal(GameObject gameObject)
     {
         temp = int.Parse(gameObject.GetComponent<UI>().HPValue.text) + 20;
         gameObject.GetComponent<UI>().HPValue.text = temp.ToString();
         gameObject.GetComponent<Health>().HP.fillAmount = (float)temp / 100;
+        Destroy(gameObject);
     }
 }

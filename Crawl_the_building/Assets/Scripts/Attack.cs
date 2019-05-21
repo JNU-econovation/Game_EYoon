@@ -14,10 +14,11 @@ public class Attack : MonoBehaviour
     Transform bulletPosition;
     [SerializeField] int speed;
     public int NumberOfBullet;
+    int windowHP;
     
     void Start()
     {
-        NumberOfBullet = 30;
+        
     }
 
     void Update()
@@ -25,8 +26,9 @@ public class Attack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && NumberOfBullet > 0)
         {
-            NumberOfBullet--;
+            
             CastRay();
+            
         }
     
     }
@@ -42,24 +44,27 @@ public class Attack : MonoBehaviour
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 10f);
-        
+
         if (hit.collider != null)
         {
 
             target = hit.collider.gameObject;
-            
-            if (target.tag == "Window" && target.GetComponent<SpriteRenderer>().sortingOrder == 2)
+          windowHP =  target.GetComponent<Item>().Hp;
+
+            if (target.tag == "Window" && windowHP > 0)
             {
                 target.tag = "targetWindow";
                 Debug.Log(target.tag);
                 windowAttack();
+                NumberOfBullet--;
             }
-           
+            
 
+           
+            
         }
 
-        else
-            attack();
+       
     }
 
 

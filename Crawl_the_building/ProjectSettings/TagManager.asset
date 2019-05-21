@@ -11,6 +11,8 @@ TagManager:
   - targetWindow
   - Window
   - item
+  - mapDestroyer
+  - map
   layers:
   - Default
   - TransparentFX
