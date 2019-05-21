@@ -432,6 +432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: {fileID: 1420954023}
   headUp: {fileID: 172110406}
+  hpUI: {fileID: 1792484149}
+  fullHp: 100
+  maxHp: 100
 --- !u!50 &544116980
 Rigidbody2D:
   serializedVersion: 4

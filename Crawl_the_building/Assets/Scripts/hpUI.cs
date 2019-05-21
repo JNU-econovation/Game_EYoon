@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeatherControll : MonoBehaviour
+public class hpUI : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
