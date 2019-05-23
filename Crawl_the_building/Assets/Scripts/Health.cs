@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public Image HP;
     public Transform headUp;
     public Text hpUI;
-    [SerializeField] float hp;//캐릭터의 현재 체력
+    public float hp;//캐릭터의 현재 체력
     [SerializeField] float maxHp; //캐릭터의 풀피
 
     private void Start()

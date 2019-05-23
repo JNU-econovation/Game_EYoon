@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6547349753291987594}
   - component: {fileID: 6547349753291987595}
   - component: {fileID: 6547349753291987596}
+  - component: {fileID: 697988825788516642}
   - component: {fileID: 6547349753291987597}
   m_Layer: 8
   m_Name: "\uCC3D\uBB382(hp1)"
@@ -110,6 +111,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 9}
   m_EdgeRadius: 0
+--- !u!114 &697988825788516642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547349753291987593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c44bc3c4c0ac96439506cafc68317cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
+  delay: 2
+  dist: 60
+  rate: 40
 --- !u!114 &6547349753291987597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,5 +141,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NewBullet: {fileID: 8527463947851771553, guid: 844da02d45f8c314f970321c60df85bf,
     type: 3}
-  hitCount: 0
+  Hp: 0
   HealTem: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5, type: 3}

@@ -13,8 +13,5 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(Vector3.up * speed);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-    }
+
 }
