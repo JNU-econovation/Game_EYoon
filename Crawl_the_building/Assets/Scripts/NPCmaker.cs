@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class NPCmaker : MonoBehaviour
 {
-    // Start is called before the first frame update
+  
     [SerializeField] GameObject npc;//주민 등록
     [SerializeField] int delay = 2; //주민 소환 함수를 돌리는 주기
      [SerializeField]int dist = 80;//플래이어로부터 어느정도 위에서부터 주민이 물건을 던지는지 정의하는 변수
     [SerializeField] int rate = 40; // 주민 스폰 확률
 
-    // Update is called once per frame
 
-    private void Start()
+    void Start()
     {
         StartCoroutine(npcSpawn());
     }

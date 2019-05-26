@@ -9,14 +9,13 @@ public class UI : MonoBehaviour
     public GameObject player;
     Attack playerAttack;
     public int temp;
-    private void Start()
-    {
 
+    void Start()
+    {
         playerAttack = player.GetComponent<Attack>();
     }
     void Update()
     {
-
         temp = playerAttack.NumberOfBullet;
         NOBullet.text = temp.ToString();
     }

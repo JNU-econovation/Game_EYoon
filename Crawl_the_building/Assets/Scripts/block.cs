@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class block : MonoBehaviour
+public class Block : MonoBehaviour
 {
     [SerializeField] float speed = 1;
     [SerializeField] int Damage;
@@ -12,18 +12,18 @@ public class block : MonoBehaviour
         Destroy(gameObject, 10f);
     }
 
-   
+
     void Update()
     {
         transform.Translate(Vector3.up * speed);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (other.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            other.GetComponent<Health>().hp = other.GetComponent<Health>().hp - Damage;
+            collider.GetComponent<Health>().hp -= Damage;
             Destroy(gameObject);
         }
-
     }
 }

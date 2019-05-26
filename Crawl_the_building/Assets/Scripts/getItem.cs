@@ -2,34 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class getItem : MonoBehaviour
+public class GetItem : MonoBehaviour
 {
     Text hp;
     int temp;
     Image playerHp;
-    string[] item = { "NewBullet", "Healtem" };
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        int i;
-        for (i = 0; i < item.Length; i++)
-        {
-            if (collider.gameObject.name == item[i])
-                break;
-        }
-        switch (i)
-        {
-            case 0:
-                Bullet(collider.gameObject);
-                break;
-            case 1:
-                Heal(collider.gameObject); 
-                break;
-        }
 
-        
     }
 
-    
     void Bullet(GameObject gameObject)
     {
         temp = gameObject.GetComponent<UI>().temp + 3;

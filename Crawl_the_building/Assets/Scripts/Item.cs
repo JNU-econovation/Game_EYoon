@@ -5,17 +5,8 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public GameObject NewBullet;
-    public int Hp;
-   
-   
-
     public GameObject HealTem;
 
-
-    void Start()
-    {
-        
-    }
     public void Bullet()
     {
         NewBullet.transform.position = transform.position;
