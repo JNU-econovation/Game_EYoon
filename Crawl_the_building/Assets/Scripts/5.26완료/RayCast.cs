@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cam : MonoBehaviour
+public class RayCast : MonoBehaviour
 {
-    public GameObject player;
-    Attack attack;
     Camera cam;
+    public GameObject player;
     public GameObject target;
-    public Vector3 mousePosition;
+    Vector3 mousePosition;
     float maxDistance = 15f;
     void Start()
     {
-        attack = new Attack();
-        target = new GameObject();
         cam = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,11 +27,10 @@ public class Cam : MonoBehaviour
                 if (hit.collider != null)
                 {
                     target = hit.collider.gameObject;
-                    player.GetComponent<Attack>().Shoot(mousePosition);
-                    //attack.Shoot(mousePosition);
+                    player.GetComponent<Attack>().Shoot(mousePosition);                   
                 }
             }
-                
+
         }
     }
 }
