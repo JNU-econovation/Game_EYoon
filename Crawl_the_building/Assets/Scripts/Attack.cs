@@ -7,28 +7,32 @@ public class Attack : MonoBehaviour
     public Vector3 mousePosition;
     public Transform firePosition;
     public GameObject bullet;
-    public GameObject windowBullet;
     GameObject target;
     public int NumberOfBullet;
+    public Camera cam;
+    private void Start()
+    {
+        target = cam.GetComponent<Cam>().target;
+    }
 
-    public void ChooseShoot(GameObject targetObject)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        target = targetObject;
-        if (target.tag == "Window")
+
+        if(collider.gameObject == target)
         {
-           // ShootWindow();            
+            Destroy(collider.gameObject);
         }
-       
-    }/*
-    void ShootWindow() 
+    }
+    
+    public void Shoot(Vector3 position) 
     {
-        mousePosition = GetComponent<Cam>().mousePosition;
+        mousePosition = position;
         float dx = mousePosition.x - transform.position.x;
         float dy = mousePosition.y - transform.position.y;
         float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
         Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
         Instantiate(bullet, firePosition.position, Rotation);
-    }*/
+    }
     void ShootEnemy()
     {
 

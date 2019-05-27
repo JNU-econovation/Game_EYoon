@@ -289,7 +289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544116977
 GameObject:
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544116977}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32e243e6b8db2f641b9f4eaec19cf24c, type: 3}
   m_Name: 
@@ -409,7 +409,7 @@ Transform:
   - {fileID: 134860787}
   - {fileID: 1233125973}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &544116984
 MonoBehaviour:
@@ -719,7 +719,7 @@ RectTransform:
   - {fileID: 1603132857}
   - {fileID: 1264705480}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1256,6 +1256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6fae7576674a946a02b87bb3cc28be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 544116977}
+  target: {fileID: 0}
   mousePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2064159494
 GameObject:

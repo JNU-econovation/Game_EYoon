@@ -7,13 +7,13 @@ public class Cam : MonoBehaviour
     public GameObject player;
     Attack attack;
     Camera cam;
-    GameObject target;
+    public GameObject target;
     public Vector3 mousePosition;
     float maxDistance = 15f;
     void Start()
     {
-        attack = player.GetComponent<Attack>();
-        mousePosition = Vector3.zero;
+        attack = new Attack();
+        target = new GameObject();
         cam = GetComponent<Camera>();
     }
 
@@ -31,7 +31,8 @@ public class Cam : MonoBehaviour
                 if (hit.collider != null)
                 {
                     target = hit.collider.gameObject;
-                    attack.ChooseShoot(target);               
+                    player.GetComponent<Attack>().Shoot(mousePosition);
+                    //attack.Shoot(mousePosition);
                 }
             }
                 
