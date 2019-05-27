@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4481832911450454019}
   - component: {fileID: 3873376021066089292}
   m_Layer: 9
-  m_Name: Bulletwed Variant
+  m_Name: Bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ Transform:
   m_GameObject: {fileID: 3632869723135427885}
   m_LocalRotation: {x: 0.05547897, y: 0.05547897, z: 0.70492697, w: 0.70492697}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 9063673205065985800}
   m_RootOrder: 0

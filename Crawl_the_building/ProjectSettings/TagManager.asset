@@ -13,6 +13,7 @@ TagManager:
   - item
   - mapDestroyer
   - map
+  - Enemy
   layers:
   - Default
   - TransparentFX
