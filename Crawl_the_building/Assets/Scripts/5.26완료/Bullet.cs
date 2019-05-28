@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed = 1;
+    public float speed;
     GameObject target;
     public Camera cam;
     public int damage;
     WindowHP windowhp;
     private void Start()
     {
-        
-        target = cam.GetComponent<Cam>().target;
+        target = cam.GetComponent<MakeRay>().target;
         windowhp = target.GetComponent<WindowHP>();
-      
     }
     void Update()
     {
         transform.Translate(Vector3.up * speed);
     }
     private void OnTriggerEnter2D(Collider2D collider)
-    {
-        
+    {      
         if (collider.gameObject == target)
         {
             windowhp.HP -= damage;

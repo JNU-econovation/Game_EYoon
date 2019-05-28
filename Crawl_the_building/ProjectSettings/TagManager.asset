@@ -14,6 +14,7 @@ TagManager:
   - mapDestroyer
   - map
   - Enemy
+  - None
   layers:
   - Default
   - TransparentFX
