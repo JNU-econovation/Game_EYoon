@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     //public Transform target;
-    public Image HP;
+    Image imageHP;
     public Text hpUI;
     public float hp;//캐릭터의 현재 체력
-    float maxHp; //캐릭터의 풀피
+    public float maxHp; //캐릭터의 풀피
 
     private void Start()
     {
-        hp = maxHp;
+        imageHP = GetComponentInChildren<Image>();
     }
     private void Update()
     {
         hpUI.text = hp.ToString();
-        HP.fillAmount = hp / maxHp;
+        imageHP.fillAmount = hp / maxHp;
     }
 }
 
