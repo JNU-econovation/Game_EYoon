@@ -19,6 +19,7 @@ public class Attack : MonoBehaviour
         float dy = position.y - transform.position.y;
         float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
         Quaternion Rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+
         if (target.tag == "Window")
             Instantiate(bullet, firePosition.position, Rotation);
         else    

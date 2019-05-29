@@ -6,15 +6,15 @@ TagManager:
   tags:
   - bullet
   - target
-  - brokenWindow
   - buildingMover
-  - targetWindow
   - Window
   - item
   - mapDestroyer
   - map
   - Enemy
-  - None
+  - Window1
+  - Window2
+  - Window3
   layers:
   - Default
   - TransparentFX

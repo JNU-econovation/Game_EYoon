@@ -27,12 +27,17 @@ public class MakeRay : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward, maxDistance);
             if (hit)
             {
-                print(1);
-                if (hit.collider != null)
-                {                  
-                    target = hit.collider.gameObject;            
-                    attack.Shoot(target, mousePosition);
-                }          
+                if (attack.NumberOfBullet > 0) {
+                    if (hit.collider != null)
+                    {
+                        target = hit.collider.gameObject;
+                        attack.Shoot(target, mousePosition);
+                    }
+                    else
+                    {
+                        attack.Shoot(null, mousePosition);
+                    }
+                }
             }
 
         }

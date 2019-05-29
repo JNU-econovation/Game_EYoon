@@ -10,11 +10,12 @@ public class MakeMap : MonoBehaviour
     public GameObject newMap;
     GameObject temp;
     public float moveDistance;
-
+ 
     void Start()
     {
         move = new Vector3(0, moveDistance, 0);
         spawn = transform.position;
+               
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -23,7 +24,7 @@ public class MakeMap : MonoBehaviour
         {
             spawn += move;
             temp = Instantiate(newMap, spawn, Quaternion.identity);
-            temp.name = temp.name.Replace("(Clone)", "");
+            temp.name = temp.name.Replace("(Clone)", "");    
         }
     }
   

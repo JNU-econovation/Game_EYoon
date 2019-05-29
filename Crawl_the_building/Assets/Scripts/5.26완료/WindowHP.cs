@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WindowHP : MonoBehaviour
 {
-    public int HP;
-    int maxHP;
+    public float HP;
+    public float maxHP;
     int count = 0;
     float temp = 0;
     public Sprite[] brokenWindow;
-    SpriteRenderer sr;
-
+    public SpriteRenderer sr;
+    public Image hpImage;
     void Start()
     {
+        hpImage = gameObject.GetComponentInChildren<Image>();
         maxHP = HP;
         sr = GetComponent<SpriteRenderer>();
     }

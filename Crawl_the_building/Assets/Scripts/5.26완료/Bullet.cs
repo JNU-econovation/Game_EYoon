@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         if (collider.gameObject == target)
         {
             windowhp.HP -= damage;
-            print(windowhp.HP);
+            windowhp.hpImage.fillAmount = windowhp.HP / windowhp.maxHP;
             Destroy(gameObject);
             windowhp.ChangeWindow();
         }
