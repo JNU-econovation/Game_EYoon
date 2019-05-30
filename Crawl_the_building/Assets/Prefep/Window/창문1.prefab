@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1877886467393586005, guid: 93120878a332ef2478ca380ad8fb0e1b, type: 3}
+  heal: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5, type: 3}
 --- !u!1 &1859550612500936472
 GameObject:
   m_ObjectHideFlags: 0

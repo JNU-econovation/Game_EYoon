@@ -2,17 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealItem : MonoBehaviour
+public class HealItem : Item
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    // Update is called once per frame
-    void Update()
+    new public void Function()
     {
-        
+        player.GetComponent<Health>().hp += 10;
+
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Function();
+            Destroy(gameObject);
+        }
+
+    }
+    new public void MakeItem(Vector3 vector3)
+    {
+        print("healitem");
+        item = GameObject.Find("HealItem");
+        transform.position = vector3;
+        Instantiate(item);
     }
 }

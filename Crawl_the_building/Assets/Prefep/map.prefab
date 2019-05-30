@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca7e0bf576b5c144b47992542849185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2416422215877662229, guid: acb3ce148d545be42b1841ab8402b228, type: 3}
   newMap: {fileID: 3771729105117631001}
   moveDistance: 280.8
 --- !u!1 &3771729104403621390
@@ -506,7 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a858dc2b58a947b408c1069d87f56cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1849351752360808775, guid: acb3ce148d545be42b1841ab8402b228, type: 3}
 --- !u!1 &3771729105177097640
 GameObject:
   m_ObjectHideFlags: 0

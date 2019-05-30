@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  cam: {fileID: 0}
+  cam: {fileID: 5192610320807049499, guid: 4c1a554c7041cdf45adef8f94a068cc8, type: 3}
   damage: 20
 --- !u!61 &9051197326804292738
 BoxCollider2D:

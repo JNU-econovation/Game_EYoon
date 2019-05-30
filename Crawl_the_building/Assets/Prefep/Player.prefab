@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sideSpeed: 30
-  forwardSpeed: 0.3
+  forwardSpeed: 0.5
 --- !u!114 &2515028090259809566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
   trashBullet: {fileID: 742297474371153504, guid: 0b4b8a0507a0cda49b2e44e892f8f161,
     type: 3}
-  NumberOfBullet: 60
+  NumberOfBullet: 30
   cam: {fileID: 5192610320807049499, guid: 4c1a554c7041cdf45adef8f94a068cc8, type: 3}
 --- !u!114 &2515028090259809560
 MonoBehaviour:
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpUI: {fileID: 686328876423927242, guid: bfcc3c321fedc6841a428fbfa11a8e10, type: 3}
-  hp: 50
+  hp: 30
   maxHp: 100
 --- !u!50 &2515028090259809567
 Rigidbody2D:
@@ -140,7 +140,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

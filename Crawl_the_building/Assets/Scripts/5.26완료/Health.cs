@@ -11,12 +11,14 @@ public class Health : MonoBehaviour
     public float hp;//캐릭터의 현재 체력
     public float maxHp; //캐릭터의 풀피
 
-    private void Start()
+    void Start()
     {
         imageHP = GetComponentInChildren<Image>();
     }
-    private void Update()
+    void Update()
     {
+        if (hp >= maxHp)
+            hp = maxHp;
         hpUI.text = hp.ToString();
         imageHP.fillAmount = hp / maxHp;
     }

@@ -23,11 +23,8 @@ public class Attack : MonoBehaviour
         if (target.tag == "Window")
             Instantiate(bullet, firePosition.position, Rotation);
         else    
-            Instantiate(trashBullet, firePosition.position, Rotation);           
-        
-
-            
-        NumberOfBullet--;
+            Instantiate(trashBullet, firePosition.position, Rotation);                             
+        NumberOfBullet--;     
     }
     
     void ShootEnemy()

@@ -2,16 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BulletItem : Item
 {
-    public GameObject player;
-    public GameObject bullet;
-    
-    void Start()
-    {        
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
     new public void Function()
     {
         player.GetComponent<Attack>().NumberOfBullet += 5;
@@ -22,10 +19,19 @@ public class BulletItem : Item
         if (collider.gameObject.tag == "Player")
         {
             Function();
-            Destroy(gameObject);
-            
+            Destroy(gameObject);            
         }
        
     }
+    new public void MakeItem(Vector3 vector3)
+    {
+        print("bulletitem");
+        item = GameObject.Find("BulletItem");
+       
+        transform.position = vector3;
+        Instantiate(item);
+        
+    }
+
 
 }

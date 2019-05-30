@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class DestroyMap : MonoBehaviour
 {
-    public GameObject player;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject == player)
+        if (collider.gameObject.tag == "Player")
         {
             GameObject map = gameObject.transform.parent.gameObject;
             Destroy(map);
