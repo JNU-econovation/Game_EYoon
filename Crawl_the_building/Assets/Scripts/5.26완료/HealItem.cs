@@ -24,8 +24,6 @@ public class HealItem : Item
     }
     new public void MakeItem(Vector3 vector3)
     {
-        print("healitem");
-        item = GameObject.Find("HealItem");
         transform.position = vector3;
         Instantiate(item);
     }

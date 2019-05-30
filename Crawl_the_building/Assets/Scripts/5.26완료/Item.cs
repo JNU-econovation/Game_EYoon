@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
     }
     public virtual void MakeItem(Vector3 vector3)
     {
-        
+        print("item");
     }
 
 

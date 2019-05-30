@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8065a24858dc14c8d5b7f3b18be463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
-  maxHP: 20
+  HP: 50
+  maxHP: 50
   brokenWindow:
   - {fileID: 21300000, guid: 3476d9223e6bf254c9cde14119bdc2e9, type: 3}
   - {fileID: 21300000, guid: 5c527210857960f42bf1f190391dcfeb, type: 3}
