@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sideSpeed: 30
-  forwardSpeed: 0.5
+  forwardSpeed: 1
 --- !u!114 &2515028090259809566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,12 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e243e6b8db2f641b9f4eaec19cf24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePosition: {fileID: 2515028090937670168}
-  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
   trashBullet: {fileID: 742297474371153504, guid: 0b4b8a0507a0cda49b2e44e892f8f161,
     type: 3}
+  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
   NumberOfBullet: 30
-  cam: {fileID: 5192610320807049499, guid: 4c1a554c7041cdf45adef8f94a068cc8, type: 3}
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0

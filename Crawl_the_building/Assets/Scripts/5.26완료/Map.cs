@@ -22,7 +22,7 @@ public class Map : MonoBehaviour
         {
             
             temp = Instantiate(newMap, spawn, Quaternion.identity);
-            temp.name = temp.name.Replace("(Clone)", "");
+           // temp.name = temp.name.Replace("(Clone)", "");
         }
 
     }

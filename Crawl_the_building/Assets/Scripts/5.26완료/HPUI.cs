@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class HPUI : MonoBehaviour
 {
     Text hpValue; //총알 개수
-    public GameObject player;
+    GameObject player;
+    public GameObject service;
     Image heart;
     float hp;
     float maxHp;
 
     private void Start()
     {
+        player = service.GetComponent<LevelManager>().player;
         heart = GetComponent<Image>();
         hpValue = GetComponentInChildren<Text>();
        // hp = player.GetComponent<Health>().hp;

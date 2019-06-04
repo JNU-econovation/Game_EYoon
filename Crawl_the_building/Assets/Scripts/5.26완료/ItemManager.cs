@@ -8,10 +8,10 @@ public class ItemManager : MonoBehaviour
     Item item;
     public GameObject bullet;
     public GameObject heal;
+
     public void SelectItem(Vector3 vector3)
     {
         rand = Random.Range(1, 100);
-        print(rand);
         if(1<=rand && rand <= 33)
         {
             MakeItem(bullet, vector3);         

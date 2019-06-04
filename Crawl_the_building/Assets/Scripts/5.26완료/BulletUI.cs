@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class BulletUI : MonoBehaviour
 {
     public Text NOBullet; //총알 개수
-    public GameObject player;
+    public GameObject service;
+    GameObject player;
     int temp;
 
-
+    private void Start()
+    {
+        player = service.GetComponent<LevelManager>().player;
+    }
     void Update()
     {
         temp = player.GetComponent<Attack>().NumberOfBullet;

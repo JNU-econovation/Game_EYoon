@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class MakeMap : MonoBehaviour
 {
-    Vector3 spawn;
+    public Vector3 move;
+    GameObject player;
+    public GameObject service;
     public GameObject newMap;
-    GameObject temp;
+    Vector3 spawnPosition;
     public float moveDistance;
- 
+
     void Start()
     {
-        spawn  = transform.position + new Vector3(0, moveDistance, 0);              
+        player = service.GetComponent<LevelManager>().player;
+        move = new Vector3(0, moveDistance, 0);
+        spawnPosition = transform.position + move;
     }
-    
     private void OnTriggerEnter2D(Collider2D collider)
     {
-       
-        if(collider.gameObject.tag == "Player")
-        {            
-            temp = Instantiate(newMap, spawn, Quaternion.identity);
-            temp.name = temp.name.Replace("(Clone)", "");    
+        if (collider.gameObject == player)
+        {
+            Instantiate(newMap, spawnPosition, Quaternion.identity);           
         }
-              
-    }
 
+    }
 }

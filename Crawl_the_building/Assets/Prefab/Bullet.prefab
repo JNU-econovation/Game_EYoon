@@ -195,8 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bd079466141fb4fbe565144fa5b7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2515028090259809562, guid: c2b61f796db46c64595bfee25cfa7f1b, type: 3}
   speed: 5
-  cam: {fileID: 5192610320807049499, guid: 4c1a554c7041cdf45adef8f94a068cc8, type: 3}
+  target: {fileID: 0}
   damage: 20
 --- !u!61 &9051197326804292738
 BoxCollider2D:

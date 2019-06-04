@@ -8,14 +8,13 @@ public class Item : MonoBehaviour
     public GameObject player;
     public void Function()
     {
-
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {     
     }
     public virtual void MakeItem(Vector3 vector3)
     {
-        print("item");
+        
     }
 
 
