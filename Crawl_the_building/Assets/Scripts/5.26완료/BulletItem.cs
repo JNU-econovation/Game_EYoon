@@ -21,7 +21,7 @@ public class BulletItem : Item
             Function();
             Destroy(gameObject);            
         }
-       
+        Debug.Log("gy");
     }
     new public void MakeItem(Vector3 vector3)
     {
