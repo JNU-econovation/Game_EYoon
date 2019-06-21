@@ -19,9 +19,12 @@ public class MakeMap : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
+
         if (collider.gameObject == player)
         {
-            Instantiate(newMap, spawnPosition, Quaternion.identity);           
+            spawnPosition = transform.position + move;
+            Instantiate(newMap, spawnPosition, Quaternion.identity);
+            transform.Translate(0, 187, 0);
         }
 
     }

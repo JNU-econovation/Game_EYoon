@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
     public int NumberOfBullet;
     private void Start()
     {
-      
+        NumberOfBullet = 30;
     }
     public void Shoot(GameObject obj, Vector3 position) 
     {
@@ -25,13 +25,22 @@ public class Attack : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
 
         if (target.tag == "Window")
+        {
+            Debug.Log(transform.localPosition.y);
             Instantiate(bullet, transform.position, rotation);
+        }
         else
             Instantiate(trashBullet, transform.position, rotation);
 
         NumberOfBullet--;     
     }
-    
+
+    private void Update()
+    {
+        Debug.Log(transform.localPosition.y);
+
+    }
+
     void ShootEnemy()
     {
 

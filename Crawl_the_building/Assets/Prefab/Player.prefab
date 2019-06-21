@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2515028090259809555}
   - component: {fileID: 2515028090259809566}
   - component: {fileID: 2515028090259809560}
-  - component: {fileID: 7839598808151538679}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
   - component: {fileID: -882289096373247377}
@@ -52,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideSpeed: 30
   forwardSpeed: 1
 --- !u!114 &2515028090259809566
 MonoBehaviour:
@@ -69,7 +67,7 @@ MonoBehaviour:
   trashBullet: {fileID: 742297474371153504, guid: 0b4b8a0507a0cda49b2e44e892f8f161,
     type: 3}
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  NumberOfBullet: 30
+  NumberOfBullet: 4
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,21 +83,6 @@ MonoBehaviour:
   hpUI: {fileID: 686328876423927242, guid: bfcc3c321fedc6841a428fbfa11a8e10, type: 3}
   hp: 30
   maxHp: 100
---- !u!114 &7839598808151538679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a97a3995b91eb04183d3469cb125456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move: {x: 0, y: 0, z: 0}
-  newMap: {fileID: 8963045722571628447, guid: 4e1867a432425ed4fbad1b8b78b1c2b5, type: 3}
-  moveDistance: 280.8
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4

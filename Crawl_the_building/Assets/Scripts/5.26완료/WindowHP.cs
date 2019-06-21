@@ -13,9 +13,10 @@ public class WindowHP : MonoBehaviour
     public SpriteRenderer sr;
     public Image hpImage;
     ItemManager itemManager;
-
+    bool itemMade;
     void Start()
     {
+        itemMade = false;
         itemManager = GetComponent<ItemManager>(); 
         hpImage = gameObject.GetComponentInChildren<Image>();
         sr = GetComponent<SpriteRenderer>();
@@ -34,10 +35,11 @@ public class WindowHP : MonoBehaviour
         {
             sr.sprite = brokenWindow[2];
         }
-        else if (HP <= 0)
+        else if (HP <= 0 && itemMade == false)
         {
             sr.sprite = brokenWindow[3];
-            itemManager.SelectItem(gameObject.transform.position);           
+            itemManager.SelectItem(gameObject.transform.position);
+            itemMade = true;
         }
     }   
 

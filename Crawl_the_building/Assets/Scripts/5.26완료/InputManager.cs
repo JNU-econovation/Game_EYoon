@@ -6,19 +6,25 @@ public class InputManager : MonoBehaviour
 {
     Camera cam;
     Attack attack;
-    public GameObject player;
+    GameObject player;
     public GameObject target;
     Vector3 mousePosition;
     float maxDistance = 15f;
+    public float sideSpeed;
 
     void Start()
     {
         cam = Camera.main;
+        player = GetComponentInParent<LevelManager>().player;
         attack = player.GetComponent<Attack>();
     }
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.D))
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right);
+        else if (Input.GetKey(KeyCode.A))
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left);
         //마우스 좌클릭
         if (Input.GetMouseButtonDown(0))
         {
