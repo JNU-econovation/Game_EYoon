@@ -17,8 +17,7 @@ public class HPUI : MonoBehaviour
         player = service.GetComponent<LevelManager>().player;
         heart = GetComponent<Image>();
         hpValue = GetComponentInChildren<Text>();
-       // hp = player.GetComponent<Health>().hp;
-       // maxHp = player.GetComponent<Health>().maxHp;
+       
     }
 
     void Update()

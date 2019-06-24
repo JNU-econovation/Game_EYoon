@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class HealItem : Item
 {
-    private void Start()
+    public int increase;
+    public override void Function()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Health>().hp += increase;
     }
-    new public void Function()
-    {
-        player.GetComponent<Health>().hp += 10;
 
-    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -21,10 +18,5 @@ public class HealItem : Item
             Destroy(gameObject);
         }
 
-    }
-    new public void MakeItem(Vector3 vector3)
-    {
-        transform.position = vector3;
-        Instantiate(item);
     }
 }

@@ -23,11 +23,12 @@ public class Bullet : MonoBehaviour
         windowhp = target.GetComponent<WindowHP>();
         if (collider.gameObject == target)
         {
+            windowhp.hpImage.gameObject.SetActive(true);
             windowhp.HP -= damage;
             windowhp.hpImage.fillAmount = windowhp.HP / windowhp.maxHP;
-            Destroy(gameObject);
+            Destroy(gameObject);          
             windowhp.ChangeWindow();
         }
     }
-
+    
 }

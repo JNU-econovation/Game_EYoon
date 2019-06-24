@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class WindowHP : MonoBehaviour
 {
     public float HP;
-    public float maxHP;
-    int count = 0;
-    float temp = 0;
+    public float maxHP;  
     public Sprite[] brokenWindow;
     public SpriteRenderer sr;
     public Image hpImage;
@@ -20,6 +18,7 @@ public class WindowHP : MonoBehaviour
         itemManager = GetComponent<ItemManager>(); 
         hpImage = gameObject.GetComponentInChildren<Image>();
         sr = GetComponent<SpriteRenderer>();
+        hpImage.gameObject.SetActive(false);       
     }
     public void ChangeWindow()
     {
@@ -38,7 +37,7 @@ public class WindowHP : MonoBehaviour
         else if (HP <= 0 && itemMade == false)
         {
             sr.sprite = brokenWindow[3];
-            itemManager.SelectItem(gameObject.transform.position);
+            itemManager.MakeItem(gameObject.transform.position);
             itemMade = true;
         }
     }   

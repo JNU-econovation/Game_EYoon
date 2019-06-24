@@ -258,8 +258,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0decf149b52929b438aeadf69ebd51e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1877886467393586005, guid: 93120878a332ef2478ca380ad8fb0e1b, type: 3}
-  heal: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5, type: 3}
+  bulletItem: {fileID: 1877886467393586005, guid: 93120878a332ef2478ca380ad8fb0e1b,
+    type: 3}
+  healItem: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5,
+    type: 3}
+  armorItem: {fileID: 6752138282359108234, guid: 0368f13de0837a94cb7ec6a7daf6439e,
+    type: 3}
+  raincoatItem: {fileID: 4275523195453998412, guid: 42b1c69e447d0754dbd643fcb981663e,
+    type: 3}
+  fireExItem: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b,
+    type: 3}
+  jacketItem: {fileID: 6202786235695198609, guid: 2f3ae111956ae644a91cad8eed9c3cd7,
+    type: 3}
+  coinItem: {fileID: 1668642081837173021, guid: dc24c3b0a722c9e47a0625516c506cb4,
+    type: 3}
+  nullItem: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
 --- !u!1 &8841771792385946518
 GameObject:
   m_ObjectHideFlags: 0

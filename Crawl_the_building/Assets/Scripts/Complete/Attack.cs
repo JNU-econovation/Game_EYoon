@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    Transform firePosition;
-    public GameObject trashBullet;
     GameObject target;
+    public GameObject trashBullet;
     public GameObject bullet;
     public int NumberOfBullet;
+
     private void Start()
     {
         NumberOfBullet = 30;
     }
     public void Shoot(GameObject obj, Vector3 position) 
     {
-        print(gameObject.name);
         target = obj;
-        bullet.GetComponent<Bullet>().ReferenceTarget(target);
+        bullet.GetComponent<Bullet>().ReferenceTarget(target); //bullet 스크립트에도 타겟 전달
 
         float dx = position.x - transform.position.x;
         float dy = position.y - transform.position.y;
@@ -25,8 +24,7 @@ public class Attack : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
 
         if (target.tag == "Window")
-        {
-            Debug.Log(transform.localPosition.y);
+        {       
             Instantiate(bullet, transform.position, rotation);
         }
         else
@@ -34,16 +32,4 @@ public class Attack : MonoBehaviour
 
         NumberOfBullet--;     
     }
-
-    private void Update()
-    {
-        Debug.Log(transform.localPosition.y);
-
-    }
-
-    void ShootEnemy()
-    {
-
-    }
-
 }

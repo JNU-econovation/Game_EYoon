@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2515028090259809555}
   - component: {fileID: 2515028090259809566}
   - component: {fileID: 2515028090259809560}
+  - component: {fileID: 2624472585311118398}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
-  - component: {fileID: -882289096373247377}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 1
+  forwardSpeed: 0.5
 --- !u!114 &2515028090259809566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   trashBullet: {fileID: 742297474371153504, guid: 0b4b8a0507a0cda49b2e44e892f8f161,
     type: 3}
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  NumberOfBullet: 4
+  NumberOfBullet: 30
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,9 +80,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43477a09416ce3428e4882dcddb12a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpUI: {fileID: 686328876423927242, guid: bfcc3c321fedc6841a428fbfa11a8e10, type: 3}
   hp: 30
   maxHp: 100
+--- !u!114 &2624472585311118398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515028090259809562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941f3d421445018499c10fa07ff50ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
+  fireEx: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b, type: 3}
+  damage: 0
+  armor: 0
+  avoidance: 0
+  intelligence: 0
+  fireExCount: 0
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4
@@ -130,22 +148,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5771637, y: 1.7502131}
   m_EdgeRadius: 0
---- !u!70 &-882289096373247377
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.35724258, y: -0.05358696}
-  m_Size: {x: 1.2144852, y: 2.1790457}
-  m_Direction: 0
 --- !u!1 &2515028090937670169
 GameObject:
   m_ObjectHideFlags: 0
