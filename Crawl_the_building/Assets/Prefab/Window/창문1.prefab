@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1231191690524089096}
   - component: {fileID: 1231191690524089108}
   - component: {fileID: 1231191690524089099}
-  - component: {fileID: 1231191690524089098}
   - component: {fileID: 3359716705378962327}
+  - component: {fileID: -6215758744679894882}
+  - component: {fileID: -5748916222909664517}
   - component: {fileID: 6404556699545316118}
   m_Layer: 8
   m_Name: "\uCC3D\uBB381"
@@ -110,22 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.48, y: 6.1}
   m_EdgeRadius: 0
---- !u!114 &1231191690524089098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231191690524089103}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c44bc3c4c0ac96439506cafc68317cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
-  delay: 2
-  dist: 60
-  rate: 40
 --- !u!114 &3359716705378962327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +132,35 @@ MonoBehaviour:
   - {fileID: 21300000, guid: af1c2d351ed1a0e4692d70495607adfa, type: 3}
   sr: {fileID: 0}
   hpImage: {fileID: 0}
+--- !u!114 &-6215758744679894882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231191690524089103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d154394fbf57ec445a344865b23fe5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dist: 80
+--- !u!114 &-5748916222909664517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231191690524089103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76279d0a38c26354cbea605876b6d942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
+  Security: {fileID: 6752138282359108234, guid: 0368f13de0837a94cb7ec6a7daf6439e,
+    type: 3}
+  nothing: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
 --- !u!114 &6404556699545316118
 MonoBehaviour:
   m_ObjectHideFlags: 0
