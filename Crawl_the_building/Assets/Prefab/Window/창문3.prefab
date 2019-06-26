@@ -238,14 +238,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7934058975833635808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76279d0a38c26354cbea605876b6d942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
-  Security: {fileID: 6752138282359108234, guid: 0368f13de0837a94cb7ec6a7daf6439e,
-    type: 3}
+  npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
+  security: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
   nothing: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
 --- !u!114 &-9214620030130692489
 MonoBehaviour:
@@ -254,7 +253,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7934058975833635808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d154394fbf57ec445a344865b23fe5d7, type: 3}
   m_Name: 
