@@ -7,6 +7,6 @@ public class UImanager : MonoBehaviour
 {
   public void Gamestart()
     {
-        SceneManager.LoadScene("프로젝트");
+        SceneManager.LoadScene("Project");
     }
 }

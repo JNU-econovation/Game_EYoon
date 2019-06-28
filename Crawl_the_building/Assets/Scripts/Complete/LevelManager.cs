@@ -16,6 +16,6 @@ public class LevelManager : MonoBehaviour
     
     void Update()
     {
-        
+        print(player.transform.position.y);
     }
 }
