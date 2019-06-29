@@ -9,7 +9,6 @@ public class Ability : MonoBehaviour
     public float damage;
     public float armor;
     public float avoidance;
-    public float intelligence;
     public int fireExCount;
     
     void Start()

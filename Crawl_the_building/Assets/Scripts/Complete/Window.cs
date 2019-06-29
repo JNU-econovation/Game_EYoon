@@ -3,25 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WindowHP : MonoBehaviour
+public class Window : MonoBehaviour
 {
     public float HP;
-    public float maxHP;  
+    public float maxHP;
     public Sprite[] brokenWindow;
-    public SpriteRenderer sr;
-    public Image hpImage;
+    public Sprite initialWindow;
+    SpriteRenderer sr;
+    Image hpImage;
     ItemManager itemManager;
-    bool itemMade;
+    public bool itemMade;
+
     void Start()
     {
         itemMade = false;
-        itemManager = GetComponent<ItemManager>(); 
+        itemManager = GetComponent<ItemManager>();
         hpImage = gameObject.GetComponentInChildren<Image>();
         sr = GetComponent<SpriteRenderer>();
-        hpImage.gameObject.SetActive(false);       
+        hpImage.gameObject.SetActive(false);
+    }
+    public void InitializeWindow()
+    {
+        sr.sprite = initialWindow;
+        hpImage.fillAmount = 1.0f;
+        hpImage.gameObject.SetActive(false);
     }
     public void ChangeWindow()
     {
+        hpImage.gameObject.SetActive(true);
+        hpImage.fillAmount = HP / maxHP;
         if (maxHP * (0.66f) <= HP && HP < maxHP)
         {
             sr.sprite = brokenWindow[0];
@@ -37,9 +47,8 @@ public class WindowHP : MonoBehaviour
         else if (HP <= 0 && itemMade == false)
         {
             sr.sprite = brokenWindow[3];
-            itemManager.MakeItem(gameObject.transform.position);
+            ItemManager.Instance.MakeItem(gameObject.transform.position);
             itemMade = true;
         }
-    }   
-
+    }
 }

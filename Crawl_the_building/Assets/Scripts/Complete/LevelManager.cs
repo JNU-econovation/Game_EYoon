@@ -6,16 +6,18 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;   
     public GameObject player;
-   
+    public GameObject[] window;
+    public Window windowHP;
     void Awake()
     {
-        player = Instantiate(playerPrefab);   
-        
+        player = Instantiate(playerPrefab);          
     }
-
     
-    void Update()
+    public void RecoverWindows(GameObject obj)
     {
-        print(player.transform.position.y);
-    }
+        Window window= obj.GetComponent<Window>();   
+        window.itemMade = false;
+        window.HP = window.maxHP;       
+        window.InitializeWindow();       
+    }    
 }

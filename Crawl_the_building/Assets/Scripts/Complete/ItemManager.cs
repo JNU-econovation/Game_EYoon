@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : Singleton<ItemManager>
 {
     float rand;
     //총알 치료 갑옷 우비 소화기 패딩 골드 빈템 순
@@ -17,10 +17,10 @@ public class ItemManager : MonoBehaviour
     public GameObject jacketItem;
     public GameObject coinItem;
     public GameObject nullItem;
-    List<GameObject> item = new List<GameObject>();
+    List<GameObject> item = new List<GameObject>();       
 
     private void Start()
-    {              
+    {        
         item.Add(bulletItem);
         item.Add(healItem);
         item.Add(armorItem);
@@ -28,15 +28,13 @@ public class ItemManager : MonoBehaviour
         item.Add(fireExItem);
         item.Add(jacketItem);
         item.Add(coinItem);
-        item.Add(nullItem);
-        
+        item.Add(nullItem);       
     }
-
+    
     public int SelectIndex(float[] weight)
     {
         rand = Random.Range(0, 100);
-        float total = 0;
-        print(rand);
+        float total = 0;        
         for(int i = 0; i < weight.Length; i++)
         {
             total += weight[i];
@@ -45,12 +43,12 @@ public class ItemManager : MonoBehaviour
         }
         return weight.Length - 1;
     }
-
+  
     public void MakeItem(Vector3 vector3)
     {
         int i = SelectIndex(weight);
         item[i].transform.position = vector3;
-        Instantiate(item[i]);
+        Instantiate(item[i]);       
     }
       
 }

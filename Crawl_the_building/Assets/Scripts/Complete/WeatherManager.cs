@@ -10,12 +10,13 @@ public class WeatherManager : MonoBehaviour
     float[] weight = { 100.0f, 0.0f };
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
+    public GameObject service;
     public GameObject rain;
     public GameObject nullObject;
 
     private void Start()
     {
-        player = gameObject.GetComponent<LevelManager>().player;
+        player = service.GetComponent<LevelManager>().player;
 
         weather.Add(rain);
         weather.Add(nullObject);
@@ -23,11 +24,11 @@ public class WeatherManager : MonoBehaviour
                             
     }
     
-    public int SelectIndex(float[] weight)
+    int SelectIndex(float[] weight)
     {
         rand = Random.Range(0, 100);
         float total = 0;
-        print(rand);
+        
         for (int i = 0; i < weight.Length; i++)
         {
             total += weight[i];
@@ -36,6 +37,8 @@ public class WeatherManager : MonoBehaviour
         }
         return weight.Length - 1;
     }
+
+    
     IEnumerator ChangeWeather()
     {
         while (true)

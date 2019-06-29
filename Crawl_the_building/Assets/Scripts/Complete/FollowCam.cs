@@ -6,7 +6,7 @@ public class FollowCam : MonoBehaviour
 {
     Transform target;
     public GameObject service;
-    public float dist;
+    public float distance;
     float x;
     float y;
     float z;
@@ -19,7 +19,7 @@ public class FollowCam : MonoBehaviour
     void LateUpdate()
     {
         target = service.GetComponent<LevelManager>().player.transform;
-        y = target.position.y - dist;
+        y = target.position.y - distance;
         transform.position = new Vector3(x, y, z);                                   
     }
 }

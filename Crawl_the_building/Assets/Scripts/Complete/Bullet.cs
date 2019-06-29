@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public GameObject target;
     public int damage;
-    WindowHP windowhp;
+    Window window;
     
     void Update()
     {
@@ -20,14 +20,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        windowhp = target.GetComponent<WindowHP>();
+        window = target.GetComponent<Window>();
         if (collider.gameObject == target)
-        {
-            windowhp.hpImage.gameObject.SetActive(true);
-            windowhp.HP -= damage;
-            windowhp.hpImage.fillAmount = windowhp.HP / windowhp.maxHP;
+        {            
+            window.HP -= damage;           
             Destroy(gameObject);          
-            windowhp.ChangeWindow();
+            window.ChangeWindow();
         }
     }
     
