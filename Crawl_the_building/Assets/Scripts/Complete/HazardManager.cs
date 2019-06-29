@@ -8,16 +8,15 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject security;
     public GameObject nullObject;
     public GameObject service;
-    GameObject player;
-    public GameObject window1;
-    public GameObject window2;
-    public GameObject window3;
-    [SerializeField] int dist = 80;
-    int delay = 4;
+    GameObject player;   
+    float delaytime = 4.0f;
     float[] weight = {40.0f, 40.0f, 20.0f};
     float rand;
-    List<GameObject> hazards = new List<GameObject>();
-    public List<GameObject> windows = new List<GameObject>();
+    public GameObject[] map;
+    float mapHeight;
+    List<GameObject> hazards = new List<GameObject>();   
+    List<GameObject> HazardSpawnWindows = new List<GameObject>();
+    
 
     private void Start()
     {
@@ -25,16 +24,26 @@ public class HazardManager : Singleton<HazardManager>
         hazards.Add(security);
         hazards.Add(nullObject);
         player = service.GetComponent<LevelManager>().player;
-       // StartCoroutine(MakeHazard());
+        StartCoroutine(MakeHazard());
+        
     }
     
-    private int SelectWindow()
+    GameObject SelectWindow(List<GameObject> HazardSpawnWindows)
     {
-        int rand = Random.Range(0, windows.Count-1);
-        
-        return rand;
+        int rand = Random.Range(0, HazardSpawnWindows.Count);      
+        return HazardSpawnWindows[rand];
     }
-    public int SelectHazard(float[] weight)
+    GameObject SelectMap()
+    {
+        float i = player.transform.position.y / mapHeight;
+        if (i % 3 == 0)
+            return map[0];
+        else if (i % 3 == 1)
+            return map[1];
+        else
+            return map[2];
+    }
+    int SelectHazard(float[] weight)
     {
         rand = Random.Range(0, 100);
         float total = 0;      
@@ -54,18 +63,14 @@ public class HazardManager : Singleton<HazardManager>
         Instantiate(hazards[i]);
     }
     
-    public IEnumerator MakeHazard(GameObject obj)
+    public IEnumerator MakeHazard()
     {
         while (true)
-        {            
-            SpawnHazard(obj);
-            StartCoroutine(Wait(5.0f));
+        {
+            HazardSpawnWindows = SelectMap().GetComponent<WindowList>().windows;           
+            GameObject temp = SelectWindow(HazardSpawnWindows);
+            SpawnHazard(temp);
+            yield return new WaitForSeconds(delaytime);
         }       
-    }
-    
-    private IEnumerator Wait(float wait)
-    {
-        yield return new WaitForSeconds(wait);        
-    }
- 
+    }     
 }

@@ -234,7 +234,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 50
   maxHP: 50
-  brokenWindow: []
+  brokenWindow:
+  - {fileID: 21300000, guid: 3476d9223e6bf254c9cde14119bdc2e9, type: 3}
+  - {fileID: 21300000, guid: 5c527210857960f42bf1f190391dcfeb, type: 3}
+  - {fileID: 21300000, guid: cb1fbe9d520152b47b6da843f12c0ad8, type: 3}
+  - {fileID: 21300000, guid: 33ba01b2f2ea2494fb3cdb73fa8d91af, type: 3}
   initialWindow: {fileID: 21300000, guid: e3d02132cae009b45bcda4440b86761c, type: 3}
   itemMade: 0
 --- !u!1 &6314339171689490834

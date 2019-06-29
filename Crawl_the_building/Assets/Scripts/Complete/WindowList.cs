@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class WindowList : MonoBehaviour
 {
-    Window[] windows;
-    public List<GameObject> window = new List<GameObject>();
-    void Start()
+    Window[] window;
+    public List<GameObject> windows = new List<GameObject>();
+    void Awake()
     {
-        windows = GetComponentsInChildren<Window>();
-        foreach(var obj in windows)
+        window = GetComponentsInChildren<Window>();
+        foreach(var obj in window)
         {
-            window.Add(obj.gameObject);           
+            windows.Add(obj.gameObject);           
         }             
     }
     
+
 }

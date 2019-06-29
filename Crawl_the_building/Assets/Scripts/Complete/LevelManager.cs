@@ -5,9 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;   
-    public GameObject player;
-    public GameObject[] window;
-    public Window windowHP;
+    public GameObject player;   
     void Awake()
     {
         player = Instantiate(playerPrefab);          
@@ -19,5 +17,6 @@ public class LevelManager : MonoBehaviour
         window.itemMade = false;
         window.HP = window.maxHP;       
         window.InitializeWindow();       
-    }    
+    }
+    
 }

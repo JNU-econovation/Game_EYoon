@@ -14,7 +14,7 @@ public class MakeMap : MonoBehaviour
 
     void Start()
     {
-        windows = map.GetComponent<WindowList>().window;
+        windows = map.GetComponent<WindowList>().windows;
         player = service.GetComponent<LevelManager>().player;
         move = new Vector3(0, moveDistance, 0);
         movedPosition = map.transform.position + move;
