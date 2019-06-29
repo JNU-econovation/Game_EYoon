@@ -1,5 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!81 &1352416225983034317
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698720508621239661}
+  m_Enabled: 1
 --- !u!1001 &6698720508621151795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14,6 +22,30 @@ PrefabInstance:
     - target: {fileID: 191326, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: RainIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: EnableWind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: CollisionMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: RainMistThreshold
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: RainMistCollisionMultiplier
+      value: 0.934
       objectReference: {fileID: 0}
     - target: {fileID: 465656, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,54 +99,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: RainIntensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: EnableWind
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: CollisionMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: RainMistThreshold
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: RainMistCollisionMultiplier
-      value: 0.934
-      objectReference: {fileID: 0}
-    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 423936, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 19804216, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: SizeModule.enabled
       value: 1
@@ -155,5 +139,35 @@ PrefabInstance:
       propertyPath: SizeModule.y.minScalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427478, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 423936, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+--- !u!1 &6698720508621239661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 191326, guid: b046278bb9b6e104790392b566667ba5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6698720508621151795}
+  m_PrefabAsset: {fileID: 0}

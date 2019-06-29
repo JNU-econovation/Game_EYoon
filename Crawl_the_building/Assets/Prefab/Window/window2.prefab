@@ -110,12 +110,10 @@ GameObject:
   - component: {fileID: 2110688798461368886}
   - component: {fileID: 2110688798461368875}
   - component: {fileID: 2110688798461368874}
-  - component: {fileID: -4303907663190533976}
-  - component: {fileID: 1347327964957278127}
-  - component: {fileID: -1983438778482141808}
-  - component: {fileID: 7946331105251150534}
+  - component: {fileID: 7912650110666233390}
+  - component: {fileID: 6481702766463327856}
   m_Layer: 8
-  m_Name: "\uCC3D\uBB382"
+  m_Name: window2
   m_TagString: Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +208,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 9}
   m_EdgeRadius: 0
---- !u!114 &-4303907663190533976
+--- !u!114 &7912650110666233390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,73 +217,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2110688798461368885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8065a24858dc14c8d5b7f3b18be463, type: 3}
+  m_Script: {fileID: 11500000, guid: 31b5aec271255f34e9b5663ff48ccbcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6481702766463327856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110688798461368885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f180fc4a96315fd499c97bd7026cedbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 50
   maxHP: 50
-  brokenWindow:
-  - {fileID: 21300000, guid: 3476d9223e6bf254c9cde14119bdc2e9, type: 3}
-  - {fileID: 21300000, guid: 5c527210857960f42bf1f190391dcfeb, type: 3}
-  - {fileID: 21300000, guid: cb1fbe9d520152b47b6da843f12c0ad8, type: 3}
-  - {fileID: 21300000, guid: bbdba597f22ecac4d9ac04f1f910b4f1, type: 3}
-  sr: {fileID: 0}
-  hpImage: {fileID: 0}
---- !u!114 &1347327964957278127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110688798461368885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76279d0a38c26354cbea605876b6d942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npc: {fileID: 8491986772298208898, guid: f070eb45f9dd49946a8cdf4f87979fe4, type: 3}
-  security: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
-  nothing: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
---- !u!114 &-1983438778482141808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110688798461368885}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d154394fbf57ec445a344865b23fe5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dist: 80
---- !u!114 &7946331105251150534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110688798461368885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0decf149b52929b438aeadf69ebd51e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletItem: {fileID: 1877886467393586005, guid: 93120878a332ef2478ca380ad8fb0e1b,
-    type: 3}
-  healItem: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5,
-    type: 3}
-  armorItem: {fileID: 6752138282359108234, guid: 0368f13de0837a94cb7ec6a7daf6439e,
-    type: 3}
-  raincoatItem: {fileID: 4275523195453998412, guid: 42b1c69e447d0754dbd643fcb981663e,
-    type: 3}
-  fireExItem: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b,
-    type: 3}
-  jacketItem: {fileID: 6202786235695198609, guid: 2f3ae111956ae644a91cad8eed9c3cd7,
-    type: 3}
-  coinItem: {fileID: 1668642081837173021, guid: dc24c3b0a722c9e47a0625516c506cb4,
-    type: 3}
-  nullItem: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
+  brokenWindow: []
+  initialWindow: {fileID: 21300000, guid: e3d02132cae009b45bcda4440b86761c, type: 3}
+  itemMade: 0
 --- !u!1 &6314339171689490834
 GameObject:
   m_ObjectHideFlags: 0

@@ -99,7 +99,6 @@ MonoBehaviour:
   damage: 0
   armor: 0
   avoidance: 0
-  intelligence: 0
   fireExCount: 0
 --- !u!50 &2515028090259809567
 Rigidbody2D:
