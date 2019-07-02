@@ -7,10 +7,12 @@ public class Shopmanager : MonoBehaviour
 {
     [SerializeField] Sprite soldout;
     public GameObject[] shoptables;
+    int price;
+    int gold;
   public  void Shopping(GameObject button)
     {
-        int price = button.GetComponentInChildren<Stuffprice>().price;
-        int gold = PlayerPrefs.GetInt("Gold");
+         price = button.GetComponentInChildren<Stuffprice>().price;
+         gold = PlayerPrefs.GetInt("Gold");
        
         if (price <= gold)
         {
@@ -22,6 +24,9 @@ public class Shopmanager : MonoBehaviour
 
   public void Soldout(int i)
     {
-        shoptables[i].GetComponent<Image>().sprite = soldout;
+        if (price <= gold)
+        {
+            shoptables[i].GetComponent<Image>().sprite = soldout;
+        }
     }
 }
