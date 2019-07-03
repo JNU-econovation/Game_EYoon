@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     {
         if (hp >= maxHp)
             hp = maxHp;
+        else if (hp <= 0)
+            hp = 0;
         HPImage.fillAmount = hp / maxHp;
     }
 }

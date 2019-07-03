@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class Item : MonoBehaviour
-{
-    protected GameObject item;
+{   
     protected GameObject player;
     
     private void Start()

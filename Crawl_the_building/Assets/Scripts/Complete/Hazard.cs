@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hazard : MonoBehaviour
+abstract public class Hazard : MonoBehaviour
 {
+
+    protected GameObject player;
     
-    void Start()
+    void Awake()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-    
-    void Update()
-    {
-        
-    }
+
+    public abstract void Function(GameObject window);    
 }

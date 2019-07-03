@@ -13,13 +13,13 @@ public class Attack : MonoBehaviour
     {
         NumberOfBullet = 30;
     }
-    public void Shoot(GameObject obj, Vector3 position) 
+    public void Shoot(GameObject targetObj, Vector3 mousePosition) 
     {
-        target = obj;
+        target = targetObj;
         bullet.GetComponent<Bullet>().ReferenceTarget(target); //bullet 스크립트에도 타겟 전달
 
-        float dx = position.x - transform.position.x;
-        float dy = position.y - transform.position.y;
+        float dx = mousePosition.x - transform.position.x;
+        float dy = mousePosition.y - transform.position.y;
         float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
 

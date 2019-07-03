@@ -19,7 +19,7 @@ public class ItemManager : Singleton<ItemManager>
     public GameObject nullItem;
     List<GameObject> item = new List<GameObject>();       
 
-    private void Start()
+    private void Awake()
     {        
         item.Add(bulletItem);
         item.Add(healItem);
@@ -44,11 +44,12 @@ public class ItemManager : Singleton<ItemManager>
         return weight.Length - 1;
     }
   
-    public void MakeItem(Vector3 vector3)
-    {
-        int i = SelectIndex(weight);
-        item[i].transform.position = vector3;
-        Instantiate(item[i]);       
-    }
-      
+    public GameObject MakeItem(Vector3 vector3)
+    { 
+        int i = SelectIndex(weight);        
+        item[i].transform.position = vector3;        
+        GameObject temp = Instantiate(item[i]);
+        return temp;
+    }  
+
 }

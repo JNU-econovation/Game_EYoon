@@ -10,14 +10,12 @@ public class Window : MonoBehaviour
     public Sprite[] brokenWindow;
     public Sprite initialWindow;
     SpriteRenderer sr;
-    Image hpImage;
-    ItemManager itemManager;
+    Image hpImage; 
     public bool itemMade;
 
     void Start()
-    {
-        itemMade = false;
-        itemManager = GetComponent<ItemManager>();
+    {        
+        itemMade = false;        
         hpImage = gameObject.GetComponentInChildren<Image>();
         sr = GetComponent<SpriteRenderer>();
         hpImage.gameObject.SetActive(false);
@@ -51,4 +49,5 @@ public class Window : MonoBehaviour
             itemMade = true;
         }
     }
+   
 }
