@@ -4,17 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bullet
-  - target
-  - buildingMover
   - Window
-  - item
-  - mapDestroyer
-  - map
-  - Enemy
-  - Window1
-  - Window2
-  - Window3
+  - Block
+  - Map
+  - Undefined
+  - Bullet
+  - TrashBullet
   layers:
   - Default
   - TransparentFX

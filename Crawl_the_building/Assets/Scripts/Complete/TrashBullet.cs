@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TrashBullet : MonoBehaviour
 {
-    public float speed;
-    [SerializeField]
-    float lifeTime = 5.0f;
-
+    public float speed;    
+    public float lifeTime = 5.0f;
+    public float damage;
     private void OnEnable()
     {
         StartCoroutine(DestroySelf());

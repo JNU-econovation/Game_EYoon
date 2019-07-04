@@ -20,6 +20,7 @@ public class Window : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         hpImage.gameObject.SetActive(false);
     }
+    
     public void InitializeWindow()
     {
         sr.sprite = initialWindow;
@@ -29,6 +30,8 @@ public class Window : MonoBehaviour
     public void ChangeWindow()
     {
         hpImage.gameObject.SetActive(true);
+        if (HP <= 0)
+            HP = 0;
         hpImage.fillAmount = HP / maxHP;
         if (maxHP * (0.66f) <= HP && HP < maxHP)
         {
@@ -48,6 +51,8 @@ public class Window : MonoBehaviour
             ItemManager.Instance.MakeItem(gameObject.transform.position);
             itemMade = true;
         }
+        else
+            sr.sprite = brokenWindow[3];
     }
    
 }

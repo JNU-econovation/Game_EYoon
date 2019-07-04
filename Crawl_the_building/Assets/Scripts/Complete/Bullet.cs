@@ -7,8 +7,19 @@ public class Bullet : MonoBehaviour
     public float speed;
     public GameObject target;
     public int damage;
-    Window window;
-    
+    public float lifeTime = 5.0f;
+   
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());
+    }
+
+    public IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
+
     void Update()
     {
         transform.Translate(Vector3.up * speed);
@@ -19,12 +30,12 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
-    {
-        window = target.GetComponent<Window>();
-        if (collider.gameObject == target)
-        {            
+    {        
+        if (collider.gameObject == target && collider.gameObject.tag == "Window")
+        {
+            Window window = collider.gameObject.GetComponent<Window>();
             window.HP -= damage;           
-            Destroy(gameObject);          
+            Destroy(gameObject);            
             window.ChangeWindow();
         }
     }

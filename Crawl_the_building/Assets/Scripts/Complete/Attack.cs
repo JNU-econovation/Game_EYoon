@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    GameObject target;
-    public GameObject trashBullet;
+    GameObject target;   
     public GameObject bullet;
     public int NumberOfBullet;
 
     private void Start()
     {
         NumberOfBullet = 30;
-    }
-    public void Shoot(GameObject targetObj, Vector3 mousePosition) 
-    {
-        target = targetObj;
-        bullet.GetComponent<Bullet>().ReferenceTarget(target); //bullet 스크립트에도 타겟 전달
+    }   
 
+    public void Shoot(GameObject target, Vector3 mousePosition) 
+    {
+        bullet.GetComponent<Bullet>().target = target;
         float dx = mousePosition.x - transform.position.x;
         float dy = mousePosition.y - transform.position.y;
         float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
 
-        if (target.tag == "Window")
-        {       
-            Instantiate(bullet, transform.position, rotation);
-        }
-        else
-            Instantiate(trashBullet, transform.position, rotation);
-
+        Instantiate(bullet, transform.position, rotation);               
         NumberOfBullet--;     
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {        
+        if (collider.gameObject.tag == "Block")
+        {
+            GameObject block = collider.gameObject;
+            gameObject.GetComponent<Health>().hp -= block.GetComponent<Block>().damage;
+            Destroy(collider.gameObject);
+        } 
     }
 }

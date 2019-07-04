@@ -4178,7 +4178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   service: {fileID: 4854051716300901137}
   rain: {fileID: 6698720508621239661, guid: fa6bfca0396cc064aa4044794ace748f, type: 3}
-  nullObject: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8,
+  nullObject: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
     type: 3}
 --- !u!212 &770756036
 SpriteRenderer:
@@ -7806,7 +7806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.85, y: 0.77}
   m_AnchorMax: {x: 1, y: 0.86}
-  m_AnchoredPosition: {x: 11.61499, y: -0.000030517578}
+  m_AnchoredPosition: {x: 11.61499, y: 0}
   m_SizeDelta: {x: 22.2, y: 50.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376464492
@@ -12616,21 +12616,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0decf149b52929b438aeadf69ebd51e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletItem: {fileID: 1877886467393586005, guid: 93120878a332ef2478ca380ad8fb0e1b,
+  bulletItem: {fileID: 7030149667269202919, guid: 93120878a332ef2478ca380ad8fb0e1b,
     type: 3}
-  healItem: {fileID: 7407279605775009682, guid: 1a7d5af3f7ea07248936b7c8cfbe6fb5,
+  healItem: {fileID: 5982769630630285754, guid: b76f983ee4a8c2e48ad4311b46450ae7,
     type: 3}
-  armorItem: {fileID: 6752138282359108234, guid: 0368f13de0837a94cb7ec6a7daf6439e,
+  armorItem: {fileID: 3653674545768120989, guid: 36fdbe2a4d984564fad36f5dc482f346,
     type: 3}
-  raincoatItem: {fileID: 4275523195453998412, guid: 42b1c69e447d0754dbd643fcb981663e,
+  raincoatItem: {fileID: 8439787241353383856, guid: 0dffc20717ccaea44ada828c7692351b,
     type: 3}
   fireExItem: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b,
     type: 3}
-  jacketItem: {fileID: 6202786235695198609, guid: 2f3ae111956ae644a91cad8eed9c3cd7,
+  jacketItem: {fileID: 9209522776591685791, guid: 2f3ae111956ae644a91cad8eed9c3cd7,
     type: 3}
   coinItem: {fileID: 1668642081837173021, guid: dc24c3b0a722c9e47a0625516c506cb4,
     type: 3}
-  nullItem: {fileID: 187072285156831252, guid: 6c1e080a30243c043ad816152847adc8, type: 3}
+  nullItem: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
+    type: 3}
 --- !u!212 &4854051716300901140
 SpriteRenderer:
   m_ObjectHideFlags: 0

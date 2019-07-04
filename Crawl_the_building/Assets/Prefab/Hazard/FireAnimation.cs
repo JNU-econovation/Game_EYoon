@@ -21,8 +21,7 @@ public class FireAnimation : MonoBehaviour
         maxArmor = player.GetComponent<Ability>().maxArmor;
         armor = player.GetComponent<Ability>().armor;       
         decrease = decrease * (1 - (armor / maxArmor));
-        fireHp = fire.GetComponent<Fire>().HP;        
-        bulletDamage = bullet.GetComponent<Bullet>().damage;
+        fireHp = fire.GetComponent<Fire>().HP;                
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {        
@@ -30,17 +29,7 @@ public class FireAnimation : MonoBehaviour
         {                     
                 Function();                               
         }
-        else if(collider.gameObject.tag == "bullet")
-        {
-
-            fireHp -= bulletDamage;
-            if (fireHp <= 0)
-            {
-                Destroy(gameObject);               
-            }
-            Destroy(collider.gameObject);
-
-        }
+        
     }
 
     void Function()

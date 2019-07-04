@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9051197326804292738}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: bullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,10 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bd079466141fb4fbe565144fa5b7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2515028090259809562, guid: c2b61f796db46c64595bfee25cfa7f1b, type: 3}
   speed: 5
   target: {fileID: 0}
   damage: 20
+  lifeTime: 5
 --- !u!61 &9051197326804292738
 BoxCollider2D:
   m_ObjectHideFlags: 0
