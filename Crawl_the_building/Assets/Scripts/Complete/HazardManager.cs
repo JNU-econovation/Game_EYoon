@@ -30,23 +30,20 @@ public class HazardManager : Singleton<HazardManager>
         hazards.Add(blanket);
         hazards.Add(nullObject);
         player = service.GetComponent<LevelManager>().player;
+
+        StartCoroutine(MakeHazard());
+    }
+
+    IEnumerator MakeHazard()
+    {
+        yield return new WaitForSeconds(delaytime);        
+        spawnObject = SpawnHazard();
+        Destroy(spawnObject, 5.0f);        
         StartCoroutine(MakeHazard());
         
+           
     }
-
-    public IEnumerator MakeHazard()
-    {
-        int i = 0;
-        while (i <= 100)
-        {
-            spawnObject = SpawnHazard();                                
-            selectedRand.Clear();
-            print(player.transform.position.y);
-            yield return new WaitForSeconds(delaytime);
-            i++;
-        }
-    }
-
+    
     GameObject SelectWindow(List<GameObject> HazardSpawnWindows)
     {
         ReRand:
@@ -94,13 +91,12 @@ public class HazardManager : Singleton<HazardManager>
        
         HazardSpawnWindows = SelectMap().GetComponent<WindowList>().windows;
         GameObject window = SelectWindow(HazardSpawnWindows);
-        int i = SelectHazard(weight);
-        if (i == weight.Length - 1)
-            return hazards[i];
+        int i = SelectHazard(weight);      
         hazards[i].transform.position = window.transform.position;     
         GameObject temp = Instantiate(hazards[i]);
-        
-        temp.GetComponent<Hazard>().Function(window);
+        if(i != weight.Length-1)
+            temp.GetComponent<Hazard>().Function(window);
+        selectedRand.Clear();
         return temp;
     }
       

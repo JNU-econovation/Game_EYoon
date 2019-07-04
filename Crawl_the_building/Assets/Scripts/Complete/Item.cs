@@ -6,7 +6,7 @@ abstract public class Item : MonoBehaviour
 {   
     protected GameObject player;
     
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
