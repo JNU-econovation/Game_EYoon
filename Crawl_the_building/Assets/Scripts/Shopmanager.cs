@@ -9,9 +9,10 @@ public class Shopmanager : MonoBehaviour
     public GameObject[] shoptables;
     int price;
     int gold;
+    
   public  void Shopping(GameObject button)
     {
-         price = button.GetComponentInChildren<Stuffprice>().price;
+         price = button.GetComponentInChildren<Pricetag>().price;
          gold = PlayerPrefs.GetInt("Gold");
        
         if (price <= gold)

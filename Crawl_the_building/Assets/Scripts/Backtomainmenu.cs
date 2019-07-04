@@ -10,5 +10,6 @@ public class Backtomainmenu : MonoBehaviour
     {
         SceneManager.LoadScene("Mainmenu");
         Time.timeScale = 1;
+        Time.fixedDeltaTime = 1;
     }
 }

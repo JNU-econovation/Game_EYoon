@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class Pricetag : MonoBehaviour
 {
-   [SerializeField] Stuffprice stuffprice;
+   public int price;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        GetComponent<Text>().text = stuffprice.price.ToString();
+        GetComponent<Text>().text = price.ToString();
+    }
+    public void Addprice()
+    {
+        price += 100;
+        
     }
 
 }
