@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class AtkText : MonoBehaviour
 {
-    private void Start()
+    [SerializeField] Abilitymanager Abilitymanager;
+    int statvalue;
+
+
+    void Update()
     {
-        PlayerPrefs.SetInt("Atk", 20);
+
+        statvalue = Abilitymanager.Character.GetComponent<BasicCharacter>().Atk;
+        GetComponent<Text>().text = "Atk: " + statvalue.ToString();
+
     }
-    private void Update()
-    {
-        GetComponent<Text>().text = "Atk: " + PlayerPrefs.GetInt("Atk");
-    }
+
 }
