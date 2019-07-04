@@ -15,7 +15,7 @@ public class FireAnimation : MonoBehaviour
     float fireMaxHp;
     float bulletDamage;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         maxArmor = player.GetComponent<Ability>().maxArmor;
