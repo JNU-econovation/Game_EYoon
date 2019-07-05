@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public float hp;//캐릭터의 현재 체력
     public float maxHp; //캐릭터의 풀피
 
-    void Start()
+    void Awake()
     {
         HPImage = GetComponentInChildren<Image>();
     }

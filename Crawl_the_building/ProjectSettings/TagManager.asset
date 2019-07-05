@@ -10,6 +10,9 @@ TagManager:
   - Undefined
   - Bullet
   - TrashBullet
+  - map
+  - mapDestroyer
+  - Blanket
   layers:
   - Default
   - TransparentFX

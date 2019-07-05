@@ -7,13 +7,24 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject NPC;
     public GameObject fire;
     public GameObject open;
+<<<<<<< HEAD
   //  public GameObject 
     public GameObject service;
     GameObject player;   
     float delaytime = 1.0f;
     float[] weight = {100f, 50.0f, 0f};
+=======
+    public GameObject blanket;
+    public GameObject nullObject;
+    public GameObject service;
+    GameObject player;   
+    float delaytime = 1.0f;
+    //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null
+    float[] weight = {30.0f, 20.0f, 10.0f, 20.0f, 20.0f};
+>>>>>>> f5c9706fb55b34f35b86866617716a4fc4350210
     float rand;
     public GameObject[] map;
+    GameObject spawnObject;
     float mapHeight = 187;
     List<GameObject> hazards = new List<GameObject>();   
     List<GameObject> HazardSpawnWindows = new List<GameObject>();
@@ -24,36 +35,34 @@ public class HazardManager : Singleton<HazardManager>
         hazards.Add(NPC);
         hazards.Add(fire);       
         hazards.Add(open);
+        hazards.Add(blanket);
+        hazards.Add(nullObject);
         player = service.GetComponent<LevelManager>().player;
+
+        StartCoroutine(MakeHazard());
+    }
+
+    IEnumerator MakeHazard()
+    {
+        yield return new WaitForSeconds(delaytime);        
+        spawnObject = SpawnHazard();
+        Destroy(spawnObject, 5.0f);        
         StartCoroutine(MakeHazard());
         
-    }
-
-    public IEnumerator MakeHazard()
-    {
-        while (true)
-        {
-            int spawnCount = 2;
            
-
-            for (int i = 0; i < spawnCount; i++)
-            {                
-                GameObject temp = SpawnHazard();                
-                Destroy(temp, 5.0f);
-                
-            }
-            selectedRand.Clear();
-            yield return new WaitForSeconds(delaytime);
-        }
     }
+    
     GameObject SelectWindow(List<GameObject> HazardSpawnWindows)
     {
         ReRand:
         int rand = Random.Range(0, HazardSpawnWindows.Count);
+        if (HazardSpawnWindows[rand].transform.position.y < player.transform.position.y)
+            goto ReRand;
         if (selectedRand.Count == 0)
             selectedRand.Add(rand);
         for(int i = 0; i < selectedRand.Count; i++)
         {
+            
             if (rand == selectedRand[i])
                 goto ReRand;            
         }
@@ -84,17 +93,18 @@ public class HazardManager : Singleton<HazardManager>
         }
         return weight.Length - 1;
     }
-
+    
     public GameObject SpawnHazard()
     {
+       
         HazardSpawnWindows = SelectMap().GetComponent<WindowList>().windows;
         GameObject window = SelectWindow(HazardSpawnWindows);
-        int i = SelectHazard(weight);
-
-        hazards[i].transform.position = window.transform.position;
+        int i = SelectHazard(weight);      
+        hazards[i].transform.position = window.transform.position;     
         GameObject temp = Instantiate(hazards[i]);
-      
-        temp.GetComponent<Hazard>().Function(window);
+        if(i != weight.Length-1)
+            temp.GetComponent<Hazard>().Function(window);
+        selectedRand.Clear();
         return temp;
     }
       

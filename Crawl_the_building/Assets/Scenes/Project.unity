@@ -3540,7 +3540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.6, y: -20.2}
+  m_AnchoredPosition: {x: 23, y: -18.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650461042
@@ -3576,7 +3576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 100
 --- !u!222 &650461043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4158,6 +4158,9 @@ MonoBehaviour:
   NPC: {fileID: 3690297913793765591, guid: 17be8cd09119e004a9d31c52d2717123, type: 3}
   fire: {fileID: 5513394454849877593, guid: fc50afad5b91300409fad86aab7bcad9, type: 3}
   open: {fileID: 9192415392479862907, guid: 6d4dfe372205fdf43b14e0ea2ef200ac, type: 3}
+  blanket: {fileID: 6358337398572201209, guid: c7b20f6a84807934da6c38414e98d3ae, type: 3}
+  nullObject: {fileID: 1104233961954355181, guid: 44f6c43efbc0a6f42b49660a3ddef085,
+    type: 3}
   service: {fileID: 4854051716300901137}
   map:
   - {fileID: 1617204356}
@@ -12630,7 +12633,7 @@ MonoBehaviour:
     type: 3}
   coinItem: {fileID: 1668642081837173021, guid: dc24c3b0a722c9e47a0625516c506cb4,
     type: 3}
-  nullItem: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
+  nullItem: {fileID: 1104233961954355181, guid: 44f6c43efbc0a6f42b49660a3ddef085,
     type: 3}
 --- !u!212 &4854051716300901140
 SpriteRenderer:

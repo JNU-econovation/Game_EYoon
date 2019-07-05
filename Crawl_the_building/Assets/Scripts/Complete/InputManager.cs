@@ -30,7 +30,7 @@ public class InputManager : MonoBehaviour
         {
             mousePosition = Input.mousePosition;
             mousePosition = cam.ScreenToWorldPoint(mousePosition);
-
+            
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, transform.forward, maxDistance);
             if (hit)
             {

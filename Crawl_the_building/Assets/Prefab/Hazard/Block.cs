@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    public float lifeTime = 5.0f;
     public float speed;
     public GameObject target;
     public int damage;
     public float hp;
     Window window;
+
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());
+    }
+
+    public IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
 
     void Update()
     {
