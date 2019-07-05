@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerprefsStarter : MonoBehaviour
 {
-    string[] Keys = {"Basic_Atk", "Basic_Def", "Basic_Dex" };
+    string[] Keys = {"Basic_Atk", "Basic_Def", "Basic_Dex","Basic_Mag","Character1_Atk","Character1_Def", "Character1_Dex", "Character1_Mag" };
     private void Awake()
     {
         for (int i = 0; i < Keys.Length;  i++)
@@ -16,6 +16,10 @@ public class PlayerprefsStarter : MonoBehaviour
                 if (i == 0)
                 {
                     PlayerPrefs.SetInt(Keys[i], 20);
+                }
+                else if (i == 3)
+                {
+                    PlayerPrefs.SetInt(Keys[i], 30);
                 }
                 else
                 {

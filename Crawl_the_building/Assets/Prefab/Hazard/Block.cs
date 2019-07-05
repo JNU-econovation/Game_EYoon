@@ -19,8 +19,7 @@ public class Block : MonoBehaviour
     {
         if (collider.gameObject.tag == "Bullet")       
             hp -= collider.gameObject.GetComponent<Bullet>().damage;        
-        else if(collider.gameObject.tag == "TrashBullet")
-            hp -= collider.gameObject.GetComponent<TrashBullet>().damage;
+       
 
        if(hp <= 0)
         {

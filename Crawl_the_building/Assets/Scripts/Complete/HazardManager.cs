@@ -7,10 +7,11 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject NPC;
     public GameObject fire;
     public GameObject open;
+  //  public GameObject 
     public GameObject service;
     GameObject player;   
     float delaytime = 1.0f;
-    float[] weight = {30.0f, 30.0f, 20.0f};
+    float[] weight = {100f, 50.0f, 0f};
     float rand;
     public GameObject[] map;
     float mapHeight = 187;
