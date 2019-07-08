@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6358337398572201209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 384.937, y: 278.879, z: -5}
+  m_LocalPosition: {x: 335.063, y: 1366.879, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,6 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
+  largeBlanketCol: {fileID: 3251673002525214526, guid: e5ecce0c393b27c4a95dc7328bc76240,
+    type: 3}
+  smallBlanketCol: {fileID: 5053712068782694229, guid: 94bdb4e0eb0460d41a508c16cd3a06db,
+    type: 3}
   LargeBlanketAnim: {fileID: 5790372917885668052, guid: 154215bbc54f30a459d9a9dcad440072,
     type: 3}
   SmallBlanketAnim: {fileID: 7155658798224736532, guid: 46591daa9fd3af74c804761187b81c03,
