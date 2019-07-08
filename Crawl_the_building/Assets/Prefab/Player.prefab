@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 0.7
-  floor: 1
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:

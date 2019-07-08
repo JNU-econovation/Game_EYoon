@@ -6,22 +6,14 @@ public class HazardManager : Singleton<HazardManager>
 {
     public GameObject NPC;
     public GameObject fire;
-    public GameObject open;
-<<<<<<< HEAD
-  //  public GameObject 
-    public GameObject service;
+    public GameObject open;   
     GameObject player;   
-    float delaytime = 1.0f;
-    float[] weight = {100f, 50.0f, 0f};
-=======
+    float delaytime = 1.0f;   
     public GameObject blanket;
     public GameObject nullObject;
-    public GameObject service;
-    GameObject player;   
-    float delaytime = 1.0f;
+    public GameObject service;  
     //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null
     float[] weight = {30.0f, 20.0f, 10.0f, 20.0f, 20.0f};
->>>>>>> f5c9706fb55b34f35b86866617716a4fc4350210
     float rand;
     public GameObject[] map;
     GameObject nextMap;
@@ -100,7 +92,6 @@ public class HazardManager : Singleton<HazardManager>
         }
 
         int rand = Random.Range(0, HigherThanPlayerWins.Count);
-        print(HigherThanPlayerWins.Count);
         return HigherThanPlayerWins[rand];
     }
 
