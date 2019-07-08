@@ -8,7 +8,7 @@ public class Pausebutton : MonoBehaviour
     {
         Time.timeScale = 0;
         Time.fixedDeltaTime = 0;
-        print(231);
+        print(Time.timeScale);
     }
  
 }

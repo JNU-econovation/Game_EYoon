@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeatherManager : MonoBehaviour
 {
     float rand;
-    float delaytime = 7.0f;
+    float delayTime = 7.0f;
+    float enableTime = 3.0f;
     GameObject temp;
     float[] weight = { 100.0f, 0.0f };
     List<GameObject> weather = new List<GameObject>();
@@ -43,18 +44,18 @@ public class WeatherManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(delaytime);
+            yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
             temp = Instantiate(weather[i]);
-            StartCoroutine(Wait(3.0f));
+            StartCoroutine(Destroy(enableTime));
         }
     }
 
    
 
-    private IEnumerator Wait(float wait)
+    private IEnumerator Destroy(float enableTime)
     {
-        yield return new WaitForSeconds(wait);
+        yield return new WaitForSeconds(enableTime);
         Destroy(temp);
     }
 }

@@ -11,6 +11,7 @@ public class DustOffBlanket : Hazard
     public GameObject SmallBlanketAnim;
     public override void Function(GameObject window)
     {
+        Destroy(gameObject);
         GameObject blanket;
         if (window.name == "window2")        
             blanket = Instantiate(LargeBlanketAnim);        

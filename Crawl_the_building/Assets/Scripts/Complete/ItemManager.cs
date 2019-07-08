@@ -8,7 +8,8 @@ public class ItemManager : Singleton<ItemManager>
 {
     float rand;
     //총알 치료 갑옷 우비 소화기 패딩 골드 빈템 순
-    float[] weight = {10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 30.0f};
+    //   float[] weight = {10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 30.0f};
+    float[] weight = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100.0f, 0.0f };
     public GameObject bulletItem;
     public GameObject healItem;
     public GameObject armorItem;

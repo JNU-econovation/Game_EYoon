@@ -14,7 +14,18 @@ public class FireAnimation : MonoBehaviour
     float fireHp;
     float fireMaxHp;
     float bulletDamage;
+    public float lifeTime = 5.0f;
 
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());
+    }
+
+    public IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,6 +34,7 @@ public class FireAnimation : MonoBehaviour
         decrease = decrease * (1 - (armor / maxArmor));
         fireHp = fire.GetComponent<Fire>().HP;                
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {        
         if (collider.gameObject.tag == "Player")
@@ -40,8 +52,9 @@ public class FireAnimation : MonoBehaviour
             StartCoroutine(DelayOneSecond());
          }
     }
+
     IEnumerator DelayOneSecond()
-    {       
+    {            
         yield return new WaitForSeconds(1.0f);
     }
    

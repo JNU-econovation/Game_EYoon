@@ -17,7 +17,7 @@ public class Ability : MonoBehaviour
     {
         hp = GetComponent<Health>().hp;
         damage = bullet.GetComponent<Bullet>().damage;
-        fireExCount = fireEx.GetComponent<FireExtinguisherItem>().FireExCount; ;
+      //  fireExCount = fireEx.GetComponent<FireExtinguisherItem>().FireExCount; 
     }
 
     

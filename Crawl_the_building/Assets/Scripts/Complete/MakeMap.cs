@@ -24,7 +24,7 @@ public class MakeMap : MonoBehaviour
     {
 
         if (collider.gameObject == player)
-        {
+        {            
             movedPosition = map.transform.position + move;
             map.transform.position = movedPosition;            
            

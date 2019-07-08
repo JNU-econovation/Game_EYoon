@@ -19,9 +19,9 @@ public class Attack : MonoBehaviour
         float dx = mousePosition.x - transform.position.x;
         float dy = mousePosition.y - transform.position.y;
         float angle = Mathf.Atan2(dx, dy) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
-
-        Instantiate(bullet, transform.position, rotation);               
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, -angle));        
+            Instantiate(bullet, transform.position, rotation);
+                   
         NumberOfBullet--;     
     }
     private void OnTriggerEnter2D(Collider2D collider)

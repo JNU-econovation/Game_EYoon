@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
             if (hit)
             {
                 if (attack.NumberOfBullet > 0)
-                {                       
+                {
                     target = hit.collider.gameObject;
                     attack.Shoot(target, mousePosition);
                                        

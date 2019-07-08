@@ -12,7 +12,7 @@ public class Window : MonoBehaviour
     SpriteRenderer sr;
     Image hpImage; 
     public bool itemMade;
-
+    public int floor = 1;
     void Start()
     {        
         itemMade = false;        
@@ -54,5 +54,5 @@ public class Window : MonoBehaviour
         else
             sr.sprite = brokenWindow[3];
     }
-   
+    
 }

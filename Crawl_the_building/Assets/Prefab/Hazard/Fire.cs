@@ -11,6 +11,7 @@ public class Fire : Hazard
     public float maxHP;
     public override void Function(GameObject window)
     {
+        Destroy(gameObject);
         ChangeWindow(window);
         Destroy(fire, 10.0f);
     }
