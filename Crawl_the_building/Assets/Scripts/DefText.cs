@@ -12,11 +12,9 @@ public class DefText : MonoBehaviour
     void Update()
     {
         
-        statvalue = Abilitymanager.Character.GetComponent<BasicCharacter>().Def;
+        statvalue = Abilitymanager.Character.GetComponent<Character>().Def;
         GetComponent<Text>().text = "Def: " + statvalue.ToString();
         
-        
-
     }
 
 

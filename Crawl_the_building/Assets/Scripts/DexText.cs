@@ -11,7 +11,7 @@ public class DexText : MonoBehaviour
 
     void Update()
     {
-        statvalue = Abilitymanager.Character.GetComponent<BasicCharacter>().Dex;
+        statvalue = Abilitymanager.Character.GetComponent<Character>().Dex;
         GetComponent<Text>().text = "Dex: " + statvalue.ToString();
     }
 

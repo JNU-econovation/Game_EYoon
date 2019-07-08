@@ -6,11 +6,25 @@ using UnityEngine.UI;
 public class Shopmanager : MonoBehaviour
 {
     [SerializeField] Sprite soldout;
-    public GameObject[] shoptables;
+    public List<Transform> shoptables;
+    [SerializeField] Transform content;
     int price;
     int gold;
-    
-  public  void Shopping(GameObject button)
+
+
+
+    private void Start()
+    {
+        int contentLength = content.childCount;
+        
+        for(int i= 0; i < contentLength; i++)
+        {
+            Transform tables = content.GetChild(i);
+            shoptables.Add(tables);
+        }
+    }
+
+    public  void Shopping(GameObject button)
     {
          price = button.GetComponentInChildren<Pricetag>().price;
          gold = PlayerPrefs.GetInt("Gold");

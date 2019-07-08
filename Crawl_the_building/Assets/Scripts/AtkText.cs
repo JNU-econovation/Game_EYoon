@@ -12,7 +12,7 @@ public class AtkText : MonoBehaviour
     void Update()
     {
 
-        statvalue = Abilitymanager.Character.GetComponent<BasicCharacter>().Atk;
+        statvalue = Abilitymanager.Character.GetComponent<Character>().Atk;
         GetComponent<Text>().text = "Atk: " + statvalue.ToString();
 
     }
