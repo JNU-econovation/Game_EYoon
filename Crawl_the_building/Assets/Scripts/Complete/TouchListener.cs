@@ -8,7 +8,7 @@ public class TouchListener : InputManager
     void Start()
     {
 
-        touchMove += (touches) => { Debug.Log("move"); };
+        //touchMove += (touches) => { Debug.Log("move"); };
     }
 
     // Update is called once per frame
