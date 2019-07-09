@@ -22,6 +22,50 @@ public class MobileInputManager : MonoBehaviour
         player = GetComponentInParent<LevelManager>().player;
         attack = player.GetComponent<Attack>();       
     }
+    
+    void FixedUpdate()
+    {
+      //  Debug.DrawLine(new Vector3(110, transform.position.y), new Vector3(610, transform.position.y));
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPos = touch.position;
+            if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
+            {
+                if (touchPos.y < Screen.height / 10)
+                {
+                    PlayerMove(0);
+                }
+                else
+                {
+                    ShootBullet(0);
+                }
+            }
+        }
+        else if(Input.touchCount > 1)
+        {
+            for(int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+                Vector3 touchPos = touch.position;
+                
+                if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
+                {
+                    if (touchPos.y < Screen.height / 10)
+                    {
+                        PlayerMove(i);
+                    }
+                    else
+                    {
+                        ShootBullet(i);
+                    }
+                }                                                   
+
+            }                       
+            
+        }                                 
+
+    }
     void PlayerMove(int i)
     {
         Touch touch = Input.GetTouch(i);
@@ -57,47 +101,6 @@ public class MobileInputManager : MonoBehaviour
                 }
             }
         }
-    }
-    void FixedUpdate()
-    {       
-        if(Input.touchCount == 1)
-        {
-            Touch touch = Input.GetTouch(0);
-            Vector3 touchPos = touch.position;
-            if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
-            {
-                if (touchPos.y < Screen.height / 10)
-                {
-                    PlayerMove(0);
-                }
-                else
-                {
-                    ShootBullet(0);
-                }
-            }
-        }
-        if(Input.touchCount > 1)
-        {
-            for(int i = 0; i < Input.touchCount; i++)
-            {
-                Touch touch = Input.GetTouch(i);
-                Vector3 touchPos = touch.position;
-                if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
-                {
-                    if (touchPos.y < Screen.height / 10)
-                    {
-                        PlayerMove(i);
-                    }
-                    else
-                    {
-                        ShootBullet(i);
-                    }
-                }                                                   
-
-            }                       
-            
-        }                                 
-
     }
 }
 

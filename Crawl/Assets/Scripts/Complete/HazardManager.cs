@@ -15,12 +15,12 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject skyscraperCleaner;
     public GameObject service;  
     //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 페인트공
-    float[] weight = {20.0f, 20.0f, 10.0f, 15.0f, 15.0f, 10.0f, 10.0f};
+    float[] weight = {0.0f, 0.0f, 0.0f, 100.0f, 0.0f, 0.0f, 0.0f};
     float rand;
     public GameObject[] map;
     GameObject nextMap;
     GameObject spawnObject;
-    List<GameObject> hazards = new List<GameObject>();   
+    public List<GameObject> hazards = new List<GameObject>();   
     List<GameObject> windows = new List<GameObject>();
     public List<GameObject> HigherThanPlayerWins = new List<GameObject>();
     private void Start()

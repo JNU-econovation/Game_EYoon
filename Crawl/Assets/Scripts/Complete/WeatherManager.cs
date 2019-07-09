@@ -17,7 +17,7 @@ public class WeatherManager : MonoBehaviour
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
-
+        rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
         weather.Add(nullObject);
         StartCoroutine(ChangeWeather());
@@ -46,16 +46,17 @@ public class WeatherManager : MonoBehaviour
         {
             yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
-            GameObject temp = Instantiate(weather[i]);
-            StartCoroutine(Destroy(temp, enableTime));
+            GameObject temp = weather[i];
+            temp.SetActive(true);
+            StartCoroutine(Disable(temp, enableTime));
         }
     }
 
    
 
-    private IEnumerator Destroy(GameObject weather, float enableTime)
+    private IEnumerator Disable(GameObject weather, float enableTime)
     {
         yield return new WaitForSeconds(enableTime);
-        Destroy(weather);
+        weather.SetActive(false);
     }
 }

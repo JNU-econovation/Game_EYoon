@@ -17,7 +17,7 @@ public class FireExtinguisherItem : Item
         if (collider.gameObject.tag == "Player")
         {
             Function();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }

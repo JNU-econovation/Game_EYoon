@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2515028090259809566}
   - component: {fileID: 2515028090259809560}
   - component: {fileID: 2624472585311118398}
+  - component: {fileID: 6968185086891347187}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
-  - component: {fileID: 6968185086891347187}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -99,15 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 0.5
+  forwardSpeed: 0.7
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:
   - {fileID: 1231191690524089103, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
   - {fileID: 2110688798461368885, guid: 4cda1ac08460f4543801133de1cf10a0, type: 3}
   - {fileID: 7934058975833635808, guid: ed4221f816754b942a45cce09ce7b723, type: 3}
-  rightSpeed: 0
-  leftSpeed: 0
 --- !u!114 &2515028090259809566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +154,21 @@ MonoBehaviour:
   avoidance: 0
   hp: 0
   fireExCount: 0
+--- !u!114 &6968185086891347187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515028090259809562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e39e50430062f4096b8b380e71f0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blanketLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4
@@ -203,21 +216,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5771637, y: 1.7502131}
   m_EdgeRadius: 0
---- !u!114 &6968185086891347187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0b1165ab67d9748833d7ac7fa1255c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blanketLayerMask:
-    serializedVersion: 2
-    m_Bits: 16384
 --- !u!1 &2515028091681389646
 GameObject:
   m_ObjectHideFlags: 0

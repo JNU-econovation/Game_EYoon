@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5513394454849877593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 360, y: 227.9138, z: -5}
+  m_LocalPosition: {x: 360, y: 397.9138, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5513394454849877593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e45bb1aeea23964480e20156b247df4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e035f46944f8144aa463fb2b472115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
@@ -97,5 +97,3 @@ MonoBehaviour:
     type: 3}
   smallWindowFire: {fileID: 5316188715450036427, guid: 23e3039e22d8a564d95e4925e40f0a21,
     type: 3}
-  HP: 50
-  maxHP: 50

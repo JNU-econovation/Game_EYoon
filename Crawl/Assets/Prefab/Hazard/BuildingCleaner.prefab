@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8064717870404711184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 360, y: 1070.0001, z: 0}
+  m_LocalPosition: {x: 335, y: 311.29977, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1bf2874ed85a9684cb3157ee67f70c32, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: bc7ce7d982517304dbe898a862ee7fdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,12 +90,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8064717870404711184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab4c67640bbdac745894e6fa36bfb6c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 287a3f3907f45b845b75a0ef2f4f1313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  speed: 0.2
-  damage: 50
+  speed: 1
+  damage: 30
 --- !u!61 &1705937574257266767
 BoxCollider2D:
   m_ObjectHideFlags: 0

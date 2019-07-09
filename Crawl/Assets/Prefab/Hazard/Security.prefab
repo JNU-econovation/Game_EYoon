@@ -68,8 +68,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 594c1d863ebf6694aa99ea6a2d81431d, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 44d85b5b4ffcfc64f847c24e6c3522c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3454271525887003687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e00dd72bd2b714eafe230241ac9324, type: 3}
+  m_Script: {fileID: 11500000, guid: 734c4e9f8481af24891f5768d0931c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
@@ -98,7 +98,7 @@ MonoBehaviour:
   bigWarning: {fileID: 5169511532574299851, guid: a5be8748271f1914ca7ab16db483138a,
     type: 3}
   delay: 2
-  existTime: 5
+  existTime: 3
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0

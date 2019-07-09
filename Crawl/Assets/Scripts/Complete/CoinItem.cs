@@ -16,7 +16,7 @@ public class CoinItem : Item
         if (collider.gameObject.tag == "Player")
         {
             Function();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }

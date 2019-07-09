@@ -15,7 +15,7 @@ public class HealItem : Item
         if (collider.gameObject.tag == "Player")
         {
             Function();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }

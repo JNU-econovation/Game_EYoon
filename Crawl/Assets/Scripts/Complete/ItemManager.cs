@@ -26,7 +26,7 @@ public class ItemManager : Singleton<ItemManager>
     public GameObject armorLv3;
     public GameObject armorLv4;
     public GameObject armorLv5;
-    List<GameObject> item = new List<GameObject>();       
+    public List<GameObject> item = new List<GameObject>();       
 
     private void Awake()
     {
@@ -64,9 +64,11 @@ public class ItemManager : Singleton<ItemManager>
   
     public GameObject MakeItem(Vector3 vector3)
     { 
-        int i = SelectIndex(weight);        
-        item[i].transform.position = vector3;        
-        GameObject temp = Instantiate(item[i]);
+        int i = SelectIndex(weight);
+        GameObject temp = GetComponent<LevelManager>().items[i];
+        print(temp);
+        temp.transform.position = vector3;
+        temp.SetActive(true);
         return temp;
     }  
 

@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Singleton<InputManager>
 {
-    KeyCode A = KeyCode.A;
-    KeyCode D = KeyCode.D;
     Camera cam;
     Attack attack;
     GameObject player;
     public GameObject target;
     Vector3 mousePosition;
     float maxDistance = 15f;
-    public float sideSpeed;   
-
+    public float sideSpeed;
+    public float rightSpeed;
+    public float leftSpeed;
     void Start()
     {
         cam = Camera.main;
@@ -23,13 +22,11 @@ public class InputManager : MonoBehaviour
     }
 
     void Update()
-    {
-        float rightSpeed = player.GetComponent<PlayerMove>().rightSpeed;
-        float leftSpeed = player.GetComponent<PlayerMove>().leftSpeed;
+    {       
         if (Input.GetKey(KeyCode.D))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right * rightSpeed);
+            player.transform.Translate(Time.deltaTime * Vector3.right * rightSpeed);
         else if (Input.GetKey(KeyCode.A))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left * leftSpeed);
+            player.transform.Translate(Time.deltaTime * Vector3.left * leftSpeed);
                         
         //마우스 좌클릭
         if (Input.GetMouseButtonDown(0))
