@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class MobileInputManager : MonoBehaviour
 {
+    KeyCode A = KeyCode.A;
+    KeyCode D = KeyCode.D;
     Camera cam;
     Attack attack;
     GameObject player;
@@ -11,7 +14,8 @@ public class MobileInputManager : MonoBehaviour
     Vector3 mousePosition;
     float maxDistance = 15f;
     public float sideSpeed;
-
+    public Sprite image;
+    public Sprite image2;
     void Start()
     {
         cam = Camera.main;
@@ -19,39 +23,66 @@ public class MobileInputManager : MonoBehaviour
         attack = player.GetComponent<Attack>();
     }
 
-    private void Update()
+    void Update()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            Vector3 tpos = Input.GetTouch(0).position;
-            //  if(Screen.width / 7 <= tpos.x && tpos.x <= Screen.width * 6 / 7)  
-
-            if (tpos.y <= Screen.height / 9)
+        int count = Input.touchCount;
+        if(count > 0)
+        { 
+            Touch touch = Input.GetTouch(0);
+            Vector3 tpos = touch.position;
+            if (360 - 250 <= tpos.x && tpos.x <= 360 + 250)
             {
-                // 캐릭터 이동
-
-            }
-            else //총알 발사
-            {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (tpos.y < Screen.height / 10)
                 {
-                    tpos = cam.ScreenToWorldPoint(tpos);
-
-                    RaycastHit2D hit = Physics2D.Raycast(tpos, transform.forward, maxDistance);
-                    if (hit)
+                    print(tpos);
+                    Vector3 firstPos;
+                    Vector3 nowPos;
+                    Vector3 movePos;
+                    if (touch.phase == TouchPhase.Began)
                     {
-                        if (attack.NumberOfBullet > 0)
-                        {
-                            target = hit.collider.gameObject;
-                            attack.Shoot(target, tpos);
+                        print(tpos);
+                    }
+                    if(touch.phase == TouchPhase.Moved)
+                    {
+                        //movePos = tpos - firstPos;
+                    }
 
+                }
+                else
+                {
+                    if (touch.phase == TouchPhase.Began)
+                    {                        
+                        tpos = cam.ScreenToWorldPoint(tpos);
+
+                        RaycastHit2D hit = Physics2D.Raycast(tpos, transform.forward, maxDistance);
+                        if (hit)
+                        {
+                            if (attack.NumberOfBullet > 0)
+                            {
+                                target = hit.collider.gameObject;
+                                attack.Shoot(target, tpos);
+
+                            }
                         }
                     }
 
                 }
-            }
+
+            }                       
+            
+        }                   
+
+        int right = player.GetComponent<PlayerMove>().rightSpeed;
+        int left = player.GetComponent<PlayerMove>().leftSpeed;        
+        if (Input.GetKey(KeyCode.D))
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right * right);
+        else if (Input.GetKey(KeyCode.A))
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left * left);
+
+        
+
 
         }
     }
-}
+
 

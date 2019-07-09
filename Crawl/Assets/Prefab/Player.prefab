@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 0.05
+  forwardSpeed: 0.01
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:
