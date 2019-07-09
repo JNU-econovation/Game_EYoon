@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 2515028091681389645}
   - component: {fileID: 2515028091681389635}
   - component: {fileID: 2515028091681389644}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HP
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 2515028092036986803}
   - component: {fileID: 2515028092036986812}
   - component: {fileID: 2515028092036986813}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Player
   m_Icon: {fileID: 0}

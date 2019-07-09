@@ -99,3 +99,6 @@ MonoBehaviour:
     type: 3}
   delay: 1
   existTime: 1
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
