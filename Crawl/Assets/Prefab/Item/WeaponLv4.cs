@@ -6,8 +6,9 @@ public class WeaponLv4 : Item
 {
     public override void Function()
     {
-        Inventory1.Instance.InsertItem(itemImage);
+        Inventory1.Instance.InsertItem(itemImage, 4);
         player.GetComponent<Ability>().damage = 40;
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -15,7 +16,6 @@ public class WeaponLv4 : Item
         if (collider.gameObject.tag == "Player")
         {
             Function();
-            Destroy(gameObject);
         }
 
     }

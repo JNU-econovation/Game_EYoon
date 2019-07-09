@@ -5,8 +5,13 @@ using UnityEngine.UI;
 public class Inventory1 : Singleton<Inventory1>
 {
     public Sprite inventoryImage;
-    public void InsertItem(Sprite itemImage)
+    public int weaponLevel = 0;
+    public void InsertItem(Sprite itemImage, int level)
     {
-        GetComponent<Image>().sprite = itemImage;
+        if (level > weaponLevel)
+        {
+            GetComponent<Image>().sprite = itemImage;
+            weaponLevel = level;
+        }
     }
 }
