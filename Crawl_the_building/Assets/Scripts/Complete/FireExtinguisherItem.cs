@@ -5,9 +5,11 @@ using UnityEngine;
 public class FireExtinguisherItem : Item
 {
     public int FireExCount = 0;
+  
     public override void Function()
-    {       
-            FireExCount = 3;         
+    {
+        Inventory2.Instance.InsertItem(itemImage);
+        FireExCount = 3;         
     }
     
     private void OnTriggerEnter2D(Collider2D collider)

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WeaponLv3 : Item
 {
+    
     public override void Function()
     {
+        Inventory1.Instance.InsertItem(itemImage);
         player.GetComponent<Ability>().damage = 30;
     }
     private void OnTriggerEnter2D(Collider2D collider)

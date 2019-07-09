@@ -10,7 +10,7 @@ public class MobileInputManager : MonoBehaviour
     public GameObject target;
     Vector3 mousePosition;
     float maxDistance = 15f;
-    public float sideSpeed;   
+    public float sideSpeed;
 
     void Start()
     {
@@ -24,6 +24,8 @@ public class MobileInputManager : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             Vector3 tpos = Input.GetTouch(0).position;
+            //  if(Screen.width / 7 <= tpos.x && tpos.x <= Screen.width * 6 / 7)  
+
             if (tpos.y <= Screen.height / 9)
             {
                 // 캐릭터 이동
@@ -32,7 +34,7 @@ public class MobileInputManager : MonoBehaviour
             else //총알 발사
             {
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
-                {                    
+                {
                     tpos = cam.ScreenToWorldPoint(tpos);
 
                     RaycastHit2D hit = Physics2D.Raycast(tpos, transform.forward, maxDistance);
@@ -48,7 +50,8 @@ public class MobileInputManager : MonoBehaviour
 
                 }
             }
+
         }
-        
     }
 }
+

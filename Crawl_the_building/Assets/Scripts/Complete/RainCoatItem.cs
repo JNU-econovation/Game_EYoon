@@ -5,9 +5,11 @@ using UnityEngine;
 public class RainCoatItem : Item
 {
     public float increase;
+    
     public override void Function()
-    {       
-            player.GetComponent<PlayerMove>().forwardSpeed += increase;          
+    {
+        Inventory2.Instance.InsertItem(itemImage);        
+        player.GetComponent<PlayerMove>().forwardSpeed += increase;          
     }   
 
     private void OnTriggerEnter2D(Collider2D collider)
