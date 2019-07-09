@@ -12,6 +12,8 @@ public class InputManager : MonoBehaviour
     Vector3 mousePosition;
     float maxDistance = 15f;
     public float sideSpeed;
+    
+   
   //  protected delegate void listener(ArrayList touches);
  //   protected event listener touchBegin, touchMove, touchEnd;
 
@@ -24,10 +26,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        int right = player.GetComponent<PlayerMove>().right;
+        int left = player.GetComponent<PlayerMove>().left;
         if (Input.GetKey(KeyCode.D))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right);
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right * right);
         else if (Input.GetKey(KeyCode.A))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left);
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left * left);
                         
         //마우스 좌클릭
         if (Input.GetMouseButton(0))

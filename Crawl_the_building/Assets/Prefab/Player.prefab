@@ -106,6 +106,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  right: 1
+  left: 1
 --- !u!114 &2515028090259809566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0b1165ab67d9748833d7ac7fa1255c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blanketLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!1 &2515028091681389646
 GameObject:
   m_ObjectHideFlags: 0

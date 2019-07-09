@@ -7,7 +7,7 @@ public class DustOffBlanket : Hazard
     Vector3 playerTr;
     float playerYpos;
     float blanketYpos;
-    int existTime = 3;
+    int existTime = 4;
     public GameObject largeBlanketCol;
     public GameObject smallBlanketCol;
     public GameObject LargeBlanketAnim;
