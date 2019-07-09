@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Window
+  - Block
+  - Map
+  - Undefined
+  - Bullet
+  - TrashBullet
+  - map
+  - mapDestroyer
+  - Blanket
+  - Pause
+  - map1
+  - map2
+  - map3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Window
+  - Player
+  - Disturb
+  - Item
+  - Pause
+  - Map
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 3621086971
+    locked: 0
+  - name: 2
+    uniqueID: 119475897
+    locked: 0
+  - name: 3
+    uniqueID: 2640536407
+    locked: 0
+  - name: 4
+    uniqueID: 4011269353
+    locked: 0
