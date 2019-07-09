@@ -21,6 +21,9 @@ public class MobileInputManager : MonoBehaviour
 
     private void Update()
     {
+        int right = player.GetComponent<PlayerMove>().rightSpeed;
+        int left = player.GetComponent<PlayerMove>().leftSpeed;
+
         if (Application.platform == RuntimePlatform.Android)
         {
             Vector3 tpos = Input.GetTouch(0).position;
@@ -28,7 +31,11 @@ public class MobileInputManager : MonoBehaviour
 
             if (tpos.y <= Screen.height / 9)
             {
-                // 캐릭터 이동
+                if (tpos.x < Screen.width / 2)
+                    player.transform.Translate(sideSpeed * Time.deltaTime * left, 0, 0);
+                else if (tpos.x > Screen.width / 2)
+                    player.transform.Translate(sideSpeed * Time.deltaTime * right, 0, 0);
+
 
             }
             else //총알 발사
