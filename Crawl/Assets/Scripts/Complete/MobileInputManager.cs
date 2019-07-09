@@ -16,11 +16,19 @@ public class MobileInputManager : MonoBehaviour
     public float sideSpeed;
     public Sprite image;
     public Sprite image2;
+
+    private Vector3 startPos = Vector3.zero;
+    private Vector3 endPos = Vector3.zero;
+    private Vector3 targetPos = Vector3.zero;
+    float deltaX, deltaY;
+    Rigidbody2D rb;
+    private bool isClicked = false;
     void Start()
     {
         cam = Camera.main;
         player = GetComponentInParent<LevelManager>().player;
         attack = player.GetComponent<Attack>();
+        rb = player.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -29,38 +37,40 @@ public class MobileInputManager : MonoBehaviour
         if(count > 0)
         { 
             Touch touch = Input.GetTouch(0);
-            Vector3 tpos = touch.position;
-            if (360 - 250 <= tpos.x && tpos.x <= 360 + 250)
+            Vector3 touchPos = touch.position;
+            if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
             {
-                if (tpos.y < Screen.height / 10)
+
+                if (touchPos.y < Screen.height / 10)
                 {
-                    print(tpos);
-                    Vector3 firstPos;
-                    Vector3 nowPos;
-                    Vector3 movePos;
-                    if (touch.phase == TouchPhase.Began)
+               //     touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+                    switch (touch.phase)
                     {
-                        print(tpos);
-                    }
-                    if(touch.phase == TouchPhase.Moved)
-                    {
-                        //movePos = tpos - firstPos;
+                        case TouchPhase.Began:
+                            deltaX = touchPos.x - player.transform.position.x;         
+                            break;
+                        case TouchPhase.Moved:
+                            rb.MovePosition(new Vector2(touchPos.x - deltaX, 0));
+                            break;
+                        case TouchPhase.Ended:
+                            rb.velocity = Vector2.zero;
+                            break;
                     }
 
                 }
                 else
                 {
                     if (touch.phase == TouchPhase.Began)
-                    {                        
-                        tpos = cam.ScreenToWorldPoint(tpos);
+                    {
+                        touchPos = cam.ScreenToWorldPoint(touchPos);
 
-                        RaycastHit2D hit = Physics2D.Raycast(tpos, transform.forward, maxDistance);
+                        RaycastHit2D hit = Physics2D.Raycast(touchPos, transform.forward, maxDistance);
                         if (hit)
                         {
                             if (attack.NumberOfBullet > 0)
                             {
                                 target = hit.collider.gameObject;
-                                attack.Shoot(target, tpos);
+                                attack.Shoot(target, touchPos);
 
                             }
                         }
@@ -85,4 +95,19 @@ public class MobileInputManager : MonoBehaviour
         }
     }
 
-
+/* 코드 메모
+ * if (tpos.y < Screen.height / 10)
+                {
+                    Vector3 diffpos;
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        startPos = tpos;
+                    }
+                    if(touch.phase == TouchPhase.Moved)
+                    {
+                        diffpos = new Vector3(tpos.x - startPos.x, 0.0f,0.0f);
+                        startPos = tpos;
+                        player.transform.position += diffpos /5;
+                    }
+                   
+                    */
