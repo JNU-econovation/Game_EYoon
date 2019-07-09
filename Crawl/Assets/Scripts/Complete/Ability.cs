@@ -6,11 +6,11 @@ public class Ability : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject fireEx;
-    public float damage;
-    public float armor;
-    public float maxArmor = 100;
+    public int damage;
+    public int armor;
+    public int maxArmor = 100;
     public float avoidance;
-    public float hp;
+    public int hp;
     public int fireExCount;
     
     void Awake()

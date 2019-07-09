@@ -9,10 +9,10 @@ public class PlayerMove : MonoBehaviour
     public GameObject playerNearMap;
     public GameObject nextMap;
     public GameObject[] map;
-    public int rightSpeed;
-    public int leftSpeed;
+    public float rightSpeed;
+    public float leftSpeed;
 
-    void Update()
+    void FixedUpdate()
     {
         xPos = Mathf.Clamp(transform.position.x, 330.0f, 390.0f);
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z);

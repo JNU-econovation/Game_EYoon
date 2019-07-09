@@ -7,8 +7,8 @@ public class Health : MonoBehaviour
 {
     //public Transform target;
     Image HPImage;
-    public float hp;//캐릭터의 현재 체력
-    public float maxHp; //캐릭터의 풀피
+    public int hp;//캐릭터의 현재 체력
+    public int maxHp; //캐릭터의 풀피
 
     void Awake()
     {

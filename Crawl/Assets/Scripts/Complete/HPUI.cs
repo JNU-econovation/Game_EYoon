@@ -24,7 +24,7 @@ public class HPUI : MonoBehaviour
     {
         hp = player.GetComponent<Health>().hp;
         maxHp = player.GetComponent<Health>().maxHp;
-        hpValue.text = hp.ToString();
+        hpValue.text = ((int)hp).ToString();
         heart.fillAmount = hp / maxHp;
     }
 }

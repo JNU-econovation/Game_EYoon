@@ -48,7 +48,7 @@ public class FireAnimation : MonoBehaviour
     {     
          for (int i = 0; i < 5; i++)
          {
-            player.GetComponent<Health>().hp -= decrease;
+            player.GetComponent<Health>().hp -= (int)decrease;
             StartCoroutine(DelayOneSecond());
          }
     }

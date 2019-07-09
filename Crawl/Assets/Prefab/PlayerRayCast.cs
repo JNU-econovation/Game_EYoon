@@ -15,6 +15,17 @@ public class PlayerRayCast : MonoBehaviour
     float distance = 1.0f;
     [SerializeField] LayerMask blanketLayerMask;
 
+    float originalLeftSpeed;
+    float originalRightSpeed;
+    float originalUpSpeed;
+
+    private void Start()
+    {
+        originalLeftSpeed = GetComponent<PlayerMove>().leftSpeed;
+        originalRightSpeed = GetComponent<PlayerMove>().rightSpeed;
+        originalUpSpeed = GetComponent<PlayerMove>().forwardSpeed;
+    }
+
     private void Update()
     {
 
@@ -30,15 +41,15 @@ public class PlayerRayCast : MonoBehaviour
         if (rightHit)
             GetComponent<PlayerMove>().rightSpeed = 0;
         else
-            GetComponent<PlayerMove>().rightSpeed = 1;
+            GetComponent<PlayerMove>().rightSpeed = originalRightSpeed;
         if (leftHit)
             GetComponent<PlayerMove>().leftSpeed = 0;
         else
-            GetComponent<PlayerMove>().leftSpeed = 1;
+            GetComponent<PlayerMove>().leftSpeed = originalLeftSpeed;
         if (upHit)
             GetComponent<PlayerMove>().forwardSpeed = 0;
         else
-            GetComponent<PlayerMove>().forwardSpeed = 1;
+            GetComponent<PlayerMove>().forwardSpeed = originalUpSpeed;
             
 
         

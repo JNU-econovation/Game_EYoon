@@ -7,7 +7,6 @@ public class WeatherManager : MonoBehaviour
     float rand;
     float delayTime = 7.0f;
     float enableTime = 3.0f;
-    GameObject temp;
     float[] weight = { 100.0f, 0.0f };
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
@@ -42,20 +41,21 @@ public class WeatherManager : MonoBehaviour
     
     IEnumerator ChangeWeather()
     {
+        
         while (true)
         {
             yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
-            temp = Instantiate(weather[i]);
-            StartCoroutine(Destroy(enableTime));
+            GameObject temp = Instantiate(weather[i]);
+            StartCoroutine(Destroy(temp, enableTime));
         }
     }
 
    
 
-    private IEnumerator Destroy(float enableTime)
+    private IEnumerator Destroy(GameObject weather, float enableTime)
     {
         yield return new WaitForSeconds(enableTime);
-        Destroy(temp);
+        Destroy(weather);
     }
 }

@@ -24,12 +24,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        int right = player.GetComponent<PlayerMove>().rightSpeed;
-        int left = player.GetComponent<PlayerMove>().leftSpeed;
+        float rightSpeed = player.GetComponent<PlayerMove>().rightSpeed;
+        float leftSpeed = player.GetComponent<PlayerMove>().leftSpeed;
         if (Input.GetKey(KeyCode.D))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right * right);
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right * rightSpeed);
         else if (Input.GetKey(KeyCode.A))
-            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left * left);
+            player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left * leftSpeed);
                         
         //마우스 좌클릭
         if (Input.GetMouseButtonDown(0))
