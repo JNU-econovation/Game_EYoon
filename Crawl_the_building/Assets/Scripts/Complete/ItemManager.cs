@@ -7,9 +7,8 @@ using Random = UnityEngine.Random;
 public class ItemManager : Singleton<ItemManager>
 {
     float rand;
-    //총알 치료 갑옷 우비 소화기 패딩 골드 빈템 순
-    //   float[] weight = {10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 10.0f, 30.0f};
-    float[] weight = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100.0f, 0.0f };
+    //총알 치료 갑옷 우비 소화기 패딩 골드 무기 1~5렙 빈템 순
+    public float[] weight = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
     public GameObject bulletItem;
     public GameObject healItem;
     public GameObject armorItem;
@@ -17,6 +16,11 @@ public class ItemManager : Singleton<ItemManager>
     public GameObject fireExItem;
     public GameObject jacketItem;
     public GameObject coinItem;
+    public GameObject weaponLv1;
+    public GameObject weaponLv2;
+    public GameObject weaponLv3;
+    public GameObject weaponLv4;
+    public GameObject weaponLv5;
     public GameObject nullItem;
     List<GameObject> item = new List<GameObject>();       
 
@@ -29,7 +33,12 @@ public class ItemManager : Singleton<ItemManager>
         item.Add(fireExItem);
         item.Add(jacketItem);
         item.Add(coinItem);
-        item.Add(nullItem);       
+        item.Add(weaponLv1); 
+        item.Add(weaponLv2);
+        item.Add(weaponLv3);
+        item.Add(weaponLv4);
+        item.Add(weaponLv5);
+        item.Add(nullItem);
     }
     
     public int SelectIndex(float[] weight)

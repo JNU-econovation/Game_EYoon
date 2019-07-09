@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 0.7
+  forwardSpeed: 0.5
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  NumberOfBullet: 30
+  NumberOfBullet: 100
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
+    KeyCode A = KeyCode.A;
+    KeyCode D = KeyCode.D;
     Camera cam;
     Attack attack;
     GameObject player;
@@ -24,13 +26,13 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(D))
             player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.right);
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(A))
             player.transform.Translate(sideSpeed * Time.deltaTime * Vector3.left);
                         
         //마우스 좌클릭
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;
             mousePosition = cam.ScreenToWorldPoint(mousePosition);

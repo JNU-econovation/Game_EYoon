@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
 
     private void Start()
     {
-        NumberOfBullet = 30;
+        NumberOfBullet = 100;
     }   
 
     public void Shoot(GameObject target, Vector3 mousePosition) 
