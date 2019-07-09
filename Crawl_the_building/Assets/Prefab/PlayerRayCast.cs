@@ -28,13 +28,13 @@ public class PlayerRayCast : MonoBehaviour
         
 
         if (rightHit)
-            GetComponent<PlayerMove>().right = 0;
+            GetComponent<PlayerMove>().rightSpeed = 0;
         else
-            GetComponent<PlayerMove>().right = 1;
+            GetComponent<PlayerMove>().rightSpeed = 1;
         if (leftHit)
-            GetComponent<PlayerMove>().left = 0;
+            GetComponent<PlayerMove>().leftSpeed = 0;
         else
-            GetComponent<PlayerMove>().left = 1;
+            GetComponent<PlayerMove>().leftSpeed = 1;
         if (upHit)
             GetComponent<PlayerMove>().forwardSpeed = 0;
         else

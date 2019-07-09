@@ -9,8 +9,8 @@ public class Security : Hazard
     float distance = 200;
     [SerializeField] GameObject smallWarning;
     [SerializeField] GameObject bigWarning;
-    [SerializeField] int delay = 2; //경고가 뜬 후 경비가 나타나기까지의 시간
-    [SerializeField] int existTime = 2; // 경비가 존재하는 시간
+    [SerializeField] int delay; //경고가 뜬 후 경비가 나타나기까지의 시간
+    [SerializeField] int existTime; // 경비가 존재하는 시간
     [SerializeField] LayerMask playerLayerMask;
 
     private void Update()

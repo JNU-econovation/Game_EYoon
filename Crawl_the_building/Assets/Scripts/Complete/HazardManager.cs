@@ -14,8 +14,8 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject security;
     public GameObject skyscraperCleaner;
     public GameObject service;  
-    //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 청소부
-    float[] weight = {20.0f, 20.0f, 10.0f, 15.0f, 15.0f, 10f, 10f};
+    //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 페인트공
+    float[] weight = {20.0f, 20.0f, 10.0f, 15.0f, 15.0f, 10.0f, 10.0f};
     float rand;
     public GameObject[] map;
     GameObject nextMap;

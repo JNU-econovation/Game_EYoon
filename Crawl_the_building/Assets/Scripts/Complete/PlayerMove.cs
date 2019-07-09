@@ -9,8 +9,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject playerNearMap;
     public GameObject nextMap;
     public GameObject[] map;
-    public int right = 1;
-    public int left = 1;
+    public int rightSpeed;
+    public int leftSpeed;
 
     void Update()
     {

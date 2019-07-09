@@ -97,8 +97,8 @@ MonoBehaviour:
     type: 3}
   bigWarning: {fileID: 5169511532574299851, guid: a5be8748271f1914ca7ab16db483138a,
     type: 3}
-  delay: 1
-  existTime: 1
+  delay: 2
+  existTime: 5
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 512
