@@ -8,7 +8,9 @@ public class PlayerMove : MonoBehaviour
     float xPos;
     public GameObject playerNearMap;
     public GameObject nextMap;
-    public GameObject[] map;    
+    public GameObject[] map;
+    public int right = 1;
+    public int left = 1;
 
     void Update()
     {

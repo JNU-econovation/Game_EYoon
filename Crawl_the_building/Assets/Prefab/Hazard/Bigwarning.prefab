@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6358337398572201209
+--- !u!1 &5169511532574299851
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7378543124238157561}
-  - component: {fileID: 7656968076375404456}
-  - component: {fileID: 6971230869212291434}
+  - component: {fileID: 7658308575221248874}
+  - component: {fileID: 8587534345038256860}
+  - component: {fileID: 2329465013148492757}
   m_Layer: 0
-  m_Name: DustOffBlanket
+  m_Name: Bigwarning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7378543124238157561
+--- !u!4 &7658308575221248874
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6358337398572201209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 335.063, y: 278.879, z: -5}
-=======
-  m_LocalPosition: {x: 360, y: 635.9138, z: -5}
->>>>>>> c59aaec8adfc88cf5e63db19f75ae893688383a3
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 5169511532574299851}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 361.2, y: 40.27999, z: -2.4000015}
+  m_LocalScale: {x: 3.6000004, y: 17, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7656968076375404456
+--- !u!212 &8587534345038256860
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6358337398572201209}
+  m_GameObject: {fileID: 5169511532574299851}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,36 +68,23 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 175cf9f1562adad49ad8039c9e2d0eda, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.94, y: 11.23}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6971230869212291434
-MonoBehaviour:
+--- !u!222 &2329465013148492757
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6358337398572201209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2b414727d7d8514d98dca9f4d7410ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
-  largeBlanketCol: {fileID: 3251673002525214526, guid: e5ecce0c393b27c4a95dc7328bc76240,
-    type: 3}
-  smallBlanketCol: {fileID: 5053712068782694229, guid: 94bdb4e0eb0460d41a508c16cd3a06db,
-    type: 3}
-  LargeBlanketAnim: {fileID: 5790372917885668052, guid: 154215bbc54f30a459d9a9dcad440072,
-    type: 3}
-  SmallBlanketAnim: {fileID: 7155658798224736532, guid: 46591daa9fd3af74c804761187b81c03,
-    type: 3}
+  m_GameObject: {fileID: 5169511532574299851}
+  m_CullTransparentMesh: 0

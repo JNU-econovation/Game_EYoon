@@ -3466,6 +3466,10 @@ MonoBehaviour:
   blanket: {fileID: 6358337398572201209, guid: c7b20f6a84807934da6c38414e98d3ae, type: 3}
   nullObject: {fileID: 1104233961954355181, guid: 44f6c43efbc0a6f42b49660a3ddef085,
     type: 3}
+  security: {fileID: 3454271525887003687, guid: f0aadc0b9a7c08c4787b9193eb054856,
+    type: 3}
+  skyscraperCleaner: {fileID: 8064717870404711184, guid: 410754ba67b7205458a5134f83b85224,
+    type: 3}
   service: {fileID: 4854051716300901137}
   map:
   - {fileID: 1617204356}
