@@ -6,12 +6,13 @@ public class ArmorLv1 : Item
 {
     public override void Function()
     {
-        Inventory3.Instance.InsertItem(itemImage);
+        Inventory3.Instance.InsertItem(itemImage, 1);
         player.GetComponent<Ability>().armor = 10;
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        
+        if (collider.gameObject.tag == "Player" )
         {
             Function();
             Destroy(gameObject);
