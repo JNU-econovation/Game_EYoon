@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorItem : Item
+public class ArmorLv4 : Item
 {
-    public int increase;
-   
+
     public override void Function()
-    {       
-            player.GetComponent<Ability>().armor += increase;            
+    {
+        Inventory3.Instance.InsertItem(itemImage);
+        player.GetComponent<Ability>().armor = 10;
     }
-   
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")

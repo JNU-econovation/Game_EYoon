@@ -5,9 +5,11 @@ using UnityEngine;
 public class JacketItem : Item
 {
     public int increase;
+
+
     public override void Function()
-    {       
-             
+    {
+        Inventory2.Instance.InsertItem(itemImage);
     }
    
     private void OnTriggerEnter2D(Collider2D collider)

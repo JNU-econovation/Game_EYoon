@@ -6,8 +6,8 @@ public class BuildingClearner : Hazard
 {
     Vector3[] cleanerSpawnpos;
     Vector3 playerPos;
-    [SerializeField] float speed = 2;
-    [SerializeField] int damage = 50;
+    [SerializeField] float speed;
+    [SerializeField] int damage;
 
  
     private void Update()
