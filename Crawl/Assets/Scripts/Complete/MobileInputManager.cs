@@ -32,7 +32,7 @@ public class MobileInputManager : MonoBehaviour
             Vector3 touchPos = touch.position;
             if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
             {
-                if (touchPos.y < Screen.height / 10)
+                if (touchPos.y < Screen.height / 5)
                 {
                     PlayerMove(0);
                 }

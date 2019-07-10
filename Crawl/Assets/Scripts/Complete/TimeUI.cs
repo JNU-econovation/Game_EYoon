@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimeUI : MonoBehaviour
 {
-    float time = 0.0f;
-    float minute = 0.0f;
+    public float minute = 0.0f;
     float second = 0.0f;
     Text timeText;
     private void Start()

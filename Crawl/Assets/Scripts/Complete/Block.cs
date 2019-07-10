@@ -15,7 +15,16 @@ public class Block : MonoBehaviour
     {
         transform.Translate(Vector3.up * speed);
     }
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());
+    }
 
+    public IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Bullet")
