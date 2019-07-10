@@ -8,23 +8,29 @@ public class BuildingClearner : Hazard
     Vector3 playerPos;
     [SerializeField] float speed;
     [SerializeField] int damage;
-
+    public int hp;
  
     private void Update()
     {
         transform.Translate(0, -speed,0);
     }
-    // Start is called before the first frame update
+    
     public override void Function(GameObject window)
-
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            collision.GetComponent<Health>().hp -= damage;
+            collider.gameObject.GetComponent<Health>().hp -= damage;
+        }
+        else if(collider.gameObject.tag == "Bullet")
+        {
+            Destroy(collider.gameObject);
+            hp -= collider.gameObject.GetComponent<Bullet>().damage;
+            if (hp <= 0)
+                Destroy(gameObject);
         }
     }
 }

@@ -66,7 +66,6 @@ public class ItemManager : Singleton<ItemManager>
     { 
         int i = SelectIndex(weight);
         GameObject temp = GetComponent<LevelManager>().items[i];
-        print(temp);
         temp.transform.position = vector3;
         temp.SetActive(true);
         return temp;

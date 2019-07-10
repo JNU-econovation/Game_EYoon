@@ -42,17 +42,18 @@ public class FireAnimation : MonoBehaviour
     }
 
     void Function()
-    {     
-         for (int i = 0; i < 5; i++)
-         {
-            player.GetComponent<Health>().hp -= (int)decrease;
-            StartCoroutine(DelayOneSecond());
-         }
+    {              
+        player.GetComponent<Health>().hp -= (int)decrease;
+        StartCoroutine(Damage());
     }
 
-    IEnumerator DelayOneSecond()
+    IEnumerator Damage()
     {            
-        yield return new WaitForSeconds(1.0f);
+        for(int i = 0; i < 5; i++)
+        {
+            player.GetComponent<Health>().hp -= (int)decrease;
+            yield return new WaitForSeconds(1.0f);
+        }       
     }
    
 }

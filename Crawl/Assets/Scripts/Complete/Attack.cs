@@ -24,13 +24,14 @@ public class Attack : MonoBehaviour
                    
         NumberOfBullet--;     
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {        
         if (collider.gameObject.tag == "Block")
         {
             GameObject block = collider.gameObject;
             gameObject.GetComponent<Health>().hp -= block.GetComponent<Block>().damage;
-            Destroy(collider.gameObject);
+            Destroy(block);
         } 
     }
 }

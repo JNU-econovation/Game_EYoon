@@ -13,14 +13,8 @@ public class Block : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(DestroySelf());
-    }
-
-    public IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
-    }
+       
+    }   
 
     void Update()
     {
@@ -29,16 +23,15 @@ public class Block : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Bullet")       
-            hp -= collider.gameObject.GetComponent<Bullet>().damage;        
-       
-
-       if(hp <= 0)
+        if (collider.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
             Destroy(collider.gameObject);
-        }
-          
+            hp -= collider.gameObject.GetComponent<Bullet>().damage;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);               
+            }
+        }                           
         
     }
 }

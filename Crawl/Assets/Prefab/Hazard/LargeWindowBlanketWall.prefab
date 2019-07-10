@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 22}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28, y: 1}
+  m_Size: {x: 32, y: 48}
   m_EdgeRadius: 0
 --- !u!1 &3251673002179575123
 GameObject:
@@ -123,8 +123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3251673002525214520}
-  m_Layer: 0
-  m_Name: BlanketWall(big)
+  m_Layer: 14
+  m_Name: LargeWindowBlanketWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

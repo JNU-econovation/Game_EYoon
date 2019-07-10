@@ -9,9 +9,8 @@ public class Fire : Hazard
     GameObject fire;
     public override void Function(GameObject window)
     {
-        Destroy(gameObject);
-        ChangeWindow(window);
-        Destroy(fire, 10.0f);
+        gameObject.SetActive(false);
+        ChangeWindow(window);        
     }
   
     void ChangeWindow(GameObject window)

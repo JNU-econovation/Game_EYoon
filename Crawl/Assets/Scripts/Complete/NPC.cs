@@ -10,7 +10,9 @@ public class NPC : Hazard
     {
         gameObject.transform.position = window.transform.position;              
         StartCoroutine(ThrowBlock());
-    }
+       
+    }  
+
     IEnumerator ThrowBlock()
     {
        yield return new WaitForSeconds(2.0f);       

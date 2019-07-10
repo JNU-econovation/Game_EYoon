@@ -48,6 +48,11 @@ public class WeatherManager : MonoBehaviour
             int i = SelectIndex(weight);
             GameObject temp = weather[i];
             temp.SetActive(true);
+            ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
+            for(int j = 0; j < rain.Length; j++)
+            {
+                rain[j].Play();
+            }
             StartCoroutine(Disable(temp, enableTime));
         }
     }

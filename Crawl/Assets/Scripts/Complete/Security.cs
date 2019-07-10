@@ -11,26 +11,27 @@ public class Security : Hazard
     [SerializeField] GameObject bigWarning;
     [SerializeField] int delay; //경고가 뜬 후 경비가 나타나기까지의 시간
     [SerializeField] int existTime; // 경비가 존재하는 시간
-    [SerializeField] LayerMask playerLayerMask;
+    public LayerMask playerLayerMask;
 
     private void Update()
     {
         ray = new Ray2D(transform.position, Vector2.down);
         rayHit = Physics2D.Raycast(transform.position, Vector2.down, distance, playerLayerMask);
 
-
+        print(rayHit.collider);
 
         if (rayHit && rayHit.collider.gameObject.tag == "Player")
         {
+            print(1);
             rayHit.collider.gameObject.GetComponent<Health>().hp = 0;
         }
     }
     public override void Function(GameObject window)
     {
-        StartCoroutine(Petrol(window));
-
+        StartCoroutine(Petrol(window));       
         
     }
+    
     IEnumerator Petrol(GameObject window)
     {
         
@@ -53,9 +54,6 @@ public class Security : Hazard
         Destroy(warning);
 
         gameObject.transform.position = window.transform.position;
-
-        
-        Destroy(gameObject, existTime);
 
     }
     private void OnDrawGizmos()

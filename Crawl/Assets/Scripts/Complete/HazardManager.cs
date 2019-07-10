@@ -8,14 +8,15 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject fire;
     public GameObject open;   
     GameObject player;   
-    float delaytime = 1.0f;   
+    float delaytime = 1.0f;
+    float lifeTime = 5.0f;
     public GameObject blanket;
     public GameObject nullObject;
     public GameObject security;
     public GameObject skyscraperCleaner;
     public GameObject service;  
     //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 페인트공
-    float[] weight = {0.0f, 0.0f, 0.0f, 100.0f, 0.0f, 0.0f, 0.0f};
+    float[] weight = {20.0f, 10.0f, 5.0f, 10.0f, 0.0f, 40.0f, 10.0f};
     float rand;
     public GameObject[] map;
     GameObject nextMap;
@@ -25,32 +26,35 @@ public class HazardManager : Singleton<HazardManager>
     public List<GameObject> HigherThanPlayerWins = new List<GameObject>();
     private void Start()
     {
+        player = service.GetComponent<LevelManager>().player;
+        StartCoroutine(MakeHazard());
+
+    }
+
+    private void Awake()
+    {
         hazards.Add(NPC);
-        hazards.Add(fire);       
+        hazards.Add(fire);
         hazards.Add(open);
         hazards.Add(blanket);
         hazards.Add(nullObject);
         hazards.Add(security);
         hazards.Add(skyscraperCleaner);
-        player = service.GetComponent<LevelManager>().player;
-        StartCoroutine(MakeHazard());
-
     }
-      
-
     IEnumerator MakeHazard()
     {
         while (true)
         {
             yield return new WaitForSeconds(delaytime);
-            for(int i=0;i<1;i++)
-            SpawnHazard();
+            for (int i = 0; i < 1; i++)
+                StartCoroutine(DisableHazard(SpawnHazard(), lifeTime));
         }
                         
     }
-    IEnumerator WaitHalfSecond()
+    private IEnumerator DisableHazard(GameObject hazard, float lifeTime)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(hazard);
     }
     GameObject SelectWindow(List<GameObject> windows, GameObject nextMap) 
     {
@@ -123,28 +127,28 @@ public class HazardManager : Singleton<HazardManager>
         return weight.Length - 1;
     }
 
-    public void SpawnHazard()
+    public GameObject SpawnHazard()
     {
         float[] randomX = { 335.0f, 360.0f, 385.0f };
         windows = SelectMap().GetComponent<WindowList>().windows;
         GameObject window = SelectWindow(windows, nextMap);
         HigherThanPlayerWins.Clear();
-        int i = SelectHazard(weight); 
-        if(i == 5)
+        int i = SelectHazard(weight);
+        GameObject temp = Instantiate(hazards[i]);
+        if (i == 5)
         {
-            hazards[i].transform.position = new Vector3(0, 0, 0);
+            temp.transform.position = new Vector3(0, 0, 0);
         }
         else if (i == 6)
         {
-            hazards[i].transform.position = new Vector3(randomX[Random.Range(0,2)],player.transform.position.y + 187, 0);
+            temp.transform.position = new Vector3(randomX[Random.Range(0,2)], player.transform.position.y + 187, 0);
         }
         else
         {
-            hazards[i].transform.position = window.transform.position;
-        }
-        GameObject temp = Instantiate(hazards[i]);
-        if(i != weight.Length-1)
-            temp.GetComponent<Hazard>().Function(window);              
+            temp.transform.position = window.transform.position;
+        }                
+        temp.GetComponent<Hazard>().Function(window);
+        return temp;
     }
       
 }

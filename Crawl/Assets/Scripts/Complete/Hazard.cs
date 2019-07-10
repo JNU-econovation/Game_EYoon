@@ -14,16 +14,6 @@ abstract public class Hazard : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
-    
-    private void OnEnable()
-    {
-        StartCoroutine(DestroySelf());
-    }
-    public IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
-    }
-
+     
     public abstract void Function(GameObject window);    
 }
