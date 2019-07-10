@@ -11,11 +11,6 @@ public class Block : MonoBehaviour
     public float hp;
     Window window;
 
-    private void OnEnable()
-    {
-       
-    }   
-
     void Update()
     {
         transform.Translate(Vector3.up * speed);
@@ -25,7 +20,7 @@ public class Block : MonoBehaviour
     {
         if (collider.gameObject.tag == "Bullet")
         {
-            Destroy(collider.gameObject);
+            Destroy(collider.gameObject); // 총알 제거
             hp -= collider.gameObject.GetComponent<Bullet>().damage;
             if (hp <= 0)
             {

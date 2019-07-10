@@ -17,8 +17,7 @@ public class Security : Hazard
     {
         ray = new Ray2D(transform.position, Vector2.down);
         rayHit = Physics2D.Raycast(transform.position, Vector2.down, distance, playerLayerMask);
-
-        print(rayHit.collider);
+       
 
         if (rayHit && rayHit.collider.gameObject.tag == "Player")
         {

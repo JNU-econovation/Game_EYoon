@@ -6,7 +6,7 @@ public class WindowOpen : Hazard
 {
     public override void Function(GameObject window)
     {
-        GameObject temp = ItemManager.Instance.MakeItem(transform.position);        
+        ItemManager.Instance.MakeItem(transform.position);        
     }
     
 }
