@@ -12,11 +12,11 @@ public class HPUI : MonoBehaviour
     float hp;
     float maxHp;
 
-    private void Awake()
+    private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
-        heart = GetComponent<Image>();
-        hpValue = GetComponentInChildren<Text>();
+        heart = GetComponentInParent<Image>();
+        hpValue = GetComponent<Text>();
        
     }
 
@@ -24,7 +24,7 @@ public class HPUI : MonoBehaviour
     {
         hp = player.GetComponent<Health>().hp;
         maxHp = player.GetComponent<Health>().maxHp;
-        hpValue.text = ((int)hp).ToString();
+        hpValue.text = ((int)hp).ToString() + "/100";
         heart.fillAmount = hp / maxHp;
     }
 }
