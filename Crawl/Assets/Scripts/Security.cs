@@ -7,8 +7,7 @@ public class Security : Hazard
     Ray2D ray;
     RaycastHit2D rayHit;
     float distance = 200;
-    [SerializeField] GameObject smallWarning;
-    [SerializeField] GameObject bigWarning;
+    [SerializeField] GameObject siren;
     [SerializeField] int delay; //경고가 뜬 후 경비가 나타나기까지의 시간
     [SerializeField] int existTime; // 경비가 존재하는 시간
     public LayerMask playerLayerMask;
@@ -37,15 +36,9 @@ public class Security : Hazard
         GameObject warning;
         Vector3 windowPos;
         windowPos = window.transform.position;
-        if (window.name == "window2")
-        {
-            warning = Instantiate(bigWarning);
-        }
-        else
-        {
-            warning = Instantiate(smallWarning);
-        }
-        warning.transform.position = new Vector3(windowPos.x, windowPos.y - 90.2f, windowPos.z);
+
+        warning = Instantiate(siren);
+        warning.transform.position = new Vector3(windowPos.x, windowPos.y, windowPos.z);
 
         yield return new WaitForSeconds(delay);
   
