@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlanketAnim : MonoBehaviour
+public class LargeBlanketAnim : Hazard
 {
-
-    public float lifeTime = 5.0f;
     public GameObject dark;
     public Sprite black;
     private void OnEnable()
@@ -19,9 +17,12 @@ public class BlanketAnim : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Function()
+    public override void Function(GameObject window)
     {
-        StartCoroutine(Dark());       
+        float diffYpos = transform.position.y - player.transform.position.y;
+        float diffXpos = transform.position.x - player.transform.position.x;
+        if (0 <= diffYpos && diffYpos <= 40 && diffXpos <= 20)
+            StartCoroutine(Dark());
     }
     public IEnumerator Dark()
     {

@@ -9,7 +9,7 @@ abstract public class Hazard : MonoBehaviour
     public float lifeTime = 5.0f;
    
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 

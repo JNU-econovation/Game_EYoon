@@ -20,7 +20,7 @@ public class WeatherManager : MonoBehaviour
         rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
         weather.Add(nullObject);
-        StartCoroutine(ChangeWeather());
+    //    StartCoroutine(ChangeWeather());
                             
     }
     

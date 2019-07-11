@@ -15,22 +15,19 @@ public class DustOffBlanket : Hazard
     public override void Function(GameObject window)
     {
         GameObject blanket;
-    //    GameObject wall;
         if (window.name == "window2")
         {
             blanket = Instantiate(LargeBlanketAnim);
-    //        wall = Instantiate(largeBlanketWall);
+            blanket.GetComponent<LargeBlanketAnim>().Function(window);
         }
 
         else
         {
             blanket = Instantiate(SmallBlanketAnim);
-   //         wall = Instantiate(smallBlanketWall);
+            blanket.GetComponent<SmallBlanketAnim>().Function(window);
         }
         blanket.transform.position = transform.position;
-  //      wall.transform.position = transform.position;
-
-  //      Destroy(wall, existTime);
+  
     }   
     
 }

@@ -15,6 +15,7 @@ public class Block : MonoBehaviour
     {
         transform.Translate(Vector3.up * speed);
     }
+
     private void OnEnable()
     {
         StartCoroutine(DestroySelf());

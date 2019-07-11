@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlanketAnim : MonoBehaviour
+public class SmallBlanketAnim : Hazard
 {
-
-    public float lifeTime = 5.0f;
     public GameObject dark;
     public Sprite black;
     private void OnEnable()
@@ -18,14 +16,18 @@ public class BlanketAnim : MonoBehaviour
         yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
-
-    void Function()
-    {
-        StartCoroutine(Dark());       
-    }
+   
     public IEnumerator Dark()
     {
         yield return new WaitForSeconds(3.0f);
         dark.GetComponent<SpriteRenderer>().sprite = black;
+    }
+
+    public override void Function(GameObject window)
+    {
+        print(1111111);
+        float diffPos = transform.position.y - player.transform.position.y;
+        if(0<= diffPos && diffPos <= 40)
+             StartCoroutine(Dark());
     }
 }
