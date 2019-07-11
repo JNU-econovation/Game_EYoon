@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 0.7
+  forwardSpeed: 0.5
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:
@@ -242,9 +242,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e39e50430062f4096b8b380e71f0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blanketLayerMask:
+  UpBlanketLayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 0
+  RightBlanketLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  LeftBlanketLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4

@@ -10,10 +10,15 @@ public class PlayerRayCast : MonoBehaviour
    
     RaycastHit2D rightHit;
     RaycastHit2D leftHit;
-    RaycastHit2D upHit;
+    RaycastHit2D downHit;
     
-    float distance = 1.0f;
-    [SerializeField] LayerMask blanketLayerMask;
+    float upDistance = 1.0f;
+    float sideDistance = 7.0f;
+    [SerializeField] LayerMask UpBlanketLayer;
+    [SerializeField] LayerMask RightBlanketLayer;
+    [SerializeField] LayerMask LeftBlanketLayer;
+
+
 
     float originalLeftSpeed;
     float originalRightSpeed;
@@ -31,28 +36,31 @@ public class PlayerRayCast : MonoBehaviour
 
         rightRay = new Ray2D(transform.position, Vector2.right);
         leftRay = new Ray2D(transform.position, Vector2.left);
-        upRay = new Ray2D(transform.position, Vector2.up);
+        upRay = new Ray2D(transform.position, Vector2.down);
         
-        rightHit = Physics2D.Raycast(transform.position, Vector2.right, distance, blanketLayerMask);
-        leftHit = Physics2D.Raycast(transform.position, Vector2.left, distance, blanketLayerMask);
-        upHit = Physics2D.Raycast(transform.position, Vector2.up, distance, blanketLayerMask);
-        
+        rightHit = Physics2D.Raycast(transform.position, Vector2.right, sideDistance, RightBlanketLayer);
+        leftHit = Physics2D.Raycast(transform.position, Vector2.left, sideDistance, LeftBlanketLayer);
+        downHit = Physics2D.Raycast(transform.position, Vector2.down, upDistance, UpBlanketLayer);
 
-        if (rightHit)
-            InputManager.Instance.rightSpeed = 0;
-        else
-            InputManager.Instance.rightSpeed = originalRightSpeed;
-        if (leftHit)
-            InputManager.Instance.leftSpeed = 0;
-        else
-            InputManager.Instance.leftSpeed = originalLeftSpeed;
-        if (upHit)
-            GetComponent<PlayerMove>().forwardSpeed = 0;
-        else
-            GetComponent<PlayerMove>().forwardSpeed = originalUpSpeed;
-            
 
+        //if (rightHit)
+        //    rightHit.collider.gameObject.GetComponent<BlanketAnim>().ActiveFunction();
+        //else
+        //    rightHit.collider.gameObject.GetComponent<BlanketAnim>().InactiveFunction();
         
+        //if (leftHit)
+        //    rightHit.collider.gameObject.GetComponent<BlanketAnim>().Function();
+
+
+        //else
+        //    InputManager.Instance.leftSpeed = originalLeftSpeed;
+        //if (downHit)
+        //    rightHit.collider.gameObject.GetComponent<BlanketAnim>().Function();
+        //else
+        //    GetComponent<PlayerMove>().forwardSpeed = originalUpSpeed;
+
+
+
     }
 
 

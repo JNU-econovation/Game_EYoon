@@ -8,8 +8,6 @@ public class DustOffBlanket : Hazard
     float playerYpos;
     float blanketYpos;
     int existTime = 4;
-    public GameObject largeBlanketWall;
-    public GameObject smallBlanketWall;
     public GameObject LargeBlanketAnim;
     public GameObject SmallBlanketAnim;
     public override void Function(GameObject window)
@@ -18,13 +16,13 @@ public class DustOffBlanket : Hazard
         if (window.name == "window2")
         {
             blanket = Instantiate(LargeBlanketAnim);
-            blanket.GetComponent<LargeBlanketAnim>().Function(window);
+
         }
 
         else
         {
             blanket = Instantiate(SmallBlanketAnim);
-            blanket.GetComponent<SmallBlanketAnim>().Function(window);
+        
         }
         blanket.transform.position = transform.position;
   

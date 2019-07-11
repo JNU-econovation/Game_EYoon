@@ -7,7 +7,7 @@ public class BlanketAnim : MonoBehaviour
 
     public float lifeTime = 5.0f;
     public GameObject dark;
-    public Sprite black;
+    public GameObject black;
     private void OnEnable()
     {
         StartCoroutine(DestroySelf());
@@ -19,13 +19,31 @@ public class BlanketAnim : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Function()
+  public  void ActiveFunction()
     {
-        StartCoroutine(Dark());       
+        dark.SetActive(false);
+        black.SetActive(true);
+    }
+    public void InactiveFunction()
+    {
+        black.SetActive(false);
+        dark.SetActive(true);
     }
     public IEnumerator Dark()
     {
         yield return new WaitForSeconds(3.0f);
-        dark.GetComponent<SpriteRenderer>().sprite = black;
+  
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player")
+        {
+            ActiveFunction();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        InactiveFunction(); 
     }
 }
