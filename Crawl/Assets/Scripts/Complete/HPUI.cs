@@ -12,7 +12,7 @@ public class HPUI : MonoBehaviour
     float hp;
     float maxHp;
 
-    private void Start()
+    private void Awake()
     {
         player = service.GetComponent<LevelManager>().player;
         heart = GetComponent<Image>();
