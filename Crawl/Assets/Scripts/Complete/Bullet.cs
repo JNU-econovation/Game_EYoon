@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public GameObject target;
     public int damage;
-    public float lifeTime = 5.0f;
+    public float lifeTime;
    
     private void OnEnable()
     {
@@ -30,7 +30,8 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
-    {        
+    {
+
         if (collider.gameObject == target && collider.gameObject.tag == "Window")
         {
             Window window = collider.gameObject.GetComponent<Window>();

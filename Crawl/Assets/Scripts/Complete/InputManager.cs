@@ -28,7 +28,12 @@ public class InputManager : Singleton<InputManager>
         else if (Input.GetKey(KeyCode.A))
             player.transform.Translate(Time.deltaTime * Vector3.left * leftSpeed);
                         
-        //마우스 좌클릭
+        
+    }
+
+}
+
+/*//마우스 좌클릭
         if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;
@@ -46,10 +51,7 @@ public class InputManager : Singleton<InputManager>
             }
             
         }
-    }
-
-}
-
+        */
 /* 모바일 구동
  * if (Application.platform == RuntimePlatform.Android)
      {
