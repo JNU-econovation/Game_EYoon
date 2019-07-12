@@ -26,44 +26,16 @@ public class MobileInputManager : MonoBehaviour
     void FixedUpdate()
     {
       //  Debug.DrawLine(new Vector3(110, transform.position.y), new Vector3(610, transform.position.y));
-        if (Input.touchCount == 1)
+       
+        if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchPos = touch.position;
             if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
             {
-                if (touchPos.y < Screen.height / 5)
-                {
-                    PlayerMove(0);
-                }
-                else
-                {
-                    ShootBullet(0);
-                }
+                PlayerMove(0);
             }
         }
-        else if(Input.touchCount > 1)
-        {
-            for(int i = 0; i < Input.touchCount; i++)
-            {
-                Touch touch = Input.GetTouch(i);
-                Vector3 touchPos = touch.position;
-                
-                if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
-                {
-                    if (touchPos.y < Screen.height / 10)
-                    {
-                        PlayerMove(i);
-                    }
-                    else
-                    {
-                        ShootBullet(i);
-                    }
-                }                                                   
-
-            }                       
-            
-        }                                 
 
     }
     void PlayerMove(int i)
@@ -82,6 +54,7 @@ public class MobileInputManager : MonoBehaviour
             player.transform.position += diffpos / 10;
         }
     }
+    /*
     void ShootBullet(int i)
     {
         Touch touch = Input.GetTouch(i);
@@ -101,7 +74,7 @@ public class MobileInputManager : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }
 
 /* 코드 메모
