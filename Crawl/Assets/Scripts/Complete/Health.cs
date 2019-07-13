@@ -17,6 +17,16 @@ public class Health : MonoBehaviour
             hp = 0.0f;
         HPImage.fillAmount = hp / maxHp;       
     }
-  
+
+    public void IncreaseHP(float increase)
+    {
+        hp += increase;
+    }
+
+    public void DecreaseHP(float decrease)
+    {
+        hp -= decrease;
+    }
+
 }
 

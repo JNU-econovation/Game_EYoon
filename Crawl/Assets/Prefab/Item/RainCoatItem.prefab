@@ -96,6 +96,8 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   lifeTime: 5
   increase: 0
+  rainMaker: {fileID: 6698720508621239661, guid: 28e88937e3efb234ba39de566f0a4a24,
+    type: 3}
 --- !u!61 &5305886090769629330
 BoxCollider2D:
   m_ObjectHideFlags: 0

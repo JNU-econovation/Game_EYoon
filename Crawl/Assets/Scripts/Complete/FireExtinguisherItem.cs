@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class FireExtinguisherItem : Item
 {
-    public int FireExCount = 0;
   
     public override void Function()
     {
         Inventory2.Instance.InsertItem(itemImage);
-        FireExCount = 3;         
+        player.GetComponent<Ability>().ChargeFireExCount();         
     }
     
    

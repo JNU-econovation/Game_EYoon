@@ -20,6 +20,10 @@ public class Window : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         hpImage.gameObject.SetActive(false);
     }
+    public void DecreaseHP(float decrease)
+    {
+        HP -= decrease;
+    }
     
     public void InitializeWindow()
     {

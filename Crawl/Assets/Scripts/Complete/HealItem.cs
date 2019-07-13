@@ -7,7 +7,7 @@ public class HealItem : Item
     public int increase;
     public override void Function()
     {
-        player.GetComponent<Health>().hp += increase;
+        player.GetComponent<Health>().IncreaseHP(increase);
     }
 
    

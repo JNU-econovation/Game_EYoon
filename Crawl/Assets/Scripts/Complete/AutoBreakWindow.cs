@@ -5,6 +5,7 @@ using UnityEngine;
 public class AutoBreakWindow : MonoBehaviour
 {
     int maxDistance = 10;
+
     private void Start()
     {
         StartCoroutine(Punch());
@@ -30,8 +31,8 @@ public class AutoBreakWindow : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Window")
             {
-                GameObject target = hit.collider.gameObject;               
-                target.GetComponent<Window>().HP -= GetComponent<Ability>().damage;
+                GameObject target = hit.collider.gameObject;
+                target.GetComponent<Window>().DecreaseHP(GetComponent<Ability>().damage);                
                 target.GetComponent<Window>().ChangeWindow();
             }
 

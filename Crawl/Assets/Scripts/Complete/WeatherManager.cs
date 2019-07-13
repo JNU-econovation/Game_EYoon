@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeatherManager : MonoBehaviour
+public class WeatherManager : Singleton<WeatherManager>
 {
     float rand;
     float delayTime = 7.0f;
@@ -13,6 +13,7 @@ public class WeatherManager : MonoBehaviour
     public GameObject service;
     public GameObject rain;
     public GameObject nullObject;
+    public bool isRain = false; 
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class WeatherManager : MonoBehaviour
         rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
         weather.Add(nullObject);
-    //    StartCoroutine(ChangeWeather());
+        StartCoroutine(ChangeWeather());
                             
     }
     
@@ -48,6 +49,8 @@ public class WeatherManager : MonoBehaviour
             int i = SelectIndex(weight);
             GameObject temp = weather[i];
             temp.SetActive(true);
+            isRain = true;
+            temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
             ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
             for(int j = 0; j < rain.Length; j++)
             {
@@ -63,5 +66,7 @@ public class WeatherManager : MonoBehaviour
     {
         yield return new WaitForSeconds(enableTime);
         weather.SetActive(false);
+        weather.GetComponent<RainMaker>().RecoverStaminaSpeed();
+        isRain = false;
     }
 }

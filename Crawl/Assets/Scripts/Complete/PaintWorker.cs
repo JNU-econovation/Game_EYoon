@@ -5,8 +5,8 @@ using UnityEngine;
 public class PaintWorker : Hazard
 {
     public float speed;
-    public int damage;
-    public int hp;
+    public float damage;
+    public float hp;
 
     private void Start()
     {

@@ -231,6 +231,9 @@ MonoBehaviour:
   avoidance: 0
   hp: 0
   fireExCount: 0
+  stamina: 100
+  staminaDecreaseSpeed: 2
+  isRain: 0
 --- !u!114 &6968185086891347187
 MonoBehaviour:
   m_ObjectHideFlags: 0

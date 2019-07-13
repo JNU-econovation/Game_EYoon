@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public GameObject target;
-    public int damage;
+    public float damage;
     public float lifeTime;
    
     private void OnEnable()
@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         if (collider.gameObject == target && collider.gameObject.tag == "Window")
         {
             Window window = collider.gameObject.GetComponent<Window>();
-            window.HP -= damage;           
+            window.GetComponent<Window>().DecreaseHP(damage);           
             Destroy(gameObject);            
             window.ChangeWindow();
         }

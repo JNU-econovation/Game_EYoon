@@ -2,24 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : MonoBehaviour
+public class Ability : Singleton<Ability>
 {
     public GameObject bullet;
-    public int bulletDamage;
+    public float bulletDamage;
     public GameObject fireEx;
-    public int damage;
-    public int armor;
-    public int maxArmor = 100;
+    public float damage;
+    public float armor;
+    public float maxArmor = 100;
     public float avoidance;
     public float hp;
     public int fireExCount;
-    
+    public float stamina;
+    float maxStamina = 100;
+    public float staminaDecreaseSpeed;
+    public bool isRain;
+
     void Awake()
     {
         hp = GetComponent<Health>().hp;
-        bulletDamage = bullet.GetComponent<Bullet>().damage;
-      //  fireExCount = fireEx.GetComponent<FireExtinguisherItem>().FireExCount; 
+        bulletDamage = bullet.GetComponent<Bullet>().damage;        
     }
 
-    
+    private void Update()
+    {
+        stamina -= Time.deltaTime * staminaDecreaseSpeed;
+    }
+    public void ChargeFireExCount()
+    {
+        fireExCount++;
+    }
+
+    public void IncreaseStamina(float increase)
+    {
+        stamina += increase;
+        if(stamina >= maxStamina)
+        {
+            stamina = maxStamina;
+        }
+    }
+
+    public void DecreaseStamina(float decrease)
+    {
+        stamina -= decrease;
+        if(stamina < 1)
+        {
+            stamina = 0;
+        }
+    }
 }
