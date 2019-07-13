@@ -25,10 +25,6 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.up * speed);
     }
 
-    public void ReferenceTarget(GameObject obj){
-        target = obj;
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
 

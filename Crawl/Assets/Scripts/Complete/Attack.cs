@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    GameObject target;   
-    public GameObject bullet;
-    public int NumberOfBullet;
+  
+}
 
-    private void Start()
-    {
-        NumberOfBullet = 100;
-    }   
+/* Shoot함수
+ *     GameObject target;   
+    public GameObject bullet;
+    public int NumberOfBullet;     
 
     public void Shoot(GameObject target, Vector3 mousePosition) 
     {
@@ -24,14 +23,4 @@ public class Attack : MonoBehaviour
                    
         NumberOfBullet--;     
     }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {        
-        if (collider.gameObject.tag == "Block")
-        {
-            GameObject block = collider.gameObject;
-            gameObject.GetComponent<Health>().hp -= block.GetComponent<Block>().damage;
-            Destroy(block);
-        } 
-    }
-}
+    */

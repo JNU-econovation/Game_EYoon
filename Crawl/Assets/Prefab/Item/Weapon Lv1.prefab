@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 0}
+  lifeTime: 5
 --- !u!61 &1282849725662112784
 BoxCollider2D:
   m_ObjectHideFlags: 0

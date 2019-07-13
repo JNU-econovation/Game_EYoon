@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 2515028090259809564}
   - component: {fileID: 7666453876792817285}
   - component: {fileID: 2515028090259809555}
-  - component: {fileID: 2515028090259809566}
   - component: {fileID: -1804885379557367661}
   - component: {fileID: 2515028090259809560}
   - component: {fileID: 2624472585311118398}
@@ -182,20 +181,6 @@ MonoBehaviour:
   - {fileID: 1231191690524089103, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
   - {fileID: 2110688798461368885, guid: 4cda1ac08460f4543801133de1cf10a0, type: 3}
   - {fileID: 7934058975833635808, guid: ed4221f816754b942a45cce09ce7b723, type: 3}
---- !u!114 &2515028090259809566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e243e6b8db2f641b9f4eaec19cf24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  NumberOfBullet: 100
 --- !u!114 &-1804885379557367661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,9 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  window1: {fileID: 1231191690524089103, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
-  window2: {fileID: 2110688798461368885, guid: 4cda1ac08460f4543801133de1cf10a0, type: 3}
-  window3: {fileID: 7934058975833635808, guid: ed4221f816754b942a45cce09ce7b723, type: 3}
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e39e50430062f4096b8b380e71f0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4

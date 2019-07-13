@@ -10,7 +10,7 @@ public class Ability : MonoBehaviour
     public int armor;
     public int maxArmor = 100;
     public float avoidance;
-    public int hp;
+    public float hp;
     public int fireExCount;
     
     void Awake()

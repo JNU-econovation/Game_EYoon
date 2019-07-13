@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    public float lifeTime = 5.0f;
+    public float lifeTime;
     public float speed;
-    public GameObject target;
     public int damage;
     public float hp;
     Window window;
@@ -36,7 +35,12 @@ public class Block : MonoBehaviour
             {
                 Destroy(gameObject);               
             }
-        }                           
+        }
+        if(collider.gameObject.tag == "Player")
+        {
+            collider.gameObject.GetComponent<Health>().hp -= damage;           
+            Destroy(gameObject);
+        }
         
     }
 }

@@ -16,7 +16,5 @@ public class BulletUI : MonoBehaviour
     }
     void Update()
     {
-        temp = player.GetComponent<Attack>().NumberOfBullet;
-        NOBullet.text = temp.ToString();
     }
 }

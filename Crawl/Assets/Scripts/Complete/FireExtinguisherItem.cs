@@ -12,13 +12,5 @@ public class FireExtinguisherItem : Item
         FireExCount = 3;         
     }
     
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            Function();
-            gameObject.SetActive(false);
-        }
-
-    }
+   
 }
