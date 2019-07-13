@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     public GameObject bullet;
+    public int bulletDamage;
     public GameObject fireEx;
     public int damage;
     public int armor;
@@ -16,7 +17,7 @@ public class Ability : MonoBehaviour
     void Awake()
     {
         hp = GetComponent<Health>().hp;
-        damage = bullet.GetComponent<Bullet>().damage;
+        bulletDamage = bullet.GetComponent<Bullet>().damage;
       //  fireExCount = fireEx.GetComponent<FireExtinguisherItem>().FireExCount; 
     }
 

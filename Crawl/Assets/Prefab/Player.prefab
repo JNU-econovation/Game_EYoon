@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 2515028090259809560}
   - component: {fileID: 2624472585311118398}
   - component: {fileID: 6968185086891347187}
+  - component: {fileID: 4076812001549341584}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
   m_Layer: 18
@@ -222,8 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
+  bulletDamage: 0
   fireEx: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b, type: 3}
-  damage: 0
+  damage: 20
   armor: 0
   maxArmor: 100
   avoidance: 0
@@ -239,6 +241,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6e39e50430062f4096b8b380e71f0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4076812001549341584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515028090259809562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90577423adac9aa4d859da1f45a37ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &2515028090259809567
