@@ -8,6 +8,6 @@ public class Resumebutton : MonoBehaviour
  public void ResumeGame()
     {
         Time.timeScale = 1;
-        Time.fixedDeltaTime = 1;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
 }

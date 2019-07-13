@@ -8,8 +8,8 @@ public class Backtomainmenu : MonoBehaviour
     // Start is called before the first frame update
   public void Backtothemainmenu()
     {
-        SceneManager.LoadScene("Mainmenu");
         Time.timeScale = 1;
-        Time.fixedDeltaTime = 1;
+        SceneManager.LoadScene("Mainmenu");
+       
     }
 }
