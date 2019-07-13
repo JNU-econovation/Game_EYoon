@@ -3145,7 +3145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a636db14f722a146a663312beb7a4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseSpeed: 0
   stamina: 100
+  service: {fileID: 4854051716300901137}
 --- !u!1001 &582272866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11946,23 +11948,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight:
-  - 0
-  - 100
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 25
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
   nullItem: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
     type: 3}
   healItem: {fileID: 5982769630630285754, guid: b76f983ee4a8c2e48ad4311b46450ae7,
