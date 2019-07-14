@@ -5,11 +5,21 @@ using UnityEngine;
 public class RainCoatItem : Item
 {
     public float increase;
-    
+    bool isRain;
+    public GameObject rainMaker;
+    private void Start()
+    {
+        
+    }
     public override void Function()
     {
-        Inventory2.Instance.InsertItem(itemImage);        
-        player.GetComponent<PlayerMove>().forwardSpeed += increase;          
+        isRain = WeatherManager.Instance.isRain;
+        if (isRain)
+        {
+            print(isRain);
+            rainMaker.GetComponent<RainMaker>().RecoverStaminaSpeed();
+        }
+        Inventory2.Instance.InsertItem(itemImage);
     }   
 
     

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PaintWorker : Hazard
 {
     public float speed;
-    public int damage;
-    public int hp;
+    public float damage;
+    public float hp;
 
     private void Start()
     {
@@ -23,16 +23,16 @@ public class PaintWorker : Hazard
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
-        {
-            collider.gameObject.GetComponent<Health>().hp -= damage;
-        }
         if (collider.gameObject.tag == "Bullet")
         {
             Destroy(collider.gameObject);
             hp -= collider.gameObject.GetComponent<Bullet>().damage;
             if (hp <= 0)
                 Destroy(gameObject);
+        }
+        if (collider.gameObject.tag == "Player")
+        {
+            collider.gameObject.GetComponent<Health>().hp -= damage;
         }
     }
 }
