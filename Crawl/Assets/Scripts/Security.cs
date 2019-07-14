@@ -20,8 +20,7 @@ public class Security : Hazard
 
         if (rayHit && rayHit.collider.gameObject.tag == "Player")
         {
-            print(1);
-            rayHit.collider.gameObject.GetComponent<Health>().hp = 0;
+            rayHit.collider.gameObject.GetComponent<IsSearch>().isSearch = true;
         }
     }
     public override void Function(GameObject window)

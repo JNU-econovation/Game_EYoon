@@ -5,16 +5,23 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float forwardSpeed;
+    public float originforwardSpeed;
     float xPos;
     public GameObject playerNearMap;
     public GameObject nextMap;
     public GameObject[] map;
-
+    private void Start()
+    {
+        originforwardSpeed = forwardSpeed;
+    }
     void Update()
     {
         xPos = Mathf.Clamp(transform.position.x, 330.0f, 390.0f);
-        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
-        transform.Translate(0, forwardSpeed, 0); // 앞으로 이동                   
+        transform.position = new Vector3(xPos, transform.position.y, transform.position.z); // 앞으로 이동  
+        if (Time.timeScale != 0)
+        {
+            transform.Translate(0, forwardSpeed, 0);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
