@@ -13,7 +13,6 @@ public class WeatherManager : Singleton<WeatherManager>
     public GameObject service;
     public GameObject rain;
     public GameObject nullObject;
-    public bool isRain = false; 
 
     private void Start()
     {
@@ -49,7 +48,6 @@ public class WeatherManager : Singleton<WeatherManager>
             int i = SelectIndex(weight);
             GameObject temp = weather[i];
             temp.SetActive(true);
-            isRain = true;
             temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
             ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
             for(int j = 0; j < rain.Length; j++)
@@ -67,6 +65,5 @@ public class WeatherManager : Singleton<WeatherManager>
         yield return new WaitForSeconds(enableTime);
         weather.SetActive(false);
         weather.GetComponent<RainMaker>().RecoverStaminaSpeed();
-        isRain = false;
     }
 }

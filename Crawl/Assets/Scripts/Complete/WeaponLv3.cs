@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class WeaponLv3 : Item
 {
-    
+
     public override void Function()
     {
-        WeaponInventory.Instance.InsertItem(itemImage, 3);
-        player.GetComponent<Ability>().damage = 30;
+        level = 3;
+        WeaponInventory.Instance.InsertItem(itemImage, level);
        
     }
    

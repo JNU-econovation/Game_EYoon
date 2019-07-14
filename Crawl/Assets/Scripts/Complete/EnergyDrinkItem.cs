@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLv4 : Item
+public class EnergyDrinkItem : Item
 {
-
     public override void Function()
     {
-        level = 4;
-        WeaponInventory.Instance.InsertItem(itemImage, level);
-        
+        player.GetComponent<Health>().IncreaseStamina(30);
     }
-
    
 }

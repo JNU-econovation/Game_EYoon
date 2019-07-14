@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class RainCoatItem : Item
 {
-    public float increase;
-    bool isRain;
     public GameObject rainMaker;
-
+    int itemLevel = 0;
     public override void Function()
-    { 
-        RaincoatInventory.Instance.InsertItem(itemImage);
-        isRain = WeatherManager.Instance.isRain;
-        if (isRain)
-        {
-            print(isRain);
-            rainMaker.GetComponent<RainMaker>().RecoverStaminaSpeed();
-        }       
+    {
+        itemLevel++;
+        RaincoatInventory.Instance.InsertItem(itemImage, itemLevel); 
+        rainMaker.GetComponent<RainMaker>().SpeedDownStaminaSpeed();               
     }   
 
     

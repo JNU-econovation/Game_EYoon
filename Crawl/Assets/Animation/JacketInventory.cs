@@ -12,12 +12,12 @@ public class JacketInventory : Singleton<JacketInventory>
     {
         levelText = GetComponentInChildren<Text>();
     }
-    public void InsertItem(Sprite itemImage)
+    public void InsertItem(Sprite itemImage, int level)
     {
         GetComponent<Image>().sprite = itemImage;
         jacketLevel++;
         if (jacketLevel >= maxLevel)
             jacketLevel = maxLevel;
-        levelText.text = jacketLevel.ToString();
+        levelText.text = level.ToString();
     }
 }

@@ -12,12 +12,12 @@ public class FireExInventory : Singleton<FireExInventory>
     {
         levelText = GetComponentInChildren<Text>();
     }
-    public void InsertItem(Sprite itemImage)
+    public void InsertItem(Sprite itemImage, int level)
     {
         GetComponent<Image>().sprite = itemImage;
         fireExLevel++;
         if (fireExLevel >= maxLevel)
             fireExLevel = maxLevel;
-        levelText.text = fireExLevel.ToString();
+        levelText.text = level.ToString();
     }
 }

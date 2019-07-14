@@ -10,6 +10,7 @@ public class ItemManager : Singleton<ItemManager>
     //빈템 치료 우비 소화기 패딩 골드 무기 1~5렙 방어구 1~5렙 순
     public float[] weight;
     public GameObject nullItem;
+    public GameObject energyItem;
     public GameObject healItem;
     public GameObject raincoatItem;
     public GameObject fireExItem;
@@ -30,6 +31,7 @@ public class ItemManager : Singleton<ItemManager>
     private void Awake()
     {
         item.Add(nullItem);
+        item.Add(energyItem);
         item.Add(healItem);
         item.Add(raincoatItem);
         item.Add(fireExItem);

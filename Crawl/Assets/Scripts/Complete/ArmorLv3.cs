@@ -6,8 +6,8 @@ public class ArmorLv3 : Item
 {
     public override void Function()
     {
-        ArmorInventory.Instance.InsertItem(itemImage, 3);
-        player.GetComponent<Ability>().armor = 10;
+        level = 3;
+        ArmorInventory.Instance.InsertItem(itemImage, level);
     }
     
 }

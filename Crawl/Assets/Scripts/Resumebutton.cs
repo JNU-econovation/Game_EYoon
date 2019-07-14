@@ -5,7 +5,6 @@ using UnityEngine;
 public class Resumebutton : MonoBehaviour
 {
     
-    // Start is called before the first frame update
  public void ResumeGame(LevelManager levelManager)
     {
         Time.timeScale = 1;

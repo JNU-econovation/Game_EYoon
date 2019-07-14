@@ -7,9 +7,12 @@ public class WeaponInventory : Singleton<WeaponInventory>
 {
     int weaponLevel = 0;
     Text levelText;
+    GameObject player;
+    public GameObject service;
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
+        player = service.GetComponent<LevelManager>().player;
     }
     public void InsertItem(Sprite itemImage, int level)
     {
@@ -17,6 +20,7 @@ public class WeaponInventory : Singleton<WeaponInventory>
         {
             GetComponent<Image>().sprite = itemImage;
             weaponLevel = level;
+            player.GetComponent<Ability>().bulletDamage = weaponLevel * 10;
         }
         levelText.text = weaponLevel.ToString();
 

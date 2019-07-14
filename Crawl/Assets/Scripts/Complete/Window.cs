@@ -23,6 +23,8 @@ public class Window : MonoBehaviour
     public void DecreaseHP(float decrease)
     {
         HP -= decrease;
+        if (HP <= 0)
+            HP = 0;
     }
     
     public void InitializeWindow()
@@ -34,30 +36,34 @@ public class Window : MonoBehaviour
 
     public void ChangeWindow()
     {
-        hpImage.gameObject.SetActive(true);
-        if (HP <= 0)
-            HP = 0;
         hpImage.fillAmount = HP / maxHP;
         if (maxHP * (0.66f) <= HP && HP < maxHP)
         {
+            hpImage.gameObject.SetActive(true);
             sr.sprite = brokenWindow[0];
         }
         else if (maxHP * (0.33f) <= HP && HP < maxHP * 0.66f)
         {
+            hpImage.gameObject.SetActive(true);
             sr.sprite = brokenWindow[1];
         }
         else if (0 < HP && HP < maxHP * 0.33f)
         {
+            hpImage.gameObject.SetActive(true);
             sr.sprite = brokenWindow[2];
         }
         else if (HP <= 0 && itemMade == false)
         {
+            hpImage.gameObject.SetActive(false);
             sr.sprite = brokenWindow[3];
             ItemManager.Instance.MakeItem(gameObject.transform.position);
             itemMade = true;
         }
-        else
+        else if(HP <= 0 && itemMade == true)
+        {           
             sr.sprite = brokenWindow[3];
+        }
+           
     }
     
 }

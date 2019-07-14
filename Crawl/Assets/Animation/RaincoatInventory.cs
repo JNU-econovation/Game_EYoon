@@ -12,13 +12,13 @@ public class RaincoatInventory : Singleton<RaincoatInventory>
     {
         levelText = GetComponentInChildren<Text>();
     }
-    public void InsertItem(Sprite itemImage)
+    public void InsertItem(Sprite itemImage, int level)
     {
         GetComponent<Image>().sprite = itemImage;
         raincoatLevel++;
         if (raincoatLevel >= maxLevel)
             raincoatLevel = maxLevel;
-        levelText.text = raincoatLevel.ToString();
+        levelText.text = level.ToString();
         
     }
 }

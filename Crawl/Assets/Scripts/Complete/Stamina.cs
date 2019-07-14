@@ -10,7 +10,7 @@ public class Stamina : MonoBehaviour
     GameObject player;
     public GameObject service;
 
-    float maxStamina = 100.0f;
+    float maxStamina;
     Image staminaImage;
     private void Start()
     {
@@ -19,7 +19,8 @@ public class Stamina : MonoBehaviour
     }
     private void Update()
     {
-        stamina = player.GetComponent<Ability>().stamina;
+        stamina = player.GetComponent<Health>().stamina;
+        maxStamina = player.GetComponent<Health>().maxStamina;
         staminaImage.fillAmount = stamina / maxStamina;
     }
 }

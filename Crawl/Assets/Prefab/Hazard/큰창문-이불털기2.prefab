@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3349009560825963462}
   - component: {fileID: 8790919095039753668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5755334502917626370}
   - component: {fileID: 5846651712836747375}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7764054693429820826}
   - component: {fileID: 144992490225271146}
   - component: {fileID: 1266795297095724975}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "\uD070\uCC3D\uBB38-\uC774\uBD88\uD138\uAE302"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7764054693429820829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: 6.913803, z: -5}
+  m_LocalPosition: {x: 360, y: 6.913803, z: 0}
   m_LocalScale: {x: 1.674, y: 1.6048622, z: 1}
   m_Children:
   - {fileID: 3349009560825963462}

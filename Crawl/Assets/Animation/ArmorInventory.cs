@@ -7,9 +7,12 @@ public class ArmorInventory : Singleton<ArmorInventory>
 {
     int armorLevel = 0;    
     Text levelText;
+    public GameObject service;
+    GameObject player;
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
+        player = service.GetComponent<LevelManager>().player;
     }
     public void InsertItem(Sprite itemImage, int level)
     {
@@ -17,6 +20,7 @@ public class ArmorInventory : Singleton<ArmorInventory>
         {
             GetComponent<Image>().sprite = itemImage;
             armorLevel = level;
+            player.GetComponent<Ability>().armor = armorLevel * 10;
         }
         levelText.text = armorLevel.ToString();
     }

@@ -87,13 +87,13 @@ GameObject:
   - component: {fileID: 7666453876792817285}
   - component: {fileID: 2515028090259809555}
   - component: {fileID: 3623161889090704715}
-  - component: {fileID: 2515028090259809566}
   - component: {fileID: -1804885379557367661}
   - component: {fileID: 2515028090259809560}
   - component: {fileID: 2624472585311118398}
   - component: {fileID: 6968185086891347187}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
+  - component: {fileID: -667215014753298890}
   m_Layer: 18
   m_Name: Player
   m_TagString: Player
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2515028090259809562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 360, y: 30, z: 0}
+  m_LocalPosition: {x: 360, y: 30, z: -5}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 2515028092036986814}
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 0.5
+  originforwardSpeed: 0
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
   map:
@@ -196,20 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSearch: 0
---- !u!114 &2515028090259809566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515028090259809562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e243e6b8db2f641b9f4eaec19cf24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  NumberOfBullet: 100
 --- !u!114 &-1804885379557367661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,9 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
-  window1: {fileID: 1231191690524089103, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
-  window2: {fileID: 2110688798461368885, guid: 4cda1ac08460f4543801133de1cf10a0, type: 3}
-  window3: {fileID: 7934058975833635808, guid: ed4221f816754b942a45cce09ce7b723, type: 3}
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +225,11 @@ MonoBehaviour:
   HPImage: {fileID: 2515028091681389644}
   hp: 100
   maxHp: 100
+  stamina: 100
+  maxStamina: 100
+  staminaDecreaseSpeed: 1
+  originalStaminaDecreaseSpeed: 0
+  hpDecreaseSpeed: 0.5
 --- !u!114 &2624472585311118398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,12 +243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
+  bulletDamage: 0
   fireEx: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b, type: 3}
-  damage: 0
+  damage: 20
   armor: 0
   maxArmor: 100
   avoidance: 0
-  hp: 0
   fireExCount: 0
 --- !u!114 &6968185086891347187
 MonoBehaviour:
@@ -273,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e39e50430062f4096b8b380e71f0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4
@@ -321,6 +309,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5771637, y: 1.7502131}
   m_EdgeRadius: 0
+--- !u!114 &-667215014753298890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515028090259809562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90577423adac9aa4d859da1f45a37ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2515028091681389646
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,11 +5,12 @@ using UnityEngine;
 public class JacketItem : Item
 {
     public int increase;
-
+    int itemLevel = 0;
 
     public override void Function()
     {
-        JacketInventory.Instance.InsertItem(itemImage);
+        itemLevel++;
+        JacketInventory.Instance.InsertItem(itemImage, itemLevel);
     }
    
    

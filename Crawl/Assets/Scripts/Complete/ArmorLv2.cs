@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ArmorLv2 : Item
 {
-
     public override void Function()
     {
-        ArmorInventory.Instance.InsertItem(itemImage , 2);
-        player.GetComponent<Ability>().armor = 10;
-        
+        level = 2;
+        ArmorInventory.Instance.InsertItem(itemImage , level);        
     }
    
 }
