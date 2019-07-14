@@ -38,7 +38,7 @@ public class Block : MonoBehaviour
         }
         if(collider.gameObject.tag == "Player")
         {
-            collider.gameObject.GetComponent<Health>().hp -= damage;           
+            collider.gameObject.GetComponent<Health>().DecreaseHP(damage);           
             Destroy(gameObject);
         }
         

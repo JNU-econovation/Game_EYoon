@@ -4462,7 +4462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685865071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -4755,8 +4755,8 @@ MonoBehaviour:
     type: 3}
   service: {fileID: 4854051716300901137}
   weight:
-  - 0
   - 100
+  - 0
   - 0
   - 0
   - 0
@@ -13224,7 +13224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight:
   - 0
-  - 100
   - 0
   - 0
   - 0
@@ -13236,10 +13235,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
   nullItem: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
     type: 3}
   energyItem: {fileID: 2832154580640265740, guid: 93120878a332ef2478ca380ad8fb0e1b,

@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     public float staminaDecreaseSpeed;
     public float originalStaminaDecreaseSpeed;
     public float hpDecreaseSpeed;
-
+    float armor;
     private void Start()
     {
         originalStaminaDecreaseSpeed = staminaDecreaseSpeed;
@@ -40,7 +40,10 @@ public class Health : MonoBehaviour
 
     public void DecreaseHP(float decrease)
     {
-        hp -= decrease;
+        float armor = GetComponent<Ability>().armor;
+        float maxArmor = GetComponent<Ability>().maxArmor;
+
+        hp -= decrease * (1 - armor / maxArmor);
     }
 
     public void IncreaseStamina(float increase)
