@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     GameObject player;
     bool GameOver = true;
     public GameObject coinItemPrefab;
+    public float height;
+    [SerializeField] Height Height;
     [SerializeField] GameObject GameOverUI;
     [SerializeField] GameObject ScoreUI;
     int delay = 3;
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-   
+        height = Height.ypos;
         if(GameOver==true && player.GetComponent<Health>().hp == 0 ||
             GameOver == true && player.GetComponent<IsSearch>().isSearch == true)
         {
