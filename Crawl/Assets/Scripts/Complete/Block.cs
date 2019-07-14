@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class Block : Hazard
 {
-    public float lifeTime;
     public float speed;
     public int damage;
     public float hp;
@@ -15,32 +14,37 @@ public class Block : MonoBehaviour
         transform.Translate(Vector3.up * speed);
     }
 
-    private void OnEnable()
+    void DecreaseHP(float damage)
     {
-        StartCoroutine(DestroySelf());
-    }
-
-    public IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Bullet")
         {
             Destroy(collider.gameObject); // 총알 제거
-            hp -= collider.gameObject.GetComponent<Bullet>().damage;
-            if (hp <= 0)
-            {
-                Destroy(gameObject);               
-            }
+            float bulletDamage = player.GetComponent<Ability>().bulletDamage;
+            DecreaseHP(bulletDamage);
         }
         if(collider.gameObject.tag == "Player")
         {
+            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
             collider.gameObject.GetComponent<Health>().DecreaseHP(damage);           
             Destroy(gameObject);
         }
+        
+    }
+
+    public override void Function(GameObject window)
+    {
         
     }
 }

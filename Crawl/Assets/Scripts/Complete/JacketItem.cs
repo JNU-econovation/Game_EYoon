@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class JacketItem : Item
 {
-    public int increase;
-    int itemLevel = 0;
+    static int itemLevel = 0;
 
     public override void Function()
     {
+        if (itemLevel > 5)
+            return;
         itemLevel++;
         JacketInventory.Instance.InsertItem(itemImage, itemLevel);
     }

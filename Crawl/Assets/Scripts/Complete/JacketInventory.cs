@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class JacketInventory : Singleton<JacketInventory>
 {
-    int jacketLevel = 0;
-    int maxLevel = 5;
     Text levelText;
     private void Start()
     {
@@ -14,10 +12,7 @@ public class JacketInventory : Singleton<JacketInventory>
     }
     public void InsertItem(Sprite itemImage, int level)
     {
-        GetComponent<Image>().sprite = itemImage;
-        jacketLevel++;
-        if (jacketLevel >= maxLevel)
-            jacketLevel = maxLevel;
+        GetComponent<Image>().sprite = itemImage;   
         levelText.text = level.ToString();
     }
 }

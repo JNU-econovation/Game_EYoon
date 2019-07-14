@@ -20,7 +20,12 @@ public class Security : Hazard
 
         if (rayHit && rayHit.collider.gameObject.tag == "Player")
         {
-            rayHit.collider.gameObject.GetComponent<IsSearch>().isSearch = true;
+            if (rayHit.collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
+            Manager.Instance.Gameover();
         }
     }
     public override void Function(GameObject window)
@@ -30,20 +35,12 @@ public class Security : Hazard
     }
     
     IEnumerator Petrol(GameObject window)
-    {
-        
-        GameObject warning;
-        Vector3 windowPos;
-        windowPos = window.transform.position;
+    {       
+        GameObject warning = Instantiate(siren);
+        warning.transform.position = window.transform.position;
 
-        warning = Instantiate(siren);
-        warning.transform.position = new Vector3(windowPos.x, windowPos.y, windowPos.z);
-
-        yield return new WaitForSeconds(delay);
-  
-
+        yield return new WaitForSeconds(delay);  
         Destroy(warning);
-
         gameObject.transform.position = window.transform.position;
 
     }

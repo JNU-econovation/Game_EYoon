@@ -62,7 +62,7 @@ public class ItemManager : Singleton<ItemManager>
         return weight.Length - 1;
     }
   
-    public GameObject MakeItem(Vector3 vector3)
+    public GameObject MakeItem(Vector3 vector3, float[] weight)
     { 
         int i = SelectIndex(weight);
         GameObject temp = Instantiate(item[i]);

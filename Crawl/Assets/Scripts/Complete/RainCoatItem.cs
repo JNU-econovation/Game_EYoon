@@ -5,10 +5,12 @@ using UnityEngine;
 public class RainCoatItem : Item
 {
     public GameObject rainMaker;
-    int itemLevel = 0;
+    static int itemLevel = 0;
     public override void Function()
     {
-        itemLevel++;
+        if (itemLevel > 5)
+            return;
+        itemLevel++;        
         RaincoatInventory.Instance.InsertItem(itemImage, itemLevel); 
         rainMaker.GetComponent<RainMaker>().SpeedDownStaminaSpeed();               
     }   

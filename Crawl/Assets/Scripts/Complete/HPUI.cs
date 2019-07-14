@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HPUI : MonoBehaviour
 {
-  //  Text hpValue; 
+    Text hpValue; 
     GameObject player;
     public GameObject service;
     Image heart;
@@ -16,7 +16,7 @@ public class HPUI : MonoBehaviour
     {
         player = service.GetComponent<LevelManager>().player;
         heart = GetComponentInParent<Image>();
-    //    hpValue = GetComponent<Text>();
+        hpValue = GetComponent<Text>();
        
     }
 
@@ -24,6 +24,7 @@ public class HPUI : MonoBehaviour
     {
         hp = player.GetComponent<Health>().hp;
         maxHp = player.GetComponent<Health>().maxHp;
+        hpValue.text = ((int)(player.GetComponent<Health>().hp)).ToString() + "/100";
         heart.fillAmount = hp / maxHp;
     }
 }

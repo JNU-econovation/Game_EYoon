@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 0}
-  damage: 20
+  damage: 5
   lifeTime: 0.3
 --- !u!61 &9051197326804292738
 BoxCollider2D:

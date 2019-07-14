@@ -121,5 +121,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   lifeTime: 5
-  increase: 0
+  increase: 1
   coin: 0

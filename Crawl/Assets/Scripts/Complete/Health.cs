@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public Image HPImage; //캐릭터 위의 hp바
+    public Text damagedAmount;
     public float hp;//캐릭터의 현재 체력
     public float maxHp; //캐릭터의 최대 체력
     public float stamina;
@@ -23,13 +24,13 @@ public class Health : MonoBehaviour
         if (hp >= maxHp)
             hp = maxHp;
         else if (hp <= 0.0f)
-            hp = 0.0f;
+            Manager.Instance.Gameover();
         stamina -= Time.deltaTime * staminaDecreaseSpeed;
         if (stamina <= 0)
         {
             stamina = 0;
             GetComponent<Health>().hp -= Time.deltaTime * hpDecreaseSpeed;
-        }      
+        }
         HPImage.fillAmount = hp / maxHp;       
     }
 
@@ -43,7 +44,11 @@ public class Health : MonoBehaviour
         float armor = GetComponent<Ability>().armor;
         float maxArmor = GetComponent<Ability>().maxArmor;
 
-        hp -= decrease * (1 - armor / maxArmor);
+        decrease = decrease * (1 - armor / maxArmor);
+        hp -= decrease;
+        if (hp <= 0)
+            Manager.Instance.Gameover();
+  //      damagedAmount.text = decrease.ToString();
     }
 
     public void IncreaseStamina(float increase)
