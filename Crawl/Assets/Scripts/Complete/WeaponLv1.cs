@@ -7,7 +7,7 @@ public class WeaponLv1 : Item
     
     public override void Function()
     {
-        Inventory1.Instance.InsertItem(itemImage, 1);
+        WeaponInventory.Instance.InsertItem(itemImage, 1);
         player.GetComponent<Ability>().damage = 10;
         
     }

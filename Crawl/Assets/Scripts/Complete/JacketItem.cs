@@ -9,7 +9,7 @@ public class JacketItem : Item
 
     public override void Function()
     {
-        Inventory2.Instance.InsertItem(itemImage);
+        JacketInventory.Instance.InsertItem(itemImage);
     }
    
    

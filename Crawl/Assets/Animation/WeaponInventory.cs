@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Inventory1 : Singleton<Inventory1>
+
+public class WeaponInventory : Singleton<WeaponInventory>
 {
-    public Sprite inventoryImage;
-    public int weaponLevel = 0;
+    int weaponLevel = 0;
+    Text levelText;
+    private void Start()
+    {
+        levelText = GetComponentInChildren<Text>();
+    }
     public void InsertItem(Sprite itemImage, int level)
     {
         if (level > weaponLevel)
@@ -13,5 +18,8 @@ public class Inventory1 : Singleton<Inventory1>
             GetComponent<Image>().sprite = itemImage;
             weaponLevel = level;
         }
+        levelText.text = weaponLevel.ToString();
+
+
     }
 }

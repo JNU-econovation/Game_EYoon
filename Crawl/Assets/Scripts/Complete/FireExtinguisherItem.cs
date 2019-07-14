@@ -7,7 +7,7 @@ public class FireExtinguisherItem : Item
   
     public override void Function()
     {
-        Inventory2.Instance.InsertItem(itemImage);
+        FireExInventory.Instance.InsertItem(itemImage);
         player.GetComponent<Ability>().ChargeFireExCount();         
     }
     

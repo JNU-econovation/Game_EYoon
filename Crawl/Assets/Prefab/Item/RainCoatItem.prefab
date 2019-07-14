@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8416775749145363495}
   - component: {fileID: 6707147100969485661}
-  - component: {fileID: 517033895571628944}
   - component: {fileID: 5305886090769629330}
+  - component: {fileID: -2756352829781551608}
   m_Layer: 0
   m_Name: RainCoatItem
   m_TagString: Untagged
@@ -81,23 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &517033895571628944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8439787241353383856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f72d0163156c69c4086159276ae349a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
-  lifeTime: 5
-  increase: 0
-  rainMaker: {fileID: 6698720508621239661, guid: 28e88937e3efb234ba39de566f0a4a24,
-    type: 3}
 --- !u!61 &5305886090769629330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,3 +107,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!114 &-2756352829781551608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439787241353383856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72d0163156c69c4086159276ae349a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 0}
+  lifeTime: 5
+  increase: 0
+  rainMaker: {fileID: 6698720508621239661, guid: 28e88937e3efb234ba39de566f0a4a24,
+    type: 3}

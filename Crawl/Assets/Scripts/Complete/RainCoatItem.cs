@@ -7,19 +7,16 @@ public class RainCoatItem : Item
     public float increase;
     bool isRain;
     public GameObject rainMaker;
-    private void Start()
-    {
-        
-    }
+
     public override void Function()
-    {
+    { 
+        RaincoatInventory.Instance.InsertItem(itemImage);
         isRain = WeatherManager.Instance.isRain;
         if (isRain)
         {
             print(isRain);
             rainMaker.GetComponent<RainMaker>().RecoverStaminaSpeed();
-        }
-        Inventory2.Instance.InsertItem(itemImage);
+        }       
     }   
 
     

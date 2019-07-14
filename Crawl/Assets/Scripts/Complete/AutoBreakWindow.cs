@@ -25,7 +25,7 @@ public class AutoBreakWindow : MonoBehaviour
 
     void BreakWindow()
     {
-        Vector3 targetPosition = transform.position + new Vector3(0, 10, 0);
+        Vector3 targetPosition = transform.position + new Vector3(0, 50, 0);
         RaycastHit2D hit = Physics2D.Raycast(targetPosition, transform.forward, maxDistance);
         if (hit)
         {
