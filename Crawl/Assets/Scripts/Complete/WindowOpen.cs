@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WindowOpen : Hazard
 {
+    public float[] itemWeight;
     public override void Function(GameObject window)
     {
-        ItemManager.Instance.MakeItem(transform.position);        
+        ItemManager.Instance.MakeItem(transform.position, itemWeight);        
     }
     
 }

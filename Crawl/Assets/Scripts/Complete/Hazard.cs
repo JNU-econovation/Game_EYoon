@@ -6,7 +6,7 @@ abstract public class Hazard : MonoBehaviour
 {
 
     protected GameObject player;
-    public float lifeTime = 5.0f;
+    public float lifeTime;
    
 
     void Awake()
@@ -14,6 +14,15 @@ abstract public class Hazard : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
-     
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());
+    }
+
+    public IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
     public abstract void Function(GameObject window);    
 }

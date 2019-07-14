@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GameManager : Singleton<GameManager>
+
+public class Manager : Singleton<Manager>
 {
     static public int coin;
     public Text coinText;
     GameObject player;
     bool GameOver = true;
-    public GameObject coinItemPrefab;
     public GameObject gameOverUI;
     public GameObject scoreUI;
     int delay = 3;
@@ -16,28 +16,21 @@ public class GameManager : Singleton<GameManager>
     {
         coin = 0;
         player = GetComponent<LevelManager>().player;
-    }
-
-    void Update()
-    {
-   
-        if(GameOver==true && player.GetComponent<Health>().hp == 0 ||
-            GameOver == true && player.GetComponent<IsSearch>().isSearch == true)
-        {
-            StartCoroutine(Gameover());
-        }
-        print(coin);
-    }
-
-    IEnumerator Gameover()
+    } 
+           
+    public void Gameover()
     {
         GameOver = false;
         player.GetComponent<PlayerMove>().forwardSpeed = 0;
         gameOverUI.SetActive(true);
-        yield return new WaitForSeconds(delay);
+        StartCoroutine(Delay(delay));
         scoreUI.SetActive(true);
     }
 
+    IEnumerator Delay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+    }
     public void IncreaseCoin(int n)
     {
         coin += n;

@@ -56,7 +56,8 @@ public class Window : MonoBehaviour
         {
             hpImage.gameObject.SetActive(false);
             sr.sprite = brokenWindow[3];
-            ItemManager.Instance.MakeItem(gameObject.transform.position);
+            float[] weight = ItemManager.Instance.weight;
+            ItemManager.Instance.MakeItem(gameObject.transform.position, weight);
             itemMade = true;
         }
         else if(HP <= 0 && itemMade == true)

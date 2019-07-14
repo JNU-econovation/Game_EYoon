@@ -1,49 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FireAnimation : MonoBehaviour
+public class FireAnimation : Hazard
 {
-    public GameObject fire;
-    public GameObject bullet;
-    float hp;
-    public float decrease;
-    float armor;
-    float maxArmor;
-    GameObject player;
-    float bulletDamage;
-    public float lifeTime = 5.0f;
-
-    private void OnEnable()
-    {
-        StartCoroutine(DestroySelf());
-    }
-
-    public IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
-    }
+    public float damage;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        maxArmor = player.GetComponent<Ability>().maxArmor;
-        armor = player.GetComponent<Ability>().armor;       
-        decrease = decrease * (1 - (armor / maxArmor));           
+        player = GameObject.FindGameObjectWithTag("Player");                
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {        
+        //화상피해
         if (collider.gameObject.tag == "Player")
-        {                     
-                Function();                               
+        {
+            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
+                
+            Function();                               
         }
         
     }
 
     void Function()
-    {              
-        player.GetComponent<Health>().hp -= (int)decrease;
+    {                     
         StartCoroutine(Damage());
     }
 
@@ -51,9 +36,13 @@ public class FireAnimation : MonoBehaviour
     {            
         for(int i = 0; i < 5; i++)
         {
-            player.GetComponent<Health>().hp -= (int)decrease;
+            player.GetComponent<Health>().DecreaseHP(damage);
             yield return new WaitForSeconds(1.0f);
         }       
     }
-   
+
+    public override void Function(GameObject window)
+    {
+        
+    }
 }

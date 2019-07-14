@@ -139,7 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ff406dba1db6f499ac34ac47a8b683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 0}
-  bullet: {fileID: 0}
-  decrease: 5
   lifeTime: 5
+  damage: 3

@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e035f46944f8144aa463fb2b472115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 1
   largeWindowFire: {fileID: 6710956042956999440, guid: 7e7f9db047f8045418749833db8fb3d7,
     type: 3}
   smallWindowFire: {fileID: 5316188715450036427, guid: 23e3039e22d8a564d95e4925e40f0a21,

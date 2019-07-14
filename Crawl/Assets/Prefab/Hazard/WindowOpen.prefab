@@ -93,3 +93,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
+  itemWeight:
+  - 20
+  - 15
+  - 15
+  - 1
+  - 1
+  - 1
+  - 40
+  - 2
+  - 1
+  - 0.4
+  - 0.1
+  - 0.05
+  - 2
+  - 1
+  - 0.3
+  - 0.1
+  - 0.05
