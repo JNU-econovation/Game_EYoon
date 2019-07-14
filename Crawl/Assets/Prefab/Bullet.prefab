@@ -198,7 +198,7 @@ MonoBehaviour:
   speed: 5
   target: {fileID: 0}
   damage: 5
-  lifeTime: 1
+  lifeTime: 0.3
 --- !u!61 &9051197326804292738
 BoxCollider2D:
   m_ObjectHideFlags: 0

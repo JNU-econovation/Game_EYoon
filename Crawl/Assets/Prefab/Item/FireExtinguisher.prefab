@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 0}
+  lifeTime: 5
   FireExCount: 3
 --- !u!61 &-2142719815082252811
 BoxCollider2D:

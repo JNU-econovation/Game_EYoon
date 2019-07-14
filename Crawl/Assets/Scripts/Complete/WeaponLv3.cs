@@ -11,13 +11,5 @@ public class WeaponLv3 : Item
         player.GetComponent<Ability>().damage = 30;
        
     }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            Function();
-            gameObject.SetActive(false);
-        }
-
-    }
+   
 }

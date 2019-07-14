@@ -7,10 +7,9 @@ using Random = UnityEngine.Random;
 public class ItemManager : Singleton<ItemManager>
 {
     float rand;
-    //빈템 총알 치료 우비 소화기 패딩 골드 무기 1~5렙 방어구 1~5렙 순
-    public float[] weight = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+    //빈템 치료 우비 소화기 패딩 골드 무기 1~5렙 방어구 1~5렙 순
+    public float[] weight;
     public GameObject nullItem;
-    public GameObject bulletItem;
     public GameObject healItem;
     public GameObject raincoatItem;
     public GameObject fireExItem;
@@ -31,7 +30,6 @@ public class ItemManager : Singleton<ItemManager>
     private void Awake()
     {
         item.Add(nullItem);
-        item.Add(bulletItem);
         item.Add(healItem);
         item.Add(raincoatItem);
         item.Add(fireExItem);
@@ -65,9 +63,8 @@ public class ItemManager : Singleton<ItemManager>
     public GameObject MakeItem(Vector3 vector3)
     { 
         int i = SelectIndex(weight);
-        GameObject temp = GetComponent<LevelManager>().items[i];
+        GameObject temp = Instantiate(item[i]);
         temp.transform.position = vector3;
-        temp.SetActive(true);
         return temp;
     }  
 

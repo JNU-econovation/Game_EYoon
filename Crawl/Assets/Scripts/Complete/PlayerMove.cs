@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float forwardSpeed;
+    public float originforwardSpeed;
     float xPos;
     public GameObject playerNearMap;
     public GameObject nextMap;
     public GameObject[] map;
-
+    private void Start()
+    {
+        originforwardSpeed = forwardSpeed;
+    }
     void Update()
     {
         xPos = Mathf.Clamp(transform.position.x, 330.0f, 390.0f);

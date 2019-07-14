@@ -27,6 +27,7 @@ public class Window : MonoBehaviour
         hpImage.fillAmount = 1.0f;
         hpImage.gameObject.SetActive(false);
     }
+
     public void ChangeWindow()
     {
         hpImage.gameObject.SetActive(true);
