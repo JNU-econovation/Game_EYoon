@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Project.unity
     guid: 84b324af9470caa44ba8ce8979f7f8b7
+  - enabled: 1
+    path: Assets/Scenes/PrefapForge.unity
+    guid: 9fd12e67a1d32ab4299a27a38d568e9b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

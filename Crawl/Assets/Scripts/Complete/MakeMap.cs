@@ -10,10 +10,10 @@ public class MakeMap : MonoBehaviour
     public GameObject map;   
     Vector3 movedPosition;
     public float moveDistance;
-   // GameManager GameManager;
-    //[SerializeField] GameObject roofTop;
+    Manager Manager;
+    [SerializeField] GameObject roofTop;
     List<GameObject> windows = new List<GameObject>();
-   // bool roof = true;
+    bool roof = true;
 
     void Start()
     {
@@ -21,13 +21,21 @@ public class MakeMap : MonoBehaviour
         player = service.GetComponent<LevelManager>().player;
         move = new Vector3(0, moveDistance, 0);
         movedPosition = map.transform.position + move;
-       // GameManager = service.GetComponent<GameManager>();
+        Manager = service.GetComponent<Manager>();
 
+    }
+    private void Update()
+    {
+        if (movedPosition.y >= Height.Instance.maxHeight)
+        {
+            gameObject.SetActive(false);
+            GetComponentInParent<WindowList>().DisableFloor();           
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
-        if (collider.gameObject == player /*&& GameManager.height < 500*/)
+        if (collider.gameObject == player && Manager.height < 500)
         {
             movedPosition = map.transform.position + move;
             map.transform.position = movedPosition;
@@ -44,12 +52,12 @@ public class MakeMap : MonoBehaviour
             }
 
         }
-        //else if (collider.gameObject == player && GameManager.height > 500 && roof ==true)
-        //{
-        //    roof = false;
-        //    Instantiate(roofTop, move, transform.rotation);
-        //}
-        
+        else if (collider.gameObject == player && Manager.height > 500 && roof == true)
+        {
+            roof = false;
+            roofTop.transform.position = move;
+        }
+
 
     }
 }
