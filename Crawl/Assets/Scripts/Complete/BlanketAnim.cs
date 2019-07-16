@@ -19,7 +19,11 @@ public class BlanketAnim : MonoBehaviour
         Destroy(gameObject);
     }
 
- 
+     IEnumerator RecoverReverseMove()
+    {
+        yield return new WaitForSeconds(4.0f);
+        MobileInputManager.Instance.isReverse = false;
+    }
  
  
 
@@ -31,6 +35,8 @@ public class BlanketAnim : MonoBehaviour
 
             InputManager.Instance.ChangeSideMove();
 
+            MobileInputManager.Instance.isReverse = true;
+            RecoverReverseMove();
         }
     }
   

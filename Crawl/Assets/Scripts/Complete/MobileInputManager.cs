@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 
-public class MobileInputManager : MonoBehaviour
+public class MobileInputManager : Singleton<MobileInputManager>
 {
-    Camera cam;
-    Attack attack;
     GameObject player;
     public GameObject target;
     Vector3 mousePosition;
@@ -15,17 +13,16 @@ public class MobileInputManager : MonoBehaviour
     private Vector3 startPos = Vector3.zero;
     private Vector3 endPos = Vector3.zero;
     private Vector3 targetPos = Vector3.zero;
-
+    public bool isReverse = false;
     void Start()
     {
-        cam = Camera.main;
-        player = GetComponentInParent<LevelManager>().player;
-        attack = player.GetComponent<Attack>();       
+
+        player = GetComponentInParent<LevelManager>().player;      
     }
     
     void FixedUpdate()
     {
-      //  Debug.DrawLine(new Vector3(110, transform.position.y), new Vector3(610, transform.position.y));
+      //  Debug.DrawLine(new Vector3(110, player.transform.position.y), new Vector3(610, player.transform.position.y));
        
         if(Input.touchCount > 0)
         {
@@ -33,10 +30,30 @@ public class MobileInputManager : MonoBehaviour
             Vector3 touchPos = touch.position;
             if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
             {
-                PlayerMove(0);
+                if (isReverse == false)
+                    PlayerMove(0);
+                else
+                    ReverseMove(0);
             }
         }
 
+    }
+
+    public void ReverseMove(int i)
+    {
+        Touch touch = Input.GetTouch(i);
+        Vector3 touchPos = touch.position;
+        Vector3 diffpos;
+        if (touch.phase == TouchPhase.Began)
+        {
+            startPos = touchPos;
+        }
+        if (touch.phase == TouchPhase.Moved)
+        {
+            diffpos = new Vector3(-(touchPos.x - startPos.x), 0.0f, 0.0f);
+            startPos = touchPos;
+            player.transform.position += diffpos / 10;
+        }
     }
     void PlayerMove(int i)
     {
