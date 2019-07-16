@@ -14,19 +14,52 @@ public class InputManager : Singleton<InputManager>
     public float sideSpeed;
     public float rightSpeed;
     public float leftSpeed;
+    float rightReverseSpeed;
+    float leftReverseSpeed;
+    float originRightSpeed;
+    float originLeftSpeed;
+    public bool isReverse = false;
     void Start()
     {
         cam = Camera.main;
         player = GetComponentInParent<LevelManager>().player;
         attack = player.GetComponent<Attack>();
+        originRightSpeed = rightSpeed;
+        originLeftSpeed = leftSpeed;
+        rightReverseSpeed = rightSpeed * -1;
+        leftReverseSpeed = leftSpeed * -1;
     }
 
+    public void ChangeSideMove()
+    {
+        if(isReverse == true)
+        {
+            rightSpeed = rightReverseSpeed;
+            leftSpeed = leftReverseSpeed;
+            StartCoroutine(ResetSideMove());
+        }
+        
+    }
+
+    IEnumerator ResetSideMove()
+    {
+        yield return new WaitForSeconds(4.0f);
+        rightSpeed = originRightSpeed;
+        leftSpeed = originLeftSpeed;
+        isReverse = false;
+    }
     void Update()
     {       
         if (Input.GetKey(KeyCode.D))
+        {
             player.transform.Translate(Time.deltaTime * Vector3.right * rightSpeed);
+        }
+           
         else if (Input.GetKey(KeyCode.A))
+        {
             player.transform.Translate(Time.deltaTime * Vector3.left * leftSpeed);
+        }
+    
                         
         
     }

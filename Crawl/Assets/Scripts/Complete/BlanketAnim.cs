@@ -19,31 +19,19 @@ public class BlanketAnim : MonoBehaviour
         Destroy(gameObject);
     }
 
-  public  void ActiveFunction()
-    {
-        dark.SetActive(false);
-        black.SetActive(true);
-    }
-    public void InactiveFunction()
-    {
-        black.SetActive(false);
-        dark.SetActive(true);
-    }
-    public IEnumerator Dark()
-    {
-        yield return new WaitForSeconds(3.0f);
-  
-    }
+ 
+ 
+ 
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
-            ActiveFunction();
+            InputManager.Instance.isReverse = true;
+
+            InputManager.Instance.ChangeSideMove();
+
         }
     }
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        InactiveFunction(); 
-    }
+  
 }

@@ -234,7 +234,7 @@ MonoBehaviour:
   damage: 20
   armor: 0
   maxArmor: 100
-  avoidance: 100
+  avoidance: 20
   fireExCount: 0
 --- !u!114 &-4379006342196232569
 MonoBehaviour:
