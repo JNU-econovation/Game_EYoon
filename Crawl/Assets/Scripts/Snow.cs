@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snow : MonoBehaviour
 {
     GameObject player;
-    [SerializeField] LevelManager LevelManager;
+    [SerializeField] GameObject service;
     int damage = 2;
     int delay = 1;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class Snow : MonoBehaviour
 
    IEnumerator SnowFunction()
     {
-        player = LevelManager.player;
+        player = service.GetComponent<LevelManager>().player;
         for (int i =0; i<5; i++)
         {
             player.GetComponent<Health>().DecreaseHP(damage);
