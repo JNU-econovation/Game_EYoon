@@ -11,7 +11,7 @@ public class Manager : Singleton<Manager>
     bool GameOver = true;
     public GameObject gameOverUI;
     public GameObject scoreUI;
-    int delay = 3;
+    float delay = 3;
     private void Start()
     {
         coin = 0;
@@ -24,12 +24,13 @@ public class Manager : Singleton<Manager>
         player.GetComponent<PlayerMove>().forwardSpeed = 0;
         gameOverUI.SetActive(true);
         StartCoroutine(Delay(delay));
-        scoreUI.SetActive(true);
     }
 
     IEnumerator Delay(float delay)
-    {
+    {        
         yield return new WaitForSeconds(delay);
+        scoreUI.SetActive(true);
+        Time.timeScale = 0;
     }
     public void IncreaseCoin(int n)
     {

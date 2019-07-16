@@ -345,7 +345,7 @@ MonoBehaviour:
   lifeTime: 20
   hpImage: {fileID: 2211534359212828152}
   speed: 0.6
-  damage: 5
+  damage: 100
   hp: 10
   maxHp: 10
   itemWeight:
