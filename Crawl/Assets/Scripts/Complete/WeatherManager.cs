@@ -7,14 +7,14 @@ public class WeatherManager : Singleton<WeatherManager>
     float rand;
     float delayTime = 7.0f;
     float enableTime = 3.0f;
-    float[] weight = { 50.0f, 0.0f,50.0f };
+    float[] weight = { 0.0f, 0.0f, 0.0f ,100.0f};
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
     public GameObject service;
     public GameObject rain;
     public GameObject nullObject;
     public GameObject snow;
-    public GameObject lightning;
+    public GameObject lightningMaker;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class WeatherManager : Singleton<WeatherManager>
         weather.Add(rain);
         weather.Add(nullObject);
         weather.Add(snow);
-        weather.Add(lightning);
+        weather.Add(lightningMaker);
         StartCoroutine(ChangeWeather());
                             
     }
@@ -51,9 +51,10 @@ public class WeatherManager : Singleton<WeatherManager>
             yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
             GameObject temp = weather[i];
-            temp.SetActive(true);
+            
             if (i == 0)
             {
+                temp.SetActive(true);
                 temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
                 ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
                 for (int j = 0; j < rain.Length; j++)
@@ -65,12 +66,16 @@ public class WeatherManager : Singleton<WeatherManager>
             }
             else if ( i == 2)
             {
+                temp.SetActive(true);
                 temp.GetComponent<Snow>().SnowEffect();
                 StartCoroutine(DisableSnow(temp, enableTime));
             }
             else if (i == 3)
             {
-
+                for(int j =0; j<Random.Range(1,3); j++)
+                {
+                    Instantiate(lightningMaker);
+                }
             }
            
         }

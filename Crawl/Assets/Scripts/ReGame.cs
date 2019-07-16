@@ -7,5 +7,6 @@ public class ReGame : MonoBehaviour
     public void Regame()
     {
         SceneManager.LoadScene("project");
+        Time.timeScale = 1;
     }
 }
