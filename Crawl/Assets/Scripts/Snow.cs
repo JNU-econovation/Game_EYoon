@@ -6,17 +6,20 @@ public class Snow : MonoBehaviour
 {
     GameObject player;
     [SerializeField] GameObject service;
-    int damage = 2;
-    int delay = 1;
+    static float damage = 2;
+    float delay = 1.0f;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+    }
     public void SnowEffect()
     {
-        StartCoroutine(SnowFunction());
+        StartCoroutine(Damage());
     }
 
-   IEnumerator SnowFunction()
-    {
+   IEnumerator Damage()
+    {       
         player = service.GetComponent<LevelManager>().player;
         for (int i =0; i<5; i++)
         {
@@ -24,4 +27,11 @@ public class Snow : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
     }
+
+    public void DecreaseDamage(float level)
+    {
+        damage = 2.0f - (0.2f * level);
+    }
+   
+
 }

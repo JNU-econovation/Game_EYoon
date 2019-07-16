@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class FireExInventory : Singleton<FireExInventory>
 {
-    int fireExLevel = 0;
-    int maxLevel = 5;
+    public int fireExCount = 0;
+    int maxfireExCount = 5;
     Text levelText;
+    public GameObject service;
+    GameObject player;
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
+        player = service.GetComponent<LevelManager>().player;
     }
-    public void InsertItem(Sprite itemImage, int level)
+    public void InsertItem(Sprite itemImage)
     {
         GetComponent<Image>().sprite = itemImage;
-        fireExLevel++;
-        if (fireExLevel >= maxLevel)
-            fireExLevel = maxLevel;
-        levelText.text = level.ToString();
+        fireExCount++;
+        if (fireExCount >= maxfireExCount)
+        {
+            fireExCount = maxfireExCount;            
+        }
+
+        levelText.text = fireExCount.ToString();
     }
 }

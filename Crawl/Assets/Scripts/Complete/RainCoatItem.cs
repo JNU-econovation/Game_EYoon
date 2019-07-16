@@ -8,7 +8,7 @@ public class RainCoatItem : Item
     static int itemLevel = 0;
     public override void Function()
     {
-        if (itemLevel > 5)
+        if (itemLevel >= 5)
             return;
         itemLevel++;        
         RaincoatInventory.Instance.InsertItem(itemImage, itemLevel); 

@@ -7,24 +7,23 @@ public class WeatherManager : Singleton<WeatherManager>
     float rand;
     float delayTime = 7.0f;
     float enableTime = 3.0f;
-    float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
+    public float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
 
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
     public GameObject service;
     public GameObject rain;
-    public GameObject nullObject;
     public GameObject snow;
-    public GameObject lightningMaker;
-
+    public GameObject lightning;
+    public GameObject nullObject;
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
         rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
-        weather.Add(nullObject);
         weather.Add(snow);
-        weather.Add(lightningMaker);
+        weather.Add(lightning);
+        weather.Add(nullObject);
         StartCoroutine(ChangeWeather());
                             
     }
@@ -65,17 +64,17 @@ public class WeatherManager : Singleton<WeatherManager>
                 
                 StartCoroutine(DisableRain(temp, enableTime));
             }
-            else if ( i == 2)
+            else if ( i == 1)
             {
                 temp.SetActive(true);
                 temp.GetComponent<Snow>().SnowEffect();
                 StartCoroutine(DisableSnow(temp, enableTime));
             }
-            else if (i == 3)
+            else if (i == 2)
             {
                 for(int j =0; j<Random.Range(1,3); j++)
                 {
-                    Instantiate(lightningMaker);
+                    Instantiate(lightning);
                 }
             }
            

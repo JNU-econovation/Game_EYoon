@@ -12,6 +12,7 @@ public class Ability : Singleton<Ability>
     public float maxArmor = 100.0f;
     public float avoidance;
     public int fireExCount;
+    int maxFireExCount = 5;
     float[] avoidWeight = new float[2];
     void Awake()
     {
@@ -21,6 +22,8 @@ public class Ability : Singleton<Ability>
     public void ChargeFireExCount()
     {
         fireExCount++;
+        if (fireExCount >= maxFireExCount)
+            fireExCount = maxFireExCount;
     }
     int SelectAvoid()
     {
@@ -40,5 +43,7 @@ public class Ability : Singleton<Ability>
     {
         return SelectAvoid() == 0;
     }
- 
+
+  
+
 }

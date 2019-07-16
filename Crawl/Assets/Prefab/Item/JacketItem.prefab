@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   lifeTime: 5
-  increase: 0
+  snow: {fileID: 2372033750699754723, guid: 819c1c094ba5b434283fce84bc93c300, type: 3}
 --- !u!61 &7271536258392426178
 BoxCollider2D:
   m_ObjectHideFlags: 0

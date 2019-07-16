@@ -7,7 +7,6 @@ public class Fire : Hazard
     public GameObject largeWindowFire;
     public GameObject smallWindowFire;
     GameObject fire;
-
     public override void Function(GameObject window)
     {
         gameObject.SetActive(false);

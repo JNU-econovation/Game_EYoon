@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     public GameObject playerPrefab;   
     public GameObject player;
     public GameObject rainMaker;
     public GameObject rainPrefab;
     public GameObject[] map;
-
+    public List<GameObject> fireList = new List<GameObject>();
     void Awake()
     {
         player = Instantiate(playerPrefab);       

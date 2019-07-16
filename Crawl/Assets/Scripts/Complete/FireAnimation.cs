@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FireAnimation : Hazard
+public class FireAnimation : Fire
 {
     public float damage;
     private void Awake()
@@ -11,6 +11,10 @@ public class FireAnimation : Hazard
         player = GameObject.FindGameObjectWithTag("Player");                
     }
 
+    private void OnEnable()
+    {
+        LevelManager.Instance.fireList.Add(gameObject);
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {        
         //화상피해

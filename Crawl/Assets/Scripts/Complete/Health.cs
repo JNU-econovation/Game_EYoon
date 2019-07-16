@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
         originalStaminaDecreaseSpeed = staminaDecreaseSpeed;
     }
     void Update()
-    {
+    { 
         if (hp >= maxHp)
             hp = maxHp;
         else if (hp <= 0.0f)
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         hp -= decrease;
         if (hp <= 0)
             Manager.Instance.Gameover();
-  //      damagedAmount.text = decrease.ToString();
+      //  damagedAmount.text = decrease.ToString();
     }
 
     public void IncreaseStamina(float increase)
@@ -68,5 +68,7 @@ public class Health : MonoBehaviour
             stamina = 0;
         }
     }
+
+   
 }
 
