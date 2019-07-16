@@ -7,11 +7,8 @@ public class WeatherManager : Singleton<WeatherManager>
     float rand;
     float delayTime = 7.0f;
     float enableTime = 3.0f;
-<<<<<<< HEAD
-    float[] weight = { 33.0f, 34.0f,33.0f };
-=======
-    float[] weight = { 0.0f, 0.0f, 0.0f ,100.0f};
->>>>>>> 7593e985e5c6d16b086d721f29409bd37404b10d
+    float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
+
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
     public GameObject service;
