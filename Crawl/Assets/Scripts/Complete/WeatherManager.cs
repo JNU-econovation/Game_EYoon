@@ -7,12 +7,13 @@ public class WeatherManager : Singleton<WeatherManager>
     float rand;
     float delayTime = 7.0f;
     float enableTime = 3.0f;
-    float[] weight = { 100.0f, 0.0f };
+    float[] weight = { 50.0f, 0.0f,50.0f };
     List<GameObject> weather = new List<GameObject>();
     GameObject player;
     public GameObject service;
     public GameObject rain;
     public GameObject nullObject;
+    public GameObject snow;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class WeatherManager : Singleton<WeatherManager>
         rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
         weather.Add(nullObject);
+        weather.Add(snow);
         StartCoroutine(ChangeWeather());
                             
     }
@@ -48,22 +50,39 @@ public class WeatherManager : Singleton<WeatherManager>
             int i = SelectIndex(weight);
             GameObject temp = weather[i];
             temp.SetActive(true);
-            temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
-            ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
-            for(int j = 0; j < rain.Length; j++)
+            if (i == 0)
             {
-                rain[j].Play();
+                temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
+                ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
+                for (int j = 0; j < rain.Length; j++)
+                {
+                    rain[j].Play();
+                }
+                
+                StartCoroutine(DisableRain(temp, enableTime));
             }
-            StartCoroutine(Disable(temp, enableTime));
+            else if ( i == 2)
+            {
+                temp.GetComponent<Snow>().SnowEffect();
+                StartCoroutine(DisableSnow(temp, enableTime));
+            }
+           
         }
     }
 
    
 
-    private IEnumerator Disable(GameObject weather, float enableTime)
+    private IEnumerator DisableRain(GameObject weather, float enableTime)
     {
         yield return new WaitForSeconds(enableTime);
         weather.SetActive(false);
         weather.GetComponent<RainMaker>().RecoverStaminaSpeed();
     }
+    IEnumerator DisableSnow(GameObject weather, float enableTime)
+    {
+        yield return new WaitForSeconds(enableTime);
+        weather.SetActive(false);
+        
+    }
+
 }
