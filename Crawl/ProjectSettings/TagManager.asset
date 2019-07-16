@@ -37,7 +37,7 @@ TagManager:
   - Rightblanket
   - Leftblanket
   - Player
-  - 
+  - Effects
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: 4
     uniqueID: 4011269353
+    locked: 0
+  - name: 5
+    uniqueID: 515571609
     locked: 0

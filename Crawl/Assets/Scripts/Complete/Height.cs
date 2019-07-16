@@ -19,7 +19,7 @@ public class Height : Singleton<Height>
     void Update()
     {
         height = player.transform.position.y / 10;
-        if(height >= 50)
+        if(height >= 500)
         {
             Manager.Instance.StopPlayer();
             Manager.Instance.GameComplete();
