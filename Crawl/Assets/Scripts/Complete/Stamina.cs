@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Stamina : MonoBehaviour
 {
-    public float decreaseSpeed;
     public float stamina;
     GameObject player;
     public GameObject service;

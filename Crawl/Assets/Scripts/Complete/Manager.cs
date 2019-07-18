@@ -9,47 +9,47 @@ public class Manager : Singleton<Manager>
     static public int coin;
     public Text coinText;
     GameObject player;
-    bool GameOver = true;
+    bool gameOver = true;
     public GameObject gameOverUI;
     public GameObject scoreUI;
-    float delay = 3;
     public GameObject GameCompleteUI;
-    public float height;
+    float delayTime = 3.0f;
+    public GameObject heightUI;
     private void Start()
     {
         coin = 0;
         player = GetComponent<LevelManager>().player;
     }
+   
     public void GameComplete()
     {
+        StopPlayer();
         GameCompleteUI.SetActive(true);
-        StartCoroutine(Complete());
+        StartCoroutine(LoadEndingScene());
     }
     public void Gameover()
     {
-        GameOver = false;
         StopPlayer();
         gameOverUI.SetActive(true);
-        StartCoroutine(Delay(delay));
-
+        StartCoroutine(Delay(delayTime));
+        gameOver = false;
     }
 
     public void StopPlayer()
     {
         player.GetComponent<PlayerMove>().forwardSpeed = 0;
-
     }
 
-    IEnumerator Delay(float delay)
+    IEnumerator Delay(float delayTime)
     {        
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delayTime);
         scoreUI.SetActive(true);
         Time.timeScale = 0;
 
     }
-    IEnumerator Complete()
+    IEnumerator LoadEndingScene()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene("PrefapForge");
     }
     public void IncreaseCoin(int n)

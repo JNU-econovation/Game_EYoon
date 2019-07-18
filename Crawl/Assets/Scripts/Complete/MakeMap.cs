@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class MakeMap : MonoBehaviour
 {
-    Vector3 move;
+    Vector3 moving;
     GameObject player;
-    public GameObject service;
-    public GameObject map;   
+    public GameObject service; 
     Vector3 movedPosition;
     public float moveDistance;
-    Manager Manager;
-    [SerializeField] GameObject roofTop;
     List<GameObject> windows = new List<GameObject>();
-    bool roof = true;
-
     void Start()
     {
-        windows = map.GetComponent<WindowList>().windows;
+        windows = GetComponentInParent<WindowList>().windows;
         player = service.GetComponent<LevelManager>().player;
-        move = new Vector3(0, moveDistance, 0);
-        movedPosition = map.transform.position + move;
-        Manager = service.GetComponent<Manager>();
+        moving = new Vector3(0, moveDistance, 0);
 
     }
+
     private void Update()
     {
-        if (movedPosition.y >= Height.Instance.maxHeight)
+       float maxHeight = service.GetComponent<LevelManager>().maxHeight;
+       if (movedPosition.y >= maxHeight)
         {
             gameObject.SetActive(false);
             GetComponentInParent<WindowList>().DisableFloor();           
@@ -35,10 +30,10 @@ public class MakeMap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
-        if (collider.gameObject == player && Manager.height < 500)
+        if (collider.gameObject == player)
         {
-            movedPosition = map.transform.position + move;
-            map.transform.position = movedPosition;
+            movedPosition = transform.position + moving;
+            GetComponentInParent<WindowList>().transform.position += moving;
 
             for (int i = 0; i < windows.Count; i++)
             {
@@ -51,13 +46,7 @@ public class MakeMap : MonoBehaviour
                 }
             }
 
-        }
-        else if (collider.gameObject == player && Manager.height > 500 && roof == true)
-        {
-            roof = false;
-            roofTop.transform.position = move;
-        }
-
+        }       
 
     }
 }

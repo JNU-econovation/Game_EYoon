@@ -23,7 +23,6 @@ public class FireExInventory : Singleton<FireExInventory>
         {
             fireExCount = maxfireExCount;            
         }
-
         levelText.text = fireExCount.ToString();
     }
 }

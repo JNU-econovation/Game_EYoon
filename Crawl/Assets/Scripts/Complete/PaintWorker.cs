@@ -31,7 +31,6 @@ public class PaintWorker : Hazard
             ItemManager.Instance.MakeItem(gameObject.transform.position, itemWeight);
         }           
         hpImage.fillAmount = hp / maxHp;
-        print(hpImage.fillAmount);
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

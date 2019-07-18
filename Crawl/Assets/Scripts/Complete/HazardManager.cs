@@ -14,9 +14,9 @@ public class HazardManager : Singleton<HazardManager>
     public GameObject nullObject;
     public GameObject security;
     public GameObject skyscraperCleaner;
-    public GameObject service;  
+    public GameObject service;
     //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 페인트공
-    public float[] weight = {0.0f, 100.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
+    public float[] weight;
     float rand;
     public GameObject[] map;
     GameObject nextMap;
@@ -56,6 +56,7 @@ public class HazardManager : Singleton<HazardManager>
         yield return new WaitForSeconds(lifeTime);
         Destroy(hazard);
     }
+
     GameObject SelectWindow(List<GameObject> windows, GameObject nextMap) 
     {
         List<GameObject> nextWindows = nextMap.GetComponent<WindowList>().windows;

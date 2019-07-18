@@ -8,17 +8,18 @@ public class RaincoatInventory : Singleton<RaincoatInventory>
     int raincoatLevel = 0;
     int maxLevel = 5;
     Text levelText;
+
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
     }
-    public void InsertItem(Sprite itemImage, int level)
+    public void InsertItem(Sprite itemImage)
     {
         GetComponent<Image>().sprite = itemImage;
         raincoatLevel++;
         if (raincoatLevel >= maxLevel)
             raincoatLevel = maxLevel;
-        levelText.text = level.ToString();
+        levelText.text = raincoatLevel.ToString();
         
     }
 }

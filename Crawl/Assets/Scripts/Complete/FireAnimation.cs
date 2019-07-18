@@ -10,10 +10,11 @@ public class FireAnimation : Fire
     {
         player = GameObject.FindGameObjectWithTag("Player");                
     }
-
+   
     private void OnEnable()
     {
         LevelManager.Instance.fireList.Add(gameObject);
+        StartCoroutine(DestroySelf());
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {        

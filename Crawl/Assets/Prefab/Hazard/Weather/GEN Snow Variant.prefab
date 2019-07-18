@@ -47,6 +47,23 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1423593463146905484, guid: 8a8d02102a1d940e7a090024a6d95e73,
+        type: 3}
+      propertyPath: enableTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668618271572560, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668618271572560, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668618271572560, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1861845745454228, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}
       propertyPath: m_Layer
       value: 19
@@ -58,6 +75,11 @@ PrefabInstance:
     - target: {fileID: 1152729245882542, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}
       propertyPath: m_Layer
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 199172096990651698, guid: 8a8d02102a1d940e7a090024a6d95e73,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198531756661606110, guid: 8a8d02102a1d940e7a090024a6d95e73,
         type: 3}
@@ -263,6 +285,21 @@ PrefabInstance:
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198366221659805230, guid: 8a8d02102a1d940e7a090024a6d95e73,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 198366221659805230, guid: 8a8d02102a1d940e7a090024a6d95e73,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198366221659805230, guid: 8a8d02102a1d940e7a090024a6d95e73,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8d02102a1d940e7a090024a6d95e73, type: 3}

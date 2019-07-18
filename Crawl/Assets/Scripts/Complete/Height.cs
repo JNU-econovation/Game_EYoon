@@ -3,30 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Height : Singleton<Height>
+public class Height : MonoBehaviour
 {
     Text heightText;
-    GameObject player;
     public GameObject service;
-    public float ypos;
-    public float height;
-    public float maxHeight;
     private void Start()
     {
         heightText = GetComponent<Text>();
-        player = service.GetComponent<LevelManager>().player;
     }
+
     void Update()
     {
-        height = player.transform.position.y / 10;
-        if(height >= maxHeight / 10)
-        {
-            Manager.Instance.StopPlayer();
-            Manager.Instance.GameComplete();
-            
-        }
-        service.GetComponent<Manager>().height = ypos;
+        float height = service.GetComponent<LevelManager>().height;
         heightText.text = ((int)height).ToString() + "m";
-
     }
 }

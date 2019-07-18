@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class JacketInventory : Singleton<JacketInventory>
 {
     Text levelText;
+    public int jacketLevel = 0;
+    int maxLevel = 5;
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
     }
-    public void InsertItem(Sprite itemImage, int level)
+    public void InsertItem(Sprite itemImage)
     {
-        GetComponent<Image>().sprite = itemImage;   
-        levelText.text = level.ToString();
+        GetComponent<Image>().sprite = itemImage;
+        jacketLevel++;
+        if (jacketLevel >= maxLevel)
+            jacketLevel = maxLevel;
+        levelText.text = jacketLevel.ToString();
     }
 }

@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         originforwardSpeed = forwardSpeed;
+        playerNearMap = WindowList.Instance.map[0];
     }
     void Update()
     {
@@ -27,18 +28,18 @@ public class PlayerMove : MonoBehaviour
     {
         if (collider.tag == "map1")
         {
-            playerNearMap = map[0];
-            nextMap = map[1];
+            playerNearMap = WindowList.Instance.map[0];
+            nextMap = WindowList.Instance.map[1];
         }
         if (collider.tag == "map2")
         {
-            playerNearMap = map[1];
-            nextMap = map[2];
+            playerNearMap = WindowList.Instance.map[1];
+            nextMap = WindowList.Instance.map[2];
         }
         if (collider.tag == "map3")
         {
-            playerNearMap = map[2];
-            nextMap = map[0];
+            playerNearMap = WindowList.Instance.map[2];
+            nextMap = WindowList.Instance.map[0];
         }
            
     }

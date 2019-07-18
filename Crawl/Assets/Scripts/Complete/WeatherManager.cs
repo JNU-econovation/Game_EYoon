@@ -19,7 +19,7 @@ public class WeatherManager : Singleton<WeatherManager>
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
-        rain = service.GetComponent<LevelManager>().rainMaker;
+        //rain = service.GetComponent<LevelManager>().rainMaker;
         weather.Add(rain);
         weather.Add(snow);
         weather.Add(lightning);
@@ -50,50 +50,8 @@ public class WeatherManager : Singleton<WeatherManager>
         {
             yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
-            GameObject temp = weather[i];
-            
-            if (i == 0)
-            {
-                temp.SetActive(true);
-                temp.GetComponent<RainMaker>().SpeedUpDecreasingStamina();
-                ParticleSystem[] rain = temp.GetComponentsInChildren<ParticleSystem>();
-                for (int j = 0; j < rain.Length; j++)
-                {
-                    rain[j].Play();
-                }
-                
-                StartCoroutine(DisableRain(temp, enableTime));
-            }
-            else if ( i == 1)
-            {
-                temp.SetActive(true);
-                temp.GetComponent<Snow>().SnowEffect();
-                StartCoroutine(DisableSnow(temp, enableTime));
-            }
-            else if (i == 2)
-            {
-                for(int j =0; j<Random.Range(1,3); j++)
-                {
-                    Instantiate(lightning);
-                }
-            }
-           
+            weather[0].GetComponent<Weather>().MakeWeather();
+            weather[0].GetComponent<Weather>().Function();
         }
-    }
-
-   
-
-    private IEnumerator DisableRain(GameObject weather, float enableTime)
-    {
-        yield return new WaitForSeconds(enableTime);
-        weather.SetActive(false);
-        weather.GetComponent<RainMaker>().RecoverStaminaSpeed();
-    }
-    IEnumerator DisableSnow(GameObject weather, float enableTime)
-    {
-        yield return new WaitForSeconds(enableTime);
-        weather.SetActive(false);
-        
-    }
-
+    }  
 }
