@@ -25,7 +25,7 @@ public class Snow : Weather
         damage = 2.0f - (0.2f * level);
     }
 
-    public override void OnEnable()
+    public void OnEnable()
     {
         transform.position = Camera.main.transform.position + new Vector3(0, 50, 0);
         StartCoroutine(DisableSelf());
@@ -45,5 +45,6 @@ public class Snow : Weather
     public override void MakeWeather()
     {
         gameObject.SetActive(true);
+        Function();
     }
 }

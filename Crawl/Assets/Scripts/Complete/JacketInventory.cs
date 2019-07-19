@@ -14,7 +14,7 @@ public class JacketInventory : Singleton<JacketInventory>
     }
     public void InsertItem(Sprite itemImage)
     {
-        GetComponent<Image>().sprite = itemImage;
+    //    GetComponent<Image>().sprite = itemImage;
         jacketLevel++;
         if (jacketLevel >= maxLevel)
             jacketLevel = maxLevel;

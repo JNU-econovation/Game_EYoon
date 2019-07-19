@@ -24,7 +24,11 @@ public class Health : MonoBehaviour
         if (hp >= maxHp)
             hp = maxHp;
         else if (hp <= 0.0f)
+        {
+            hp = 0.0f;
             Manager.Instance.Gameover();
+        }
+
         stamina -= Time.deltaTime * staminaDecreaseSpeed;
         if (stamina <= 0)
         {

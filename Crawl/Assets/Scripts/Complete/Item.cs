@@ -34,10 +34,7 @@ abstract public class Item : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            if(level < 5)
-            {
-                Function();
-            }
+            Function();            
             Destroy(gameObject);
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLv2 : Item
+public class WeaponLv2 : WeaponItem
 {
 
 

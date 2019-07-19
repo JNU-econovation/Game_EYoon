@@ -12,7 +12,6 @@ public class MobileInputManager : Singleton<MobileInputManager>
     public float sideSpeed;
     private Vector3 startPos = Vector3.zero;
     private Vector3 endPos = Vector3.zero;
-    private Vector3 targetPos = Vector3.zero;
     public bool isReverse = false;
     void Start()
     {
@@ -28,13 +27,10 @@ public class MobileInputManager : Singleton<MobileInputManager>
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchPos = touch.position;
-            if (360 - 250 <= touchPos.x && touchPos.x <= 360 + 250)
-            {
-                if (isReverse == false)
-                    PlayerMove(0);
-                else
-                    ReverseMove(0);
-            }
+            if (isReverse == false)
+                PlayerMove(0);
+            else
+                ReverseMove(0);            
         }
 
     }

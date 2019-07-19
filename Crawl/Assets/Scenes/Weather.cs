@@ -6,7 +6,6 @@ abstract public class Weather : MonoBehaviour
 {
     public float enableTime;
 
-    abstract public void OnEnable();
     abstract public void MakeWeather();
     abstract public void Function();
 }

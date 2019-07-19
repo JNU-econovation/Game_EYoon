@@ -29,7 +29,7 @@ public class RainMaker : Weather
         
     }
 
-    public override void OnEnable()
+    public void OnEnable()
     {
         StartCoroutine(DisableSelf());
     }
@@ -49,6 +49,7 @@ public class RainMaker : Weather
         {
             rain[j].Play();
         }
+        Function();
     }
 
     public override void Function()

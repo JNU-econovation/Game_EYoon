@@ -25,6 +25,13 @@ public class Ability : Singleton<Ability>
         if (fireExCount >= maxFireExCount)
             fireExCount = maxFireExCount;
     }
+
+    public void DischargeFireExCount()
+    {
+        fireExCount--;
+        if (fireExCount <= 0)
+            fireExCount = 0;
+    }
     int SelectAvoid()
     {
         avoidWeight[0] = avoidance;

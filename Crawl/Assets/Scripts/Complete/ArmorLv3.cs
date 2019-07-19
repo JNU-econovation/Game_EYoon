@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorLv3 : Item
+public class ArmorLv3 : ArmorItem
 {
     public override void Function()
     {

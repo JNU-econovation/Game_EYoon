@@ -12,15 +12,15 @@ public class ArmorInventory : Singleton<ArmorInventory>
     private void Start()
     {
         levelText = GetComponentInChildren<Text>();
-        player = service.GetComponent<LevelManager>().player;
+    //    player = service.GetComponent<LevelManager>().player;
     }
     public void InsertItem(Sprite itemImage, int level)
     {
         if (level > armorLevel)
         {
-            GetComponent<Image>().sprite = itemImage;
+     //       GetComponent<Image>().sprite = itemImage;
             armorLevel = level;
-            player.GetComponent<Ability>().armor = armorLevel * 10;
+     //       player.GetComponent<Ability>().armor = armorLevel * 10;
         }
         levelText.text = armorLevel.ToString();
     }

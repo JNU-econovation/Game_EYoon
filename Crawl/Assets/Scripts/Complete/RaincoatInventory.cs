@@ -15,7 +15,7 @@ public class RaincoatInventory : Singleton<RaincoatInventory>
     }
     public void InsertItem(Sprite itemImage)
     {
-        GetComponent<Image>().sprite = itemImage;
+      //  GetComponent<Image>().sprite = itemImage;
         raincoatLevel++;
         if (raincoatLevel >= maxLevel)
             raincoatLevel = maxLevel;

@@ -5,7 +5,6 @@ using UnityEngine;
 public class LightningMaker : Weather
 {
     public GameObject warning;
-    public GameObject lightning;
     GameObject player;
     int numOfLight;
     int delay = 1;
@@ -23,16 +22,11 @@ public class LightningMaker : Weather
         GameObject siren = Instantiate(warning);
         siren.transform.position = new Vector2(Random.Range(335, 385), player.transform.position.y + Random.Range(10, 80));
         yield return new WaitForSeconds(delay);
-        GameObject temp = Instantiate(lightning);
+        GameObject temp = Instantiate(gameObject);
         temp.transform.position = siren.transform.position;     
         Destroy(siren);
         Destroy(temp, 1);
-    }
-
-    public override void OnEnable()
-    {
-       
-    }
+    }  
 
     public override void MakeWeather()
     {

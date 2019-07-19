@@ -50,8 +50,7 @@ public class WeatherManager : Singleton<WeatherManager>
         {
             yield return new WaitForSeconds(delayTime);
             int i = SelectIndex(weight);
-            weather[0].GetComponent<Weather>().MakeWeather();
-            weather[0].GetComponent<Weather>().Function();
+            weather[i].GetComponent<Weather>().MakeWeather();          
         }
     }  
 }

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoAttack : MonoBehaviour
+public class AutoAttack : Singleton<AutoAttack>
 {
     public GameObject bullet;
     GameObject target;
     int maxDistance = 10;
+    public bool isAttacking;
     private void Start()
     {
+        isAttacking = true;
         StartCoroutine(Shoot());
     }
 
@@ -16,11 +18,18 @@ public class AutoAttack : MonoBehaviour
     {
         while (true)
         {
+            if (isAttacking == true)
+                MakeBullet();
+            else
+                break;
             yield return new WaitForSeconds(0.2f);
-            MakeBullet();     
         }
 
+    }
 
+    public void StartAttack()
+    {
+        StartCoroutine(Shoot());
     }
 
     void MakeBullet()

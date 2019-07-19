@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLv5 : Item
+public class WeaponLv5 : WeaponItem
 {
 
     public override void Function()
