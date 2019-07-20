@@ -6,22 +6,17 @@ public class RainMaker : Weather
 {
     GameObject player;
     static float maxSpeed = 6.0f;
-    float startMaxSpeed;
-    private void Start()
+    float minSpeed = 1.0f;
+    public void DownStaminaSpeed()
     {
-        startMaxSpeed = maxSpeed;
+        maxSpeed -= 0.1f;
+        if (maxSpeed <= minSpeed)
+            maxSpeed = minSpeed;
     }
-    public void SpeedUpDecreasingStamina()
-    {       
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Health>().staminaDecreaseSpeed = maxSpeed;
-    }
-
-    public void SpeedDownStaminaSpeed()
+    private void Update()
     {
-        maxSpeed -= 1;
+        print(maxSpeed);
     }
-
     public void RecoverStaminaSpeed()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -54,7 +49,7 @@ public class RainMaker : Weather
 
     public override void Function()
     {
-        SpeedUpDecreasingStamina();
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Health>().staminaDecreaseSpeed = maxSpeed;
     }
 }

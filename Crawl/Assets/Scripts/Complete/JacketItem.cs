@@ -5,10 +5,15 @@ using UnityEngine;
 public class JacketItem : Item
 {
     public GameObject snow;
+    static int jacketLevel = 0;
+    void IncreaseLevel()
+    {
+        jacketLevel++;
+    }
     public override void Function()
-    {      
-        JacketInventory.Instance.InsertItem(itemImage);
-        snow.GetComponent<Snow>().DecreaseDamage();
+    {
+        IncreaseLevel();
+        snow.GetComponent<Snow>().DecreaseDamage(jacketLevel);
     }
 
     

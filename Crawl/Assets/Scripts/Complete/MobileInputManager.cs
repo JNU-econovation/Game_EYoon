@@ -20,8 +20,7 @@ public class MobileInputManager : Singleton<MobileInputManager>
     }
     
     void FixedUpdate()
-    {
-      //  Debug.DrawLine(new Vector3(110, player.transform.position.y), new Vector3(610, player.transform.position.y));
+    {      
        
         if(Input.touchCount > 0)
         {
@@ -48,7 +47,7 @@ public class MobileInputManager : Singleton<MobileInputManager>
         {
             diffpos = new Vector3(-(touchPos.x - startPos.x), 0.0f, 0.0f);
             startPos = touchPos;
-            player.transform.position += diffpos / 10;
+            player.transform.position += diffpos / 5;
         }
     }
     void PlayerMove(int i)

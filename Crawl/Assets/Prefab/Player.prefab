@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
+  isAttacking: 0
 --- !u!114 &2515028090259809560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,12 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
   bulletDamage: 0
-  fireEx: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b, type: 3}
   damage: 20
   armor: 0
   maxArmor: 100
   avoidance: 20
-  fireExCount: 0
 --- !u!114 &-4379006342196232569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90577423adac9aa4d859da1f45a37ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!50 &2515028090259809567
 Rigidbody2D:
   serializedVersion: 4

@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ArmorLv4 : ArmorItem
 {
-    public override void Function()
-    {
-        level = 4;
-        ArmorInventory.Instance.InsertItem(itemImage , level);
-    }
+ 
    
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AutoBreakWindow : MonoBehaviour
 {
     int maxDistance = 10;
-
+    public LayerMask layerMask = 0;
     private void Start()
     {
         StartCoroutine(Punch());
@@ -26,9 +26,11 @@ public class AutoBreakWindow : MonoBehaviour
     void BreakWindow()
     {
         Vector3 targetPosition = transform.position + new Vector3(0, 50, 0);
-        RaycastHit2D hit = Physics2D.Raycast(targetPosition, transform.forward, maxDistance);
+        RaycastHit2D hit = Physics2D.Raycast(targetPosition, transform.forward, maxDistance,layerMask.value);
+        
         if (hit)
         {
+            print(hit.collider.gameObject);
             if (hit.collider.gameObject.tag == "Window")
             {
                 GameObject target = hit.collider.gameObject;

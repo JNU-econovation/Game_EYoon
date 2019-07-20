@@ -5,36 +5,26 @@ using UnityEngine.UI;
 
 public class FireExInventory : Singleton<FireExInventory>
 {
-    public int fireExCount = 0;
-    int maxfireExCount = 5;
+    int fireExCount = 0;
+    Image image;
     Text countText;
     public GameObject service;
     GameObject player;
-    Color originalColor;
     float disableTime = 0.5f;
-
+    public GameObject fireExItem;
     private void Start()
-    {
-        originalColor = GetComponent<Image>().color;
+    {       
         countText = GetComponentInChildren<Text>();
         countText.gameObject.SetActive(false);
-        player = service.GetComponent<LevelManager>().player;
-    }
-    public void InsertItem(Sprite itemImage)
-    {        
-        fireExCount++;
-        if (fireExCount >= maxfireExCount)
-        {
-            fireExCount = maxfireExCount;            
-        }
-        ChargeCount();
-    }
+        image = GetComponentInChildren<Image>();
+    }    
 
-    public void ChargeCount()
+    public void ChangeCount(int count)
     {
-        GetComponent<Image>().color = new Color(0,0,0, 0);
+        fireExCount = count;
         countText.text = fireExCount.ToString();
         countText.gameObject.SetActive(true);
+        image.gameObject.SetActive(false);
         StartCoroutine(DisableText());
     }
 
@@ -42,7 +32,7 @@ public class FireExInventory : Singleton<FireExInventory>
     {
         yield return new WaitForSeconds(disableTime);
         countText.gameObject.SetActive(false);
-        GetComponent<Image>().color = originalColor;
+        image.gameObject.SetActive(true);
     }
 
     public void FireOff()
@@ -53,12 +43,9 @@ public class FireExInventory : Singleton<FireExInventory>
             {
                 Destroy(fire);
             }
-            player.GetComponent<Ability>().DischargeFireExCount();
-            fireExCount--;
-            countText.text = fireExCount.ToString();
-            countText.gameObject.SetActive(true);
-            GetComponent<Image>().color = new Color(0, 0, 0, 0);
-            StartCoroutine(DisableText());
+            fireExItem.GetComponent<FireExtinguisherItem>().DisChargeFireExCount();
+            int count = fireExItem.GetComponent<FireExtinguisherItem>().GetFireExCount();
+            ChangeCount(count);
         }
 
     }

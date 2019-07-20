@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class Item : MonoBehaviour
-{
-    public int level;
+{   
     protected GameObject player;
     protected Sprite itemImage;
     public float lifeTime;
