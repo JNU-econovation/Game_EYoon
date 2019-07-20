@@ -6,32 +6,36 @@ public class Ability : Singleton<Ability>
 {
     public GameObject bullet;
     public float bulletDamage;
-    public GameObject fireEx;
+    float maxBulletDamage = 100;
     public float damage;
     public float armor;
-    public float maxArmor = 100.0f;
+    public float maxArmor = 80.0f;
     public float avoidance;
-    public int fireExCount;
-    int maxFireExCount = 5;
     float[] avoidWeight = new float[2];
     void Awake()
     {
         bulletDamage = bullet.GetComponent<Bullet>().damage;        
     }
-
-    public void ChargeFireExCount()
+ 
+    public void IncreaseArmor(float n)
     {
-        fireExCount++;
-        if (fireExCount >= maxFireExCount)
-            fireExCount = maxFireExCount;
+        armor += n;
+        if(armor >= maxArmor)
+        {
+            armor = maxArmor;
+        }
     }
 
-    public void DischargeFireExCount()
+    public void IncreaseBulletDamage(float n)
     {
-        fireExCount--;
-        if (fireExCount <= 0)
-            fireExCount = 0;
+        bulletDamage += n;
+        if(bulletDamage >= maxBulletDamage)
+        {
+            bulletDamage = maxBulletDamage;
+        }
+        bullet.GetComponent<Bullet>().damage = bulletDamage;
     }
+
     int SelectAvoid()
     {
         avoidWeight[0] = avoidance;

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnergyDrinkItem : Item
 {
+    public int increase;
     public override void Function()
     {
-        player.GetComponent<Health>().IncreaseStamina(30);
+        player.GetComponent<Health>().IncreaseStamina(increase);
     }
    
 }

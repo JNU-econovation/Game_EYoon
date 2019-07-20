@@ -7,21 +7,24 @@ public class Snow : Weather
     GameObject player;
     [SerializeField] GameObject service;
     static float damage = 2;
-    float delay = 1.0f;        
-    
-    IEnumerator Damage()
-    {       
+    float delay = 1.0f;
+
+    private void Start()
+    {
         player = service.GetComponent<LevelManager>().player;
+    }
+
+    IEnumerator Damage()
+    {              
         for (int i =0; i<5; i++)
         {
             player.GetComponent<Health>().DecreaseHP(damage);
             yield return new WaitForSeconds(delay);
         }
     }
-
-    public void DecreaseDamage()
-    {
-        float level = JacketInventory.Instance.jacketLevel;
+    
+    public void DecreaseDamage(int level)
+    {        
         damage = 2.0f - (0.2f * level);
     }
 
