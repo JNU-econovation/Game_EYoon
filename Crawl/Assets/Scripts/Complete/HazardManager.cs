@@ -129,7 +129,7 @@ public class HazardManager : Singleton<HazardManager>
     }
 
     public GameObject SpawnHazard()
-    {
+    { 
         float[] randomX = { 335.0f, 360.0f, 385.0f };
         windows = SelectMap().GetComponent<WindowList>().windows;
         GameObject window = SelectWindow(windows, nextMap);

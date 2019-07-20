@@ -19,8 +19,7 @@ public class LevelManager : Singleton<LevelManager>
     void Awake()
     {
         player = Instantiate(playerPrefab);       
-        for (int i = 0; i < map.Length; i++)
-            player.GetComponent<PlayerMove>().map[i] = map[i];
+       
     }
     
     public void RecoverWindows(GameObject obj)

@@ -13,10 +13,7 @@ public class RainMaker : Weather
         if (maxSpeed <= minSpeed)
             maxSpeed = minSpeed;
     }
-    private void Update()
-    {
-        print(maxSpeed);
-    }
+
     public void RecoverStaminaSpeed()
     {
         player = GameObject.FindGameObjectWithTag("Player");
