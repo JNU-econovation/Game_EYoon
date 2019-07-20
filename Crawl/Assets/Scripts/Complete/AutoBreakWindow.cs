@@ -29,8 +29,7 @@ public class AutoBreakWindow : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(targetPosition, transform.forward, maxDistance,layerMask.value);
         
         if (hit)
-        {
-            print(hit.collider.gameObject);
+        { 
             if (hit.collider.gameObject.tag == "Window")
             {
                 GameObject target = hit.collider.gameObject;

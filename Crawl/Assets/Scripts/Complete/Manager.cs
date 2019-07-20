@@ -38,6 +38,7 @@ public class Manager : Singleton<Manager>
     public void StopPlayer()
     {
         player.GetComponent<PlayerMove>().forwardSpeed = 0;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;       
     }
 
     IEnumerator Delay(float delayTime)

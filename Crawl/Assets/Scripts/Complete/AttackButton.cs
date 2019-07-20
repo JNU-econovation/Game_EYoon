@@ -1,20 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class AttackButton : MonoBehaviour
 {
-    public void ChooseAttack()
+    float shootingGauge = 100;
+    float maxShootingGauge = 100;
+    Image image;
+    bool isClicked = false;
+    private void Start()
     {
-        bool isAttacking = AutoAttack.Instance.isAttacking;
-        if(isAttacking == true)
+        image = GetComponent<Image>();
+    }
+            
+    
+    private void Update()
+    {
+        if (shootingGauge <= 0)
         {
-            AutoAttack.Instance.isAttacking = false;
+            shootingGauge = 0;
+            isClicked = false;
+            AutoAttack.Instance.StopAttack(isClicked);
+        }           
+
+        if (isClicked == false)
+        {
+            shootingGauge += Time.deltaTime * 20;
+            if (shootingGauge >= maxShootingGauge)
+                shootingGauge = maxShootingGauge;
         }
         else
         {
-            AutoAttack.Instance.isAttacking = true;
-            AutoAttack.Instance.StartAttack();
+            shootingGauge -= Time.deltaTime * 20;
+        }
+                   
+        image.fillAmount = shootingGauge / maxShootingGauge;
+    }       
+
+    public void Attack()
+    {
+        if(isClicked == false)
+        {
+            isClicked = true;
+            AutoAttack.Instance.StartAttack(isClicked);
+        }
+        else
+        {
+            isClicked = false;
+            AutoAttack.Instance.StopAttack(isClicked);
         }
     }
 }

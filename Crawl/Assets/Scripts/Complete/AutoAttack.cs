@@ -7,18 +7,13 @@ public class AutoAttack : Singleton<AutoAttack>
     public GameObject bullet;
     GameObject target;
     int maxDistance = 10;
-    public bool isAttacking;
-    private void Start()
-    {
-        isAttacking = true;
-        StartCoroutine(Shoot());
-    }
+    public bool isAttack = false;   
 
     private IEnumerator Shoot()
     {
         while (true)
         {
-            if (isAttacking == true)
+            if (isAttack == true)
                 MakeBullet();
             else
                 break;
@@ -27,9 +22,14 @@ public class AutoAttack : Singleton<AutoAttack>
 
     }
 
-    public void StartAttack()
+    public void StartAttack(bool isClicked)
     {
+        isAttack = isClicked;
         StartCoroutine(Shoot());
+    }
+    public void StopAttack(bool isClicked)
+    {
+        isAttack = isClicked;
     }
 
     void MakeBullet()
