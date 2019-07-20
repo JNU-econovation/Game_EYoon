@@ -32,7 +32,7 @@ public class FireExInventory : Singleton<FireExInventory>
 
     public void ChargeCount()
     {
-        GetComponent<Image>().color = new Color(0,0,0);
+        GetComponent<Image>().color = new Color(0,0,0, 0);
         countText.text = fireExCount.ToString();
         countText.gameObject.SetActive(true);
         StartCoroutine(DisableText());
@@ -57,7 +57,7 @@ public class FireExInventory : Singleton<FireExInventory>
             fireExCount--;
             countText.text = fireExCount.ToString();
             countText.gameObject.SetActive(true);
-            GetComponent<Image>().color = new Color(0, 0, 0);
+            GetComponent<Image>().color = new Color(0, 0, 0, 0);
             StartCoroutine(DisableText());
         }
 
