@@ -23,18 +23,6 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-
-        if (collider.gameObject == target && collider.gameObject.tag == "Window")
-        {
-            Window window = collider.gameObject.GetComponent<Window>();
-            window.GetComponent<Window>().DecreaseHP(damage);           
-            Destroy(gameObject);            
-            window.ChangeWindow();
-        }
-    }
+    }  
     
 }

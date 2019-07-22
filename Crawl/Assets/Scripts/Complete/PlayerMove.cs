@@ -13,11 +13,13 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         originforwardSpeed = forwardSpeed;
-        playerNearMap = map[0];
+        playerNearMap = WindowList.Instance.map[0];
+        nextMap = WindowList.Instance.map[1];
     }
     void Update()
     {
-        xPos = Mathf.Clamp(transform.position.x, 330.0f, 390.0f);
+      
+        xPos = Mathf.Clamp(transform.position.x, 300.0f, 420.0f);
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z); // 앞으로 이동  
         if (Time.timeScale != 0)
         {

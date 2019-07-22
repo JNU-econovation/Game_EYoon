@@ -15,6 +15,7 @@ public class Manager : Singleton<Manager>
     public GameObject GameCompleteUI;
     float delayTime = 3.0f;
     public GameObject heightUI;
+    public GameObject hpBar;
     private void Start()
     {
         coin = 0;
@@ -30,9 +31,11 @@ public class Manager : Singleton<Manager>
     public void Gameover()
     {
         StopPlayer();
+        hpBar.SetActive(false);
         gameOverUI.SetActive(true);
         StartCoroutine(Delay(delayTime));
         gameOver = false;
+        
     }
 
     public void StopPlayer()
