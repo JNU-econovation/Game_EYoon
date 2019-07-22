@@ -9,7 +9,7 @@ public class Snow : Weather
     static float damage = 2;
     float delay = 1.0f;
 
-    private void Start()
+    private void Awake()
     {
         player = service.GetComponent<LevelManager>().player;
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HPUI : MonoBehaviour
 {
-    Text hpValue; 
+    public Text hpValue; 
     GameObject player;
     public GameObject service;
     Image heart;
@@ -15,9 +15,7 @@ public class HPUI : MonoBehaviour
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
-        heart = GetComponentInParent<Image>();
-        hpValue = GetComponent<Text>();
-       
+        heart = GetComponent<Image>();       
     }
 
     void Update()

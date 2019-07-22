@@ -24,6 +24,9 @@ public class HazardManager : Singleton<HazardManager>
     public List<GameObject> hazards = new List<GameObject>();   
     List<GameObject> windows = new List<GameObject>();
     public List<GameObject> HigherThanPlayerWins = new List<GameObject>();
+    public Sprite openStateWindow;
+    public Sprite openWindow;
+    public Sprite originWindow;
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
@@ -47,14 +50,17 @@ public class HazardManager : Singleton<HazardManager>
         {
             yield return new WaitForSeconds(delaytime);
             for (int i = 0; i <2; i++)
+            {
                 StartCoroutine(DisableHazard(SpawnHazard(), lifeTime));
+            }
         }
                         
     }
-    private IEnumerator DisableHazard(GameObject hazard, float lifeTime)
+    private IEnumerator DisableHazard(GameObject[] hazardAndWindow, float lifeTime)
     {
         yield return new WaitForSeconds(lifeTime);
-        Destroy(hazard);
+        Destroy(hazardAndWindow[0]);
+        hazardAndWindow[1].GetComponent<SpriteRenderer>().sprite = originWindow;
     }
 
     GameObject SelectWindow(List<GameObject> windows, GameObject nextMap) 
@@ -128,13 +134,14 @@ public class HazardManager : Singleton<HazardManager>
         return weight.Length - 1;
     }
 
-    public GameObject SpawnHazard()
+    public GameObject[] SpawnHazard()
     { 
         float[] randomX = { 335.0f, 360.0f, 385.0f };
         windows = SelectMap().GetComponent<WindowList>().windows;
         GameObject window = SelectWindow(windows, nextMap);
         HigherThanPlayerWins.Clear();
         int i = SelectHazard(weight);
+        if(i == 0 || i == 2 || i == 3 || i == 5) WindowOpen(window);
         GameObject temp = Instantiate(hazards[i]);
         if (i == 5)
         {
@@ -149,7 +156,25 @@ public class HazardManager : Singleton<HazardManager>
             temp.transform.position = window.transform.position;
         }                
         temp.GetComponent<Hazard>().Function(window);
-        return temp;
+        GameObject[] hazardAndWindow = { temp, window };
+
+
+        return hazardAndWindow;
+    }
+
+    public void WindowOpen(GameObject window)
+    {
+        originWindow = window.GetComponent<SpriteRenderer>().sprite;
+        window.GetComponent<SpriteRenderer>().sprite = openWindow;
+        StartCoroutine(WindowOpenDisappear(window));
+    }
+
+    IEnumerator WindowOpenDisappear(GameObject window)
+    {
+        yield return new WaitForSeconds(0.5f);
+        window.GetComponent<SpriteRenderer>().sprite = openStateWindow;
+
+
     }
       
 }

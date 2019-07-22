@@ -21,15 +21,14 @@ public class LevelManager : Singleton<LevelManager>
         player = Instantiate(playerPrefab);       
        
     }
-    
+    /*
     public void RecoverWindows(GameObject obj)
     {
         Window window= obj.GetComponent<Window>();   
         window.itemMade = false;
-        window.HP = window.maxHP;       
-        window.InitializeWindow();       
+        window.HP = window.maxHP;            
     }
-
+    */
     private void Update()
     {
         height = player.transform.position.y / 10;

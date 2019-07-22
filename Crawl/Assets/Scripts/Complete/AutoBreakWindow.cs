@@ -16,25 +16,24 @@ public class AutoBreakWindow : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.3f);           
-            BreakWindow();
+            Ray();
         }
 
 
     }
 
 
-    void BreakWindow()
+    void Ray()
     {
         Vector3 targetPosition = transform.position + new Vector3(0, 50, 0);
         RaycastHit2D hit = Physics2D.Raycast(targetPosition, transform.forward, maxDistance,layerMask.value);
         
         if (hit)
-        { 
-            if (hit.collider.gameObject.tag == "Window")
+        {
+            if (hit.collider.gameObject.tag == "Window" && hit.collider.gameObject.GetComponent<Window>().isBroken == false)
             {
                 GameObject target = hit.collider.gameObject;
-                target.GetComponent<Window>().DecreaseHP(GetComponent<Ability>().damage);                
-                target.GetComponent<Window>().ChangeWindow();
+                target.GetComponent<Window>().BreakWindow();
             }
 
         }

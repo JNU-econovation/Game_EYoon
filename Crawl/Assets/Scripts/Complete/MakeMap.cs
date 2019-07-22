@@ -10,6 +10,7 @@ public class MakeMap : MonoBehaviour
     Vector3 movedPosition;
     public float moveDistance;
     List<GameObject> windows = new List<GameObject>();
+    public Sprite originWindowSprite;
     void Start()
     {
         windows = GetComponentInParent<WindowList>().windows;
@@ -35,17 +36,15 @@ public class MakeMap : MonoBehaviour
             movedPosition = transform.position + moving;
             GetComponentInParent<WindowList>().transform.position += moving;
 
-            for (int i = 0; i < windows.Count; i++)
+            List<GameObject> windows = GetComponentInParent<WindowList>().windows;
+            foreach(var window in windows)
             {
-                float hp = windows[i].GetComponent<Window>().HP;
-                float maxhp = windows[i].GetComponent<Window>().maxHP;
+                Color color = window.GetComponent<Window>().originColor;
+                window.GetComponent<Window>().window.GetComponent<SpriteRenderer>().sprite = originWindowSprite;
+                window.GetComponent<Window>().window.GetComponent<SpriteRenderer>().color = color;
+                window.GetComponent<Window>().isBroken = false;
 
-                if (hp != maxhp)
-                {
-                    service.GetComponent<LevelManager>().RecoverWindows(windows[i]);
-                }
             }
-
         }       
 
     }
