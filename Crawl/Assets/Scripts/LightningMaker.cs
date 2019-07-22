@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LightningMaker : Weather
 {
-   
+    public GameObject warning;  
     public GameObject lightning;
     [SerializeField] GameObject flash;
     int numOfLight;
@@ -19,9 +19,12 @@ public class LightningMaker : Weather
         numOfLight = Random.Range(1, 4);
         for(int i = 0; i < numOfLight; i++)
         {
-            Instantiate(lightning);
+            warning.SetActive(true);
+            lightning.transform.position = warning.transform.position;
+            lightning.SetActive(true);
+            
         }
-        StartCoroutine(LighningFlash());
+     //   StartCoroutine(LighningFlash());
 
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Lighning : MonoBehaviour
 {
+    float lifeTime = 3.0f;
    [SerializeField] GameObject player;
     public int delay = 1;
    [SerializeField] GameObject warning;
@@ -13,18 +14,17 @@ public class Lighning : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        StartCoroutine(LightningMake());
     }
 
-    IEnumerator LightningMake()
+    private void OnEnable()
+    {        
+        StartCoroutine(DestroySelf());
+    }
+
+    IEnumerator DestroySelf()
     {
-        GameObject siren = Instantiate(warning);
-        siren.transform.position = new Vector2(Random.Range(335, 385), player.transform.position.y + Random.Range(10, 80));
-        yield return new WaitForSeconds(delay);
-        GameObject temp = Instantiate(gameObject);
-        temp.transform.position = siren.transform.position;
-        Destroy(siren);
-        Destroy(temp, 1);
+        yield return new WaitForSeconds(lifeTime);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

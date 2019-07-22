@@ -6,16 +6,20 @@ public class Warning : MonoBehaviour
 {
    [SerializeField] GameObject red;
    [SerializeField] GameObject black;
+    public GameObject service;
+    GameObject player;
+    public bool isTurnOn = false;
     float delay = 0.5f;
-    // Start is called before the first frame update
-    void Start()
+    float lifeTime = 3.0f;
+    
+    void Awake()
     {
-        StartCoroutine(ColorChange());
+        player = service.GetComponent<LevelManager>().player;
     }
 
-    IEnumerator ColorChange()
+    IEnumerator ChangeColor()
     {
-        while (true)
+       for(int i = 0; i < 3; i++)
         {
             red.SetActive(true);
             black.SetActive(false);
@@ -24,5 +28,16 @@ public class Warning : MonoBehaviour
             black.SetActive(true);
             yield return new WaitForSeconds(delay);
         }
+        gameObject.SetActive(false);
+
     }
+   
+    private void OnEnable()
+    {
+        isTurnOn = true;
+        transform.position = new Vector2(Random.Range(335, 385), player.transform.position.y + Random.Range(10, 80));
+        StartCoroutine(ChangeColor());
+    }
+
+    
 }
