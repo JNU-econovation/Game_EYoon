@@ -27,7 +27,7 @@ public class LightningMaker : Weather
 
     IEnumerator LighningFlash()
     {
-        yield return new WaitForSeconds(lightning.GetComponent<Lighning>().delay);
+        yield return new WaitForSeconds(lightning.GetComponent<Lighning>().delay/2);
         float flashDelay = 0.4f;
         flash.GetComponent<Animator>().SetBool("Flash", true);
         yield return new WaitForSeconds(flashDelay);
