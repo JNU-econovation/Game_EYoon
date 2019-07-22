@@ -4,19 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Window
-  - Block
-  - Map
-  - Undefined
-  - Bullet
-  - TrashBullet
-  - map
-  - mapDestroyer
-  - Blanket
-  - Pause
-  - map1
-  - map2
-  - map3
+  - Shootable
   layers:
   - Default
   - TransparentFX
@@ -26,18 +14,18 @@ TagManager:
   - UI
   - 
   - 
-  - Map
-  - Window
-  - Disturb
-  - Item
-  - Pause
+  - Lighting
+  - Ground
+  - Postprocessing
   - 
-  - Upblanket
-  - Bullet
-  - Rightblanket
-  - Leftblanket
-  - Player
-  - Effects
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -51,21 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fire
+    uniqueID: 3804908061
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 1
-    uniqueID: 3621086971
-    locked: 0
-  - name: 2
-    uniqueID: 119475897
-    locked: 0
-  - name: 3
-    uniqueID: 2640536407
-    locked: 0
-  - name: 4
-    uniqueID: 4011269353
-    locked: 0
-  - name: 5
-    uniqueID: 515571609
     locked: 0
