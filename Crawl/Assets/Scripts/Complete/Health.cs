@@ -74,13 +74,14 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void DecreaseStaminaSpeed(int n)
+    public void DecreaseStaminaSpeed(float n)
     {
         maxStaminaDecreaseSpeed -= n;
         if(maxStaminaDecreaseSpeed <= originalStaminaDecreaseSpeed)
         {
             maxStaminaDecreaseSpeed = originalStaminaDecreaseSpeed;
         }
+
     }
    
 }

@@ -15456,8 +15456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight:
-  - 100
   - 0
+  - 100
   - 0
   - 0
   service: {fileID: 4854051716300901137}
@@ -43214,9 +43214,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 0
   - 100
-  - 0
-  - 0
   - 0
   - 0
   - 0
@@ -43424,6 +43424,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GEN Snow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8023357458934082759, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023357458934082759, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8020300380308360129, guid: bdd34a4832a4aab49bf774a12f11042a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43484,6 +43494,21 @@ PrefabInstance:
       propertyPath: service
       value: 
       objectReference: {fileID: 4854051716300901137}
+    - target: {fileID: 8023746702282920405, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023327857155032559, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023502619117543867, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd34a4832a4aab49bf774a12f11042a, type: 3}
 --- !u!4 &6065988619281318900

@@ -13,6 +13,7 @@ TagManager:
   - Block
   - Bullet
   - Rain
+  - Snow
   layers:
   - Default
   - TransparentFX

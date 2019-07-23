@@ -7,6 +7,10 @@ public class Fire : Hazard
     GameObject fire;
     public float damage;
     float delay = 1.0f;
+    private void OnEnable()
+    {
+        LevelManager.Instance.fireList.Add(gameObject);
+    }
     public override void Function(GameObject window)
     {
         transform.position = new Vector3(window.transform.position.x, window.transform.position.y - 10.0f, window.transform.position.z);       
@@ -15,9 +19,14 @@ public class Fire : Hazard
     
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        print(1);
+       
         if(collider.gameObject.tag == "Player")
-        {          
+        {
+            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
             StartCoroutine(Damage(collider.gameObject));
         }
     }

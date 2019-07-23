@@ -265,6 +265,7 @@ MonoBehaviour:
   maxStamina: 100
   staminaDecreaseSpeed: 1
   originalStaminaDecreaseSpeed: 0
+  maxStaminaDecreaseSpeed: 6
   hpDecreaseSpeed: 0.5
 --- !u!114 &2624472585311118398
 MonoBehaviour:

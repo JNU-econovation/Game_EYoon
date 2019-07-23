@@ -120,5 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  rainMaker: {fileID: 6698720508621239661, guid: 28e88937e3efb234ba39de566f0a4a24,
-    type: 3}
+  decrease: 0.1

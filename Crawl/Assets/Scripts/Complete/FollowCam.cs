@@ -31,7 +31,6 @@ public class FollowCam : MonoBehaviour
             x = target.transform.position.x - xDistance;
             y = target.transform.position.y - yDistance;
         }
-        print(gameObject.transform.position.x - target.transform.position.x);
         transform.position = new Vector3(x, y, z);                                   
     }
 }

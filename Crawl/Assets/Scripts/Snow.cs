@@ -7,6 +7,7 @@ public class Snow : Weather
     GameObject player;
     [SerializeField] GameObject service;
     static float damage = 2;
+    float minDamage = 0.5f;
     float delay = 1.0f;
 
     private void Awake()
@@ -18,14 +19,18 @@ public class Snow : Weather
     {              
         for (int i =0; i<5; i++)
         {
+            DecreaseDamage();
             player.GetComponent<Health>().DecreaseHP(damage);
             yield return new WaitForSeconds(delay);
         }
     }
     
-    public void DecreaseDamage(int level)
-    {        
-        damage = 2.0f - (0.2f * level);
+    public void DecreaseDamage()
+    {
+        int level = player.GetComponent<Ability>().TakeJacketLevel();
+        damage -= (0.1f * level);
+        if (damage <= minDamage)
+            damage = minDamage;
     }
 
     public void OnEnable()
