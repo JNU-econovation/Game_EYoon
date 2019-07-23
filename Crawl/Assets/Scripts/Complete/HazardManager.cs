@@ -51,17 +51,11 @@ public class HazardManager : Singleton<HazardManager>
             yield return new WaitForSeconds(delaytime);
             for (int i = 0; i <1; i++)
             {
-                StartCoroutine(DisableHazard(SpawnHazard(), lifeTime));
+                SpawnHazard();              
             }
         }
                         
-    }
-    private IEnumerator DisableHazard(GameObject[] hazardAndWindow, float lifeTime)
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(hazardAndWindow[0]);
-        hazardAndWindow[1].GetComponent<SpriteRenderer>().sprite = originWindow;
-    }
+    }  
 
     GameObject SelectWindow(List<GameObject> windows, GameObject nextMap) 
     {
@@ -121,7 +115,7 @@ public class HazardManager : Singleton<HazardManager>
         return weight.Length - 1;
     }
 
-    public GameObject[] SpawnHazard()
+    public void SpawnHazard()
     { 
         float[] randomX = { 335.0f, 360.0f, 385.0f };
         windows = SelectMap().GetComponent<WindowList>().windows;
@@ -139,15 +133,11 @@ public class HazardManager : Singleton<HazardManager>
             temp.transform.position = window.transform.position;
         }                
         temp.GetComponent<Hazard>().Function(window);
-        GameObject[] hazardAndWindow = { temp, window };
-
-
-        return hazardAndWindow;
+        temp.GetComponent<Hazard>().OnEnable(window, originWindow);
     }
 
     public void WindowOpen(GameObject window)
-    {
-        originWindow = window.GetComponent<SpriteRenderer>().sprite;
+    {        
         window.GetComponent<SpriteRenderer>().sprite = openWindow;
         StartCoroutine(WindowOpenDisappear(window));
     }

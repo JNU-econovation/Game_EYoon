@@ -27,7 +27,6 @@ public class FollowCam : MonoBehaviour
         }
         else
         {
-            print(123);
             x = target.transform.position.x - xDistance;
             y = target.transform.position.y - yDistance;
         }
