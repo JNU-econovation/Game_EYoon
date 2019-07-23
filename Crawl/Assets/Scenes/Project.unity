@@ -7450,7 +7450,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402740424}
-  - component: {fileID: 402740427}
   - component: {fileID: 402740426}
   - component: {fileID: 402740425}
   m_Layer: 5
@@ -7522,19 +7521,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402740423}
   m_CullTransparentMesh: 0
---- !u!114 &402740427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402740423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85463077251001b4ca3303c5baea088f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelManager: {fileID: 4854051716300901150}
 --- !u!4 &402821816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6364139856096488566, guid: eac733bb4812d794e96fc9798e54106f,
@@ -15430,10 +15416,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0
   - 100
+  - 0
+  - 0
+  - 0
   map:
   - {fileID: 1617204356}
   - {fileID: 2017934820}

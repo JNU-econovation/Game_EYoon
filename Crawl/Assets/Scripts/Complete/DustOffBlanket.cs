@@ -4,28 +4,43 @@ using UnityEngine;
 
 public class DustOffBlanket : Hazard
 {
-    Vector3 playerTr;
-    float playerYpos;
-    float blanketYpos;
-    int existTime = 4;
-    public GameObject LargeBlanketAnim;
-    public GameObject SmallBlanketAnim;
+    static float reverseTime = 4.0f;
+    float startReverseTime;
+    private void Start()
+    {
+        startReverseTime = reverseTime;
+    }
     public override void Function(GameObject window)
     {
-        GameObject blanket;
-        //if (window.name == "window2")
-        //{
-        //    blanket = Instantiate(LargeBlanketAnim);
-
-        //}
-
-        //else
-        //{
-        //    blanket = Instantiate(SmallBlanketAnim);
         
-        //}
-        //blanket.transform.position = transform.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    { 
+        if(collider.gameObject.tag == "Player")
+        {         
+            reverseTime = startReverseTime;
+            InputManager.Instance.isReverse = true;
+            InputManager.Instance.ChangeSideMove();
+            MobileInputManager.Instance.isReverse = true;
+            RecoverReverseMove();
+        }
+    }
+    private void Update()
+    {
+        print(reverseTime);
+    }
+    void RecoverReverseMove()
+    {
+        while (reverseTime > 0)
+        {
+            reverseTime -= Time.deltaTime;
+            
+        }
+        if (reverseTime < 0)
+            reverseTime = startReverseTime;
+        InputManager.Instance.isReverse = false;
+        InputManager.Instance.ChangeSideMove();
+    }
   
-    }   
-    
 }

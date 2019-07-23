@@ -32,22 +32,20 @@ public class InputManager : Singleton<InputManager>
 
     public void ChangeSideMove()
     {
-        if(isReverse == true)
+        if(isReverse)
         {
             rightSpeed = rightReverseSpeed;
-            leftSpeed = leftReverseSpeed;
-            StartCoroutine(ResetSideMove());
+            leftSpeed = leftReverseSpeed;           
+        }
+        else
+        {
+            rightSpeed = originRightSpeed;
+            leftSpeed = originLeftSpeed;
         }
         
     }
 
-    IEnumerator ResetSideMove()
-    {
-        yield return new WaitForSeconds(4.0f);
-        rightSpeed = originRightSpeed;
-        leftSpeed = originLeftSpeed;
-        isReverse = false;
-    }
+    
     void Update()
     {       
         if (Input.GetKey(KeyCode.D))
