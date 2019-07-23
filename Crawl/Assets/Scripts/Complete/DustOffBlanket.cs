@@ -18,20 +18,21 @@ public class DustOffBlanket : Hazard
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
-        {         
+        {
             reverseTime = startReverseTime;
             InputManager.Instance.isReverse = true;
             InputManager.Instance.ChangeSideMove();
             MobileInputManager.Instance.isReverse = true;
-            RecoverReverseMove();
+            StartCoroutine(RecoverReverseMove());
         }
     }
    
-    void RecoverReverseMove()
+    IEnumerator RecoverReverseMove()
     {
-        while (reverseTime > 0)
+        while (reverseTime > 0.0f)
         {
-            reverseTime -= Time.deltaTime;
+            yield return new WaitForSeconds(1.0f);
+            reverseTime--;
             
         }
         if (reverseTime < 0)

@@ -26,13 +26,13 @@ public class InputManager : Singleton<InputManager>
         attack = player.GetComponent<Attack>();
         originRightSpeed = rightSpeed;
         originLeftSpeed = leftSpeed;
-        rightReverseSpeed = rightSpeed * -1;
-        leftReverseSpeed = leftSpeed * -1;
+        rightReverseSpeed = rightSpeed * -1.0f;
+        leftReverseSpeed = leftSpeed * -1.0f;
     }
 
     public void ChangeSideMove()
     {
-        if(isReverse)
+        if(isReverse == true)
         {
             rightSpeed = rightReverseSpeed;
             leftSpeed = leftReverseSpeed;           
