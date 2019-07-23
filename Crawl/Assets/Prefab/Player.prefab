@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e3239c109b3b944bb423eb48bbc86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 5
+  forwardSpeed: 0.5
   originforwardSpeed: 0
   playerNearMap: {fileID: 0}
   nextMap: {fileID: 0}
@@ -306,7 +306,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2515028090259809562}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
