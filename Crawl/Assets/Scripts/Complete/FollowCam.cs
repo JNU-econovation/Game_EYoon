@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    Transform target;
+    GameObject target;
     public GameObject service;
     public float xDistance;
     public float yDistance;
@@ -13,15 +13,25 @@ public class FollowCam : MonoBehaviour
     float z;
 
     void Start()
-    {     
+    {
+        target = service.GetComponent<LevelManager>().player;
         x = transform.position.x;
         z = transform.position.z;
     }
     void LateUpdate()
     {
-        target = service.GetComponent<LevelManager>().player.transform;
-        x = target.position.x - xDistance;
-        y = target.position.y - yDistance;
+        if (transform.position.x - target.transform.position.x < 42 && transform.position.x - target.transform.position.x > -42)
+        {
+            
+            y = target.transform.position.y - yDistance;
+        }
+        else
+        {
+            print(123);
+            x = target.transform.position.x - xDistance;
+            y = target.transform.position.y - yDistance;
+        }
+        print(gameObject.transform.position.x - target.transform.position.x);
         transform.position = new Vector3(x, y, z);                                   
     }
 }
