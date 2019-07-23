@@ -11,6 +11,7 @@ public class Ability : Singleton<Ability>
     public float armor;
     public float maxArmor = 80.0f;
     public float avoidance;
+    public bool isReverse = false;
     static int jacketLevel;
     GameObject snow;
     float[] avoidWeight = new float[2];
@@ -19,7 +20,8 @@ public class Ability : Singleton<Ability>
     {
         bulletDamage = bullet.GetComponent<Bullet>().damage;        
     }
- 
+
+
     public int TakeJacketLevel()
     {
         jacketLevel++;
