@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - map1
+  - map2
+  - map3
+  - mapDestroyer
+  - Window
+  - Block
+  - Bullet
+  - Rain
   layers:
   - Default
   - TransparentFX
@@ -17,7 +25,7 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
+  - Player
   - 
   - 
   - 

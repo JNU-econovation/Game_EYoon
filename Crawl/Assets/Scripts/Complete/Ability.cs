@@ -12,6 +12,7 @@ public class Ability : Singleton<Ability>
     public float maxArmor = 80.0f;
     public float avoidance;
     float[] avoidWeight = new float[2];
+
     void Awake()
     {
         bulletDamage = bullet.GetComponent<Bullet>().damage;        

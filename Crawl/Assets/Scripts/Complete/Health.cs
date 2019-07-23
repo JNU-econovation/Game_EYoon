@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public float maxStamina = 100.0f;
     public float staminaDecreaseSpeed;
     public float originalStaminaDecreaseSpeed;
+    public float maxStaminaDecreaseSpeed;
     public float hpDecreaseSpeed;
     float armor;
     private void Start()
@@ -73,6 +74,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void DecreaseStaminaSpeed(int n)
+    {
+        maxStaminaDecreaseSpeed -= n;
+        if(maxStaminaDecreaseSpeed <= originalStaminaDecreaseSpeed)
+        {
+            maxStaminaDecreaseSpeed = originalStaminaDecreaseSpeed;
+        }
+    }
    
 }
 

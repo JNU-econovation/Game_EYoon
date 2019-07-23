@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RainCoatItem : Item
 {
-    public GameObject rainMaker;
    
     public override void Function()
     {
-
+        GameObject rainMaker = GameObject.FindGameObjectWithTag("Rain");
         rainMaker.GetComponent<RainMaker>().DownStaminaSpeed();               
     }   
 

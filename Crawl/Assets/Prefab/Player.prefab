@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3509832521035575739}
   - component: {fileID: 3541040700527959181}
   - component: {fileID: 8632228871947391036}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: -4379006342196232569}
   - component: {fileID: 2515028090259809567}
   - component: {fileID: 2515028090259809561}
-  m_Layer: 18
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 2515028091681389645}
   - component: {fileID: 2515028091681389635}
   - component: {fileID: 2515028091681389644}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HP
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 4874470507861012953}
   - component: {fileID: 2930272343564673710}
   - component: {fileID: 4202074283171694694}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 6722110638307948410}
   - component: {fileID: 7285448914399633585}
   - component: {fileID: 2031867384650912645}
-  m_Layer: 18
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 3385080143748928507}
   - component: {fileID: 8514102422354746126}
   - component: {fileID: 1637894994375175032}
-  m_Layer: 18
+  m_Layer: 11
   m_Name: Avoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1743592536678955163}
   - component: {fileID: 7772494622353176293}
   - component: {fileID: 4370302716771682693}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Ability increase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
