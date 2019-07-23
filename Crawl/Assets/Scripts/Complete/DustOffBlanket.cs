@@ -13,18 +13,18 @@ public class DustOffBlanket : Hazard
     public override void Function(GameObject window)
     {
         GameObject blanket;
-        if (window.name == "window2")
-        {
-            blanket = Instantiate(LargeBlanketAnim);
+        //if (window.name == "window2")
+        //{
+        //    blanket = Instantiate(LargeBlanketAnim);
 
-        }
+        //}
 
-        else
-        {
-            blanket = Instantiate(SmallBlanketAnim);
+        //else
+        //{
+        //    blanket = Instantiate(SmallBlanketAnim);
         
-        }
-        blanket.transform.position = transform.position;
+        //}
+        //blanket.transform.position = transform.position;
   
     }   
     

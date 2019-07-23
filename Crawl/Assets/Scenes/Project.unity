@@ -15418,7 +15418,7 @@ MonoBehaviour:
   NPC: {fileID: 3666368418618088834, guid: 28438fed78ccf6f4dbb528a20ba5ffa3, type: 3}
   fire: {fileID: 2082189904397100508, guid: 6813304177ce09646971aaccdc6b3073, type: 3}
   open: {fileID: 2284814806122994047, guid: 6d4dfe372205fdf43b14e0ea2ef200ac, type: 3}
-  blanket: {fileID: 6290871102960540409, guid: 62f858a85aca32840bcda8fba05d0c5b, type: 3}
+  blanket: {fileID: 4487750801585317656, guid: a9ec6428c100c3f4ba155e85dee16d0a, type: 3}
   nullObject: {fileID: 881220453695351597, guid: 44f6c43efbc0a6f42b49660a3ddef085,
     type: 3}
   security: {fileID: 5959180872717269747, guid: cec4e2a4697c7ac41bf7807f27a72929,
@@ -15427,10 +15427,10 @@ MonoBehaviour:
     type: 3}
   service: {fileID: 4854051716300901137}
   weight:
+  - 0
+  - 0
+  - 0
   - 100
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
