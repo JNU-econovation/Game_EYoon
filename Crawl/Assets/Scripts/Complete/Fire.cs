@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class Fire : Hazard
 {
-    public GameObject largeWindowFire;
-    public GameObject smallWindowFire;
     GameObject fire;
+    public float damage;
+    float delay = 1.0f;
     public override void Function(GameObject window)
     {
-        gameObject.SetActive(false);
-        ChangeWindow(window);        
+        transform.position = new Vector3(window.transform.position.x, window.transform.position.y - 10.0f, window.transform.position.z);       
     }
-  
-    void ChangeWindow(GameObject window)
-    {                
-        if (window.name == "window2")
-            fire = Instantiate(largeWindowFire);
-        else
-            fire = Instantiate(smallWindowFire);
-        fire.transform.position = window.transform.position;               
-    }
+
     
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        print(1);
+        if(collider.gameObject.tag == "Player")
+        {          
+            StartCoroutine(Damage(collider.gameObject));
+        }
+    }
+
+    IEnumerator Damage(GameObject player)
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            player.GetComponent<Health>().DecreaseHP(damage);
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
 }

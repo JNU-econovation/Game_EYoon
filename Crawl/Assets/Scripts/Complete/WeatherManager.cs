@@ -18,8 +18,7 @@ public class WeatherManager : Singleton<WeatherManager>
     public GameObject nullObject;
     private void Start()
     {
-        player = service.GetComponent<LevelManager>().player;
-        //rain = service.GetComponent<LevelManager>().rainMaker;
+        player = service.GetComponent<LevelManager>().player;      
         weather.Add(rain);
         weather.Add(snow);
         weather.Add(lightning);

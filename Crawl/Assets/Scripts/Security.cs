@@ -9,9 +9,8 @@ public class Security : Hazard
     float distance = 200;
     [SerializeField] GameObject siren;
     [SerializeField] int delay; //경고가 뜬 후 경비가 나타나기까지의 시간
-    [SerializeField] int existTime; // 경비가 존재하는 시간
     public LayerMask playerLayerMask;
-
+    
     private void Update()
     {
         ray = new Ray2D(transform.position, Vector2.down);
@@ -30,7 +29,9 @@ public class Security : Hazard
     }
     public override void Function(GameObject window)
     {
-        StartCoroutine(Petrol(window));       
+        
+        StartCoroutine(Petrol(window));
+        HazardManager.Instance.WindowOpen(window);
         
     }
     

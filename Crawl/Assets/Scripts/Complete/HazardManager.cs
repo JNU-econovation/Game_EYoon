@@ -69,46 +69,33 @@ public class HazardManager : Singleton<HazardManager>
         foreach (var obj in windows)        
             if (obj.transform.position.y > player.transform.position.y)
                 HigherThanPlayerWins.Add(obj);
-
         switch (HigherThanPlayerWins.Count)
         {
             case 0:
-                for (int i = 0; i < 27; i++)
+                for (int i = 0; i < 36; i++)
                     HigherThanPlayerWins.Add(nextWindows[i]);
+                break;            
+            case 6:
+                for (int i = 0; i < 30; i++)
+                    HigherThanPlayerWins.Add(nextWindows[i]);           
                 break;
-            case 3:
+            case 12:
                 for (int i = 0; i < 24; i++)
                     HigherThanPlayerWins.Add(nextWindows[i]);
                 break;
-            case 6:
-                for (int i = 0; i < 21; i++)
-                    HigherThanPlayerWins.Add(nextWindows[i]);
-                break;
-            case 9:
+            case 18:
                 for (int i = 0; i < 18; i++)
                     HigherThanPlayerWins.Add(nextWindows[i]);
                 break;
-            case 12:
-                for (int i = 0; i < 15; i++)
-                    HigherThanPlayerWins.Add(nextWindows[i]);
-                break;
-            case 15:
+            case 24:
                 for (int i = 0; i < 12; i++)
                     HigherThanPlayerWins.Add(nextWindows[i]);
                 break;
-            case 18:
-                for (int i = 0; i < 9; i++)
-                    HigherThanPlayerWins.Add(nextWindows[i]);
-                break;
-            case 21:
+            case 30:
                 for (int i = 0; i < 6; i++)
                     HigherThanPlayerWins.Add(nextWindows[i]);
                 break;
-            case 24:
-                for (int i = 0; i < 3; i++)
-                    HigherThanPlayerWins.Add(nextWindows[i]);
-                break;            
-           
+
         }
 
         int rand = Random.Range(0, HigherThanPlayerWins.Count);
@@ -141,13 +128,9 @@ public class HazardManager : Singleton<HazardManager>
         GameObject window = SelectWindow(windows, nextMap);
         HigherThanPlayerWins.Clear();
         int i = SelectHazard(weight);
-        if(i == 0 || i == 2 || i == 3 || i == 5) WindowOpen(window);
+        if(i == 0 || i == 2 || i == 3) WindowOpen(window);
         GameObject temp = Instantiate(hazards[i]);
-        if (i == 5)
-        {
-            temp.transform.position = new Vector3(0, 0, 0);
-        }
-        else if (i == 6)
+        if (i == 6)
         {
             temp.transform.position = new Vector3(randomX[Random.Range(0,2)], player.transform.position.y + 187, 0);
         }
