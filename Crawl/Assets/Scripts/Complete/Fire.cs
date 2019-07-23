@@ -4,40 +4,18 @@ using UnityEngine;
 
 public class Fire : Hazard
 {
-    GameObject fire;
-    public float damage;
-    float delay = 1.0f;
-    private void OnEnable()
-    {
-        LevelManager.Instance.fireList.Add(gameObject);
-    }
+    public GameObject steam;
+    public bool isFIreOff = false;
     public override void Function(GameObject window)
     {
-        transform.position = new Vector3(window.transform.position.x, window.transform.position.y - 10.0f, window.transform.position.z);       
+        transform.position = new Vector3(window.transform.position.x, window.transform.position.y - 10.0f, window.transform.position.z);
+        LevelManager.Instance.fireList.Add(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        GameObject temp = Instantiate(steam);
+        temp.transform.position = gameObject.transform.position;
+    }
     
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-       
-        if(collider.gameObject.tag == "Player")
-        {
-            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
-            {
-                AvoidText.Instance.MakeAvoidText();
-                return;
-            }
-            StartCoroutine(Damage(collider.gameObject));
-        }
-    }
-
-    IEnumerator Damage(GameObject player)
-    {
-        for(int i = 0; i < 5; i++)
-        {
-            player.GetComponent<Health>().DecreaseHP(damage);
-            yield return new WaitForSeconds(delay);
-        }
-    }
-
 }

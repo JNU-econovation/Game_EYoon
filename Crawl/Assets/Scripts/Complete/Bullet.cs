@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     public GameObject target;
     public float damage;
     public float lifeTime;
-   
     private void OnEnable()
     {
         StartCoroutine(DestroySelf());
@@ -23,6 +22,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed);
-    }  
+    }
     
+
 }

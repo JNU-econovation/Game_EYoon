@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 8922303165616572433}
   m_Layer: 0
   m_Name: PaintWorker
-  m_TagString: Untagged
+  m_TagString: PaintWorker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

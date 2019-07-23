@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LightningMaker : Weather
 {
     public GameObject warning;  
-    public GameObject lightning;
     [SerializeField] GameObject flash;
     int numOfLight;
     int delay = 1;
@@ -19,15 +18,13 @@ public class LightningMaker : Weather
         numOfLight = Random.Range(1, 4);
         for(int i = 0; i < numOfLight; i++)
         {
-            warning.SetActive(true);
-            lightning.transform.position = warning.transform.position;
-            lightning.SetActive(true);
+            warning.SetActive(true);            
             
         }
      //   StartCoroutine(LighningFlash());
 
     }
-
+    /*
     IEnumerator LighningFlash()
     {
         yield return new WaitForSeconds(lightning.GetComponent<Lighning>().delay/2);
@@ -35,7 +32,7 @@ public class LightningMaker : Weather
         flash.GetComponent<Animator>().SetBool("Flash", true);
         yield return new WaitForSeconds(flashDelay);
         flash.GetComponent<Animator>().SetBool("Flash", false);
-    }
+    }*/
     public override void Function()
     {
         
