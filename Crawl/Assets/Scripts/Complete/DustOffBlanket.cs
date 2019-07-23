@@ -16,7 +16,7 @@ public class DustOffBlanket : Hazard
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
-    { 
+    {
         if(collider.gameObject.tag == "Player")
         {         
             reverseTime = startReverseTime;
@@ -26,10 +26,7 @@ public class DustOffBlanket : Hazard
             RecoverReverseMove();
         }
     }
-    private void Update()
-    {
-        print(reverseTime);
-    }
+   
     void RecoverReverseMove()
     {
         while (reverseTime > 0)

@@ -7,22 +7,26 @@ abstract public class Hazard : MonoBehaviour
 
     protected GameObject player;
     public float lifeTime;
-
+    
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
-    public void OnEnable(GameObject window, Sprite originWindow)
+    public void OnEnable()
     {
-        StartCoroutine(DestroySelf(window, originWindow));
+        StartCoroutine(DestroySelf());
     }
 
-    public IEnumerator DestroySelf(GameObject window, Sprite originWindow)
+    public IEnumerator DestroySelf()
     {
         yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
-        window.GetComponent<SpriteRenderer>().sprite = originWindow;
+        HazardManager.Instance.CloseWindow();
+    }
+    void CloseWindow(GameObject window, Sprite originWIndow)
+    {
+        window.GetComponent<SpriteRenderer>().sprite = originWIndow;
     }
     public abstract void Function(GameObject window);    
 }

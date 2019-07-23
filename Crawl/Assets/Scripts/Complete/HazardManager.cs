@@ -27,6 +27,7 @@ public class HazardManager : Singleton<HazardManager>
     public Sprite openStateWindow;
     public Sprite openWindow;
     public Sprite originWindow;
+    GameObject window;
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
@@ -119,7 +120,7 @@ public class HazardManager : Singleton<HazardManager>
     { 
         float[] randomX = { 335.0f, 360.0f, 385.0f };
         windows = SelectMap().GetComponent<WindowList>().windows;
-        GameObject window = SelectWindow(windows, nextMap);
+        window = SelectWindow(windows, nextMap);
         HigherThanPlayerWins.Clear();
         int i = SelectHazard(weight);
         if(i == 0 || i == 2 || i == 3) WindowOpen(window);
@@ -133,7 +134,6 @@ public class HazardManager : Singleton<HazardManager>
             temp.transform.position = window.transform.position;
         }                
         temp.GetComponent<Hazard>().Function(window);
-        temp.GetComponent<Hazard>().OnEnable(window, originWindow);
     }
 
     public void WindowOpen(GameObject window)
@@ -142,6 +142,10 @@ public class HazardManager : Singleton<HazardManager>
         StartCoroutine(WindowOpenDisappear(window));
     }
 
+    public void CloseWindow()
+    {
+        window.GetComponent<SpriteRenderer>().sprite = originWindow;
+    }
     IEnumerator WindowOpenDisappear(GameObject window)
     {
         yield return new WaitForSeconds(0.5f);

@@ -31,7 +31,7 @@ public class MakeMap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
-        if (collider.gameObject == player)
+        if (collider.gameObject.tag == "Player")
         {
             movedPosition = transform.position + moving;
             GetComponentInParent<WindowList>().transform.position += moving;
