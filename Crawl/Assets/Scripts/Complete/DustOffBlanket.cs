@@ -6,7 +6,6 @@ public class DustOffBlanket : Hazard
 {
     static float reverseTime = 4.0f;
     float startReverseTime;
-    bool isReverse = false;
     private void Start()
     {
         startReverseTime = reverseTime;
@@ -18,46 +17,28 @@ public class DustOffBlanket : Hazard
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player" )
+        if(collider.gameObject.tag == "Player")
         {
-            collider.gameObject.GetComponent<Ability>().isReverse = true;          
+            reverseTime = startReverseTime;
             InputManager.Instance.isReverse = true;
             InputManager.Instance.ChangeSideMove();
             MobileInputManager.Instance.isReverse = true;
-            StartCoroutine(Wait());
+            StartCoroutine(RecoverReverseMove());
         }
     }
-   IEnumerator RecoverReverse(GameObject player)
+   
+    IEnumerator RecoverReverseMove()
     {
-        yield return new WaitForSeconds(reverseTime);
-        if (player.GetComponent<Ability>().isReverse == true)
+        while (reverseTime > 0.0f)
         {
-            InputManager.Instance.isReverse = true;
-
+            yield return new WaitForSeconds(1.0f);
+            reverseTime--;
+            
         }
-        else
-        {
-            InputManager.Instance.isReverse = false;
-            player.GetComponent<Ability>().isReverse = false;
-            InputManager.Instance.ChangeSideMove();
-        }
-
-    }
-    IEnumerator Wait()
-    {
-        player.GetComponent<Ability>().isReverse = false;
-        while (reverseTime >= 0)
-        {
-            yield return new WaitForSeconds(0.2f);
-            reverseTime -= 0.2f;
-            if(player.GetComponent<Ability>().isReverse == true)
-            {
-                reverseTime = startReverseTime;
-            }
-        }       
+        if (reverseTime < 0)
+            reverseTime = startReverseTime;
         InputManager.Instance.isReverse = false;
         InputManager.Instance.ChangeSideMove();
     }
-
-
+  
 }
