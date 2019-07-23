@@ -30,9 +30,9 @@ public class Ability : Singleton<Ability>
     public void IncreaseArmor(float n)
     {
         armor += n;
-        if(armor >= maxArmor)
+        if(armor >= 80.0f)
         {
-            armor = maxArmor;
+            armor = 80.0f;
         }
     }
 

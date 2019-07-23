@@ -377,9 +377,10 @@ MonoBehaviour:
   bullet: {fileID: 9051197326804292737, guid: 89e95c95a68935e4096ff61b957aac93, type: 3}
   bulletDamage: 0
   damage: 20
-  armor: 80
-  maxArmor: 80
+  armor: 0
+  maxArmor: 100
   avoidance: 20
+  isReverse: 0
 --- !u!114 &-4379006342196232569
 MonoBehaviour:
   m_ObjectHideFlags: 0
