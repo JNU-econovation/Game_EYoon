@@ -5,6 +5,7 @@ using UnityEngine;
 abstract public class Item : MonoBehaviour
 {   
     protected GameObject player;
+    protected GameObject service;
     protected Sprite itemImage;
     public float lifeTime;
     private void Start()
@@ -14,6 +15,8 @@ abstract public class Item : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        service = GameObject.FindGameObjectWithTag("service");
+        
         
     }
     abstract public void Function();
@@ -33,6 +36,7 @@ abstract public class Item : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            Instantiate(service.GetComponent<Particles>().particles[Random.Range(0, service.GetComponent<Particles>().particles.Length-1)],collider.transform.position,collider.transform.rotation);
             Function();            
             Destroy(gameObject);
         }

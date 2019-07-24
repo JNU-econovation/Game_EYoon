@@ -20,7 +20,7 @@ public class FollowCam : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (360 - target.transform.position.x < 42 && 360- target.transform.position.x > -42)
+        if (Camera.main.transform.position.x - target.transform.position.x < 42 && Camera.main.transform.position.x - target.transform.position.x > -42)
         {
             
             y = target.transform.position.y - yDistance;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DigitalRuby.RainMaker;
 
 public class RainMaker : Weather
 {
@@ -14,22 +15,39 @@ public class RainMaker : Weather
         player.GetComponent<Health>().staminaDecreaseSpeed = player.GetComponent<Health>().originalStaminaDecreaseSpeed;
         
     }
-
-    public void OnEnable()
-    {
-        StartCoroutine(DisableSelf());
-    }
-
+    
     IEnumerator DisableSelf()
     {
-        yield return new WaitForSeconds(enableTime);
-        gameObject.SetActive(false);
+        for (int i = 1; i < 11; i++)
+        {
+            GetComponent<RainScript2D>().RainIntensity = i * 0.1f;
+            if (i < 5)
+               yield return new WaitForSeconds(0.5f);
+           else if (i >= 5)
+                yield return new WaitForSeconds(0.1f);
+
+
+        }
+       
+        
+        for (int i = 1; i < 10; i++)
+        {
+            GetComponent<RainScript2D>().RainIntensity -= 0.1f;
+            if (i < 5)
+                yield return new WaitForSeconds(0.1f);
+            else if (i >= 5)
+                yield return new WaitForSeconds(0.5f);
+        }
+        if(GetComponent<RainScript2D>().RainIntensity != 0.1f)
+            GetComponent<RainScript2D>().RainIntensity = 0;
+      
+
         RecoverStaminaSpeed();
     }
 
     public override void MakeWeather()
     {
-        gameObject.SetActive(true);
+        StartCoroutine(DisableSelf());
         ParticleSystem[] rain = GetComponentsInChildren<ParticleSystem>();
         for (int j = 0; j < rain.Length; j++)
         {

@@ -20,7 +20,12 @@ abstract public class Hazard : MonoBehaviour
 
     public IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(lifeTime);
+        yield return new WaitForSeconds(lifeTime / 1.5f);
+        for (int i = 1; i < 11; i++)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1 - i * 0.1f);
+            yield return new WaitForSeconds(lifeTime/10);
+        }
         Destroy(gameObject);
         HazardManager.Instance.CloseWindow();
     }

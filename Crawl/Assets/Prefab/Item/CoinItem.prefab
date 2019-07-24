@@ -121,3 +121,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 5
   increase: 1
+  particle: {fileID: 0}
