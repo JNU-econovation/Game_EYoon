@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeatherManager : Singleton<WeatherManager>
 {
     float rand;
-    float delayTime = 10.0f;
+    float delayTime = 11.0f;
     float enableTime = 3.0f;
     public float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
 

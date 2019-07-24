@@ -5312,7 +5312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   service: {fileID: 4854051716300901137}
-  Steam: {fileID: 1475368415682648, guid: efe021d4c307b5449b8121d46791cf95, type: 3}
+  Steam: {fileID: 0}
   fireExItem: {fileID: 7028793720720519599, guid: dc718a80fb1ccf84283206ad3b86c24b,
     type: 3}
 --- !u!1 &299378300
@@ -8224,6 +8224,7 @@ GameObject:
   - component: {fileID: 432924304}
   - component: {fileID: 310246991}
   - component: {fileID: 432924303}
+  - component: {fileID: 432924302}
   m_Layer: 15
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8231,6 +8232,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &432924302
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432924301}
+  m_Enabled: 1
 --- !u!114 &432924303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15548,8 +15557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight:
-  - 50
-  - 50
+  - 0
+  - 100
   - 0
   - 0
   service: {fileID: 4854051716300901137}
@@ -43610,6 +43619,11 @@ PrefabInstance:
       propertyPath: RainIntensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6014373113565655969, guid: 0d049a4f0004c5a489abebb4aefa19ff,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d049a4f0004c5a489abebb4aefa19ff, type: 3}
 --- !u!1 &4854051716300901137
@@ -43663,10 +43677,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight:
   - 0
-  - 0
-  - 0
-  - 0
   - 100
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0
@@ -43950,6 +43964,11 @@ PrefabInstance:
       propertyPath: service
       value: 
       objectReference: {fileID: 4854051716300901137}
+    - target: {fileID: 5743102423530789219, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: enableTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8023746702282920405, guid: bdd34a4832a4aab49bf774a12f11042a,
         type: 3}
       propertyPath: m_Layer
@@ -43969,6 +43988,26 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898244250603211631, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898244250603211631, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898244250603211631, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899058367674316915, guid: bdd34a4832a4aab49bf774a12f11042a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd34a4832a4aab49bf774a12f11042a, type: 3}
@@ -44093,6 +44132,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4734381754376543214}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6698720509322243824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698720509322243823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a787dcbc0babaa42bac84ac6cdf9fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRain: 0
 --- !u!4 &8165212406414788794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8165212406414788794, guid: 7da852c814f7e4547a087a41218e307c,

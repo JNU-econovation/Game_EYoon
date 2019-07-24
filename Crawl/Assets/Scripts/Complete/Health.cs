@@ -48,7 +48,6 @@ public class Health : MonoBehaviour
         else if(isRain == false && isCenter)
             staminaDecreaseSpeed = centerStaminaDecreaseSpeed;
         else staminaDecreaseSpeed = originalStaminaDecreaseSpeed;
-
         stamina -= Time.deltaTime * staminaDecreaseSpeed;
 
         if (stamina <= 0)
@@ -62,7 +61,6 @@ public class Health : MonoBehaviour
             Blood.Instance.gameObject.SetActive(false);
         }
         HPImage.fillAmount = hp / maxHp;
-        print(staminaDecreaseSpeed);
     }
 
     public void IncreaseHP(float increase)
