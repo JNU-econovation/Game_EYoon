@@ -13577,6 +13577,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1231191690524089099, guid: ef3774be3dae5b24c8d49df23a4c2902,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1859550612500936472, guid: ef3774be3dae5b24c8d49df23a4c2902,
         type: 3}
       propertyPath: m_Layer
@@ -13586,11 +13591,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231191690524089099, guid: ef3774be3dae5b24c8d49df23a4c2902,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
@@ -15510,7 +15510,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770756033}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76279d0a38c26354cbea605876b6d942, type: 3}
   m_Name: 
@@ -15528,11 +15528,11 @@ MonoBehaviour:
   service: {fileID: 4854051716300901137}
   weight:
   - 0
+  - 0
+  - 0
   - 100
   - 0
   - 0
-  - 0
-  - 100
   - 0
   map:
   - {fileID: 1617204356}
@@ -43887,6 +43887,7 @@ MonoBehaviour:
   rightSpeed: 30
   leftSpeed: 30
   isReverse: 1
+  t: 0
 --- !u!4 &5045123884055892768
 Transform:
   m_ObjectHideFlags: 0
