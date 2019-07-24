@@ -19,6 +19,7 @@ public class InputManager : Singleton<InputManager>
     float originRightSpeed;
     float originLeftSpeed;
     public bool isReverse = false;
+    public int t = 1;
     void Start()
     {
         cam = Camera.main;
@@ -32,18 +33,35 @@ public class InputManager : Singleton<InputManager>
 
     public void ChangeSideMove()
     {
-        if(isReverse == true)
-        {
-            rightSpeed = rightReverseSpeed;
-            leftSpeed = leftReverseSpeed;           
-        }
-        else
-        {
+    
             rightSpeed = originRightSpeed;
             leftSpeed = originLeftSpeed;
-        }
         
     }
+    public void ReverseSideMove(int ReverseTime)
+    {
+        
+        isReverse = true;
+        t = 0;
+        rightSpeed = rightReverseSpeed;
+        leftSpeed = leftReverseSpeed;
+        StartCoroutine(Wait(ReverseTime));
+    }
+    IEnumerator Wait(int ReverseTime)
+    {
+        
+        while (t <= ReverseTime)
+        {
+            print(t);
+            yield return new WaitForSeconds(1.0f);
+            t++;
+      
+        }
+        rightSpeed = originRightSpeed;
+        leftSpeed = originLeftSpeed;
+        isReverse = false;
+    }
+
 
     
     void Update()

@@ -6,7 +6,7 @@ public class DustOffBlanket : Hazard
 {
     public float hp;
     public GameObject hitEffect;
-    static float reverseTime = 4.0f;
+    int reverseTime = 4;
     float startReverseTime;
     public float[] itemWeight;
 
@@ -33,13 +33,20 @@ public class DustOffBlanket : Hazard
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
+       
         if(collider.gameObject.tag == "Player")
         {
-            reverseTime = startReverseTime;
-            InputManager.Instance.isReverse = true;
-            InputManager.Instance.ChangeSideMove();
-            MobileInputManager.Instance.isReverse = true;
-            StartCoroutine(RecoverReverseMove());
+            print(MobileInputManager.Instance.isReverse);
+            if (MobileInputManager.Instance.isReverse == false)
+            {
+                InputManager.Instance.ReverseSideMove(reverseTime);
+            }
+
+            else if (MobileInputManager.Instance.isReverse == true)
+            {
+                InputManager.Instance.t = 0;
+                print("Zero");
+            }
         }
         else if(collider.gameObject.tag == "Bullet")
         {
@@ -47,18 +54,15 @@ public class DustOffBlanket : Hazard
         }
     }
    
-    IEnumerator RecoverReverseMove()
+    IEnumerator Wait()
     {
-        while (reverseTime > 0.0f)
+        while (reverseTime == startReverseTime)
         {
             yield return new WaitForSeconds(1.0f);
-            reverseTime--;
+            reverseTime ++;
             
         }
-        if (reverseTime < 0)
-            reverseTime = startReverseTime;
-        InputManager.Instance.isReverse = false;
-        InputManager.Instance.ChangeSideMove();
+   
     }
   
 }
