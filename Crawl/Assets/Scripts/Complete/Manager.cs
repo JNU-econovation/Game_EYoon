@@ -24,9 +24,9 @@ public class Manager : Singleton<Manager>
    
     public void GameComplete()
     {
-        StopPlayer();
+        player.GetComponent<PlayerMove>().forwardSpeed = 0;
         GameCompleteUI.SetActive(true);
-        StartCoroutine(LoadEndingScene());
+       // StartCoroutine(LoadEndingScene());
     }
     public void Gameover()
     {
