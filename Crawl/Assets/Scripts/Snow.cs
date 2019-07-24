@@ -9,9 +9,15 @@ public class Snow : Weather
     static float damage = 2;
     float minDamage = 0.5f;
     float delay = 1.0f;
-    private void Awake()
+
+    private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
+        
+    }
+    private void Update()
+    {
+        transform.position = player.transform.position - new Vector3(0, 200, 0);
     }
 
     IEnumerator Damage()
@@ -33,16 +39,23 @@ public class Snow : Weather
             damage = minDamage;
     }
 
-    public void OnEnable()
-    {
-        transform.position = Camera.main.transform.position + new Vector3(0, 50, 0);
-        StartCoroutine(DisableSelf());
-    }
+
 
     IEnumerator DisableSelf()
     {
-        yield return new WaitForSeconds(enableTime);
-        gameObject.SetActive(false);      
+        var main = GetComponentInChildren<ParticleSystem>().main;
+        for (int i = 1; i < 11; i++)
+        {
+            main.startColor = new Color(255, 255, 255, i * 0.1f);
+            yield return new WaitForSeconds(0.2f);
+        }
+      
+        for (int i = 1; i < 11; i++)
+        {
+            main.startColor = new Color(255,255,255,1 - i * 0.1f);
+            yield return new WaitForSeconds(0.2f);
+        }
+           
     }
 
     public override void Function()
@@ -52,7 +65,8 @@ public class Snow : Weather
 
     public override void MakeWeather()
     {
-        gameObject.SetActive(true);
+        
+        StartCoroutine(DisableSelf());
         Function();
     }
 }
