@@ -13,6 +13,7 @@ public class FireExInventory : Singleton<FireExInventory>
     [SerializeField] GameObject Steam;
     float disableTime = 0.5f;
     public GameObject fireExItem;
+    public GameObject extinguishSound;
     private void Start()
     {       
         countText = GetComponentInChildren<Text>();
@@ -40,6 +41,7 @@ public class FireExInventory : Singleton<FireExInventory>
     {
         if (fireExCount > 0)
         {
+            Instantiate(extinguishSound);
             foreach (var fire in service.GetComponent<LevelManager>().fireList)
             {
                 if (fire != null)
@@ -49,6 +51,7 @@ public class FireExInventory : Singleton<FireExInventory>
             fireExItem.GetComponent<FireExtinguisherItem>().DisChargeFireExCount();
             int count = fireExItem.GetComponent<FireExtinguisherItem>().GetFireExCount();
             ChangeCount(count);
+            
         }
 
     }

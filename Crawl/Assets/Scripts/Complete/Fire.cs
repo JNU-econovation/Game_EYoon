@@ -14,8 +14,8 @@ public class Fire : Hazard
 
     private void OnDestroy()
     {
-        GameObject temp = Instantiate(steam);
-        temp.transform.position = gameObject.transform.position;
+        //GameObject temp = Instantiate(steam);
+        //temp.transform.position = gameObject.transform.position;
     }
     
 }
