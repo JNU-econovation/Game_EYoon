@@ -63,11 +63,17 @@ public class ItemManager : Singleton<ItemManager>
     }
   
     public GameObject MakeItem(Vector3 vector3, float[] weight)
-    { 
+    {
         int i = SelectIndex(weight);
         GameObject temp = Instantiate(item[i]);
         temp.transform.position = vector3;
         return temp;
-    }  
-
+    }
+    public void MakeItem(Vector3 vector3, float[] weight, int a)
+    {
+        int i = SelectIndex(weight);
+        vector3 += new Vector3(0, 10, 0);
+        GameObject temp = Instantiate(item[i], vector3, Quaternion.identity);
+        temp.GetComponent<Rigidbody2D>().gravityScale = 3;
+    }
 }

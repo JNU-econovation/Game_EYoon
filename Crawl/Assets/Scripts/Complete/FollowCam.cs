@@ -18,6 +18,7 @@ public class FollowCam : MonoBehaviour
         x = transform.position.x;
         z = transform.position.z;
     }
+    
     void LateUpdate()
     {
         if (Camera.main.transform.position.x - target.transform.position.x < 42 && Camera.main.transform.position.x - target.transform.position.x > -42)

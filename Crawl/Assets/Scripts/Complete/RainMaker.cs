@@ -60,6 +60,5 @@ public class RainMaker : Weather
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Health>().staminaDecreaseSpeed = player.GetComponent<Health>().maxStaminaDecreaseSpeed;
-        print(player.GetComponent<Health>().staminaDecreaseSpeed);
     }
 }

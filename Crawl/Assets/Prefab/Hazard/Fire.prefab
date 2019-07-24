@@ -4673,8 +4673,7 @@ GameObject:
   - component: {fileID: 2084059268833767016}
   - component: {fileID: 2171411137812789364}
   - component: {fileID: 2172449252777701806}
-  - component: {fileID: -7515070896329019772}
-  - component: {fileID: 7674354136806076560}
+  - component: {fileID: 1101529919176791984}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -4691,7 +4690,7 @@ Transform:
   m_GameObject: {fileID: 2082189904397100508}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 321.5, y: 581.8911, z: 0.61085415}
-  m_LocalScale: {x: 10, y: 18, z: 1}
+  m_LocalScale: {x: 7, y: 15, z: 1}
   m_Children:
   - {fileID: 2086122866166718922}
   - {fileID: 8343923826183170381}
@@ -9427,33 +9426,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!61 &-7515070896329019772
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082189904397100508}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 12.8}
-    newSize: {x: 19.2, y: 12.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &7674354136806076560
+--- !u!114 &1101529919176791984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9466,7 +9439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  damage: 5
+  steam: {fileID: 5640473224698372958, guid: df6ee901ca7566d4b979af6882137a73, type: 3}
 --- !u!1 &2951615577551417530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9477,8 +9450,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8343923826183170381}
   - component: {fileID: 1552059116568253536}
-  - component: {fileID: 5949801331974611541}
-  - component: {fileID: 3802395682893851674}
+  - component: {fileID: 6888128177181245255}
+  - component: {fileID: 3988410354151871025}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -9548,21 +9521,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5949801331974611541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2951615577551417530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e035f46944f8144aa463fb2b472115e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
-  damage: 3
---- !u!61 &3802395682893851674
+--- !u!61 &6888128177181245255
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9588,3 +9547,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.137167, y: 12.8}
   m_EdgeRadius: 0
+--- !u!114 &3988410354151871025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951615577551417530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b24b66c8bcd24e429770bec01cc4726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  playerFireEffect: {fileID: 7480927525850260998, guid: a71b7fb6cd591c148b51b456c1666045,
+    type: 3}

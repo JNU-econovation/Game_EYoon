@@ -7,6 +7,7 @@ public class Block : Hazard
     public float speed;
     public int damage;
     public float hp;
+    public GameObject hitEffect;
     Window window;
 
     void Update()
@@ -26,6 +27,9 @@ public class Block : Hazard
     {
         if (collider.gameObject.tag == "Bullet")
         {
+            GameObject effect = Instantiate(hitEffect);
+            effect.transform.position = collider.gameObject.transform.position;
+
             Destroy(collider.gameObject); // 총알 제거
             float bulletDamage = player.GetComponent<Ability>().bulletDamage;
             DecreaseHP(bulletDamage);

@@ -14,7 +14,8 @@ TagManager:
   - Bullet
   - Rain
   - Snow
-  - service
+  - PaintWorker
+  - Security
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,7 @@ public class Snow : Weather
         for (int i =0; i<5; i++)
         {
             DecreaseDamage();
+            player.GetComponentInChildren<PlayerEffect>().freezeEffect.SetActive(true);
             player.GetComponent<Health>().DecreaseHP(damage);
             yield return new WaitForSeconds(delay);
         }

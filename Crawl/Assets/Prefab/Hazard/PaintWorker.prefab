@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 8922303165616572433}
   m_Layer: 0
   m_Name: PaintWorker
-  m_TagString: Untagged
+  m_TagString: PaintWorker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,30 +424,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4bc410073940e4682792fa56a5a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 7
+  lifeTime: 5
   hpImage: {fileID: 2211534359212828152}
-  speed: 0.6
-  damage: 100
+  speed: 0.4
+  damage: 10
   hp: 10
   maxHp: 10
   itemWeight:
-  - 33
-  - 33
+  - 0
+  - 40
+  - 20
   - 0
   - 0
   - 0
-  - 0
-  - 34
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 40
   - 0
   - 0
   - 0
   - 0
   - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  hitEffect: {fileID: 4864575296219499240, guid: a7403dfc26dde804e8c41b5f5d03f4db,
+    type: 3}
 --- !u!61 &1705937574257266767
 BoxCollider2D:
   m_ObjectHideFlags: 0

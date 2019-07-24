@@ -27,13 +27,13 @@ public class AttackButton : MonoBehaviour
 
         if (isClicked == false)
         {
-            shootingGauge += Time.deltaTime * 10;
+            shootingGauge += Time.deltaTime * 3;
             if (shootingGauge >= maxShootingGauge)
                 shootingGauge = maxShootingGauge;
         }
         else
         {
-            shootingGauge -= Time.deltaTime * 10;
+            shootingGauge -= Time.deltaTime * 3;
         }
                    
         image.fillAmount = shootingGauge / maxShootingGauge;

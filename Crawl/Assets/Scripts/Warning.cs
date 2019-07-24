@@ -7,6 +7,7 @@ public class Warning : MonoBehaviour
    [SerializeField] GameObject red;
    [SerializeField] GameObject black;
     public GameObject service;
+    public GameObject lightning;
     GameObject player;
     public bool isTurnOn = false;
     float delay = 0.5f;
@@ -19,7 +20,7 @@ public class Warning : MonoBehaviour
 
     IEnumerator ChangeColor()
     {
-       for(int i = 0; i < 3; i++)
+       for(int i = 0; i < 2; i++)
         {
             red.SetActive(true);
             black.SetActive(false);
@@ -39,5 +40,9 @@ public class Warning : MonoBehaviour
         StartCoroutine(ChangeColor());
     }
 
-    
+    private void OnDisable()
+    {
+        lightning.SetActive(true);
+    }
+
 }

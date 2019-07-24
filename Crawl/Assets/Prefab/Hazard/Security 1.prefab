@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3446011777249584043}
   m_Layer: 0
   m_Name: Security 1
-  m_TagString: Untagged
+  m_TagString: Security
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5959180872717269747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 381, y: 261.89108, z: 0.61085415}
   m_LocalScale: {x: 2.6838121, y: 2.94, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,8 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 3
-  siren: {fileID: 1248360412735548029, guid: 85c91617a83e58545913a5d5937c0797, type: 3}
-  delay: 2
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 2048
