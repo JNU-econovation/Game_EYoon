@@ -9,7 +9,6 @@ public class Snow : Weather
     static float damage = 2;
     float minDamage = 0.5f;
     float delay = 1.0f;
-
     private void Awake()
     {
         player = service.GetComponent<LevelManager>().player;
@@ -20,6 +19,7 @@ public class Snow : Weather
         for (int i =0; i<5; i++)
         {
             DecreaseDamage();
+            player.GetComponentInChildren<PlayerEffect>().freezeEffect.SetActive(true);
             player.GetComponent<Health>().DecreaseHP(damage);
             yield return new WaitForSeconds(delay);
         }

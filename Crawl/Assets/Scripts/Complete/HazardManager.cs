@@ -50,7 +50,7 @@ public class HazardManager : Singleton<HazardManager>
         while (true)
         {
             yield return new WaitForSeconds(delaytime);
-            for (int i = 0; i <3; i++)
+            for (int i = 0; i <2; i++)
             {
                 SpawnHazard();              
             }
@@ -124,18 +124,16 @@ public class HazardManager : Singleton<HazardManager>
         HigherThanPlayerWins.Clear();
         int i = SelectHazard(weight);
         if(i == 0 || i == 2 || i == 3) WindowOpen(window);
-        GameObject temp = Instantiate(hazards[i]);
-        if (i == 6)
-        {
-            temp.transform.position = new Vector3(randomX[Random.Range(0,2)], player.transform.position.y + 187, 0);
-        }
-        else
-        {
-            temp.transform.position = window.transform.position;
-        }                
+
+        GameObject temp = Instantiate(hazards[i]);        
+        temp.transform.position = window.transform.position;             
         temp.GetComponent<Hazard>().Function(window);
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3.0f);
+    }
     public void WindowOpen(GameObject window)
     {        
         window.GetComponent<SpriteRenderer>().sprite = openWindow;

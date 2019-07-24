@@ -97,7 +97,7 @@ MonoBehaviour:
   speed: 1
   damage: 7
   hp: 5
-  hitEffect: {fileID: 384662628873824583, guid: b9c80c5c3ecec01458ac25dabfed87be,
+  hitEffect: {fileID: 4864575296219499240, guid: a7403dfc26dde804e8c41b5f5d03f4db,
     type: 3}
 --- !u!61 &8108955601073498990
 BoxCollider2D:

@@ -6,9 +6,8 @@ public class Security : Hazard
 {
     Ray2D ray;
     RaycastHit2D rayHit;
-    float distance = 200;
-    [SerializeField] GameObject siren;
-    [SerializeField] int delay; //경고가 뜬 후 경비가 나타나기까지의 시간
+    float distance = 90;
+    
     public LayerMask playerLayerMask;
     
     private void Update()
@@ -28,27 +27,8 @@ public class Security : Hazard
         }
     }
     public override void Function(GameObject window)
-    {
-        
-        StartCoroutine(Petrol(window));
-        HazardManager.Instance.WindowOpen(window);
-        
-    }
-    
-    IEnumerator Petrol(GameObject window)
-    {       
-        GameObject warning = Instantiate(siren);
-        warning.transform.position = window.transform.position;
-
-        yield return new WaitForSeconds(delay);  
-        Destroy(warning);
-        gameObject.transform.position = window.transform.position;
-
-    }
-    private void OnDrawGizmos()
-    {
-        Debug.DrawRay(ray.origin, ray.direction * distance, Color.red);
-    }
-
+    {                
+        HazardManager.Instance.WindowOpen(window);       
+    }      
 
 }

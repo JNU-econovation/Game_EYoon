@@ -18,6 +18,7 @@ public class FollowCam : MonoBehaviour
         x = transform.position.x;
         z = transform.position.z;
     }
+    
     void LateUpdate()
     {
         if (360 - target.transform.position.x < 42 && 360- target.transform.position.x > -42)

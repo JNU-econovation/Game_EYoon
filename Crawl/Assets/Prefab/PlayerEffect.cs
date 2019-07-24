@@ -5,4 +5,5 @@ using UnityEngine;
 public class PlayerEffect : Singleton<PlayerEffect>
 {
     public GameObject fireEffect;
+    public GameObject freezeEffect;
 }

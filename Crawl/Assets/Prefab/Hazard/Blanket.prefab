@@ -358,6 +358,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10
+  hp: 50
+  hitEffect: {fileID: 4864575296219499240, guid: a7403dfc26dde804e8c41b5f5d03f4db,
+    type: 3}
+  itemWeight:
+  - 0
+  - 40
+  - 20
+  - 0
+  - 0
+  - 0
+  - 0
+  - 40
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!61 &6737824894843127534
 BoxCollider2D:
   m_ObjectHideFlags: 0

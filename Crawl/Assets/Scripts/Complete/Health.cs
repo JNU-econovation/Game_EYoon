@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     public float originalStaminaDecreaseSpeed;
     public float maxStaminaDecreaseSpeed;
     public float hpDecreaseSpeed;
+    public GameObject hitEffect;
     float armor;
     private void Start()
     {
@@ -30,11 +31,16 @@ public class Health : MonoBehaviour
             Manager.Instance.Gameover();
         }
 
-        stamina -= Time.deltaTime * staminaDecreaseSpeed;
+        stamina -= Time.deltaTime * staminaDecreaseSpeed * 5;
         if (stamina <= 0)
         {
             stamina = 0;
             GetComponent<Health>().hp -= Time.deltaTime * hpDecreaseSpeed;
+            Blood.Instance.gameObject.SetActive(true);
+        }
+        else
+        {
+            Blood.Instance.gameObject.SetActive(false);
         }
         HPImage.fillAmount = hp / maxHp;       
     }
@@ -51,6 +57,8 @@ public class Health : MonoBehaviour
 
         decrease = decrease * (1 - armor / maxArmor);
         hp -= decrease;
+        GameObject temp = Instantiate(hitEffect);
+        temp.transform.position = transform.position;
         if (hp <= 0)
             Manager.Instance.Gameover();
       //  damagedAmount.text = decrease.ToString();
