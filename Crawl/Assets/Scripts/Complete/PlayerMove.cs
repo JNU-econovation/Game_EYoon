@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject playerNearMap;
     public GameObject nextMap;
     public GameObject[] map;
+    public bool isCenter = false;
     private void Start()
     {
         originforwardSpeed = forwardSpeed;
@@ -25,6 +26,11 @@ public class PlayerMove : MonoBehaviour
         {
             transform.Translate(0, forwardSpeed, 0);
         }
+        if (transform.position.y >= 200)
+            if (350 <= transform.position.x && transform.position.x <= 370)
+                isCenter = true;
+            else
+                isCenter = false;
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

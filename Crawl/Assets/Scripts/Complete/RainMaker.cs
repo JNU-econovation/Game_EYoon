@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class RainMaker : Weather
 {
-    GameObject player;
-    static float maxSpeed = 6.0f;
-    float minSpeed = 1.0f;
 
-    public void RecoverStaminaSpeed()
+    public bool isRain = false;
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Health>().staminaDecreaseSpeed = player.GetComponent<Health>().originalStaminaDecreaseSpeed;
-        
+        gameObject.SetActive(false);
     }
-
     public void OnEnable()
     {
+
         StartCoroutine(DisableSelf());
     }
 
@@ -24,7 +20,7 @@ public class RainMaker : Weather
     {
         yield return new WaitForSeconds(enableTime);
         gameObject.SetActive(false);
-        RecoverStaminaSpeed();
+        isRain = false;       
     }
 
     public override void MakeWeather()
@@ -40,7 +36,6 @@ public class RainMaker : Weather
 
     public override void Function()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Health>().staminaDecreaseSpeed = player.GetComponent<Health>().maxStaminaDecreaseSpeed;
+        isRain = true;            
     }
 }

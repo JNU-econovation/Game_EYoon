@@ -12,14 +12,19 @@ public class Health : MonoBehaviour
     public float stamina;
     public float maxStamina = 100.0f;
     public float staminaDecreaseSpeed;
+    static float umbrellalevel;
     public float originalStaminaDecreaseSpeed;
     public float maxStaminaDecreaseSpeed;
+    static float rainStaminaDecreaseSpeed = 6.0f;
+    public float centerStaminaDecreaseSpeed;
     public float hpDecreaseSpeed;
     public GameObject hitEffect;
+
     float armor;
     private void Start()
     {
         originalStaminaDecreaseSpeed = staminaDecreaseSpeed;
+        
     }
     void Update()
     { 
@@ -30,8 +35,22 @@ public class Health : MonoBehaviour
             hp = 0.0f;
             Manager.Instance.Gameover();
         }
+        bool isCenter = GetComponent<PlayerMove>().isCenter;
+        bool isRain = RainState.Instance.isRain;
 
-        stamina -= Time.deltaTime * staminaDecreaseSpeed * 5;
+        if(isRain && isCenter)
+        {
+            staminaDecreaseSpeed = (rainStaminaDecreaseSpeed + centerStaminaDecreaseSpeed);
+            
+        }
+        else if(isRain && isCenter == false)
+            staminaDecreaseSpeed = rainStaminaDecreaseSpeed;
+        else if(isRain == false && isCenter)
+            staminaDecreaseSpeed = centerStaminaDecreaseSpeed;
+        else staminaDecreaseSpeed = originalStaminaDecreaseSpeed;
+
+        stamina -= Time.deltaTime * staminaDecreaseSpeed;
+
         if (stamina <= 0)
         {
             stamina = 0;
@@ -42,7 +61,8 @@ public class Health : MonoBehaviour
         {
             Blood.Instance.gameObject.SetActive(false);
         }
-        HPImage.fillAmount = hp / maxHp;       
+        HPImage.fillAmount = hp / maxHp;
+        print(staminaDecreaseSpeed);
     }
 
     public void IncreaseHP(float increase)
@@ -82,15 +102,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void DecreaseStaminaSpeed(float n)
+    public void UmbrellaCount(float n)
     {
-        maxStaminaDecreaseSpeed -= n;
-        if(maxStaminaDecreaseSpeed <= originalStaminaDecreaseSpeed)
-        {
-            maxStaminaDecreaseSpeed = originalStaminaDecreaseSpeed;
-        }
-
+        rainStaminaDecreaseSpeed -= n;
+        if (rainStaminaDecreaseSpeed <= originalStaminaDecreaseSpeed)
+            rainStaminaDecreaseSpeed = originalStaminaDecreaseSpeed;
     }
+    
    
 }
 

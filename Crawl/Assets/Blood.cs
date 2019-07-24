@@ -4,5 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Blood : Singleton<Blood>
 {
-   
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 }

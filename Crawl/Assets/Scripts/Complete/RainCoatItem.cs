@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class RainCoatItem : Item
 {
-    public float decrease;
+    static float increase = 0.1f;
     public override void Function()
     {
-        player.GetComponent<Health>().DecreaseStaminaSpeed(decrease);         
+        player.GetComponent<Health>().UmbrellaCount(increase);         
     }   
 
     

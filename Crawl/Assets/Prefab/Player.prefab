@@ -421,6 +421,7 @@ MonoBehaviour:
   - {fileID: 1231191690524089103, guid: ef3774be3dae5b24c8d49df23a4c2902, type: 3}
   - {fileID: 2110688798461368885, guid: 4cda1ac08460f4543801133de1cf10a0, type: 3}
   - {fileID: 7934058975833635808, guid: ed4221f816754b942a45cce09ce7b723, type: 3}
+  isCenter: 0
 --- !u!114 &-1804885379557367661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,9 +455,10 @@ MonoBehaviour:
   stamina: 100
   maxStamina: 100
   staminaDecreaseSpeed: 1
-  originalStaminaDecreaseSpeed: 0
-  maxStaminaDecreaseSpeed: 6
-  hpDecreaseSpeed: 0.5
+  originalStaminaDecreaseSpeed: 1
+  maxStaminaDecreaseSpeed: 10
+  centerStaminaDecreaseSpeed: 8
+  hpDecreaseSpeed: 3
   hitEffect: {fileID: 3549380682570046374, guid: bd64e040f92d6f04ea2d62e989a57cd8,
     type: 3}
 --- !u!114 &2624472585311118398
