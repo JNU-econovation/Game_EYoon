@@ -44295,7 +44295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight:
-<<<<<<< HEAD
   - 6.25
   - 25
   - 15
@@ -44313,25 +44312,6 @@ MonoBehaviour:
   - 0.25
   - 0.125
   - 0.05
-=======
-  - 10
-  - 40
-  - 10
-  - 10
-  - 10
-  - 5
-  - 5
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
->>>>>>> e1f287108b60e75fd3534de3d6895cb3682d22b5
   nullItem: {fileID: 6910174167220613644, guid: 6c1e080a30243c043ad816152847adc8,
     type: 3}
   energyItem: {fileID: 2832154580640265740, guid: 93120878a332ef2478ca380ad8fb0e1b,
