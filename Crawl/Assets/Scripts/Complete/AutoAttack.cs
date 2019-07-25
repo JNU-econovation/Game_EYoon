@@ -7,17 +7,36 @@ public class AutoAttack : Singleton<AutoAttack>
     public GameObject bullet;
     GameObject target;
     int maxDistance = 10;
-    public bool isAttack = false;   
-
+    public bool isAttack = false;
+    public GameObject shootSound;
+    AudioSource audioSource;
+    int rand;
+    private void Start()
+    {
+        audioSource = shootSound.GetComponent<AudioSource>();
+    }
     private IEnumerator Shoot()
     {
         while (true)
         {
             if (isAttack == true)
-                MakeBullet();
+            {
+                rand = Random.Range(0, 2);
+                if(rand == 0)
+                {
+                    audioSource.enabled = true;
+                    audioSource.Play();
+                    MakeBullet();
+                }
+
+            }
+
             else
+            {
+                shootSound.GetComponent<AudioSource>().enabled = false;
                 break;
-            yield return new WaitForSeconds(0.1f);
+            }
+            yield return new WaitForSeconds(0.06f);
         }
 
     }
