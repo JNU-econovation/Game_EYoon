@@ -8,6 +8,7 @@ public class Block : Hazard
     public int damage;
     public float hp;
     public GameObject hitEffect;
+    public GameObject breakSound;
     Window window;
 
     void Update()
@@ -29,7 +30,7 @@ public class Block : Hazard
         {
             GameObject effect = Instantiate(hitEffect);
             effect.transform.position = collider.gameObject.transform.position;
-
+            Instantiate(breakSound, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(collider.gameObject); // 총알 제거
             float bulletDamage = player.GetComponent<Ability>().bulletDamage;
             DecreaseHP(bulletDamage);
@@ -41,7 +42,9 @@ public class Block : Hazard
                 AvoidText.Instance.MakeAvoidText();
                 return;
             }
-            collider.gameObject.GetComponent<Health>().DecreaseHP(damage);           
+            collider.gameObject.GetComponent<Health>().DecreaseHP(damage);
+            collider.GetComponent<AudioSource>().enabled = false;
+            collider.GetComponent<AudioSource>().enabled = true;
             Destroy(gameObject);
         }
         

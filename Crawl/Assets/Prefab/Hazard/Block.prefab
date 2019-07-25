@@ -99,6 +99,8 @@ MonoBehaviour:
   hp: 5
   hitEffect: {fileID: 4864575296219499240, guid: a7403dfc26dde804e8c41b5f5d03f4db,
     type: 3}
+  breakSound: {fileID: 7192955573765928387, guid: b6f9193cf5dc4a045980c4e4682b9080,
+    type: 3}
 --- !u!61 &8108955601073498990
 BoxCollider2D:
   m_ObjectHideFlags: 0

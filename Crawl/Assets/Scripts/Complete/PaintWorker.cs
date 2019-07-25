@@ -40,6 +40,9 @@ public class PaintWorker : Hazard
         if (collider.gameObject.tag == "Bullet")
         {
             float bulletDamage = player.GetComponent<Ability>().bulletDamage;
+            GetComponent<AudioSource>().enabled = false;
+            GetComponent<AudioSource>().enabled = true;
+
             DecreaseHP(bulletDamage);          
         }
         if (collider.gameObject.tag == "Player")
@@ -50,6 +53,8 @@ public class PaintWorker : Hazard
                 return;
             }
             collider.gameObject.GetComponent<Health>().DecreaseHP(damage);
+            collider.GetComponent<AudioSource>().enabled = false;
+            collider.GetComponent<AudioSource>().enabled = true;
         }
     }
 }

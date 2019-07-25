@@ -10,6 +10,7 @@ public class AttackButton : MonoBehaviour
     float maxShootingGauge = 100;
     Image image;
     bool isClicked = false;
+    [SerializeField] GameObject shoot;
     private void Start()
     {
         image = GetComponent<Image>();
@@ -22,6 +23,7 @@ public class AttackButton : MonoBehaviour
         {
             shootingGauge = 0;
             isClicked = false;
+            shoot.GetComponent<AudioSource>().enabled = false;
             AutoAttack.Instance.StopAttack(isClicked);
         }           
 
@@ -39,16 +41,18 @@ public class AttackButton : MonoBehaviour
         image.fillAmount = shootingGauge / maxShootingGauge;
     }       
 
-    public void Attack()
+    public void Attack(GameObject shoot)
     {
         if(isClicked == false)
         {
             isClicked = true;
+            shoot.GetComponent<AudioSource>().enabled = true;
             AutoAttack.Instance.StartAttack(isClicked);
         }
         else
         {
             isClicked = false;
+            shoot.GetComponent<AudioSource>().enabled = false;
             AutoAttack.Instance.StopAttack(isClicked);
         }
     }
