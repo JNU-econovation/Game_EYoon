@@ -36,7 +36,12 @@ public class DustOffBlanket : Hazard
        
         if(collider.gameObject.tag == "Player")
         {
-            print(MobileInputManager.Instance.isReverse);
+
+            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
             if (MobileInputManager.Instance.isReverse == false)
             {
                 InputManager.Instance.ReverseSideMove(reverseTime);
@@ -44,13 +49,12 @@ public class DustOffBlanket : Hazard
 
             else if (MobileInputManager.Instance.isReverse == true)
             {
-                InputManager.Instance.t = 0;
-                print("Zero");
+                InputManager.Instance.t = 0;               
             }
         }
         else if(collider.gameObject.tag == "Bullet")
         {
-            hp -= player.GetComponent<Ability>().bulletDamage;
+            DecreaseHP(player.GetComponent<Ability>().bulletDamage);
         }
     }
    

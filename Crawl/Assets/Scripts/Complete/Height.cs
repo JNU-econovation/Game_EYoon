@@ -29,7 +29,7 @@ public class Height : MonoBehaviour
                 height = maxHeight;                            
                 Manager.Instance.GameComplete();
                 yield return new WaitForSeconds(2.0f);
-                scoreUI.gameObject.SetActive(true);
+               // scoreUI.gameObject.SetActive(true);
                 Time.timeScale = 0;
             }
             heightText.text = ((int)height).ToString() + "m";
