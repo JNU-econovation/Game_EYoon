@@ -9609,6 +9609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b24b66c8bcd24e429770bec01cc4726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 1
   playerFireEffect: {fileID: 7480927525850260998, guid: a71b7fb6cd591c148b51b456c1666045,
     type: 3}

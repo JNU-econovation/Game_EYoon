@@ -14,6 +14,7 @@ public class FireExInventory : Singleton<FireExInventory>
     float disableTime = 0.5f;
     public GameObject fireExItem;
     public GameObject extinguishSound;
+    public bool isFire = false;
     private void Start()
     {       
         countText = GetComponentInChildren<Text>();
@@ -39,8 +40,13 @@ public class FireExInventory : Singleton<FireExInventory>
 
     public void FireOff()
     {
+        
         if (fireExCount > 0)
         {
+            if (FireCollider.Instance.isFire)
+            {
+                isFire = true;
+            }
             Instantiate(extinguishSound);
             foreach (var fire in service.GetComponent<LevelManager>().fireList)
             {
@@ -51,6 +57,7 @@ public class FireExInventory : Singleton<FireExInventory>
             fireExItem.GetComponent<FireExtinguisherItem>().DisChargeFireExCount();
             int count = fireExItem.GetComponent<FireExtinguisherItem>().GetFireExCount();
             ChangeCount(count);
+            isFire = false;
             
         }
 
