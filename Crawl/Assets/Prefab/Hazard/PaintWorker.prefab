@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1694349907767236057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.26, y: 115.385, z: 0}
-  m_LocalScale: {x: 0.032, y: 15.162369, z: 1}
+  m_LocalScale: {x: 0.032, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 8064717870404711190}
   m_RootOrder: 1
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4bc410073940e4682792fa56a5a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 7
   hpImage: {fileID: 2211534359212828152}
-  speed: 0.4
+  speed: 0.5
   damage: 10
   hp: 10
   maxHp: 10

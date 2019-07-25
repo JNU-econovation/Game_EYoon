@@ -9,6 +9,7 @@ public class Block : Hazard
     public float hp;
     public GameObject hitEffect;
     public GameObject breakSound;
+    public float[] itemWeight;
     Window window;
 
     void Update()
@@ -22,6 +23,7 @@ public class Block : Hazard
         if (hp <= 0)
         {
             Destroy(gameObject);
+            ItemManager.Instance.MakeItem(gameObject.transform.position, itemWeight, 1);
         }
     }
     private void OnTriggerEnter2D(Collider2D collider)

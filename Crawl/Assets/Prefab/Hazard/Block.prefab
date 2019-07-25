@@ -101,6 +101,24 @@ MonoBehaviour:
     type: 3}
   breakSound: {fileID: 7192955573765928387, guid: b6f9193cf5dc4a045980c4e4682b9080,
     type: 3}
+  itemWeight:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 100
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!61 &8108955601073498990
 BoxCollider2D:
   m_ObjectHideFlags: 0
