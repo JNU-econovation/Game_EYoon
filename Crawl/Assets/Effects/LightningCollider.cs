@@ -9,6 +9,11 @@ public class LightningCollider : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            if (collider.gameObject.GetComponent<Ability>().IsAvoid())
+            {
+                AvoidText.Instance.MakeAvoidText();
+                return;
+            }
             collider.gameObject.GetComponent<Health>().DecreaseHP(damege);
         }
     }
