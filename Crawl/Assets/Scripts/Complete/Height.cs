@@ -10,6 +10,7 @@ public class Height : MonoBehaviour
     GameObject player;
     public GameObject scoreUI;
     float maxHeight;
+    bool isComplete = false;
     private void Start()
     {
         heightText = GetComponent<Text>();
@@ -24,12 +25,14 @@ public class Height : MonoBehaviour
         {
             float height = service.GetComponent<LevelManager>().height;
 
-            if (height >= maxHeight)
+            if (height >= maxHeight && isComplete == false)
             {
+                height = maxHeight;
+                isComplete = true;
                 height = maxHeight;                            
                 Manager.Instance.GameComplete();
                 yield return new WaitForSeconds(2.0f);
-               // scoreUI.gameObject.SetActive(true);
+                scoreUI.gameObject.SetActive(true);
                 Time.timeScale = 0;
             }
             heightText.text = ((int)height).ToString() + "m";
