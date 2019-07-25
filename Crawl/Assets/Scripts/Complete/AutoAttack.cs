@@ -17,7 +17,7 @@ public class AutoAttack : Singleton<AutoAttack>
                 MakeBullet();
             else
                 break;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
 
     }

@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -18774033
-  m_SortingLayer: 0
+  m_SortingLayerID: -1172422219
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5870ad56ac57a794489c061307e7ce22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -148,8 +148,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1172422219
+  m_SortingLayer: 1
   m_SortingOrder: 7
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -199,8 +199,6 @@ MonoBehaviour:
   target: {fileID: 0}
   damage: 5
   lifeTime: 0.3
-  hitEffect: {fileID: 384662628873824583, guid: b9c80c5c3ecec01458ac25dabfed87be,
-    type: 3}
 --- !u!61 &9051197326804292738
 BoxCollider2D:
   m_ObjectHideFlags: 0

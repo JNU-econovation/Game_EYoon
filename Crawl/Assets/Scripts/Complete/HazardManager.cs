@@ -28,7 +28,6 @@ public class HazardManager : Singleton<HazardManager>
     public Sprite openWindow;
     public Sprite originWindow;
     GameObject window;
-    public GameObject windowOpenSound;
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
@@ -123,6 +122,7 @@ public class HazardManager : Singleton<HazardManager>
         windows = SelectMap().GetComponent<WindowList>().windows;
         window = SelectWindow(windows, nextMap);
         HigherThanPlayerWins.Clear();
+        LevelManager.Instance.ChangeHazardWeight();
         int i = SelectHazard(weight);
         if(i == 0 || i == 2 || i == 3) WindowOpen(window);
 
@@ -138,7 +138,6 @@ public class HazardManager : Singleton<HazardManager>
     public void WindowOpen(GameObject window)
     {        
         window.GetComponent<SpriteRenderer>().sprite = openWindow;
-        Instantiate(windowOpenSound);
         StartCoroutine(WindowOpenDisappear(window));
     }
 

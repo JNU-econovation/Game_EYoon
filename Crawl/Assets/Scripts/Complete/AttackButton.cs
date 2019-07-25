@@ -46,13 +46,13 @@ public class AttackButton : MonoBehaviour
         if(isClicked == false)
         {
             isClicked = true;
-            shoot.GetComponent<AudioSource>().enabled = true;
+            shoot.GetComponent<AudioSource>().Play();
             AutoAttack.Instance.StartAttack(isClicked);
         }
         else
         {
             isClicked = false;
-            shoot.GetComponent<AudioSource>().enabled = false;
+            shoot.GetComponent<AudioSource>().Stop();
             AutoAttack.Instance.StopAttack(isClicked);
         }
     }

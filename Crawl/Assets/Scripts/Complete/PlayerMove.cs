@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject nextMap;
     public GameObject[] map;
     public bool isCenter = false;
+    public float playerHeight;
     private void Start()
     {
         originforwardSpeed = forwardSpeed;
@@ -19,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
-      
+        playerHeight = transform.position.y / 10.0f;
         xPos = Mathf.Clamp(transform.position.x, 300.0f, 420.0f);
         transform.position = new Vector3(xPos, transform.position.y, transform.position.z); // 앞으로 이동  
         if (Time.timeScale != 0)

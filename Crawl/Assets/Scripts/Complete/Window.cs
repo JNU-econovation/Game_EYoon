@@ -19,7 +19,9 @@ public class Window : MonoBehaviour
     {
         window.GetComponent<SpriteRenderer>().sprite = breakWindow1;
         window.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
-        GetComponent<AudioSource>().enabled = true;
+        int rand = Random.Range(0, 2);
+        if(rand == 0)
+             GetComponent<AudioSource>().enabled = true;
         float[] weight = ItemManager.Instance.weight;
         ItemManager.Instance.MakeItem(gameObject.transform.position, weight);     
         isBroken = true;

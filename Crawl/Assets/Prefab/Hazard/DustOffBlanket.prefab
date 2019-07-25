@@ -66,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1172422219
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  LargeBlanketAnim: {fileID: 7764054693429820829, guid: dd83cdf3e796993459f585e6529cb9e8,
-    type: 3}
-  SmallBlanketAnim: {fileID: 7820124584215584798, guid: 2a45f9b9e5e08fd46a76aa0be6d327b5,
-    type: 3}
+  hp: 0
+  hitEffect: {fileID: 0}
+  itemWeight: []
