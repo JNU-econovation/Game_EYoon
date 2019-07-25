@@ -38,15 +38,15 @@ public class Health : MonoBehaviour
         bool isCenter = GetComponent<PlayerMove>().isCenter;
         bool isRain = RainState.Instance.isRain;
 
-        if(isRain && isCenter)
+        if (isRain && isCenter)
         {
             staminaDecreaseSpeed = (rainStaminaDecreaseSpeed + centerStaminaDecreaseSpeed);
-            
+
         }
-        else if(isRain && isCenter == false)
+        else if (isRain && isCenter == false)
             staminaDecreaseSpeed = rainStaminaDecreaseSpeed;
-        else if(isRain == false && isCenter)
-            staminaDecreaseSpeed = centerStaminaDecreaseSpeed;
+        else if (isRain == false && isCenter)
+            stamina = 0;
         else staminaDecreaseSpeed = originalStaminaDecreaseSpeed;
         stamina -= Time.deltaTime * staminaDecreaseSpeed;
 

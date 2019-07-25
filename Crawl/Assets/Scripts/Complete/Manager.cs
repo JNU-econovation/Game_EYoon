@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Manager : Singleton<Manager>
 {
+    public GameObject inGameSound;
+    public GameObject gameCompleteSound;
     static public int coin;
     public Text coinText;
     GameObject player;
@@ -16,6 +18,7 @@ public class Manager : Singleton<Manager>
     float delayTime = 3.0f;
     public GameObject heightUI;
     public GameObject hpBar;
+    public GameObject gameOverSound;
     private void Start()
     {
         coin = 0;
@@ -24,18 +27,21 @@ public class Manager : Singleton<Manager>
    
     public void GameComplete()
     {
-        StopPlayer();
+        inGameSound.GetComponent<AudioSource>().Stop();
+        Instantiate(gameCompleteSound);
+        player.GetComponent<PlayerMove>().forwardSpeed = 0;
         GameCompleteUI.SetActive(true);
-        StartCoroutine(LoadEndingScene());
+       // StartCoroutine(LoadEndingScene());
     }
     public void Gameover()
     {
+        inGameSound.GetComponent<AudioSource>().Stop();
+        Instantiate(gameOverSound);
         StopPlayer();
         hpBar.SetActive(false);
         gameOverUI.SetActive(true);
         StartCoroutine(Delay(delayTime));
         gameOver = false;
-        
     }
 
     public void StopPlayer()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 180225940264242620}
   - component: {fileID: 3921843376528789124}
   - component: {fileID: 6242460867866114197}
-  - component: {fileID: 8187561762101538518}
+  - component: {fileID: 828631013432068297}
   m_Layer: 0
   m_Name: LargeWindowFire
   m_TagString: Untagged
@@ -127,7 +127,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.966364, y: 7.5666523}
   m_EdgeRadius: 0
---- !u!114 &8187561762101538518
+--- !u!114 &828631013432068297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,9 +136,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6710956042956999440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ff406dba1db6f499ac34ac47a8b683, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e035f46944f8144aa463fb2b472115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  damage: 3
-  damage: 3
+  steam: {fileID: 5640473224698372958, guid: df6ee901ca7566d4b979af6882137a73, type: 3}
+  isFIreOff: 0

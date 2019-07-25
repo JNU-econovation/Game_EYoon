@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    GameObject target;
+    GameObject player;
     public GameObject service;
-    public float xDistance;
     public float yDistance;
     float x;
     float y;
@@ -14,23 +13,54 @@ public class FollowCam : MonoBehaviour
 
     void Start()
     {
-        target = service.GetComponent<LevelManager>().player;
+        player = service.GetComponent<LevelManager>().player;
         x = transform.position.x;
         z = transform.position.z;
+      //  StartCoroutine(MoveCamera());
     }
     
-    void LateUpdate()
+    void Update()
     {
-        if (Camera.main.transform.position.x - target.transform.position.x < 42 && Camera.main.transform.position.x - target.transform.position.x > -42)
+        y = player.transform.position.y - yDistance;       
+        transform.position = new Vector3(x, y, z);    
+        if(transform.position.y >= LevelManager.Instance.maxHeight)
         {
-            
-            y = target.transform.position.y - yDistance;
+            gameObject.transform.position = new Vector3 (x, LevelManager.Instance.maxHeight, z);
+           
         }
-        else
-        {
-            x = target.transform.position.x - xDistance;
-            y = target.transform.position.y - yDistance;
-        }
-        transform.position = new Vector3(x, y, z);                                   
     }
+
+    IEnumerator MoveCamera()
+    {
+        while (true)
+        {
+            float cameraXpos = transform.position.x;
+            float cameraYpos = transform.position.y;
+            float playerXpos = player.transform.position.x;
+            Vector2 targetPos = new Vector2(cameraXpos + 30, cameraYpos);
+            Vector2 cameraPos = transform.position;
+            float diff = cameraXpos - playerXpos;
+            if (diff <= -30 || diff >= 30)
+            {
+                float time = 0.0f;
+                float duration = 2.0f;
+                while (time < duration)
+                {
+
+                    yield return null;
+                    transform.position = Vector2.Lerp(cameraPos, targetPos, time / duration);
+                    time += Time.deltaTime;
+                    
+                }
+
+            }
+            y = player.transform.position.y - yDistance;       
+        transform.position = new Vector3(x, y, z); 
+
+            yield return null;
+
+        }
+    }
+        
+    
 }

@@ -6,7 +6,7 @@ public class Particles : MonoBehaviour
 {
     public GameObject[] particles;
     
-    // Start is called before the first frame update
+    
 
 
 

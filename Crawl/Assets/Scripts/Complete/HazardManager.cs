@@ -28,6 +28,7 @@ public class HazardManager : Singleton<HazardManager>
     public Sprite openWindow;
     public Sprite originWindow;
     GameObject window;
+    public GameObject windowOpenSound;
     private void Start()
     {
         player = service.GetComponent<LevelManager>().player;
@@ -137,6 +138,7 @@ public class HazardManager : Singleton<HazardManager>
     public void WindowOpen(GameObject window)
     {        
         window.GetComponent<SpriteRenderer>().sprite = openWindow;
+        Instantiate(windowOpenSound);
         StartCoroutine(WindowOpenDisappear(window));
     }
 
@@ -146,7 +148,7 @@ public class HazardManager : Singleton<HazardManager>
     }
     IEnumerator WindowOpenDisappear(GameObject window)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);       
         window.GetComponent<SpriteRenderer>().sprite = openStateWindow;
 
 
