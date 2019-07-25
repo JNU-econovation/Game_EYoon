@@ -19,7 +19,7 @@ public class Window : MonoBehaviour
     {
         window.GetComponent<SpriteRenderer>().sprite = breakWindow1;
         window.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
-        int rand = Random.Range(0, 2);
+        int rand = Random.Range(0, 5);
         if(rand == 0)
              GetComponent<AudioSource>().enabled = true;
         float[] weight = ItemManager.Instance.weight;
