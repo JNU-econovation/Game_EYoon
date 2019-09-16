@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class nullweather : Weather
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public override void Function()
     {
         
@@ -17,9 +12,5 @@ public class nullweather : Weather
     {
      
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

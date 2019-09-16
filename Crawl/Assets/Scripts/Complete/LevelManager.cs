@@ -8,18 +8,11 @@ public class LevelManager : Singleton<LevelManager>
     public GameObject player;
     public GameObject[] map;
     public float height;
-    public float maxHeight;
     public List<GameObject> fireList = new List<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
-        maxHeight *= 10;
-    }
-
-    void Awake()
-    {
-        player = Instantiate(playerPrefab);       
-       
+        player = Instantiate(playerPrefab);
     }
     /*
     public void RecoverWindows(GameObject obj)
@@ -29,14 +22,6 @@ public class LevelManager : Singleton<LevelManager>
         window.HP = window.maxHP;            
     }
     */
-    private void Update()
-    {
-        height = player.transform.position.y / 10;
-        if(height >= maxHeight)
-        {
-            GetComponent<Manager>().GameComplete();
-        }
-    }
 
     public float[] ChangeWeatherWeight()
     { //가중치 순서 물건던지기, 화재, 창문열기, 이불털기, null, 경비원, 페인트공

@@ -15,7 +15,7 @@ abstract public class Item : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        service = GameObject.FindGameObjectWithTag("service");
+        service = GameObject.FindGameObjectWithTag("Service");
         
         
     }

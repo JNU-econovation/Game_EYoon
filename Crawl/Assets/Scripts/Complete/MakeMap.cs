@@ -19,15 +19,7 @@ public class MakeMap : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-       float maxHeight = service.GetComponent<LevelManager>().maxHeight;
-       if (movedPosition.y >= maxHeight)
-        {
-            gameObject.SetActive(false);
-            GetComponentInParent<WindowList>().DisableFloor();           
-        }
-    }
+  
     private void OnTriggerEnter2D(Collider2D collider)
     {
 

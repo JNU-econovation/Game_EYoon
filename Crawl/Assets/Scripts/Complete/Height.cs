@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class Height : MonoBehaviour
 {
     Text heightText;
-    public GameObject service;
+    GameObject service;
     GameObject player;
     public GameObject scoreUI;
     float maxHeight;
     bool isComplete = false;
     private void Start()
     {
+        service = GameObject.FindGameObjectWithTag("Service");
         heightText = GetComponent<Text>();
-        maxHeight = service.GetComponent<LevelManager>().maxHeight;
         player = service.GetComponent<LevelManager>().player;
         StartCoroutine(HeightUI());
     }
@@ -23,18 +23,8 @@ public class Height : MonoBehaviour
     {
         while (true)
         {
-            float height = service.GetComponent<LevelManager>().height;
-
-            if (height >= maxHeight && isComplete == false)
-            {
-                height = maxHeight;
-                isComplete = true;
-                height = maxHeight;                            
-                Manager.Instance.GameComplete();
-                yield return new WaitForSeconds(2.0f);
-                scoreUI.gameObject.SetActive(true);
-                Time.timeScale = 0;
-            }
+            float height = player.transform.position.y / 10;
+           
             heightText.text = ((int)height).ToString() + "m";
             yield return null;
         }

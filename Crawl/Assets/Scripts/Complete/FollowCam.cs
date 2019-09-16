@@ -5,7 +5,8 @@ using UnityEngine;
 public class FollowCam : MonoBehaviour
 {
     GameObject player;
-    public GameObject service;
+    GameObject service;
+
     public float yDistance;
     float x;
     float y;
@@ -13,21 +14,18 @@ public class FollowCam : MonoBehaviour
 
     void Start()
     {
+        service = GameObject.FindGameObjectWithTag("Service");
         player = service.GetComponent<LevelManager>().player;
         x = transform.position.x;
         z = transform.position.z;
       //  StartCoroutine(MoveCamera());
     }
-    
+  
     void Update()
     {
         y = player.transform.position.y - yDistance;       
         transform.position = new Vector3(x, y, z);    
-        if(transform.position.y >= LevelManager.Instance.maxHeight)
-        {
-            gameObject.transform.position = new Vector3 (x, LevelManager.Instance.maxHeight, z);
-           
-        }
+       
     }
 
     IEnumerator MoveCamera()

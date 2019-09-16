@@ -5,12 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InputManager : Singleton<InputManager>
 {
-    Camera cam;
-    Attack attack;
     GameObject player;
-    public GameObject target;
-    Vector3 mousePosition;
-    float maxDistance = 15f;
     public float sideSpeed;
     public float rightSpeed;
     public float leftSpeed;
@@ -22,9 +17,7 @@ public class InputManager : Singleton<InputManager>
     public int t = 1;
     void Start()
     {
-        cam = Camera.main;
         player = GetComponentInParent<LevelManager>().player;
-        attack = player.GetComponent<Attack>();
         originRightSpeed = rightSpeed;
         originLeftSpeed = leftSpeed;
         rightReverseSpeed = rightSpeed * -1.0f;
@@ -33,10 +26,8 @@ public class InputManager : Singleton<InputManager>
 
     public void ChangeSideMove()
     {
-    
-            rightSpeed = originRightSpeed;
-            leftSpeed = originLeftSpeed;
-        
+        rightSpeed = originRightSpeed;
+        leftSpeed = originLeftSpeed;        
     }
     public void ReverseSideMove(int ReverseTime)
     {
@@ -52,10 +43,8 @@ public class InputManager : Singleton<InputManager>
         
         while (t <= ReverseTime)
         {
-            print(t);
             yield return new WaitForSeconds(1.0f);
-            t++;
-      
+            t++;      
         }
         rightSpeed = originRightSpeed;
         leftSpeed = originLeftSpeed;
@@ -75,9 +64,7 @@ public class InputManager : Singleton<InputManager>
         {
             player.transform.Translate(Time.deltaTime * Vector3.left * leftSpeed);
         }
-    
-                        
-        
+                                   
     }
 
 }

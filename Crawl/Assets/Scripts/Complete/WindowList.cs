@@ -16,14 +16,6 @@ public class WindowList : Singleton<WindowList>
         
     }
    
-    public void DisableFloor()
-    {
-        float maxHeight = service.GetComponent<LevelManager>().maxHeight;
-        for (int i = 0; i < floorArr.Length; i++)
-        {
-            if (floorArr[i].transform.position.y > maxHeight + 10)
-                floorArr[i].SetActive(false);
-        }
-    }
+   
 
 }

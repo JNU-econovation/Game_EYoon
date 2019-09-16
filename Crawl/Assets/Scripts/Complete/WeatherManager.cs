@@ -9,20 +9,15 @@ public class WeatherManager : Singleton<WeatherManager>
     float enableTime = 3.0f;
     public float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
 
-    List<GameObject> weather = new List<GameObject>();
+    public List<GameObject> weather = new List<GameObject>();
     GameObject player;
-    public GameObject service;
-    public GameObject rain;
-    public GameObject snow;
-    public GameObject lightning;
-    public GameObject nullObject;
+    GameObject service;
+
     private void Start()
     {
-        player = service.GetComponent<LevelManager>().player;      
-        weather.Add(rain);
-        weather.Add(snow);
-        weather.Add(lightning);
-        weather.Add(nullObject);
+        service = GameObject.FindGameObjectWithTag("Service");
+        player = service.GetComponent<LevelManager>().player;
+       
         StartCoroutine(ChangeWeather());
                             
     }

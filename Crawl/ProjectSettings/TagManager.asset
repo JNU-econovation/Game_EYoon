@@ -16,7 +16,8 @@ TagManager:
   - Snow
   - PaintWorker
   - Security
-  - service
+  - Service
+  - JoyStick
   layers:
   - Default
   - TransparentFX

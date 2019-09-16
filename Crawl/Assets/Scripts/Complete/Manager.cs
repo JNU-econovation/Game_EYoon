@@ -6,33 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class Manager : Singleton<Manager>
 {
-    public GameObject inGameSound;
-    public GameObject gameCompleteSound;
-    static public int coin;
-    public Text coinText;
+    GameObject inGameSound;
+    GameObject gameCompleteSound;
+    GameObject gameOverSound;
+    GameObject gameOverUI;
+    GameObject scoreUI;
     GameObject player;
+    static public int coin = 0;
+    public Text coinText;
     bool gameOver = true;
-    public GameObject gameOverUI;
-    public GameObject scoreUI;
-    public GameObject GameCompleteUI;
     float delayTime = 3.0f;
-    public GameObject heightUI;
     public GameObject hpBar;
-    public GameObject gameOverSound;
+
     private void Start()
     {
-        coin = 0;
         player = GetComponent<LevelManager>().player;
+
+        gameOverUI = GetComponent<UIManager>().gameOverUI;
+        scoreUI = GetComponent<UIManager>().scoreUI;
+
+        inGameSound = GetComponent<SoundManager>().inGameSound;
+        gameCompleteSound = GetComponent<SoundManager>().gameCompleteSound;
+        gameOverSound = GetComponent<SoundManager>().gameOverSound;
     }
    
-    public void GameComplete()
-    {
-        inGameSound.GetComponent<AudioSource>().Stop();
-        Instantiate(gameCompleteSound);
-        player.GetComponent<PlayerMove>().forwardSpeed = 0;
-        GameCompleteUI.SetActive(true);
-       // StartCoroutine(LoadEndingScene());
-    }
+   
     public void Gameover()
     {
         inGameSound.GetComponent<AudioSource>().Stop();
@@ -57,11 +55,7 @@ public class Manager : Singleton<Manager>
         Time.timeScale = 0;
 
     }
-    IEnumerator LoadEndingScene()
-    {
-        yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene("PrefapForge");
-    }
+  
     public void IncreaseCoin(int n)
     {
         coin += n;
