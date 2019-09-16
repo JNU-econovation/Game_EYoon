@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeatherManager : Singleton<WeatherManager>
 {
     float rand;
-    float delayTime = 11.0f;
+    float delayTime = 9.0f;
     float enableTime = 3.0f;
     public float[] weight = { 20.0f, 30.0f, 20.0f ,10.0f};
 
@@ -48,6 +48,7 @@ public class WeatherManager : Singleton<WeatherManager>
         while (true)
         {
             yield return new WaitForSeconds(delayTime);
+        //    weight = LevelManager.Instance.ChangeWeatherWeight();
             int i = SelectIndex(weight);
             weather[i].GetComponent<Weather>().MakeWeather();          
         }

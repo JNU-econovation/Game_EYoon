@@ -1,21 +1,13 @@
 fileFormatVersion: 2
 guid: 271edbc011d9e03489f73cef81b2d56a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: SmallDustPuff_0
-  - first:
-      213: 21300002
-    second: SmallDustPuff_1
-  - first:
-      213: 21300004
-    second: SmallDustPuff_2
-  - first:
-      213: 21300006
-    second: SmallDustPuff_3
+  fileIDToRecycleName:
+    21300000: SmallDustPuff_0
+    21300002: SmallDustPuff_1
+    21300004: SmallDustPuff_2
+    21300006: SmallDustPuff_3
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -111,7 +103,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 613f55010dbfe8f4d80d89c8a25ec833
-      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -132,7 +123,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2a4f2de9705b5584481d0e6d8efc100f
-      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -153,7 +143,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 69abf023889cf7248b472511cbdbaaf9
-      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -174,7 +163,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 06eeb114b9c6bab43a1a0620c5e53976
-      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -183,12 +171,10 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 
-    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -36,7 +36,7 @@ public class Warning : MonoBehaviour
     private void OnEnable()
     {
         isTurnOn = true;
-        transform.position = new Vector2(Random.Range(335, 385), player.transform.position.y + Random.Range(10, 80));
+        transform.position = new Vector2(340, player.transform.position.y + 150);
         StartCoroutine(ChangeColor());
     }
 

@@ -64,6 +64,7 @@ public class ItemManager : Singleton<ItemManager>
   
     public GameObject MakeItem(Vector3 vector3, float[] weight)
     {
+      //  weight = LevelManager.Instance.ChangeItemWeight();
         int i = SelectIndex(weight);
         GameObject temp = Instantiate(item[i]);
         temp.transform.position = vector3;
@@ -71,6 +72,7 @@ public class ItemManager : Singleton<ItemManager>
     }
     public void MakeItem(Vector3 vector3, float[] weight, int a)
     {
+     //   weight = LevelManager.Instance.ChangeItemWeight();
         int i = SelectIndex(weight);
         vector3 += new Vector3(0, 20, 0);
         GameObject temp = Instantiate(item[i], vector3, Quaternion.identity);
