@@ -36,7 +36,6 @@ public class Manager : Singleton<Manager>
         inGameSound.GetComponent<AudioSource>().Stop();
         Instantiate(gameOverSound);
         StopPlayer();
-        hpBar.SetActive(false);
         gameOverUI.SetActive(true);
         StartCoroutine(Delay(delayTime));
         gameOver = false;
@@ -44,7 +43,6 @@ public class Manager : Singleton<Manager>
 
     public void StopPlayer()
     {
-        player.GetComponent<PlayerMove>().forwardSpeed = 0;
         player.GetComponent<Rigidbody2D>().gravityScale = 1;       
     }
 

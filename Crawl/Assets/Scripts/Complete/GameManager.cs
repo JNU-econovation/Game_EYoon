@@ -32,7 +32,6 @@ public class GameManager : Singleton<GameManager>
     IEnumerator Gameover()
     {
         GameOver = false;
-        player.GetComponent<PlayerMove>().forwardSpeed = 0;
         gameOverUI.SetActive(true);
         yield return new WaitForSeconds(delay);
         scoreUI.SetActive(true);

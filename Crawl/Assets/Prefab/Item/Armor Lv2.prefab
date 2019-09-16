@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6334318787704219879}
   - component: {fileID: 6334318787704219878}
   - component: {fileID: -4492101552772537134}
-  - component: {fileID: -2741342484473288044}
   - component: {fileID: -5660780305021610000}
+  - component: {fileID: 679170843439564216}
   m_Layer: 0
   m_Name: Armor Lv2
   m_TagString: Untagged
@@ -108,20 +108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &-2741342484473288044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6334318787704219897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df53a010f6d90d745bb9d9a5fb3a44f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
-  increase: 2
 --- !u!50 &-5660780305021610000
 Rigidbody2D:
   serializedVersion: 4
@@ -143,3 +129,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &679170843439564216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334318787704219897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a0ac86f11698647ac3e08721869e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 7
+  increase: 2

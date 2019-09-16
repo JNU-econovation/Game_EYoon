@@ -52,10 +52,6 @@ public class DustOffBlanket : Hazard
                 InputManager.Instance.t = 0;               
             }
         }
-        else if(collider.gameObject.tag == "Bullet")
-        {
-            DecreaseHP(player.GetComponent<Ability>().bulletDamage);
-        }
     }
    
     IEnumerator Wait()

@@ -7,12 +7,13 @@ public class Stamina : MonoBehaviour
 {
     public float stamina;
     GameObject player;
-    public GameObject service;
+    GameObject service;
 
     float maxStamina;
     Image staminaImage;
     private void Start()
     {
+        service = GameObject.FindGameObjectWithTag("Service");
         staminaImage = GetComponent<Image>();
         player = service.GetComponent<LevelManager>().player;
     }

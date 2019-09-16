@@ -7,7 +7,7 @@ abstract public class WeaponItem : Item
     public float increase;
     public override void Function()
     {
-        player.GetComponent<Ability>().IncreaseBulletDamage(increase);
+       // player.GetComponent<Ability>().IncreaseBulletDamage(increase);
 
     }
 }

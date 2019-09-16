@@ -12,20 +12,9 @@ public class Health : MonoBehaviour
     public float stamina;
     public float maxStamina = 100.0f;
     public float staminaDecreaseSpeed;
-    static float umbrellalevel;
-    public float originalStaminaDecreaseSpeed;
-    public float maxStaminaDecreaseSpeed;
-    static float rainStaminaDecreaseSpeed = 6.0f;
-    public float centerStaminaDecreaseSpeed;
     public float hpDecreaseSpeed;
     public GameObject hitEffect;
 
-    float armor;
-    private void Start()
-    {
-        originalStaminaDecreaseSpeed = staminaDecreaseSpeed;
-        
-    }
     void Update()
     { 
         if (hp >= maxHp)
@@ -35,19 +24,7 @@ public class Health : MonoBehaviour
             hp = 0.0f;
             Manager.Instance.Gameover();
         }
-        bool isCenter = GetComponent<PlayerMove>().isCenter;
-        bool isRain = RainState.Instance.isRain;
-
-        if (isRain && isCenter)
-        {
-            staminaDecreaseSpeed = (rainStaminaDecreaseSpeed + centerStaminaDecreaseSpeed);
-
-        }
-        else if (isRain && isCenter == false)
-            staminaDecreaseSpeed = rainStaminaDecreaseSpeed;
-        else if (isRain == false && isCenter)
-            stamina = 0;
-        else staminaDecreaseSpeed = originalStaminaDecreaseSpeed;
+     
         stamina -= Time.deltaTime * staminaDecreaseSpeed;
 
         if (stamina <= 0)
@@ -98,15 +75,7 @@ public class Health : MonoBehaviour
         {
             stamina = 0;
         }
-    }
-
-    public void UmbrellaCount(float n)
-    {
-        rainStaminaDecreaseSpeed -= n;
-        if (rainStaminaDecreaseSpeed <= originalStaminaDecreaseSpeed)
-            rainStaminaDecreaseSpeed = originalStaminaDecreaseSpeed;
-    }
-    
+    }   
    
 }
 

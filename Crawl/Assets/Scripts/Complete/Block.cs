@@ -28,15 +28,7 @@ public class Block : Hazard
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Bullet")
-        {
-            GameObject effect = Instantiate(hitEffect);
-            effect.transform.position = collider.gameObject.transform.position;
-            Instantiate(breakSound, gameObject.transform.position, gameObject.transform.rotation);
-            Destroy(collider.gameObject); // 총알 제거
-            float bulletDamage = player.GetComponent<Ability>().bulletDamage;
-            DecreaseHP(bulletDamage);
-        }
+        
         if(collider.gameObject.tag == "Player")
         {
             if (collider.gameObject.GetComponent<Ability>().IsAvoid())

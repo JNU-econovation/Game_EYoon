@@ -9,7 +9,6 @@ public class Resumebutton : MonoBehaviour
     {
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
-        levelManager.player.GetComponent<PlayerMove>().forwardSpeed = levelManager.player.GetComponent<PlayerMove>().originforwardSpeed;
 
     }
 }

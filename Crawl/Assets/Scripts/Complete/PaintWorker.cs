@@ -37,14 +37,7 @@ public class PaintWorker : Hazard
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Bullet")
-        {
-            float bulletDamage = player.GetComponent<Ability>().bulletDamage;
-            GetComponent<AudioSource>().enabled = false;
-            GetComponent<AudioSource>().enabled = true;
-
-            DecreaseHP(bulletDamage);          
-        }
+        
         if (collider.gameObject.tag == "Player")
         {
             if (collider.gameObject.GetComponent<Ability>().IsAvoid())

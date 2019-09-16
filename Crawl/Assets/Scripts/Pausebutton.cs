@@ -9,7 +9,6 @@ public class Pausebutton : MonoBehaviour
     {
         Time.timeScale = 0;
         Time.fixedDeltaTime = 0;
-        levelManager.player.GetComponent<PlayerMove>().forwardSpeed = 0;
     }
  
 }

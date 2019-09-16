@@ -7,13 +7,14 @@ public class HPUI : MonoBehaviour
 {
     public Text hpValue; 
     GameObject player;
-    public GameObject service;
+    GameObject service;
     Image heart;
     float hp;
     float maxHp;
 
     private void Start()
     {
+        service = GameObject.FindGameObjectWithTag("Service");
         player = service.GetComponent<LevelManager>().player;
         heart = GetComponent<Image>();       
     }
@@ -22,7 +23,7 @@ public class HPUI : MonoBehaviour
     {
         hp = player.GetComponent<Health>().hp;
         maxHp = player.GetComponent<Health>().maxHp;
-        hpValue.text = ((int)(player.GetComponent<Health>().hp)).ToString() + "/100";
+        hpValue.text = ((int)(player.GetComponent<Health>().hp)).ToString();
         heart.fillAmount = hp / maxHp;
     }
 }

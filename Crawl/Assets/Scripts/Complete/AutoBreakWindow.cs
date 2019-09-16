@@ -14,10 +14,9 @@ public class AutoBreakWindow : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.3f);           
             Ray();
+            yield return new WaitForSeconds(0.3f);
         }
-
 
     }
 

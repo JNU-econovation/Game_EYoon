@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class Ability : Singleton<Ability>
 {
-    public GameObject bullet;
-    public float bulletDamage;
-    float maxBulletDamage = 100;
-    public float damage;
     public float armor;
     public float maxArmor = 80.0f;
     public float avoidance;
-    public bool isReverse = false;
     static int jacketLevel;
     GameObject snow;
     float[] avoidWeight = new float[2];
-
-    void Awake()
-    {
-        bulletDamage = bullet.GetComponent<Bullet>().damage;        
-    }
-
-
+ 
     public int TakeJacketLevel()
     {
         jacketLevel++;
@@ -36,35 +25,20 @@ public class Ability : Singleton<Ability>
         }
     }
 
-    public void IncreaseBulletDamage(float n)
+    public bool IsAvoid()
     {
-        bulletDamage += n;
-        if(bulletDamage >= maxBulletDamage)
-        {
-            bulletDamage = maxBulletDamage;
-        }
-        bullet.GetComponent<Bullet>().damage = bulletDamage;
-    }
-
-    int SelectAvoid()
-    {
+        int i = 0;
         avoidWeight[0] = avoidance;
         avoidWeight[1] = 100 - avoidance;
         float rand = Random.Range(0, 100);
         float total = 0;
-        for (int i = 0; i < avoidWeight.Length; i++)
-        {
+        while(i < avoidWeight.Length)
+        { 
             total += avoidWeight[i];
             if (rand <= total)
-                return i;
+                break;
+            i++;
         }
-        return avoidWeight.Length - 1;
+        return i == 0;
     }
-    public bool IsAvoid()
-    {
-        return SelectAvoid() == 0;
-    }
-
-  
-
 }
