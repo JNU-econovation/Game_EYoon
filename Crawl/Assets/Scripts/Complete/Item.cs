@@ -36,7 +36,7 @@ abstract public class Item : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Instantiate(service.GetComponent<Particles>().particles[Random.Range(0, service.GetComponent<Particles>().particles.Length-1)],collider.transform.position,collider.transform.rotation);
+          //  Instantiate(service.GetComponent<Particles>().particles[Random.Range(0, service.GetComponent<Particles>().particles.Length-1)],collider.transform.position,collider.transform.rotation);
             Function();            
             Destroy(gameObject);
         }

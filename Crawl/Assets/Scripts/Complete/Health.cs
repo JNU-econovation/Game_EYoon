@@ -52,8 +52,6 @@ public class Health : MonoBehaviour
 
         decrease = decrease * (1 - armor / maxArmor);
         hp -= decrease;
-        GameObject temp = Instantiate(hitEffect);
-        temp.transform.position = transform.position;
         if (hp <= 0)
             Manager.Instance.Gameover();
       //  damagedAmount.text = decrease.ToString();
