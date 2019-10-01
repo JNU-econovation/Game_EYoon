@@ -21,8 +21,10 @@ public class PlayerMove : MonoBehaviour
         _transform = transform;
         _moveVector = Vector3.zero;
     }
+
     void Update()
     {
+        
         HandleInput();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 300.0f, 420.0f), transform.position.y, transform.position.z);          
     }

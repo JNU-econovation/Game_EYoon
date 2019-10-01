@@ -42,15 +42,7 @@ public class DustOffBlanket : Hazard
                 AvoidText.Instance.MakeAvoidText();
                 return;
             }
-            if (MobileInputManager.Instance.isReverse == false)
-            {
-                InputManager.Instance.ReverseSideMove(reverseTime);
-            }
-
-            else if (MobileInputManager.Instance.isReverse == true)
-            {
-                InputManager.Instance.t = 0;               
-            }
+           
         }
     }
    

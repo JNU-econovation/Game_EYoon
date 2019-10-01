@@ -5,68 +5,6 @@ using UnityEngine.EventSystems;
 
 public class InputManager : Singleton<InputManager>
 {
-    GameObject player;
-    public float sideSpeed;
-    public float rightSpeed;
-    public float leftSpeed;
-    float rightReverseSpeed;
-    float leftReverseSpeed;
-    float originRightSpeed;
-    float originLeftSpeed;
-    public bool isReverse = false;
-    public int t = 1;
-    void Start()
-    {
-        player = GetComponentInParent<LevelManager>().player;
-        originRightSpeed = rightSpeed;
-        originLeftSpeed = leftSpeed;
-        rightReverseSpeed = rightSpeed * -1.0f;
-        leftReverseSpeed = leftSpeed * -1.0f;
-    }
-
-    public void ChangeSideMove()
-    {
-        rightSpeed = originRightSpeed;
-        leftSpeed = originLeftSpeed;        
-    }
-    public void ReverseSideMove(int ReverseTime)
-    {
-        
-        isReverse = true;
-        t = 0;
-        rightSpeed = rightReverseSpeed;
-        leftSpeed = leftReverseSpeed;
-        StartCoroutine(Wait(ReverseTime));
-    }
-    IEnumerator Wait(int ReverseTime)
-    {
-        
-        while (t <= ReverseTime)
-        {
-            yield return new WaitForSeconds(1.0f);
-            t++;      
-        }
-        rightSpeed = originRightSpeed;
-        leftSpeed = originLeftSpeed;
-        isReverse = false;
-    }
-
-
-    
-    void Update()
-    {       
-        if (Input.GetKey(KeyCode.D))
-        {
-            player.transform.Translate(Time.deltaTime * Vector3.right * rightSpeed);
-        }
-           
-        else if (Input.GetKey(KeyCode.A))
-        {
-            player.transform.Translate(Time.deltaTime * Vector3.left * leftSpeed);
-        }
-                                   
-    }
-
 }
 
 /*//마우스 좌클릭
