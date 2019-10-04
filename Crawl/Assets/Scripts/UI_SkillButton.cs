@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class UI_SkillButton : MonoBehaviour
 {
-    public int skillNum;
+    int skillNum = 1;
     List<UI_SlotMachine> slots = new List<UI_SlotMachine>();
+    List<Sprite> slot_Sprites = new List<Sprite>();
+    Image image;
     private void Start()
     {
+        image = GetComponent<Image>();
         UI_SlotMachine[] uI_SlotMachines = GetComponentsInChildren<UI_SlotMachine>();
         foreach(var slot in uI_SlotMachines)
         {
             slots.Add(slot);
-        }
-        ShakeSlots();
+            slot_Sprites.Add(slot.GetComponent<Image>().sprite);
+        }   
     }
+
+    
     public void SetSkillNum(int n)
     {
         skillNum = n;
@@ -22,30 +27,20 @@ public class UI_SkillButton : MonoBehaviour
     public int GetSkillNum()
     {
         return skillNum;
-    }
-    private void OnTriggerEnter2D(Collider2D collider)
+    }  
+  
+    public void Stop()
     {
-       
-        int slotNum = collider.gameObject.GetComponent<UI_SlotMachine>().GetSlotNum();
-        bool isWaited = collider.gameObject.GetComponent<UI_SlotMachine>().Getwait();
-        if (skillNum == slotNum && isWaited)
-        {
-            for (int i = 0; i < slots.Count; i++)
-            {
-                slots[i].Stop();
-            }
-        }
-    }
-
-    void ShakeSlots()
-    {
+        StartCoroutine(Wait(2.0f));
         for (int i = 0; i < slots.Count; i++)
         {
-            int a = i;
-            int b = Random.Range(0, slots.Count-1);
-            slots[a].SetSlotNum(a);
-            slots[b].SetSlotNum(b);
+            slots[i].Stop();
         }
-
+        print(skillNum);
+        image.sprite = slot_Sprites[skillNum];
+    }
+    IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }

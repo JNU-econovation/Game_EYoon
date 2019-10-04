@@ -35,23 +35,24 @@ public class UIManager : Singleton<UIManager>
             {
                 if(count[i] == 10)
                 {
+                    skillUI.gameObject.SetActive(true);
                     ChooseSkill(i);
+                    item[i].ResetCount();
+                    ResetCount(0);
                 }
+               
             }
             yield return null;
         }
     }
 
     void ChooseSkill(int i)
-    {
-        skillUI.gameObject.SetActive(true);
+    {       
         for (int j = 0; j < skillButtons.Count; j++)
         {
             skillButtons[j].SetSkillNum(skillManager.SelectSkill());
-            print(skillButtons[j].GetSkillNum());
-        }
-        item[i].ResetCount();
-        ResetCount(0);
+            skillButtons[j].Stop();
+        }          
     }
     void ResetCount(int i)
     {
