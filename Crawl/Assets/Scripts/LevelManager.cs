@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     GameObject player;
     void Awake()
     {
-      //  player = Instantiate(playerPrefab);
+      //player = Instantiate(playerPrefab);
     }
 
     public GameObject getPlayer()
