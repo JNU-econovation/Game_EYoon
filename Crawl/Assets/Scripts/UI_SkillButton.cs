@@ -6,17 +6,21 @@ public class UI_SkillButton : MonoBehaviour
 {
     int skillNum = 1;
     List<UI_SlotMachine> slots = new List<UI_SlotMachine>();
-    List<Sprite> slot_Sprites = new List<Sprite>();
+    List<Sprite> skill_sprites = new List<Sprite>();
+    List<Image> slot_image = new List<Image>();
     Image image;
-    private void Start()
+    public Sprite a;
+    private void Awake()
     {
         image = GetComponent<Image>();
         UI_SlotMachine[] uI_SlotMachines = GetComponentsInChildren<UI_SlotMachine>();
-        foreach(var slot in uI_SlotMachines)
+        foreach (var slot in uI_SlotMachines)
         {
             slots.Add(slot);
-            slot_Sprites.Add(slot.GetComponent<Image>().sprite);
-        }   
+            skill_sprites.Add(slot.gameObject.GetComponent<Image>().sprite);
+            slot_image.Add(slot.GetComponent<Image>());
+        }
+        
     }
 
     
@@ -31,16 +35,19 @@ public class UI_SkillButton : MonoBehaviour
   
     public void Stop()
     {
-        StartCoroutine(Wait(2.0f));
-        for (int i = 0; i < slots.Count; i++)
-        {
-            slots[i].Stop();
-        }
-        print(skillNum);
-        image.sprite = slot_Sprites[skillNum];
+        StartCoroutine(Wait(2.0f));      
     }
     IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+
+        for (int i = 0; i < slots.Count; i++)
+        {
+            slots[i].Stop();
+
+        }
+
+        image.sprite = skill_sprites[skillNum];
+        slot_image[skillNum].sprite = null;
     }
 }

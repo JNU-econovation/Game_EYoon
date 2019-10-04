@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UI_SlotMachine : MonoBehaviour
 {
-    float moveSpeed = 1000;
+    float moveSpeed = 10000;
     float time;
     bool waitTwoSecond;
     public int slotNum;

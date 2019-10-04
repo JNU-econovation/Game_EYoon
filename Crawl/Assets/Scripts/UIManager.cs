@@ -50,7 +50,7 @@ public class UIManager : Singleton<UIManager>
     {       
         for (int j = 0; j < skillButtons.Count; j++)
         {
-            skillButtons[j].SetSkillNum(skillManager.SelectSkill());
+            skillButtons[j].SetSkillNum(skillManager.SelectSkill());            
             skillButtons[j].Stop();
         }          
     }
