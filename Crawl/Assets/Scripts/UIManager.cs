@@ -36,7 +36,8 @@ public class UIManager : Singleton<UIManager>
                 if(count[i] == 10)
                 {
                     skillUI.gameObject.SetActive(true);
-                    ChooseSkill(i);
+                    yield return new WaitForSeconds(2.0f);
+                    ChooseSkill();
                     item[i].ResetCount();
                     ResetCount(0);
                 }
@@ -46,12 +47,12 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    void ChooseSkill(int i)
+    void ChooseSkill()
     {       
         for (int j = 0; j < skillButtons.Count; j++)
         {
+           
             skillButtons[j].SetSkillNum(skillManager.SelectSkill());            
-            skillButtons[j].Stop();
         }          
     }
     void ResetCount(int i)

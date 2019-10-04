@@ -4,26 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI_SkillButton : MonoBehaviour
 {
-    int skillNum = 1;
-    List<UI_SlotMachine> slots = new List<UI_SlotMachine>();
-    List<Sprite> skill_sprites = new List<Sprite>();
-    List<Image> slot_image = new List<Image>();
-    Image image;
-    public Sprite a;
+    int skillNum = -1;
+    List<UI_Slot> slots = new List<UI_Slot>();
+    public GameObject slot0;
+    float slot0_Pos;
     private void Awake()
     {
-        image = GetComponent<Image>();
-        UI_SlotMachine[] uI_SlotMachines = GetComponentsInChildren<UI_SlotMachine>();
-        foreach (var slot in uI_SlotMachines)
+        UI_Slot[] ui_slots = GetComponentsInChildren<UI_Slot>();
+        foreach (var slot in ui_slots)
         {
-            slots.Add(slot);
-            skill_sprites.Add(slot.gameObject.GetComponent<Image>().sprite);
-            slot_image.Add(slot.GetComponent<Image>());
+            slots.Add(slot); 
         }
-        
+        slot0_Pos = slot0.GetComponent<RectTransform>().localPosition.y;
     }
-
-    
+    private void Start()
+    {
+        StartCoroutine(StopSlots());
+    }
+    IEnumerator StopSlots()
+    {
+        while (true)
+        {
+            yield return null;
+            if(skillNum != -1)
+            {
+                                                              
+                float distance = Mathf.Abs(slots[skillNum].transform.localPosition.y - slot0_Pos);
+                if (distance <= 100.0f)
+                {
+                    slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
+                    for (int i = 0;i< slots.Count; i++)
+                    {
+                        
+                        slots[i].Stop();
+                    }
+                    break;
+                }
+            }
+        }
+    }
     public void SetSkillNum(int n)
     {
         skillNum = n;
@@ -33,21 +52,5 @@ public class UI_SkillButton : MonoBehaviour
         return skillNum;
     }  
   
-    public void Stop()
-    {
-        StartCoroutine(Wait(2.0f));      
-    }
-    IEnumerator Wait(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-
-        for (int i = 0; i < slots.Count; i++)
-        {
-            slots[i].Stop();
-
-        }
-
-        image.sprite = skill_sprites[skillNum];
-        slot_image[skillNum].sprite = null;
-    }
+  
 }
