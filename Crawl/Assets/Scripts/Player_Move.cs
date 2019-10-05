@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-    public float moveSpeed;
+   float moveSpeed;
     public bool isMoving;
     Vector3 _moveVector;
     Transform _transform;
@@ -15,10 +15,6 @@ public class Player_Move : MonoBehaviour
         _transform = transform;
         _moveVector = Vector3.zero;
     }
-    public float getSpeed()
-    {
-        return moveSpeed;
-    }
     void Update()
     {
         HandleInput();
@@ -27,6 +23,7 @@ public class Player_Move : MonoBehaviour
 
     private void FixedUpdate()
     {
+        moveSpeed = Player_AbilityManager.Instance.GetMoveSpeed();
         Move();
     }
 

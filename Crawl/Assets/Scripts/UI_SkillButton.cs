@@ -8,8 +8,11 @@ public class UI_SkillButton : MonoBehaviour
     List<UI_Slot> slots = new List<UI_Slot>();
     public GameObject slot0;
     float slot0_Pos;
+    public Text skillText;
+    UI_SkillText ui_SkillText;
     private void Awake()
     {
+        ui_SkillText = skillText.GetComponent<UI_SkillText>();
         UI_Slot[] ui_slots = GetComponentsInChildren<UI_Slot>();
         foreach (var slot in ui_slots)
         {
@@ -33,6 +36,8 @@ public class UI_SkillButton : MonoBehaviour
                 if (distance <= 100.0f)
                 {
                     slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
+                    string str = "(" + slots[skillNum].GetVariation() + ")";
+                    ui_SkillText.SetText(slots[skillNum].GetSkillName() + str);
                     for (int i = 0;i< slots.Count; i++)
                     {
                         

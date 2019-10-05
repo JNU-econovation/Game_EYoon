@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class UI_Slot : MonoBehaviour
 {
     float moveSpeed = 1000;
@@ -9,10 +9,15 @@ public class UI_Slot : MonoBehaviour
     bool waitTwoSecond;
     public int slotNum;
     public GameObject scroll;
-    public GameObject button;
     int button_skillNum;
-
-
+    public string skillName;
+    Skill skill;
+    float variation;
+    private void Start()
+    {
+        skill = GetComponent<Skill>();
+        variation = skill.GetVariation();
+    }
     private void Update()
     {
         time += Time.deltaTime;
@@ -43,8 +48,16 @@ public class UI_Slot : MonoBehaviour
     {
         return waitTwoSecond;
     }
+    public string GetSkillName()
+    {
+        return skillName;
+    }
     public void Stop()
     {
         moveSpeed = 0;
+    }
+    public float GetVariation()
+    {
+        return variation;
     }
 }

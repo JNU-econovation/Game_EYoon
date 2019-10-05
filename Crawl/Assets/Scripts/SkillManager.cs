@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager : Singleton<SkillManager>
 {
     [SerializeField] float[] skillWeight;
+    Skill skill_Copper;
+    private void Start()
+    {
+        
+    }
     public int SelectSkill()
     {
         float rand = Random.Range(0, 100);
@@ -20,5 +25,14 @@ public class SkillManager : MonoBehaviour
             i++;
         }
         return 1;
+    }
+    
+    public float[] GetSkillWeight()
+    {
+        return skillWeight;
+    }
+    public void SetSkillWeight(float[] weight)
+    {
+        skillWeight = weight;
     }
 }
