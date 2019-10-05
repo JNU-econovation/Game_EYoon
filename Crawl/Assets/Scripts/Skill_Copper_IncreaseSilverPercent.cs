@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
-{    
+{
+    private void Start()
+    {
+        variation = new float[] { 1, 2, 3 };
+    }
     public override void SkillFunction()
     {
-        variation = new float[]{1,2,3};
         IncreaseCount();
         float[] skillWeight = SkillManager.Instance.GetSkillWeight();      
         if (skill_Count < 3)
@@ -23,7 +26,8 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
             skillWeight[1] += variation[2];
             skillWeight[0] -= variation[2];
         }
-        SkillManager.Instance.SetSkillWeight(skillWeight);       
+        SkillManager.Instance.SetSkillWeight(skillWeight);
+        skillUI.SetActive(false);
     }
 
    

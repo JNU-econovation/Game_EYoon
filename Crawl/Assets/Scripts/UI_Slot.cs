@@ -4,27 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI_Slot : MonoBehaviour
 {
-    float moveSpeed = 1000;
-    float time;
-    bool waitTwoSecond;
+    float moveSpeed = 500;
     public int slotNum;
     public GameObject scroll;
     int button_skillNum;
     public string skillName;
     Skill skill;
     float variation;
+    Button button;
+    UI_SkillButton uI_SkillButton;
     private void Start()
     {
+        button = GetComponent<Button>();
         skill = GetComponent<Skill>();
-        variation = skill.GetVariation();
+        uI_SkillButton = GetComponentInParent<UI_SkillButton>();
+        button.interactable = false;
+    }
+    private void OnEnable()
+    {
+        moveSpeed = 1000;
     }
     private void Update()
     {
-        time += Time.deltaTime;
-        if (time >= 2.0f)
-        {
-            waitTwoSecond = true;
-        }
+        if (uI_SkillButton.GetIsStop())
+            Stop();
         transform.Translate(0, -Time.deltaTime * moveSpeed, 0);
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -44,20 +47,18 @@ public class UI_Slot : MonoBehaviour
     {
         slotNum = n;
     }
-    public bool Getwait()
-    {
-        return waitTwoSecond;
-    }
+ 
     public string GetSkillName()
     {
         return skillName;
     }
     public void Stop()
     {
+        button.interactable = true;
         moveSpeed = 0;
     }
     public float GetVariation()
     {
-        return variation;
+        return skill.GetVariation();
     }
 }

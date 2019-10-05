@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI_SkillButton : MonoBehaviour
 {
-    int skillNum = -1;
+    int skillNum = 1;
     List<UI_Slot> slots = new List<UI_Slot>();
     public GameObject slot0;
     float slot0_Pos;
     public Text skillText;
     UI_SkillText ui_SkillText;
-    private void Awake()
+    bool isSkillChosen;
+    bool isStop;
+    private void Start()
     {
         ui_SkillText = skillText.GetComponent<UI_SkillText>();
         UI_Slot[] ui_slots = GetComponentsInChildren<UI_Slot>();
@@ -19,34 +21,49 @@ public class UI_SkillButton : MonoBehaviour
             slots.Add(slot); 
         }
         slot0_Pos = slot0.GetComponent<RectTransform>().localPosition.y;
+        
     }
-    private void Start()
-    {
-        StartCoroutine(StopSlots());
-    }
+    
     IEnumerator StopSlots()
     {
         while (true)
-        {
+        {         
             yield return null;
-            if(skillNum != -1)
+            if (isSkillChosen)
             {
-                                                              
-                float distance = Mathf.Abs(slots[skillNum].transform.localPosition.y - slot0_Pos);
-                if (distance <= 100.0f)
+               
+                float distance = Mathf.Abs(slots[skillNum].transform.localPosition.y - slot0_Pos);              
+                if (distance <= 10.0f)
                 {
+                    isStop = true;
                     slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
                     string str = "(" + slots[skillNum].GetVariation() + ")";
-                    ui_SkillText.SetText(slots[skillNum].GetSkillName() + str);
-                    for (int i = 0;i< slots.Count; i++)
-                    {
-                        
-                        slots[i].Stop();
-                    }
-                    break;
+                    ui_SkillText.SetText(slots[skillNum].GetSkillName() + str);                   
+                    isSkillChosen = false;
                 }
             }
+            
         }
+    }
+    private void OnEnable()
+    {
+        StartCoroutine(StopSlots());
+    }
+    public bool GetisSkillChosen()
+    {
+        return isSkillChosen;
+    }
+    public bool GetIsStop()
+    {
+        return isStop;
+    }
+    public void SetIsStop(bool temp)
+    {
+        isStop = temp;
+    }
+    public void SetisSkillChosen(bool temp)
+    {
+        isSkillChosen = temp;
     }
     public void SetSkillNum(int n)
     {

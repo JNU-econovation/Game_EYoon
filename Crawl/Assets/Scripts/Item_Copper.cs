@@ -22,6 +22,10 @@ public class Item_Copper : Item
     public override void IncreaseCount()
     {
         count++;
+        if(count == 5)
+        {
+            UIManager.Instance.OnSkillUI(0);
+        }
     }
     public override void ResetCount()
     {

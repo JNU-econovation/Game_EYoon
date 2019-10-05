@@ -4,6 +4,7 @@ using UnityEngine;
 
 abstract public class Skill_Copper : Skill
 {
+    public GameObject skillUI;
     /* [스킬리스트]
      *은 확률증가0
      * 체력 증가1

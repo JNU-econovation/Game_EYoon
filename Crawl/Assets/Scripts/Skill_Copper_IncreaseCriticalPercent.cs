@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Skill_Copper_IncreaseCriticalPercent : Skill_Copper
 {
-    public override void SkillFunction()
+    private void Start()
     {
         variation = new float[] { 1, 2, 3 };
+    }
+    public override void SkillFunction()
+    {
+        
         IncreaseCount();
         if (skill_Count < 3)
         {
-            Player_AbilityManager.Instance.IncreaseDefense(variation[0]);
+            Player_AbilityManager.Instance.IncreaseCritical_Percentage(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            Player_AbilityManager.Instance.IncreaseDefense(variation[1]);
+            Player_AbilityManager.Instance.IncreaseCritical_Percentage(variation[1]);
         }
         else if (5 <= skill_Count)
         {
             LimitCount();
-            Player_AbilityManager.Instance.IncreaseDefense(variation[2]);
+            Player_AbilityManager.Instance.IncreaseCritical_Percentage(variation[2]);
         }
+        skillUI.SetActive(false);
     }
 }

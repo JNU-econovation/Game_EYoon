@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Skill_Copper_IncreaseCriticalHit : Skill_Copper
 {
+    private void Start()
+    {
+        variation = new float[] { 1, 2, 3 };
+    }
     public override void SkillFunction()
     {
-        variation = new float[] { 40, 80, 120 };
         IncreaseCount();
         if (skill_Count < 3)
         {
@@ -21,5 +24,6 @@ public class Skill_Copper_IncreaseCriticalHit : Skill_Copper
             LimitCount();
             Player_AbilityManager.Instance.IncreaseCritical_HIt(variation[2]);
         }
+        skillUI.SetActive(false);
     }
 }

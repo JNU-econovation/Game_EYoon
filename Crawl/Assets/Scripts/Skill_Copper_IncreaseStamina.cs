@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Skill_Copper_IncreaseStamina : Skill_Copper
 {
-    public override void SkillFunction()
+    private void Start()
     {
         variation = new float[] { 10, 20, 30 };
+    }
+    public override void SkillFunction()
+    {
         IncreaseCount();
         if (skill_Count < 3)
         {
@@ -21,5 +24,6 @@ public class Skill_Copper_IncreaseStamina : Skill_Copper
             LimitCount();
             Player_AbilityManager.Instance.IncreaseStamina(variation[2]);
         }
+        skillUI.SetActive(false);
     }
 }

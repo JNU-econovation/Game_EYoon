@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Skill_Copper_IncreaseAvoidance : Skill_Copper
 {
-    public override void SkillFunction()
+    private void Start()
     {
         variation = new float[] { 1, 2, 3 };
+    }
+    public override void SkillFunction()
+    {
+       
         IncreaseCount();
         if (skill_Count < 3)
         {
@@ -21,5 +25,6 @@ public class Skill_Copper_IncreaseAvoidance : Skill_Copper
             LimitCount();
             Player_AbilityManager.Instance.increaseAvoidance(variation[2]);
         }
+        skillUI.SetActive(false);
     }
 }

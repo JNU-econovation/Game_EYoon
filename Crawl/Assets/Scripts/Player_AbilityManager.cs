@@ -68,12 +68,13 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     //Set함수
     public void IncreaseMaxHP(float n)
     {
+        HP += n;
         maxHP += n;
     }
     public void IncreaseHP(float n)
     {
         HP += n;
-        if (HP <= maxHP)
+        if (HP >= maxHP)
             HP = maxHP;      
     }
     public void DecreaseHP(float n)
@@ -84,6 +85,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     }
     public void IncreaseMaxStamina(float n)
     {
+        stamina += n;
         maxStamina += n;
     }
     public void IncreaseStamina(float n)
