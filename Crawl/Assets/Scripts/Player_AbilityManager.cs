@@ -94,6 +94,12 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         if (stamina >= maxStamina)
             stamina = maxStamina;
     }
+    public void DecreseStamina(float n)
+    {
+        stamina -= n;
+        if (stamina < 0)
+            stamina = 0;
+    }
     public void DecreaseMoveSpeed(float n)
     {
         moveSpeed -= n;
