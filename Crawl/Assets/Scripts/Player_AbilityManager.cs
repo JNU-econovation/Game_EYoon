@@ -16,6 +16,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] float stamina;
     float maxHP = 100;
     float maxStamina = 100;
+    
+    
     //Get함수
     public float GetMaxHP()
     {
@@ -79,7 +81,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     }
     public void DecreaseHP(float n)
     {
-        HP -= n;
+        HP -= (n - defense);
         if (HP < 0)
             HP = 0;
     }
