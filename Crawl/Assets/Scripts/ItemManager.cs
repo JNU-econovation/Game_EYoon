@@ -20,7 +20,7 @@ public class ItemManager : MonoBehaviour
                 return items[i];
             }
             i++;
-        }
+        }        
         return items[0];
     }
 
