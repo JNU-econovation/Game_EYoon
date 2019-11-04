@@ -20,6 +20,7 @@ public class Enemy_UFO : Enemy
         SetPosition();
         originSpeed = speed;
         player = LevelManager.Instance.getPlayer();
+        // 아직 getPlayer에서 현재 게임 플래이 중인 플래이어를 불러올수 없어 오류가생겨요
     }
     private void Update()
     {
@@ -49,8 +50,8 @@ public class Enemy_UFO : Enemy
     {
         attack = true;
         float distance_x = player.transform.position.x - transform.position.x;
-        float angle = Mathf.Atan2(distance_y, distance_x);
-        Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 0));
+        float angle = 90 - Mathf.Atan2(distance_y, distance_x);
+        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle);
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
