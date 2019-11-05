@@ -20,5 +20,9 @@ abstract public class Item : Singleton<Item>
     abstract public void IncreaseCount();
 
     abstract public int GetCount();
+    abstract public int GetMaxCount();
+    abstract public void SetMaxCount(int n);
     abstract public void ResetCount();
+    abstract public void DecreaseMaxCount(int n);
+    abstract public void IncreaseMaxCount(int n);
 }

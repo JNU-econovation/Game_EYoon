@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 abstract public class Skill : MonoBehaviour
-{
+{  
     protected float[] variation = new float[3];
    // protected int skill_Count = 0;
     GameObject player;
     private void Start()
-    {
+    {     
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -18,7 +18,8 @@ abstract public class Skill : MonoBehaviour
 
     abstract public void IncreaseCount();
 
-    abstract public int GetCopperCount();
-   
-    
+    abstract public int GetCount();
+
+    abstract public void SkillFunction();
+
 }

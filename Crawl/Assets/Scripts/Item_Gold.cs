@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item_Gold : Item
 {
     static int count = 0;
+    protected int maxCount;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -26,5 +27,21 @@ public class Item_Gold : Item
     public override void ResetCount()
     {
         count = 0;
+    }
+    public override void DecreaseMaxCount(int n)
+    {
+        maxCount -= n;
+    }
+    public override void IncreaseMaxCount(int n)
+    {
+        maxCount += n;
+    }
+    public override int GetMaxCount()
+    {
+        return maxCount;
+    }
+    public override void SetMaxCount(int n)
+    {
+        maxCount = n;
     }
 }

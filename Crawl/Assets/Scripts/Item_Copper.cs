@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item_Copper : Item
 {
     static int count = 0;
+    protected int maxCount = 10;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -18,11 +19,26 @@ public class Item_Copper : Item
     {
         return count;
     }
-
+    public override int GetMaxCount()
+    {
+        return maxCount;
+    }
+    public override void SetMaxCount(int n)
+    {
+        maxCount = n;
+    }
+    public override void DecreaseMaxCount(int n)
+    {
+        maxCount -= n;
+    }
+    public override void IncreaseMaxCount(int n)
+    {
+        maxCount += n;
+    }
     public override void IncreaseCount()
     {
         count++;
-        if(count == 5)
+        if(count == maxCount)
         {
             UIManager.Instance.OnSkillUI(0);
         }
