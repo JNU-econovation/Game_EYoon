@@ -6,7 +6,7 @@ public class UIManager : Singleton<UIManager>
 {
   
     public Text[] jewerlyCountText;
-    public GameObject skillUI;   
+    public GameObject[] skillUI;   
     int[] count = new int[5];
     bool onSkill;
     Item[] item = new Item[5];
@@ -25,7 +25,7 @@ public class UIManager : Singleton<UIManager>
        
     public void OnSkillUI(int i)
     {
-        skillUI.gameObject.SetActive(true);
+        skillUI[i].gameObject.SetActive(true);
         item[i].ResetCount();
         ResetCount(i);
     }
