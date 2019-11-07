@@ -17,7 +17,8 @@ public class Enemy_UFO : Enemy
     // Start is called before the first frame update
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = LevelManager.Instance.GetPlayer();
+        //player = GameObject.FindGameObjectWithTag("Player");
         SetPosition();
         originSpeed = speed;
         damage = GetComponent<Enemy_Ability>().GetDamage();
