@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_Gold_LimitSilverCount : Skill_Gold
+public class Skill_Gold_LimitGoldCount : Skill_Gold
 {
     static int skill_Count = 0;
     private void Start()

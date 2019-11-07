@@ -13,7 +13,7 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
     public override void SkillFunction()
     {
         IncreaseCount();
-        float[] skillWeight = SkillManager.Instance.GetSkillWeight();      
+        float[] skillWeight = SkillManager.Instance.GetSkillWeight_Silver();      
         if (skill_Count < 3)
         {
             skillWeight[1] += variation[0];
@@ -28,7 +28,7 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
             skillWeight[1] += variation[2];
             skillWeight[0] -= variation[2];
         }
-        SkillManager.Instance.SetSkillWeight(skillWeight);
+        SkillManager.Instance.SetSkillWeight_Silver(skillWeight);
         skillUI.SetActive(false);
     }
     public override void LimitCount()

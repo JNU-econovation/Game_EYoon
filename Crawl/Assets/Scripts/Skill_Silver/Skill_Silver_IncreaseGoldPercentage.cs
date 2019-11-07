@@ -13,7 +13,7 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
     public override void SkillFunction()
     {
         IncreaseCount();
-        float[] skillWeight = SkillManager.Instance.GetSkillWeight();
+        float[] skillWeight = SkillManager.Instance.GetSkillWeight_Gold();
         if (skill_Count < 3)
         {
             skillWeight[2] += variation[0];
@@ -29,7 +29,7 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
             skillWeight[2] += variation[2];
             skillWeight[1] -= variation[2];
         }
-        SkillManager.Instance.SetSkillWeight(skillWeight);
+        SkillManager.Instance.SetSkillWeight_Gold(skillWeight);
         skillUI.SetActive(false);
     }
     public override void LimitCount()

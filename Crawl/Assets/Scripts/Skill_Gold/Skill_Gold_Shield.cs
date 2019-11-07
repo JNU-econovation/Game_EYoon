@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_Gold_Siheld : Skill_Gold
+public class Skill_Gold_Shield : Skill_Gold
 {
     static int skill_Count = 0;
     private void Start()

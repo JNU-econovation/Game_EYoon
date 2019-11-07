@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_Silver_LimitCopperCount : Skill_Silver
+public class Skill_Silver_LimitSilverCount : Skill_Silver
 {
     static int skill_Count = 0;
     private void Start()
@@ -16,7 +16,7 @@ public class Skill_Silver_LimitCopperCount : Skill_Silver
         IncreaseCount();
         if (skill_Count < 3)
         {
-            item.DecreaseMaxCount((int)variation[0]);          
+            item.DecreaseMaxCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
