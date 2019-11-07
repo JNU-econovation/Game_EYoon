@@ -12,7 +12,7 @@ public class UI_SkillButton : MonoBehaviour
     UI_SkillText ui_SkillText;
     bool isSkillChosen;
     bool isStop;
-    private void Start()
+    private void Awake()
     {
         ui_SkillText = skillText.GetComponent<UI_SkillText>();
         UI_Slot[] ui_slots = GetComponentsInChildren<UI_Slot>();

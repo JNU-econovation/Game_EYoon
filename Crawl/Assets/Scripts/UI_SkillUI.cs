@@ -5,6 +5,7 @@ using UnityEngine;
 public class UI_SkillUI : MonoBehaviour
 {
     List<UI_SkillButton> skillButtons = new List<UI_SkillButton>();
+    [SerializeField] int jewerlyNum;
     private void Awake()
     {
         UI_SkillButton[] buttons = GetComponentsInChildren<UI_SkillButton>();
@@ -30,7 +31,7 @@ public class UI_SkillUI : MonoBehaviour
     {
         for (int j = 0; j < skillButtons.Count; j++)
         {
-            skillButtons[j].SetSkillNum(SkillManager.Instance.SelectSkill());
+            skillButtons[j].SetSkillNum(SkillManager.Instance.SelectSkill(jewerlyNum));
             skillButtons[j].SetisSkillChosen(true);
         }
         

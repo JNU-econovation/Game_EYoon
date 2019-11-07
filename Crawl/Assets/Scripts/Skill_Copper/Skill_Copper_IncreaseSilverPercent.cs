@@ -8,27 +8,27 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 1, 2, 3 };
+        variation = new float[] { 5, 10, 15 };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
-        float[] skillWeight = SkillManager.Instance.GetSkillWeight();      
+        float[] itemWeight = ItemManager.Instance.GetItemWeight();       
         if (skill_Count < 3)
         {
-            skillWeight[1] += variation[0];
-            skillWeight[0] -= variation[0];
+            itemWeight[1] += variation[0];
+            itemWeight[0] -= variation[0];
         }else if (skill_Count < 5)
         {
-            skillWeight[1] += variation[1];
-            skillWeight[0] -= variation[1];
+            itemWeight[1] += variation[1];
+            itemWeight[0] -= variation[1];
         }
         else if (5 <= skill_Count)
         {
-            skillWeight[1] += variation[2];
-            skillWeight[0] -= variation[2];
+            itemWeight[1] += variation[2];
+            itemWeight[0] -= variation[2];
         }
-        SkillManager.Instance.SetSkillWeight(skillWeight);
+        ItemManager.Instance.SetItemWeight(itemWeight);
         skillUI.SetActive(false);
     }
     public override void LimitCount()
