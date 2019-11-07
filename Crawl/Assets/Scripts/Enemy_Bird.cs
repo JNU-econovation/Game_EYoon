@@ -9,9 +9,11 @@ public class Enemy_Bird : Enemy
     [SerializeField] float damage;
     [SerializeField] int speed;
     [SerializeField] Animator[] species;
+    GameObject player;
     Quaternion quaternion = Quaternion.Euler(0, 180f, 0);
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         SelectSpecies();
         SetPosition();
     }
@@ -40,8 +42,8 @@ public class Enemy_Bird : Enemy
     {
         int dir = Random.Range(0, 100);
         int birdPos = 700 + Random.Range(0, 200);
-        //float playerHeight = LevelManager.Instance.getPlayer().transform.position.y;
-        float playerHeight = 400;
+        float playerHeight = player.transform.position.y;
+       
         if (dir <= 50)
         {
             GetComponent<SpriteRenderer>().flipX = true;

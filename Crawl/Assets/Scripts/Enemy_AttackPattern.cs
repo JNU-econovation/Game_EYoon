@@ -5,21 +5,23 @@ using UnityEngine;
 public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern> 
 {
     float delay = 0.2f;
-    public void SingleShot(GameObject enemy, GameObject bullet, float angle)
+    public void SingleShot(GameObject enemy, GameObject bullet, float angle, float damage)
     {
         Vector3 pos = enemy.transform.position;
-        Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
+        GameObject bullet0 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
+        bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
     }
-    public IEnumerator RepeatShot(GameObject enemy, GameObject bullet, float angle, int count)
+    public IEnumerator RepeatShot(GameObject enemy, GameObject bullet, float angle, int count, float damage)
     {
         Vector3 pos = enemy.transform.position;
         for (int i = 0; i < count; i++)
         {
-            Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
+            GameObject bullet0 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
+            bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
             yield return new WaitForSeconds(delay);
         }
     }
-    public void MultiShot(GameObject enemy, GameObject bullet, int count)//, float angle)
+    public void MultiShot(GameObject enemy, GameObject bullet, int count, float damage)//, float angle)
     {
         Vector3 pos = enemy.transform.position;
       
@@ -27,9 +29,12 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
             {
                 for (int i = 0; i < count/2; i++)
                 {
-                    Instantiate(bullet, pos, Quaternion.Euler(0, 0, (i+1) * 90 / (2*count)));
-                    Instantiate(bullet, pos, Quaternion.Euler(0, 0, (-i-1) * 90 / (2*count)));
-                }
+                   GameObject bullet1 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, (i+1) * 90 / (2*count)));
+                   GameObject bullet2 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, (-i-1) * 90 / (2*count)));
+                bullet1.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+                bullet2.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+
+            }
             }
         else
         {
@@ -37,12 +42,16 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
             {
                 if (i == 0)
                 {
-                    Instantiate(bullet, pos, Quaternion.Euler(0, 0, 0));
+                    GameObject bullet0 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, 0));
+                    bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+
                 }
                 else
                 {
-                    Instantiate(bullet, pos, Quaternion.Euler(0, 0, i  * 90 / (2 * count)));
-                    Instantiate(bullet, pos, Quaternion.Euler(0, 0, -i * 90 / (2 * count)));
+                    GameObject bullet1 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, i  * 90 / (2 * count)));
+                    GameObject bullet2 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, -i * 90 / (2 * count)));
+                    bullet1.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+                    bullet2.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
                 }
             }
         }
