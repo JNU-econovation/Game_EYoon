@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern> 
 {
     float delay = 0.2f;
+    List<GameObject> bullets = new List<GameObject> ();
     public void SingleShot(GameObject enemy, GameObject bullet, float angle, float damage)
     {
         Vector3 pos = enemy.transform.position;
@@ -33,6 +34,8 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
                    GameObject bullet2 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, (-i-1) * 90 / (2*count)));
                 bullet1.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
                 bullet2.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+                bullets.Add(bullet1);
+                bullets.Add(bullet2);
 
             }
             }
@@ -44,7 +47,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
                 {
                     GameObject bullet0 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, 0));
                     bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
-
+                    bullets.Add(bullet0);
                 }
                 else
                 {
@@ -52,10 +55,29 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
                     GameObject bullet2 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, -i * 90 / (2 * count)));
                     bullet1.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
                     bullet2.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+                    bullets.Add(bullet1);
+                    bullets.Add(bullet2);
                 }
             }
         }
            
+            
         
+    }
+   public void Pause()
+    {
+        for(int i = 0; i < bullets.Count; i++)
+        {
+            if(bullets[i] != null)
+            bullets[i].GetComponent<Enemy_UFO_bullet>().Stop();
+        }
+    }
+    public void Resume()
+    {
+        for (int i = 0; i < bullets.Count; i++)
+        {
+            if (bullets[i] != null)
+                bullets[i].GetComponent<Enemy_UFO_bullet>().Resume();
+        }
     }
 }

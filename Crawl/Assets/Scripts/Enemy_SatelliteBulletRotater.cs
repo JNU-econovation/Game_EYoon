@@ -7,10 +7,12 @@ public class Enemy_SatelliteBulletRotater : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletCount;
     float speed = 2;
+    float originSpeed;
     [SerializeField] float r;
     bool rotate = false;
     private void Start()
     {
+        originSpeed = speed;
         for(int i = 0; i< bulletCount; i++)
         {
             GameObject satellite = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 360 / bulletCount * (i)));
@@ -33,4 +35,14 @@ public class Enemy_SatelliteBulletRotater : MonoBehaviour
     {
         rotate = true;  
     }
+
+    public void Stop()
+    {
+        speed = 0;
+    }
+    public void Resume()
+    {
+        speed = originSpeed;
+    }
 }
+

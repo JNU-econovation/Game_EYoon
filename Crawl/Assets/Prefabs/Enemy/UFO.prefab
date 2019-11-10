@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d725db0e912ed6409f22a82ed721059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPos: 0
-  damage: 0
+  birdPos: 200
   speed: 1000
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
   attackRange: 1000

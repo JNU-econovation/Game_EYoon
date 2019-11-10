@@ -11,6 +11,7 @@ public class Enemy_UFO : Enemy
     [SerializeField] GameObject bullet;
     [SerializeField] float attackRange;
     [SerializeField] float attackDelay;
+    List<GameObject> bullets;
     int originSpeed;
     bool attack = false;
     GameObject player;
@@ -51,7 +52,7 @@ public class Enemy_UFO : Enemy
     public override void Function()
     {
         Player_AbilityManager.Instance.DecreaseHP(damage);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     IEnumerator Attack(float distance_y)
@@ -64,12 +65,18 @@ public class Enemy_UFO : Enemy
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
-
-
+    public override void Pause()
+    {
+        speed = 0;
+    }
+    public override void Resume()
+    {
+        speed = originSpeed;
+    }
     public override void SetPosition()
     {
         int dir = Random.Range(0, 100);
-        int birdPos = 700 + Random.Range(0, 200);
+        int birdPos = 500 + Random.Range(0, 200);
         float playerHeight = player.transform.position.y;
         if (dir <= 50)
         {
