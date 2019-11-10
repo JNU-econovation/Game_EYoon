@@ -5,12 +5,16 @@ using UnityEngine;
 public class Enemy_SatelliteMonster : Enemy
 {
     GameObject player;
+    Enemy_SatelliteBulletRotater Rotater;
     [SerializeField] float speed;
+    float originSpeed;
     float damage;
     float distance;
     // Start is called before the first frame update
     void Start()
     {
+        originSpeed = speed;
+        Rotater = GetComponentInChildren<Enemy_SatelliteBulletRotater>();
         player = GameObject.FindGameObjectWithTag("Player");
         damage = GetComponent<Enemy_Ability>().GetDamage();
         SetPosition();
@@ -37,6 +41,16 @@ public class Enemy_SatelliteMonster : Enemy
     {
         Player_AbilityManager.Instance.DecreaseHP(damage);
         Destroy(gameObject);
+    }
+    public override void Pause()
+    {
+        speed = 0;
+        Rotater.Stop();
+    }
+    public override void Resume()
+    {
+        speed = originSpeed;
+        Rotater.Resume();
     }
 
 

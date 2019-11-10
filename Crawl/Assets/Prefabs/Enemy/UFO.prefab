@@ -127,7 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d725db0e912ed6409f22a82ed721059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   birdPos: 0
+=======
+  birdPos: 200
+>>>>>>> 464ac2f3d809f744a4f7f02363dde9ead7713844
   speed: 1000
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
   attackRange: 1000

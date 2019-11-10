@@ -17,8 +17,8 @@ abstract public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-   
-
+    abstract public void Resume();
+    abstract public void Pause();
     abstract public void Function();
     abstract public void SetPosition();
 }

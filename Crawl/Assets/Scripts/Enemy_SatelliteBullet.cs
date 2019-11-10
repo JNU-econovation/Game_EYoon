@@ -10,7 +10,7 @@ public class Enemy_SatelliteBullet : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             Player_AbilityManager.Instance.DecreaseHP(damage);
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 }

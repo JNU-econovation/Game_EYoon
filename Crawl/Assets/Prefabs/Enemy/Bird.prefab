@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5143940c3dfefe146a90cdb8fd5e623a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPos: 700
+  birdPos: 0
   damage: 10
   speed: 8
   species: []

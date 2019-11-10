@@ -6,11 +6,13 @@ public class Enemy_Storm : Enemy
 {
     GameObject player;
     [SerializeField] float speed;
+    float originSpeed;
     float damage;
     float distance;
     // Start is called before the first frame update
     void Start()
     {
+        originSpeed = speed;
         player = GameObject.FindGameObjectWithTag("Player");
         damage = GetComponent<Enemy_Ability>().GetDamage();
         SetPosition();
@@ -36,7 +38,15 @@ public class Enemy_Storm : Enemy
     public override void Function()
     {
         Player_AbilityManager.Instance.DecreaseHP(damage);
-        Destroy(gameObject);
+       // Destroy(gameObject);
+    }
+    public override void Pause()
+    {
+        speed = 0;
+    }
+    public override void Resume()
+    {
+        speed = originSpeed;
     }
 
 
