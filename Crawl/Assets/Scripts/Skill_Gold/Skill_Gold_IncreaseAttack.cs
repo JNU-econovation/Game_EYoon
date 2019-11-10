@@ -8,25 +8,28 @@ public class Skill_Gold_IncreaseAttack : Skill_Gold
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 10, 20, 30 };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            float attack = Player_AbilityManager.Instance.GetAttack();
+            float increase = attack * (variation[0] / 100.0f);
+            Player_AbilityManager.Instance.IncreaseAttack(increase);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            float attack = Player_AbilityManager.Instance.GetAttack();
+            float increase = attack * (variation[1] / 100.0f);
+            Player_AbilityManager.Instance.IncreaseAttack(increase);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            float attack = Player_AbilityManager.Instance.GetAttack();
+            float increase = attack * (variation[2] / 100.0f);
+            Player_AbilityManager.Instance.IncreaseAttack(increase);
         }
         skillUI.SetActive(false);
     }
@@ -53,5 +56,9 @@ public class Skill_Gold_IncreaseAttack : Skill_Gold
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "공격력 증가" + "(현재의 " + GetVariation() + "%)";
     }
 }

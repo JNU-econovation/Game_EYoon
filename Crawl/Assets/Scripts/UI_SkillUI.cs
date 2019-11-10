@@ -17,8 +17,8 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
-       
-        StartCoroutine(Wait(0.5f));
+
+        ChooseSkill();
     }
     private void OnDisable()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Skill_Gold_SelectDiamond : Skill_Gold
 {
     static int skill_Count = 0;
+    public GameObject skillUI_Diamond;
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
@@ -13,21 +14,7 @@ public class Skill_Gold_SelectDiamond : Skill_Gold
     public override void SkillFunction()
     {
         IncreaseCount();
-        if (skill_Count < 3)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
-        }
-        else if (skill_Count < 5)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
-        }
-        else if (5 <= skill_Count)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
-        }
+        skillUI_Diamond.SetActive(true);
         skillUI.SetActive(false);
     }
     public override void LimitCount()
@@ -53,5 +40,9 @@ public class Skill_Gold_SelectDiamond : Skill_Gold
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "다이아 뽑기 1회";
     }
 }

@@ -54,4 +54,8 @@ public class Skill_Diamond_LimitDiaCount : Skill_Diamond
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "다이아 제한 개수 하락" + "(" + GetVariation() + ")";
+    }
 }

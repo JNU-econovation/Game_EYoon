@@ -5,6 +5,7 @@ using UnityEngine;
 public class Skill_Copper_SelectSilver : Skill_Copper
 {
     static int skill_Count = 0;
+    public GameObject skillUI_Silver;
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
@@ -13,6 +14,7 @@ public class Skill_Copper_SelectSilver : Skill_Copper
     public override void SkillFunction()
     {
         IncreaseCount();
+        skillUI_Silver.SetActive(true);
         skillUI.SetActive(false);
     }
     public override void LimitCount()
@@ -38,5 +40,9 @@ public class Skill_Copper_SelectSilver : Skill_Copper
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "은 뽑기 1회";
     }
 }

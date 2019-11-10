@@ -54,4 +54,8 @@ public class Skill_Ruby_Rebirth : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "부활" + "(부활 시 체력 " + GetVariation() + ")";
+    }
 }

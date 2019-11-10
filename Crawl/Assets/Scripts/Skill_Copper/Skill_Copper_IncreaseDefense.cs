@@ -53,4 +53,8 @@ public class Skill_Copper_IncreaseDefense : Skill_Copper
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "방어력 증가" + "(" + GetVariation() + ")";
+    }
 }

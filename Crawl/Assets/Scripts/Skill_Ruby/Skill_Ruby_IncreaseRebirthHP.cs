@@ -54,4 +54,8 @@ public class Skill_Ruby_IncreaseRebirthHP : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "부활시 체력 증가" + "(" + GetVariation() + ")";
+    }
 }

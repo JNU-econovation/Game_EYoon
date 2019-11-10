@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2069639942936024519}
   - component: {fileID: 5425701209976711690}
   - component: {fileID: 2614320955962528044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FlyMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

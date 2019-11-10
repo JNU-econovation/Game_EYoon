@@ -53,4 +53,8 @@ public class Skill_Copper_IncreaseCriticalPercent : Skill_Copper
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "치명타 확률 증가" + "(" + GetVariation() + "%)";
+    }
 }

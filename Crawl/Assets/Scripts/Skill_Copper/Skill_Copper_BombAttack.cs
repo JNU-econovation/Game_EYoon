@@ -8,7 +8,7 @@ public class Skill_Copper_BombAttack : Skill_Copper
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 10, 20, 30 };
+        variation = new float[] { 1, 2, 3 };
     }
     public override void SkillFunction()
     {
@@ -51,5 +51,9 @@ public class Skill_Copper_BombAttack : Skill_Copper
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "폭탄 공격" + "(" + GetVariation() + "회)";
     }
 }

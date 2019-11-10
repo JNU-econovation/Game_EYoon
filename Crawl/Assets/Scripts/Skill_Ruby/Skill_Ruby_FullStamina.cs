@@ -54,4 +54,8 @@ public class Skill_Ruby_FullStamina : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "스태미나 모두 회복";
+    }
 }

@@ -52,4 +52,8 @@ public class Skill_Copper_Booster : Skill_Copper
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "부스터" + " (" + GetVariation() + "m)";
+    }
 }

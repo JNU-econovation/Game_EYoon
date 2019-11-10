@@ -54,4 +54,8 @@ public class Skill_Ruby_Pet : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "같은 스텟의 펫 소환";
+    }
 }

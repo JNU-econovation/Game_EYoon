@@ -7,7 +7,6 @@ public class UIManager : Singleton<UIManager>
   
     public Text[] jewerlyCountText;
     public GameObject[] skillUI;   
-    int[] count = new int[5];
     bool onSkill;
     Item[] item = new Item[5];
     SkillManager skillManager;
@@ -25,46 +24,20 @@ public class UIManager : Singleton<UIManager>
        
     public void OnSkillUI(int i)
     {
-        skillUI[i].gameObject.SetActive(true);
-        item[i].ResetCount();
-        ResetCount(i);
+        skillUI[i].gameObject.SetActive(true);       
     }
       
-    void ResetCount(int i)
-    {
-        count[i] = 0;
-    }
-   
+   /*
     private void Update()
     {
-        for (int i = 0; i < count.Length; i++)
+        for (int i = 0; i < item.Length; i++)
         {
-            jewerlyCountText[i].text = count[i].ToString();
+            jewerlyCountText[i].text = item[i].GetCount().ToString();
         }
-    }
+    }*/
     public void SetCount(int grade, int n)
     {
-        if (grade == 1)
-        {
-            count[0] = n;           
-        }            
-        else if (grade == 2)
-        {
-            count[1] = n;           
-        }
-           
-        else if (grade == 3)
-        {
-            count[2] = n;          
-        }
-        else if (grade == 4)
-        {
-            count[3] = n;            
-        }
-        else
-        {
-            count[4] = n;          
-        }
+        jewerlyCountText[grade - 1].text = n.ToString();        
     }
 
    

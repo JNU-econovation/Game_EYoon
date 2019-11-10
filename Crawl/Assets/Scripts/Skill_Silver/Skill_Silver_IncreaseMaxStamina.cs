@@ -51,4 +51,8 @@ public class Skill_Silver_IncreaseMaxStamina : Skill_Silver
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "최대 스태미나 증가" + "(" + GetVariation() + ")";
+    }
 }

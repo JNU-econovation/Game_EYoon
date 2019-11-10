@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI_Slot : MonoBehaviour
 {
-    float moveSpeed = 500;
+    float moveSpeed = 1000;
     public int slotNum;
     public GameObject scroll;
     int button_skillNum;
@@ -22,7 +22,7 @@ public class UI_Slot : MonoBehaviour
     }
     private void OnEnable()
     {
-        moveSpeed = 1000;
+        moveSpeed = 2000;
     }
     private void Update()
     {

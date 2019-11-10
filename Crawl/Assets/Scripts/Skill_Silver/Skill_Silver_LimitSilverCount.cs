@@ -12,19 +12,18 @@ public class Skill_Silver_LimitSilverCount : Skill_Silver
     }
     public override void SkillFunction()
     {
-        Item item = new Item_Copper();
         IncreaseCount();
         if (skill_Count < 3)
         {
-            item.DecreaseMaxCount((int)variation[0]);
+            ItemManager.Instance.item_Silver.DecreaseMaxCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            item.DecreaseMaxCount((int)variation[1]);
+            ItemManager.Instance.item_Silver.DecreaseMaxCount((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            item.DecreaseMaxCount((int)variation[2]);
+            ItemManager.Instance.item_Silver.DecreaseMaxCount((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -51,5 +50,9 @@ public class Skill_Silver_LimitSilverCount : Skill_Silver
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "은 제한 개수 하락" + "(" + GetVariation() + ")";
     }
 }

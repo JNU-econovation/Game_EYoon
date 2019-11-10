@@ -54,4 +54,8 @@ public class Skill_Ruby_WeakEnemy : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "적 스텟 약화" + "(" + GetVariation() + "%)";
+    }
 }

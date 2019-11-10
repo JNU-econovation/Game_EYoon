@@ -54,4 +54,8 @@ public class Skill_Diamond_IncreaseTargetNum : Skill_Diamond
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "적 타겟 수 증가" + "(" + GetVariation() + ")";
+    }
 }

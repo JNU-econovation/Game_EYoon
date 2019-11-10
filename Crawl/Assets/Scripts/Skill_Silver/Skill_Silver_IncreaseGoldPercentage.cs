@@ -13,23 +13,23 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
     public override void SkillFunction()
     {
         IncreaseCount();
-        float[] skillWeight = SkillManager.Instance.GetSkillWeight_Gold();
+        float[] itemWeight = ItemManager.Instance.GetItemWeight();
         if (skill_Count < 3)
         {
-            skillWeight[2] += variation[0];
-            skillWeight[1] -= variation[0];
+            itemWeight[2] += variation[0];
+            itemWeight[1] -= variation[0];
         }
         else if (skill_Count < 5)
         {
-            skillWeight[2] += variation[1];
-            skillWeight[1] -= variation[1];
+            itemWeight[2] += variation[1];
+            itemWeight[1] -= variation[1];
         }
         else if (5 <= skill_Count)
         {
-            skillWeight[2] += variation[2];
-            skillWeight[1] -= variation[2];
+            itemWeight[2] += variation[2];
+            itemWeight[1] -= variation[2];
         }
-        SkillManager.Instance.SetSkillWeight_Gold(skillWeight);
+        ItemManager.Instance.SetItemWeight(itemWeight);
         skillUI.SetActive(false);
     }
     public override void LimitCount()
@@ -56,5 +56,9 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
     {
         return skill_Count;
     }
-  
+
+    public override string GetSkillText()
+    {
+        return "금 확률 증가" + "(" + GetVariation() + "%)";
+    }
 }

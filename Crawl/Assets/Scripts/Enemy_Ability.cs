@@ -19,8 +19,12 @@ public class Enemy_Ability : MonoBehaviour
     public void DecreaseHP(float damage)
     {
         HP -= damage;
-        if (HP < 0)
+        if (HP <= 0)
+        {
             HP = 0;
+            Destroy(gameObject);
+        }
+           
     }
     public void IncreaseHP(float heal)
     {

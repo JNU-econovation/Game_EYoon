@@ -5,13 +5,13 @@ using UnityEngine;
 public class Item_Ruby : Item
 {
     static int count = 0;
-    protected int maxCount;
+    protected int maxCount = 10;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
-            IncreaseCount();
-            UIManager.Instance.SetCount(grade, count);
+            IncreaseCount(get_jewerly_multiple);
+            UIManager.Instance.SetCount(5, count);
             Destroy(gameObject);
         }
     }
@@ -20,9 +20,15 @@ public class Item_Ruby : Item
         return count;
     }
 
-    public override void IncreaseCount()
+    public override void IncreaseCount(int n)
     {
-        count++;
+        count += n;
+        if (count >= maxCount)
+        {
+            UIManager.Instance.OnSkillUI(4);
+            count -= maxCount;
+        }
+        
     }
 
     public override void ResetCount()
@@ -32,6 +38,8 @@ public class Item_Ruby : Item
     public override void DecreaseMaxCount(int n)
     {
         maxCount -= n;
+        if (maxCount <= 0)
+            maxCount = 0;
     }
     public override void IncreaseMaxCount(int n)
     {

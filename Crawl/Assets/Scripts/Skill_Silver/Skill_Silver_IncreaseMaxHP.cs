@@ -51,4 +51,8 @@ public class Skill_Silver_IncreaseMaxHP : Skill_Silver
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "최대 체력 증가" + "(" + GetVariation() + ")";
+    }
 }

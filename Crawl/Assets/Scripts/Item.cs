@@ -6,6 +6,7 @@ abstract public class Item : Singleton<Item>
 {
     public int grade;
     public Text text;
+    protected int get_jewerly_multiple = 1;
     void Start()
     {
         StartCoroutine(DestroySelf());
@@ -16,8 +17,11 @@ abstract public class Item : Singleton<Item>
         yield return new WaitForSeconds(4.0f);
         Destroy(gameObject);
     }
- 
-    abstract public void IncreaseCount();
+    public void SetMultiple(int n)
+    {
+        get_jewerly_multiple = n;
+    }
+    abstract public void IncreaseCount(int n);
 
     abstract public int GetCount();
     abstract public int GetMaxCount();

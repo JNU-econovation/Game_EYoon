@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 95305514025235572}
   - component: {fileID: 3362971338868349796}
   - component: {fileID: 7123958911822447983}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdPos: 0
-  damage: 0
   speed: 1000
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
   attackRange: 1000

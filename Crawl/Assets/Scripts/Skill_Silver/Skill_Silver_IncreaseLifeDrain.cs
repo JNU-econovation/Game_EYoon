@@ -51,4 +51,8 @@ public class Skill_Silver_IncreaseLifeDrain : Skill_Silver
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "생명력 흡수율 증가" + "(" + GetVariation() + "%)";
+    }
 }

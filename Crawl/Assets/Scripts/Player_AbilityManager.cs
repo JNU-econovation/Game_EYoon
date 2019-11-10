@@ -14,25 +14,41 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] float attackSpeed = 1;
     [SerializeField] [Range(0, 1000)] float moveSpeed;
     [SerializeField] [Range(0, 5)] int targetNum;
+    float reflectDamage = 0;
     float drain;
     float maxDrain = 30;
     int maxTargetNum = 5;
     float maxAttackSpeed = 5;
+    float maxAvoidance = 80.0f;
     [SerializeField] float HP;
     [SerializeField] float stamina;
-    float maxHP = 100;
-    float maxStamina = 100;
+    float maxHP = 1000;
+    float maxStamina = 1000;
     Player_Attack_Range player_Attack_Range;
-
+    bool isCritical = false;
     private void Start()
     {
         player_Attack_Range = GetComponentInChildren<Player_Attack_Range>();
     }
 
+    private void Update()
+    {
+        moveSpeed += Time.deltaTime;
+    }
+    public void Critical(float time)
+    {
+        StartCoroutine(CriticalHit(time));
+    }
+    IEnumerator CriticalHit(float time)
+    {
+        isCritical = true;
+        yield return new WaitForSeconds(time);
+        isCritical = false;
+    }
     public float Attack()
     {
         float rand = Random.Range(0, 100);
-        if(rand <= critical_Percentage)
+        if(rand <= critical_Percentage || isCritical)
         {
             realAttack = attack * (critical_Hit / 100);
         }
@@ -49,6 +65,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
             HP = maxHP;
     }
     //Get함수
+    public bool GetIsCritical()
+    {
+        return isCritical;
+    }
     public float GetMaxHP()
     {
         return maxHP;
@@ -97,7 +117,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     {
         return attack;
     }
-    public float GetTargetNum()
+    public int GetTargetNum()
     {
         return targetNum;
     }
@@ -105,7 +125,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     {
         return drain;
     }
-
+    public float GetReflectDamage()
+    {
+        return reflectDamage;
+    }
     //Set함수
     public void IncreaseMaxHP(float n)
     {
@@ -134,6 +157,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         else if (stamina < 0)
             stamina = 0;
     }
+
     public void DecreaseHP(float n)
     {
         HP -= (n - defense);
@@ -160,6 +184,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     public void DecreaseMoveSpeed(float n)
     {
         moveSpeed -= n;
+        if (moveSpeed <= 300.0f)
+            moveSpeed = 300.0f;
     }
     public void IncreaseAttackSpeed(float n)
     {
@@ -182,6 +208,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     public void increaseAvoidance(float n)
     {
         avoidance += n;
+        if (avoidance >= maxAvoidance)
+            avoidance = maxAvoidance;
     }
     public void IncreaseDefense(float n)
     {
@@ -202,5 +230,11 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         drain += n;
         if (drain > maxDrain)
             drain = maxDrain;
+    }
+    public void IncreaseReflectDamage(float n)
+    {
+        reflectDamage += n;
+        if (reflectDamage >= 100)
+            reflectDamage = 100.0f;
     }
 }

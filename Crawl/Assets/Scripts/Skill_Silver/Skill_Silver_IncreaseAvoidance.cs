@@ -8,7 +8,7 @@ public class Skill_Silver_IncreaseAvoidance : Skill_Silver
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 0.2f, 0.3f, 0.4f };
+        variation = new float[] { 5, 7, 10 };
     }
     public override void SkillFunction()
     {
@@ -50,5 +50,9 @@ public class Skill_Silver_IncreaseAvoidance : Skill_Silver
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "회피율 증가" + "(" + GetVariation() + "%)";
     }
 }

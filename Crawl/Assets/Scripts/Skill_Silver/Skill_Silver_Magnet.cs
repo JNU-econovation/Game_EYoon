@@ -39,4 +39,8 @@ public class Skill_Silver_Magnet : Skill_Silver
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "자석" + "(" + GetVariation() + "초)";
+    }
 }

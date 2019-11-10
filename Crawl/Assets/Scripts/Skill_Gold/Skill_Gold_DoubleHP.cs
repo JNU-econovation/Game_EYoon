@@ -8,7 +8,7 @@ public class Skill_Gold_DoubleHP : Skill_Gold
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 1.5f, 2f, 2.5f};
     }
     public override void SkillFunction()
     {
@@ -53,5 +53,9 @@ public class Skill_Gold_DoubleHP : Skill_Gold
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "체력 증가" + "(현재의 " + GetVariation() + "배)";
     }
 }

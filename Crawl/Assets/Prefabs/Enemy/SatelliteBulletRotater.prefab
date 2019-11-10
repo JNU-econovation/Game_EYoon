@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937139246798233364}
   - component: {fileID: 2937139246798233365}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SatelliteBulletRotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}

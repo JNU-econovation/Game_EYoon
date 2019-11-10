@@ -59,7 +59,6 @@ public class Enemy_UFO : Enemy
         attack = true;
         float distance_x = transform.position.x - player.transform.position.x;
         float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-        print(angle);
         Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, -angle, damage);
         yield return new WaitForSeconds(attackDelay);
         attack = false;

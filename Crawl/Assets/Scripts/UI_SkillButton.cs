@@ -37,8 +37,7 @@ public class UI_SkillButton : MonoBehaviour
                 {
                     isStop = true;
                     slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
-                    string str = "(" + slots[skillNum].GetVariation() + ")";
-                    ui_SkillText.SetText(slots[skillNum].GetSkillName() + str);                   
+                    ui_SkillText.SetText(slots[skillNum].GetComponent<Skill>().GetSkillText());                   
                     isSkillChosen = false;
                 }
             }

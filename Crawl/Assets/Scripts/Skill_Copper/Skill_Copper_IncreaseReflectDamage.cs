@@ -15,16 +15,16 @@ public class Skill_Copper_IncreaseReflectDamage : Skill_Copper
         IncreaseCount();
         if (skill_Count < 3)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[0]);
+            Player_AbilityManager.Instance.IncreaseReflectDamage(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[1]);
+            Player_AbilityManager.Instance.IncreaseReflectDamage(variation[1]);
         }
         else if (5 <= skill_Count)
         {
             LimitCount();
-            Player_AbilityManager.Instance.IncreaseStamina(variation[2]);
+            Player_AbilityManager.Instance.IncreaseReflectDamage(variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -51,5 +51,9 @@ public class Skill_Copper_IncreaseReflectDamage : Skill_Copper
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "반사 데미지 증가" + "(" + GetVariation() + "%)";
     }
 }

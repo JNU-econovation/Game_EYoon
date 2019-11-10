@@ -4,9 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ItemManager : Singleton<ItemManager>
 {
-    [SerializeField] GameObject[] items;
+    public GameObject[] items;
     [SerializeField] float[] itemWeight;
-  
+    public Item_Copper item_Copper;
+    public Item_Silver item_Silver;
+    public Item_Gold item_Gold;
+    public Item_Diamond item_Diamond;
+    public Item_Ruby item_Ruby;
+    private void Start()
+    {
+        item_Copper = items[0].GetComponent<Item_Copper>();
+        item_Silver = items[1].GetComponent<Item_Silver>();
+        item_Gold = items[2].GetComponent<Item_Gold>();
+        item_Diamond = items[3].GetComponent<Item_Diamond>();
+        item_Ruby = items[4].GetComponent<Item_Ruby>();
+    }
     public GameObject SelectItem()
     {
         float rand = Random.Range(0, 100);

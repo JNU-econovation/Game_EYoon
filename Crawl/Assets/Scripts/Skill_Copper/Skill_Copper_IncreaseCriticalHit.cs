@@ -52,4 +52,8 @@ public class Skill_Copper_IncreaseCriticalHit : Skill_Copper
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "치명타 피해 증가" + "(" + GetVariation() + ")";
+    }
 }

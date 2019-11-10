@@ -5,13 +5,13 @@ using UnityEngine;
 public class Item_Copper : Item
 {
     static int count = 0;
-    protected int maxCount = 10;
+    static int maxCount = 100;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
-            IncreaseCount();
-            UIManager.Instance.SetCount(grade, count);
+            IncreaseCount(get_jewerly_multiple);
+            UIManager.Instance.SetCount(1, count);
             Destroy(gameObject);
         }
     }
@@ -30,18 +30,22 @@ public class Item_Copper : Item
     public override void DecreaseMaxCount(int n)
     {
         maxCount -= n;
+        if (maxCount <= 1)
+            maxCount = 1;
     }
     public override void IncreaseMaxCount(int n)
     {
         maxCount += n;
     }
-    public override void IncreaseCount()
+    public override void IncreaseCount(int n)
     {
-        count++;
-        if(count == maxCount)
+        count += n;
+        if(count >= maxCount)
         {
             UIManager.Instance.OnSkillUI(0);
+            count -= maxCount;
         }
+        
     }
     public override void ResetCount()
     {

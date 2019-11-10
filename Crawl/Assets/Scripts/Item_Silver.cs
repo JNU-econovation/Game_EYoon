@@ -5,20 +5,22 @@ using UnityEngine;
 public class Item_Silver : Item
 {
     static int count = 0;
-    protected int maxCount = 10;
+    static int maxCount = 10;
     public override int GetCount()
     {
         return count;
     }
 
   
-    public override void IncreaseCount()
+    public override void IncreaseCount(int n)
     {
-        count++;
-        if (count == maxCount)
+        count += n;
+        if (count >= maxCount)
         {
             UIManager.Instance.OnSkillUI(1);
+            count -= maxCount;
         }
+       
     }
     public override void ResetCount()
     {
@@ -37,8 +39,8 @@ public class Item_Silver : Item
     {
         if (collider.gameObject.tag == "Player")
         {
-            IncreaseCount();
-            UIManager.Instance.SetCount(grade, count);
+            IncreaseCount(get_jewerly_multiple);
+            UIManager.Instance.SetCount(2, count);
             Destroy(gameObject);
         }
     }
@@ -46,6 +48,8 @@ public class Item_Silver : Item
     public override void DecreaseMaxCount(int n)
     {
         maxCount -= n;
+        if (maxCount <= 0)
+            maxCount = 0;
     }
     public override void IncreaseMaxCount(int n)
     {

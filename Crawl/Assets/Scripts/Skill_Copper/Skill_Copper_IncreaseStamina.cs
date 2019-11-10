@@ -52,4 +52,8 @@ public class Skill_Copper_IncreaseStamina : Skill_Copper
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "스태미나 증가" + "(" + GetVariation() + ")";
+    }
 }

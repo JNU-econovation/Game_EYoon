@@ -52,4 +52,8 @@ public class Skill_Silver_DecreaseMoveSpeed : Skill_Silver
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "이동 속도 감소" + "(" + GetVariation() + ")";
+    }
 }

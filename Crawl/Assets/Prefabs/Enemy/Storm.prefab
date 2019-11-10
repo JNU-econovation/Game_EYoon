@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3349459209207210178}
   - component: {fileID: 3349459209207210177}
   - component: {fileID: 3349459209207210176}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Storm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

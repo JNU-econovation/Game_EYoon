@@ -15,18 +15,15 @@ public class Skill_Gold_LimitGoldCount : Skill_Gold
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            ItemManager.Instance.item_Gold.DecreaseMaxCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            ItemManager.Instance.item_Gold.DecreaseMaxCount((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            ItemManager.Instance.item_Gold.DecreaseMaxCount((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -53,5 +50,9 @@ public class Skill_Gold_LimitGoldCount : Skill_Gold
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "금 제한 개수 하락" + "(" + GetVariation() + ")";
     }
 }

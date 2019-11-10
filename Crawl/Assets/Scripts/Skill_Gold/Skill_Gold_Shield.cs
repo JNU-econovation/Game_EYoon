@@ -51,4 +51,8 @@ public class Skill_Gold_Shield : Skill_Gold
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "쉴드 " + "(" + GetVariation() + "회)";
+    }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9144043929925060910}
   - component: {fileID: 9144043929925060911}
   - component: {fileID: 9144043929925060881}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SateliteMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9144043930529428835}
   - component: {fileID: 9144043930529428834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SatelliteBulletRotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}

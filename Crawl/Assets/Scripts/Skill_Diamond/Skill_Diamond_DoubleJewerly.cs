@@ -15,18 +15,15 @@ public class Skill_Diamond_DoubleJewerly : Skill_Diamond
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            Item.Instance.SetMultiple((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            Item.Instance.SetMultiple((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            Item.Instance.SetMultiple((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -53,5 +50,9 @@ public class Skill_Diamond_DoubleJewerly : Skill_Diamond
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "보석 획득량 증가" + "(" + GetVariation() + "배)";
     }
 }

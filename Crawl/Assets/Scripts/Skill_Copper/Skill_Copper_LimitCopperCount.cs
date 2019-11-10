@@ -8,23 +8,22 @@ public class Skill_Copper_LimitCopperCount : Skill_Copper
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 10, 20, 30 };
+        variation = new float[] { 1, 2, 3 };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-           
+            ItemManager.Instance.item_Copper.DecreaseMaxCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-          
+            ItemManager.Instance.item_Copper.DecreaseMaxCount((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            LimitCount();
-            
+            ItemManager.Instance.item_Copper.DecreaseMaxCount((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -51,5 +50,9 @@ public class Skill_Copper_LimitCopperCount : Skill_Copper
     public override int GetCount()
     {
         return skill_Count;
+    }
+    public override string GetSkillText()
+    {
+        return "동 뽑기 개수 하락" + "(" + GetVariation() + ")";
     }
 }

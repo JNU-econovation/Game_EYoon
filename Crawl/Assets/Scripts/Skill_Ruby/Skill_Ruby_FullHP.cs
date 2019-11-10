@@ -54,4 +54,8 @@ public class Skill_Ruby_FullHP : Skill_Ruby
     {
         return skill_Count;
     }
+    public override string GetSkillText()
+    {
+        return "체력 모두 회복";
+    }
 }
