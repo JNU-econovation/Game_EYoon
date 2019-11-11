@@ -22,6 +22,15 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
             yield return new WaitForSeconds(delay);
         }
     }
+    public void CircleShot(GameObject enemy, GameObject bullet, int count, float damage)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GameObject bullet0 = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 360 / count * (i)));
+            bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+
+        }
+    }
     public void MultiShot(GameObject enemy, GameObject bullet, int count, float damage)//, float angle)
     {
         Vector3 pos = enemy.transform.position;

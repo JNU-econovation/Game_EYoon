@@ -17,7 +17,7 @@ public class Enemy_Test : MonoBehaviour
     {
         while (true)
         {
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, shotcount, 10);
+            Enemy_AttackPattern.Instance.CircleShot(gameObject, bullet, shotcount, 10);
             yield return new WaitForSeconds(1);
         }
     }

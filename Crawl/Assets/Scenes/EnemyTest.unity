@@ -800,7 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bfa4e1c71403c47937c724872507a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &72098287
 Rigidbody2D:
   serializedVersion: 4
@@ -1007,7 +1006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8814ff517241f4c94a7453db342585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &81274844
 Rigidbody2D:
   serializedVersion: 4
@@ -2410,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dc933c3aa18bf46826430b90bfec65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI_Silver: {fileID: 0}
 --- !u!50 &224336427
 Rigidbody2D:
   serializedVersion: 4
@@ -3107,6 +3106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dc933c3aa18bf46826430b90bfec65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI_Silver: {fileID: 0}
 --- !u!50 &249033414
 Rigidbody2D:
   serializedVersion: 4
@@ -3564,7 +3564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8814ff517241f4c94a7453db342585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &282658694
 Rigidbody2D:
   serializedVersion: 4
@@ -4265,7 +4264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655361e8f28de4345a908add7f4e08d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &371050397
 Rigidbody2D:
   serializedVersion: 4
@@ -4472,7 +4470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655361e8f28de4345a908add7f4e08d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 683977214}
 --- !u!50 &371490884
 Rigidbody2D:
   serializedVersion: 4
@@ -4726,7 +4723,7 @@ RectTransform:
   - {fileID: 1990496687}
   - {fileID: 683977215}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6142,63 +6139,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477632629}
   m_CullTransparentMesh: 0
---- !u!1001 &480508006
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1000150497576542, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_Name
-      value: UFO
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 758
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 808
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222427208395062, guid: b2935fe869126814090f09b28263f6f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2935fe869126814090f09b28263f6f1, type: 3}
 --- !u!1 &496361044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7026,6 +6966,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  item_Copper: {fileID: 0}
+  item_Silver: {fileID: 0}
+  item_Gold: {fileID: 0}
+  item_Diamond: {fileID: 0}
+  item_Ruby: {fileID: 0}
 --- !u!114 &589852438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7099,7 +7044,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &589852441
 MonoBehaviour:
@@ -7115,7 +7060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys:
   - {fileID: 8479715773672928700, guid: 067f110e2b2abd044b3bacb4f2844b1a, type: 3}
-  - {fileID: 1000150497576542, guid: b2935fe869126814090f09b28263f6f1, type: 3}
+  - {fileID: 1650935537771593501, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   - {fileID: 9144043929925060906, guid: 3235f1c62ad2d594cac53afc9bf18b06, type: 3}
   - {fileID: 3349459209207210191, guid: f795787b16b4ba3499064c1a15e67001, type: 3}
   enemyWeight:
@@ -7821,7 +7766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c1a6e5cbbbed041990f95399e8372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &641989971
 Rigidbody2D:
   serializedVersion: 4
@@ -8028,7 +7972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6d80ac19f0cbe4780bb33ba5ca8a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 683977214}
 --- !u!50 &643983874
 Rigidbody2D:
   serializedVersion: 4
@@ -8510,7 +8453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bfa4e1c71403c47937c724872507a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &679377155
 Rigidbody2D:
   serializedVersion: 4
@@ -8717,7 +8659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6d80ac19f0cbe4780bb33ba5ca8a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &680641833
 Rigidbody2D:
   serializedVersion: 4
@@ -9286,7 +9227,7 @@ Transform:
   m_Children:
   - {fileID: 1610454988}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705378152
 GameObject:
@@ -10360,6 +10301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dc933c3aa18bf46826430b90bfec65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI_Silver: {fileID: 0}
 --- !u!50 &926175442
 Rigidbody2D:
   serializedVersion: 4
@@ -10566,7 +10508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655361e8f28de4345a908add7f4e08d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &926990001
 Rigidbody2D:
   serializedVersion: 4
@@ -11018,7 +10959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969721505
 GameObject:
@@ -11652,7 +11593,7 @@ Transform:
   - {fileID: 735874395}
   - {fileID: 2051295884}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1013153856
 GameObject:
@@ -12563,7 +12504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bfa4e1c71403c47937c724872507a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1112821508
 Rigidbody2D:
   serializedVersion: 4
@@ -13905,7 +13845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8814ff517241f4c94a7453db342585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1227236733
 Rigidbody2D:
   serializedVersion: 4
@@ -14444,7 +14383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c1a6e5cbbbed041990f95399e8372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1253659215
 Rigidbody2D:
   serializedVersion: 4
@@ -14798,7 +14736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1261224349
 PrefabInstance:
@@ -16845,7 +16783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6d80ac19f0cbe4780bb33ba5ca8a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1626105894
 Rigidbody2D:
   serializedVersion: 4
@@ -17822,7 +17759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bfa4e1c71403c47937c724872507a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 683977214}
 --- !u!50 &1719437034
 Rigidbody2D:
   serializedVersion: 4
@@ -18029,6 +17965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dc933c3aa18bf46826430b90bfec65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI_Silver: {fileID: 0}
 --- !u!50 &1749185409
 Rigidbody2D:
   serializedVersion: 4
@@ -18711,7 +18648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c1a6e5cbbbed041990f95399e8372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 683977214}
 --- !u!50 &1807359423
 Rigidbody2D:
   serializedVersion: 4
@@ -19004,7 +18940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6d80ac19f0cbe4780bb33ba5ca8a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1871721480
 Rigidbody2D:
   serializedVersion: 4
@@ -19211,7 +19146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8814ff517241f4c94a7453db342585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 683977214}
 --- !u!50 &1874829650
 Rigidbody2D:
   serializedVersion: 4
@@ -19428,7 +19362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889546723
 GameObject:
@@ -19633,7 +19567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655361e8f28de4345a908add7f4e08d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1902671264
 Rigidbody2D:
   serializedVersion: 4
@@ -20501,7 +20434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1940349165 stripped
 Transform:
@@ -20589,7 +20522,7 @@ Transform:
   - {fileID: 970893405}
   - {fileID: 83150531}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1943605449
 PrefabInstance:
@@ -21046,7 +20979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c1a6e5cbbbed041990f95399e8372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillUI: {fileID: 1990496686}
 --- !u!50 &1997848926
 Rigidbody2D:
   serializedVersion: 4
@@ -21385,7 +21317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028702791
 GameObject:
