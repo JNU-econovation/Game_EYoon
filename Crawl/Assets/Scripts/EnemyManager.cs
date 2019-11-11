@@ -68,7 +68,7 @@ public class EnemyManager : MonoBehaviour
     IEnumerator PauseTest()
     {
         yield return new WaitForSeconds(5);
-        Pause();
+     //   Pause();
     }
     
 }

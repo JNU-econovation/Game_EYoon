@@ -44,20 +44,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         isCritical = true;
         yield return new WaitForSeconds(time);
         isCritical = false;
-    }
-    public float Attack()
-    {
-        float rand = Random.Range(0, 100);
-        if(rand <= critical_Percentage || isCritical)
-        {
-            realAttack = attack * (critical_Hit / 100);
-        }
-        else
-        {
-            realAttack = attack;
-        }
-        return realAttack;
-    }
+    }   
     public void Drain(float realAttack)
     {
         HP += realAttack * (drain / 100);
@@ -158,11 +145,21 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
             stamina = 0;
     }
 
-    public void DecreaseHP(float n)
+    public float DecreaseHP(float n)
     {
-        HP -= (n - defense);
-        if (HP < 0)
-            HP = 0;
+        float rand = Random.Range(0, 100);
+        if(rand <= avoidance)
+        {
+            return 0; //빗나감
+        }
+        else
+        {
+            HP -= (n - defense);
+            if (HP < 0)
+                HP = 0;
+            return n - defense;
+        }
+      
     }
     public void IncreaseMaxStamina(float n)
     {

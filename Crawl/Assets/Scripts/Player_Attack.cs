@@ -17,7 +17,7 @@ public class Player_Attack : MonoBehaviour
     private void Update()
     {
         attack_range = Player_AbilityManager.Instance.GetAttackRange();
-        enemy_colliders = Physics2D.OverlapCircleAll(transform.position, attack_range * 70.0f, layerMask);
+        enemy_colliders = Physics2D.OverlapCircleAll(transform.position, attack_range * 70.0f, layerMask, 0, 20);
     }
     IEnumerator DetectAttack()
     {
@@ -46,8 +46,10 @@ public class Player_Attack : MonoBehaviour
             {
                 if (enemy_colliders[i] != null)
                 {
+                    float realDamage = RealAttack();
                     enemy_colliders[i].GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 255);
-                  //  enemy_colliders[i].GetComponent<Enemy_Ability>().DecreaseHP(RealAttack());
+                    enemy_colliders[i].GetComponent<Enemy_Ability>().DecreaseHP(realDamage);
+                    Player_AbilityManager.Instance.Drain(realDamage);
                 }              
             }
             

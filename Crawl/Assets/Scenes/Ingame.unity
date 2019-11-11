@@ -18594,16 +18594,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemys:
-  - {fileID: 1000150497576542, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   - {fileID: 8479715773672928700, guid: 067f110e2b2abd044b3bacb4f2844b1a, type: 3}
   - {fileID: 9144043929925060906, guid: 3235f1c62ad2d594cac53afc9bf18b06, type: 3}
+  - {fileID: 6806787847336912346, guid: 1904e0e9c154f1b46b05e392417fa5de, type: 3}
   - {fileID: 3349459209207210191, guid: f795787b16b4ba3499064c1a15e67001, type: 3}
   enemyWeight:
   - 0
   - 0
   - 100
   - 0
-  cycleTime: 1
+  cycleTime: 3
 --- !u!1 &1108726847
 GameObject:
   m_ObjectHideFlags: 0
@@ -41002,7 +41002,7 @@ MonoBehaviour:
   critical_Percentage: 0
   critical_Hit: 0
   attackRange: 0
-  attackSpeed: 2
+  attackSpeed: 1
   moveSpeed: 300
   targetNum: 1
   HP: 100
