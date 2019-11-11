@@ -69,6 +69,8 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Pause();
+        yield return new WaitForSeconds(5);
+        Resume();
     }
     
 }

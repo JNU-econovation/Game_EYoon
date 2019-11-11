@@ -45,6 +45,7 @@ public class Enemy_SatelliteMonster : Enemy
     public override void Pause()
     {
         speed = 0;
+        if(Rotater != null)
         Rotater.Stop();
     }
     public override void Resume()
