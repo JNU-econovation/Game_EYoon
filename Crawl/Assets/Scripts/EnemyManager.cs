@@ -13,7 +13,6 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
-        StartCoroutine(PauseTest());
     }
     IEnumerator SpawnEnemy()
     {

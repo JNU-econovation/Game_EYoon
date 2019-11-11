@@ -41005,7 +41005,7 @@ MonoBehaviour:
   attackSpeed: 1
   moveSpeed: 300
   targetNum: 1
-  HP: 100
+  HP: 1000
   stamina: 100
 --- !u!114 &8622369420676396089
 MonoBehaviour:

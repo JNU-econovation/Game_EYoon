@@ -6,7 +6,6 @@ public class Enemy_Bird : Enemy
 {
     float birdPos;
     int direction;
-    [SerializeField] float damage;
     [SerializeField] float speed;
     [SerializeField] Animator[] species;
     float originSpeed;
@@ -24,19 +23,7 @@ public class Enemy_Bird : Enemy
         transform.Translate(5 * direction,0,0);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Player")
-        {
-            Function();
-        }
-    }
-    public override void Function()
-    {
-        Player_AbilityManager.Instance.DecreaseHP(damage);
-       // Destroy(gameObject);
-    }
-
+   
     public override void Pause()
     {
         speed = 0;

@@ -55,10 +55,6 @@ public class Enemy_Flymonster : Enemy
 
         transform.Translate(0, speed, 0);
     }
-    public override void Function()
-    {
-        
-    }
     public override void Pause()
     {
         speed_x = 0;

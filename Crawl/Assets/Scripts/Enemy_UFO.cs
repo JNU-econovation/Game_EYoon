@@ -6,7 +6,6 @@ public class Enemy_UFO : Enemy
 {
     public int birdPos;
     int direction;
-    float damage;
     [SerializeField] int speed;
     [SerializeField] GameObject bullet;
     [SerializeField] float attackRange;
@@ -40,19 +39,6 @@ public class Enemy_UFO : Enemy
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Player")
-        {
-            Function();
-        }
-    }
-    public override void Function()
-    {
-        Player_AbilityManager.Instance.DecreaseHP(damage);
-        //Destroy(gameObject);
     }
 
     IEnumerator Attack(float distance_y)

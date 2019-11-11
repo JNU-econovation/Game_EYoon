@@ -7,7 +7,6 @@ public class Enemy_Storm : Enemy
     GameObject player;
     [SerializeField] float speed;
     float originSpeed;
-    float damage;
     float distance;
     // Start is called before the first frame update
     void Start()
@@ -28,18 +27,7 @@ public class Enemy_Storm : Enemy
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Player")
-        {
-            Function();
-        }
-    }
-    public override void Function()
-    {
-        Player_AbilityManager.Instance.DecreaseHP(damage);
-       // Destroy(gameObject);
-    }
+  
     public override void Pause()
     {
         speed = 0;
