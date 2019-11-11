@@ -65,16 +65,6 @@ public class EnemyManager : MonoBehaviour
         Enemy_AttackPattern.Instance.Resume();
         isPause = false;
     }
-    IEnumerator PauseTest()
-    {
-        yield return new WaitForSeconds(5);
-<<<<<<< HEAD
-     //   Pause();
-=======
-        Pause();
-        yield return new WaitForSeconds(5);
-        Resume();
->>>>>>> 9e3f94220d7009a7116871d2cbf9cd2f9997a3ef
-    }
+   
     
 }
