@@ -7,23 +7,24 @@ public class Enemy_Flymonster : Enemy
     GameObject player;
     [SerializeField] float downSpeed;
     [SerializeField] GameObject bullet;
+<<<<<<< HEAD
     [SerializeField] float sideMoveCycle; // 좌우 이동 변경 주기
     float speed;
     float originSpeed;
     float originSpeed_x;
+=======
+>>>>>>> 38241f2dfd96f570d154eca5b2444830088be801
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     float distance_y;
     [SerializeField]float attackDelay;
     bool attack;
-    [SerializeField] float speed_x; // 정지 후 좌우로 움직이는 속도
     bool sideMove = false;
     bool isPause = false;
 
     private void Start()
     {
-        originSpeed_x = speed_x;
-        originSpeed = speed;
-        player = GameObject.FindGameObjectWithTag("Player");
+       
+        player = LevelManager.Instance.GetPlayer();
         damage = GetComponent<Enemy_Ability>().GetDamage();
         stopPos = Random.Range(400, 750);
         speed = -downSpeed;

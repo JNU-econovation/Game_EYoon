@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5896023151914858003}
   - component: {fileID: 3239580047132183648}
   - component: {fileID: 3386752596690963625}
+  - component: {fileID: 9190142284612753457}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -95,9 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5143940c3dfefe146a90cdb8fd5e623a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPos: 0
-  damage: 10
-  speed: 8
   species: []
 --- !u!50 &5896023151914858003
 Rigidbody2D:
@@ -165,3 +163,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &9190142284612753457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479715773672928700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  damage: 10

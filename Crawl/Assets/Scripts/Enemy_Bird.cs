@@ -6,9 +6,7 @@ public class Enemy_Bird : Enemy
 {
     float birdPos;
     int direction;
-    [SerializeField] float speed;
     [SerializeField] Animator[] species;
-    float originSpeed;
     GameObject player;
     Quaternion quaternion = Quaternion.Euler(0, 180f, 0);
     private void Start()

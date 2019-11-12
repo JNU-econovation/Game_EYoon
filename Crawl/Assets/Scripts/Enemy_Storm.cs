@@ -5,14 +5,11 @@ using UnityEngine;
 public class Enemy_Storm : Enemy
 {
     GameObject player;
-    [SerializeField] float speed;
-    float originSpeed;
     float distance;
     // Start is called before the first frame update
     void Start()
     {
-        originSpeed = speed;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = LevelManager.Instance.GetPlayer();
         damage = GetComponent<Enemy_Ability>().GetDamage();
         SetPosition();
     }
