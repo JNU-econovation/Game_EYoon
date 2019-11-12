@@ -8,7 +8,6 @@ public class Enemy_Flymonster : Enemy
     [SerializeField] float downSpeed;
     [SerializeField] GameObject bullet;
     [SerializeField] float sideMoveCycle; // 좌우 이동 변경 주기
-    float damage;
     float speed;
     float originSpeed;
     float originSpeed_x;

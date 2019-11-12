@@ -14,7 +14,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] float attackSpeed = 1;
     [SerializeField] [Range(0, 1000)] float moveSpeed;
     [SerializeField] [Range(0, 5)] int targetNum;
-    float reflectDamage = 0;
+    [SerializeField] float reflectDamage;
     float drain;
     float maxDrain = 30;
     int maxTargetNum = 5;
