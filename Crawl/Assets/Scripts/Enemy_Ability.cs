@@ -32,4 +32,15 @@ public class Enemy_Ability : MonoBehaviour
         if (HP >= maxHP)
             HP = maxHP;
     }
+    public void SetHP(float value)
+    {
+        HP = value;
+        if (HP >= maxHP)
+            HP = maxHP;
+        else if(HP <= 0)
+        {
+            HP = 0;
+            Destroy(gameObject);
+        }
+    }
 }

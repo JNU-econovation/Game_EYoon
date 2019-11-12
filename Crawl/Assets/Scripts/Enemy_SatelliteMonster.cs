@@ -6,15 +6,13 @@ public class Enemy_SatelliteMonster : Enemy
 {
     GameObject player;
     Enemy_SatelliteBulletRotater Rotater;
-    [SerializeField] float speed;
-    float originSpeed;
+
     float distance;
     // Start is called before the first frame update
     void Start()
     {
-        originSpeed = speed;
         Rotater = GetComponentInChildren<Enemy_SatelliteBulletRotater>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = LevelManager.Instance.GetPlayer();
         damage = GetComponent<Enemy_Ability>().GetDamage();
         SetPosition();
     }
