@@ -9,7 +9,7 @@ abstract public class Enemy : Singleton<Enemy>
     protected float originSpeed;
     protected float speed_x = 1.5f;
     protected float originSpeed_x;
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -29,8 +29,9 @@ abstract public class Enemy : Singleton<Enemy>
     {
         if (collider.tag == "Player")
         {
-            Player_AbilityManager.Instance.DecreaseHP(damage);
-            gameObject.GetComponent<Enemy_Ability>().SetHP(0);
+            float trueDamage = Player_AbilityManager.Instance.DecreaseHP(damage);
+            float reflectDamage = trueDamage * Player_AbilityManager.Instance.GetReflectDamage() / 100;
+            GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);          
         }
     }
     abstract public void Resume();

@@ -7,6 +7,7 @@ public class Enemy_Flymonster : Enemy
     GameObject player;
     [SerializeField] float downSpeed;
     [SerializeField] GameObject bullet;
+    [SerializeField] float sideMoveCycle; // 좌우 이동 변경 주기
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     float distance_y;
     [SerializeField]float attackDelay;
