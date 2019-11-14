@@ -12,7 +12,7 @@ public class Enemy_Bird : Enemy
     private void Start()
     {
         originSpeed = speed;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = LevelManager.Instance.GetPlayer();
         SelectSpecies();
         SetPosition();
     }
@@ -37,7 +37,7 @@ public class Enemy_Bird : Enemy
         int dir = Random.Range(0, 100);
         
         float playerHeight = player.transform.position.y;
-        birdPos = playerHeight +300+ Random.Range(0, 200);
+        birdPos =300+ Random.Range(0, 200);
 
         if (dir <= 50)
         {

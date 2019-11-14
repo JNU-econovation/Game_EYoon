@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] GameObject[] enemys;
     [SerializeField] float[] enemyWeight;
     [SerializeField] float cycleTime;
-    List<GameObject> enemy = new List<GameObject>() ;
+    [SerializeField] List<GameObject> spawned_enemy = new List<GameObject>() ;
+    [SerializeField] GameObject spawnEnemy;
     bool isPause = false;
     // Start is called before the first frame update
     private void Start()
@@ -18,17 +19,16 @@ public class EnemyManager : MonoBehaviour
     {
         while (true)
         {
-            
-            
+            if (isPause == false)
+            {
 
-                GameObject spawnEnemy = SelectEnemy();
-                if (isPause == false)
-                    enemy.Add(Instantiate(spawnEnemy));
-                yield return new WaitForSeconds(cycleTime);
-            
+                spawned_enemy.Add(Instantiate(enemys[4]));
+            }
+            yield return new WaitForSeconds(cycleTime);
+
         }
     }
-    public GameObject SelectEnemy()
+    public int SelectEnemy()
     {
         float rand = Random.Range(0, 100);
         float sum = 0;
@@ -38,32 +38,33 @@ public class EnemyManager : MonoBehaviour
             sum += enemyWeight[i];
             if (rand <= sum)
             {
-                return enemys[i];
+                return i;
             }
             i++;
+            
         }
-        return enemys[i];
+        return 0;
     }
     public void Pause()
     {
-        for(int i = 0; i < enemy.Count; i++)
+        for(int i = 0; i < spawned_enemy.Count; i++)
         {
-            if(enemy[i] != null)
-            enemy[i].GetComponent<Enemy>().Pause();
+            if(spawned_enemy[i] != null)
+                spawned_enemy[i].GetComponent<Enemy>().Pause();
         }
         Enemy_AttackPattern.Instance.Pause();
         isPause = true;
     }
     public void Resume()
     {
-        for (int i = 0; i < enemy.Count; i++)
+        for (int i = 0; i < spawned_enemy.Count; i++)
         {
-            if (enemy[i] != null)
-                enemy[i].GetComponent<Enemy>().Resume();
+            if (spawned_enemy[i] != null)
+                spawned_enemy[i].GetComponent<Enemy>().Resume();
         }
         Enemy_AttackPattern.Instance.Resume();
         isPause = false;
     }
    
-    
+
 }

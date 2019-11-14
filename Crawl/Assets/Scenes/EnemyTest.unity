@@ -7063,12 +7063,16 @@ MonoBehaviour:
   - {fileID: 1650935537771593501, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   - {fileID: 9144043929925060906, guid: 3235f1c62ad2d594cac53afc9bf18b06, type: 3}
   - {fileID: 3349459209207210191, guid: f795787b16b4ba3499064c1a15e67001, type: 3}
+  - {fileID: 6806787847336912346, guid: 1904e0e9c154f1b46b05e392417fa5de, type: 3}
   enemyWeight:
   - 25
   - 25
   - 25
   - 25
+  - 25
   cycleTime: 5
+  spawned_enemy: []
+  spawnEnemy: {fileID: 0}
 --- !u!1 &598687410
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,17 @@ abstract public class Enemy : Singleton<Enemy>
     // Start is called before the first frame update
     void Start()
     {
+        
         originSpeed = speed;
         originSpeed_x = speed_x;
+    }
+   void OnEnable()
+    {
         StartCoroutine(DestroySelf());
     }
-
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(6.0f);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collider)
