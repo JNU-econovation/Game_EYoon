@@ -9,10 +9,10 @@ abstract public class Enemy : Singleton<Enemy>
     protected float originSpeed;
     protected float speed_x = 1.5f;
     protected float originSpeed_x;
+    protected bool isPaused = false;
     
-    void Start()
+    void Awake()
     {
-        
         originSpeed = speed;
         originSpeed_x = speed_x;
     }

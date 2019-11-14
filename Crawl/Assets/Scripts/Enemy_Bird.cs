@@ -18,17 +18,22 @@ public class Enemy_Bird : Enemy
     }
     private void Update()
     {
-        transform.Translate(5 * direction,0,0);
+        if (isPaused)
+            speed = 0;
+        else if (isPaused == false)
+            speed = originSpeed;
+
+        transform.Translate(speed * direction,0,0);
     }
 
    
     public override void Pause()
     {
-        speed = 0;
+        isPaused = true;
     }
     public override void Resume()
     {
-        speed = originSpeed;
+        isPaused = false;
     }
 
 

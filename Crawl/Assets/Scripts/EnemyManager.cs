@@ -14,6 +14,7 @@ public class EnemyManager : Singleton<EnemyManager>
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
+        //StartCoroutine(PauseTest());
     }
     IEnumerator SpawnEnemy()
     {
@@ -21,7 +22,6 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (isPause == false)
             {
-
                 spawned_enemy.Add(Instantiate(enemys[4]));
             }
             yield return new WaitForSeconds(cycleTime);
@@ -65,6 +65,16 @@ public class EnemyManager : Singleton<EnemyManager>
         Enemy_AttackPattern.Instance.Resume();
         isPause = false;
     }
-   
+    IEnumerator PauseTest()
+    {
+        yield return new WaitForSeconds(5);
+        Pause();
+    }
+    IEnumerator ResumeTest()
+    {
+        yield return new WaitForSeconds(10);
+        Resume();
+    }
+
 
 }
