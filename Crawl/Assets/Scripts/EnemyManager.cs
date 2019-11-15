@@ -19,14 +19,6 @@ public class EnemyManager : Singleton<EnemyManager>
     IEnumerator SpawnEnemy()
     {
         while (true)
-<<<<<<< HEAD
-        {                      
-                GameObject spawnEnemy = SelectEnemy();
-                if (isPause == false)
-                    enemy.Add(Instantiate(spawnEnemy));
-                yield return new WaitForSeconds(cycleTime);
-            
-=======
         {
             if (isPause == false)
             {
@@ -34,7 +26,6 @@ public class EnemyManager : Singleton<EnemyManager>
             }
             yield return new WaitForSeconds(cycleTime);
 
->>>>>>> fa136684f4ac2ace9d56350bbd9fbb97d0a8da3d
         }
     }
     public int SelectEnemy()

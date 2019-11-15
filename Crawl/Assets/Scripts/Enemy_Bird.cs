@@ -18,14 +18,11 @@ public class Enemy_Bird : Enemy
     }
     private void Update()
     {
-<<<<<<< HEAD
-=======
         if (isPaused)
             speed = 0;
         else if (isPaused == false)
             speed = originSpeed;
 
->>>>>>> fa136684f4ac2ace9d56350bbd9fbb97d0a8da3d
         transform.Translate(speed * direction,0,0);
     }
 

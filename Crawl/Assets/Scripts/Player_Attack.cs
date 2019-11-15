@@ -85,7 +85,10 @@ public class Player_Attack : MonoBehaviour
         {
             enemy.GetComponent<Enemy>().Pause();
             yield return new WaitForSeconds(n);
-            enemy.GetComponent<Enemy>().Resume();
+            if(enemy != null)
+            {
+                enemy.GetComponent<Enemy>().Resume();
+            }          
             isFreeze = false;
         }       
     }
