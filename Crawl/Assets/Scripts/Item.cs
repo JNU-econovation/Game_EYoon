@@ -6,12 +6,21 @@ abstract public class Item : Singleton<Item>
 {
     public int grade;
     public Text text;
+    protected bool isMagent;
     protected int get_jewerly_multiple = 1;
+    protected GameObject player;
     void Start()
     {
         StartCoroutine(DestroySelf());
     }
-
+    public void Magnet()
+    {
+        isMagent = true;
+    }
+    public void UnMagnet()
+    {
+        isMagent = false;
+    }
     IEnumerator DestroySelf()
     {
         yield return new WaitForSeconds(4.0f);
@@ -20,7 +29,7 @@ abstract public class Item : Singleton<Item>
     public void SetMultiple(int n)
     {
         get_jewerly_multiple = n;
-    }
+    }    
     abstract public void IncreaseCount(int n);
 
     abstract public int GetCount();

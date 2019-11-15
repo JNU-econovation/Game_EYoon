@@ -33,10 +33,11 @@ public class UI_SkillButton : MonoBehaviour
             {
                
                 float distance = Mathf.Abs(slots[skillNum].transform.localPosition.y - slot0_Pos);              
-                if (distance <= 10.0f)
+                if (distance <= 20.0f)
                 {
                     isStop = true;
                     slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
+                    slots[skillNum].OnButton();
                     ui_SkillText.SetText(slots[skillNum].GetComponent<Skill>().GetSkillText());                   
                     isSkillChosen = false;
                 }

@@ -5,26 +5,29 @@ using UnityEngine;
 public class Skill_Copper_Booster : Skill_Copper
 {
     static int skill_Count = 0;
+    Player_Booster player_Booster;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 10, 20, 30 };
+        variation = new float[] { 2, 4, 6};
+        player_Booster = player.GetComponent<Player_Booster>();
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[0]);
+            player_Booster.Booster(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[1]);
+            player_Booster.Booster(variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            LimitCount();
-            Player_AbilityManager.Instance.IncreaseStamina(variation[2]);
+            player_Booster.Booster(variation[2]);
+
         }
         skillUI.SetActive(false);
     }
@@ -54,6 +57,6 @@ public class Skill_Copper_Booster : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "부스터" + " (" + GetVariation() + "m)";
+        return "부스터" + " (" + GetVariation() + "초)";
     }
 }

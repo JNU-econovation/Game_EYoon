@@ -7,23 +7,34 @@ public class Player_Circle_Move : MonoBehaviour
 {
     [Header("속도, 반지름")]
 
-    [SerializeField]float speed = 1;
+    float speed;
     [SerializeField]float radius = 1;
     public GameObject player;
     private float runningTime = 0;
     private Vector2 newPos = new Vector2();
     float centerX;
     float centerY;
+    bool isPause;
     // Use this for initialization
     void Start()
     {
        // player = GetComponentInParent<Player>().gameObject;         
     }
     
-
+    public void Pause()
+    {
+        isPause = true;
+    }
+    public void Resume()
+    {
+        isPause = false;
+    }
     void Update()
     {
-       
+        if (isPause)
+            speed = 0;
+        else
+            speed = Player_AbilityManager.Instance.GetAttackSpeed();
         centerX = player.transform.position.x;
         centerY = player.transform.position.y;
         runningTime += Time.deltaTime * speed;

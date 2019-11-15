@@ -26,9 +26,11 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     float maxStamina = 1000;
     Player_Attack_Range player_Attack_Range;
     bool isCritical = false;
+    Player_Booster player_Booster;
     private void Start()
     {
         player_Attack_Range = GetComponentInChildren<Player_Attack_Range>();
+        player_Booster = GetComponent<Player_Booster>();
     }
 
     private void Update()
@@ -147,6 +149,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
 
     public float DecreaseHP(float n)
     {
+        if (player_Booster.GetOnBooster())
+            return 0;
         float rand = Random.Range(0, 100);
         if(rand <= avoidance)
         {

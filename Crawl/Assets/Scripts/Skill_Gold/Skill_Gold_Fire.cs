@@ -5,28 +5,28 @@ using UnityEngine;
 public class Skill_Gold_Fire : Skill_Gold
 {
     static int skill_Count = 0;
+    Player_Attack player_Attack;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        player_Attack = player.GetComponent<Player_Attack>();
+        variation = new float[] { 5, 7, 9 };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            player_Attack.OnFire((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            player_Attack.OnFire((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            player_Attack.OnFire((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -56,6 +56,6 @@ public class Skill_Gold_Fire : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "적 불태우기" + "(" + GetVariation() + "초)";
+        return "적 불태우기" + " (" + GetVariation() + "초)";
     }
 }

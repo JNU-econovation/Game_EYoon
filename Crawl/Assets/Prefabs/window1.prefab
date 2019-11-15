@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 3328403987758356274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children:
   - {fileID: 3328403988235474525}
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: bc07ba74a1f701a489a99f10fd3f7798, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6eae2c8477948140b6140a09a232a8d, type: 3}
   m_Color: {r: 0.87649107, g: 0.8632076, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4eed7a43b8bf74ba931fd0f4a6701a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenSprite: {fileID: 21300000, guid: 54168f7759847c9488c46b17bdf3e956, type: 3}
+  brokenSprite: {fileID: 21300000, guid: a6eae2c8477948140b6140a09a232a8d, type: 3}
 --- !u!1 &3328403988235474524
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7b8f115f4b069604dac5c8ed3031b2ce, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -201,6 +201,6 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 2.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

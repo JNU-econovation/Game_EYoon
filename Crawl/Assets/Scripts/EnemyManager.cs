@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] GameObject[] enemys;
     [SerializeField] float[] enemyWeight;
@@ -17,10 +17,7 @@ public class EnemyManager : MonoBehaviour
     IEnumerator SpawnEnemy()
     {
         while (true)
-        {
-            
-            
-
+        {                      
                 GameObject spawnEnemy = SelectEnemy();
                 if (isPause == false)
                     enemy.Add(Instantiate(spawnEnemy));

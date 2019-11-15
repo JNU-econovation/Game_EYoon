@@ -5,16 +5,32 @@ using UnityEngine;
 public class Skill_Silver_Magnet : Skill_Silver
 {
     static int skill_Count = 0;
+    Player_Magnetic player_Magnetic;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 1, 1, 1 };
+        player_Magnetic = player.GetComponent<Player_Magnetic>();
+        variation = new float[] { 5, 7, 9 };
     }
     public override void SkillFunction()
     {
-        IncreaseCount();        
+        IncreaseCount();
+        if (skill_Count < 3)
+        {
+            player_Magnetic.Magnet(variation[0]);
+        }
+        else if (skill_Count < 5)
+        {
+            player_Magnetic.Magnet(variation[1]);
+        }
+        else if (5 <= skill_Count)
+        {
+            player_Magnetic.Magnet(variation[2]);
+        }
         skillUI.SetActive(false);
     }
+
     public override void LimitCount()
     {
         if (skill_Count >= 5)
@@ -22,6 +38,7 @@ public class Skill_Silver_Magnet : Skill_Silver
             skill_Count = 5;
         }
     }
+
     public override float GetVariation()
     {
         if (skill_Count <= 1)

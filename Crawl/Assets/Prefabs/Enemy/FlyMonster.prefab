@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2614320955962528044}
   m_Layer: 12
   m_Name: FlyMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
   sideMoveCycle: 0
   attackDelay: 2
-  speed_x: 1
 --- !u!61 &2614320955962528044
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Map_Controler : MonoBehaviour
     [SerializeField] GameObject player;
     List<Window> windows = new List<Window>();
     List<GameObject> near_Windows = new List<GameObject>();
+    public GameObject left_backGround;
+    public GameObject right_backGround;
     private void Start()
     {
         Window[] map_Windows = map.GetComponentsInChildren<Window>();
@@ -24,6 +26,8 @@ public class Map_Controler : MonoBehaviour
         {
             InitializeWIndows();
             map.transform.Translate(0, 3600, 0);
+         //   left_backGround.transform.Translate(0, 240, 0);
+           // right_backGround.transform.Translate(0, 240, 0);
         }
     }
 

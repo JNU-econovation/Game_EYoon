@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4573358888486816366}
   m_Layer: 0
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdPos: 200
-  speed: 1000
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
   attackRange: 1000
   attackDelay: 1

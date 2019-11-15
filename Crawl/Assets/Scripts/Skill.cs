@@ -7,12 +7,19 @@ abstract public class Skill : MonoBehaviour
     protected float[] variation = new float[3];
     protected string skillText;
     // protected int skill_Count = 0;
-    GameObject player;
+    protected GameObject player;
     private void Start()
     {     
         player = LevelManager.Instance.GetPlayer();
     }
-
+    protected void Pause()
+    {
+        LevelManager.Instance.Pause();
+    }
+    protected void Resume()
+    {
+        LevelManager.Instance.Resume();
+    }
     abstract public void LimitCount();
 
     abstract public float GetVariation();

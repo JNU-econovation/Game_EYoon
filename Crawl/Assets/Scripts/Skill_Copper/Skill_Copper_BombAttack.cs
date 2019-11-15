@@ -5,29 +5,32 @@ using UnityEngine;
 public class Skill_Copper_BombAttack : Skill_Copper
 {
     static int skill_Count = 0;
+    Player_Bomb_Attack bomb_Attack;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
+        bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
         variation = new float[] { 1, 2, 3 };
     }
     public override void SkillFunction()
-    {
-        IncreaseCount();
+    {        
+        IncreaseCount();       
         if (skill_Count < 3)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[0]);
+            bomb_Attack.ThrowBomb((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            Player_AbilityManager.Instance.IncreaseStamina(variation[1]);
+            bomb_Attack.ThrowBomb((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            LimitCount();
-            Player_AbilityManager.Instance.IncreaseStamina(variation[2]);
+            bomb_Attack.ThrowBomb((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
+  
     public override void LimitCount()
     {
         if (skill_Count >= 5)

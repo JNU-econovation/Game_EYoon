@@ -10,6 +10,10 @@ public class Player_Attack : MonoBehaviour
     public Collider2D[] enemy_colliders;
     public LayerMask layerMask;
     bool isAttack = false;
+    bool isFire;
+    bool isFreeze;
+    int fireTime;
+    float freezeTime;
     private void Start()
     {     
         StartCoroutine(DetectAttack());
@@ -47,14 +51,58 @@ public class Player_Attack : MonoBehaviour
                 if (enemy_colliders[i] != null)
                 {
                     float realDamage = RealAttack();
-                    enemy_colliders[i].GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 255);
-                    enemy_colliders[i].GetComponent<Enemy_Ability>().DecreaseHP(realDamage);
+                    GameObject temp = enemy_colliders[i].gameObject;
+                    temp.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 255);
+                    temp.GetComponent<Enemy_Ability>().DecreaseHP(realDamage);
                     Player_AbilityManager.Instance.Drain(realDamage);
+                    if (isFire)
+                        StartCoroutine(Fire(fireTime, temp));
+                    if (isFreeze)
+                        StartCoroutine(Freeze(freezeTime, temp));
                 }              
             }
             
             yield return new WaitForSeconds(1.0f / attackSpeed);
         }       
+    }
+    IEnumerator Fire(int n, GameObject enemy)
+    {
+        for(int i = 0;i < n; i++)
+        {
+            if(enemy != null)
+            {
+                float hp = enemy.GetComponent<Enemy_Ability>().GetHp();
+                enemy.GetComponent<Enemy_Ability>().DecreaseHP(hp * 0.2f);
+                Player_AbilityManager.Instance.Drain(hp * 0.2f);
+            }            
+            yield return new WaitForSeconds(1.0f);
+        }
+        isFire = false;
+    }
+    IEnumerator Freeze(float n, GameObject enemy)
+    {
+        if(enemy != null)
+        {
+            enemy.GetComponent<Enemy>().Pause();
+            yield return new WaitForSeconds(n);
+            enemy.GetComponent<Enemy>().Resume();
+            isFreeze = false;
+        }       
+    }
+    public void OnFreeze(float n)
+    {
+        freezeTime = n;
+        isFreeze = true;
+    }
+    public void OnFire(int n)
+    {
+        fireTime = n;
+        isFire = true;
+    }
+    
+    public Collider2D[] GetEnemyTarget()
+    {
+        return enemy_colliders;
     }
     public float RealAttack()
     {

@@ -6,6 +6,10 @@ public class Item_Ruby : Item
 {
     static int count = 0;
     protected int maxCount = 10;
+    private void Start()
+    {
+        player = LevelManager.Instance.GetPlayer();
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -13,6 +17,13 @@ public class Item_Ruby : Item
             IncreaseCount(get_jewerly_multiple);
             UIManager.Instance.SetCount(5, count);
             Destroy(gameObject);
+        }
+    }
+    private void Update()
+    {
+        if (isMagent)
+        {
+            transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);
         }
     }
     public override int GetCount()

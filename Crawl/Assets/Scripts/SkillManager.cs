@@ -41,7 +41,7 @@ public class SkillManager : Singleton<SkillManager>
     {
         float[] skillWeight = SelectWeight(n);
 
-        float rand = Random.Range(0, 100);
+         float rand = Random.Range(0.01f, 100);
         float sum = 0;
         int i = 0;
         while (i < skillWeight.Length)

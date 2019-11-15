@@ -5,12 +5,23 @@ using UnityEngine;
 public class Item_Silver : Item
 {
     static int count = 0;
-    static int maxCount = 10;
+    static int maxCount = 100;
+    private void Start()
+    {
+        player = LevelManager.Instance.GetPlayer();
+    }
     public override int GetCount()
     {
         return count;
     }
 
+    private void Update()
+    {      
+        if (isMagent)
+        {
+            transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);
+        }
+    }
   
     public override void IncreaseCount(int n)
     {

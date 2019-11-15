@@ -9,7 +9,6 @@ abstract public class Enemy : Singleton<Enemy>
     protected float originSpeed;
     protected float speed_x = 1.5f;
     protected float originSpeed_x;
-    
     void Start()
     {
         originSpeed = speed;

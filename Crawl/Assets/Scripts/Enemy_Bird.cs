@@ -18,7 +18,7 @@ public class Enemy_Bird : Enemy
     }
     private void Update()
     {
-        transform.Translate(5 * direction,0,0);
+        transform.Translate(speed * direction,0,0);
     }
 
    

@@ -17,7 +17,7 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
-
+        LevelManager.Instance.Pause();
         ChooseSkill();
     }
     private void OnDisable()
@@ -26,6 +26,7 @@ public class UI_SkillUI : MonoBehaviour
         {
             skillButtons[j].SetIsStop(false);
         }
+        LevelManager.Instance.Resume();
     }
     void ChooseSkill()
     {

@@ -6,12 +6,10 @@ public class Enemy_UFO : Enemy
 {
     public int birdPos;
     int direction;
-    [SerializeField] int speed;
     [SerializeField] GameObject bullet;
     [SerializeField] float attackRange;
     [SerializeField] float attackDelay;
     List<GameObject> bullets;
-    int originSpeed;
     bool attack = false;
     GameObject player;
     // Start is called before the first frame update

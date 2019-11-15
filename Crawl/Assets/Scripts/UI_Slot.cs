@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UI_Slot : MonoBehaviour
 {
-    float moveSpeed = 1000;
+    float moveSpeed = 700;
     public int slotNum;
     public GameObject scroll;
     int button_skillNum;
@@ -35,7 +35,7 @@ public class UI_Slot : MonoBehaviour
 
         if (collider.gameObject == scroll)
         {
-            transform.Translate(0, 1760, 0);
+            transform.Translate(0, 1900, 0);
         }
 
     }
@@ -54,11 +54,14 @@ public class UI_Slot : MonoBehaviour
     }
     public void Stop()
     {
-        button.interactable = true;
         moveSpeed = 0;
     }
     public float GetVariation()
     {
         return skill.GetVariation();
+    }
+    public void OnButton()
+    {
+        button.interactable = true;
     }
 }

@@ -5,7 +5,11 @@ using UnityEngine;
 public class Item_Copper : Item
 {
     static int count = 0;
-    static int maxCount = 10;
+    static int maxCount = 100;
+    private void Start()
+    {
+        player = LevelManager.Instance.GetPlayer();
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
@@ -15,6 +19,14 @@ public class Item_Copper : Item
             Destroy(gameObject);
         }
     }
+    private void Update()
+    {
+        if (isMagent)
+        {
+            transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);
+        }
+    }
+  
     public override int GetCount()
     {
         return count;
