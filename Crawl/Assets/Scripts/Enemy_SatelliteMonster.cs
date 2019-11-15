@@ -20,6 +20,10 @@ public class Enemy_SatelliteMonster : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (isPaused)
+            speed = 0;
+        else if (isPaused == false)
+            speed = originSpeed;
         transform.Translate(0,-speed,0);
         distance = player.transform.position.y - transform.position.y;
         if(distance > 650)
@@ -30,13 +34,12 @@ public class Enemy_SatelliteMonster : Enemy
    
     public override void Pause()
     {
-        speed = 0;
-        if(Rotater != null)
+        isPaused = true;
         Rotater.Stop();
     }
     public override void Resume()
     {
-        speed = originSpeed;
+        isPaused = false;
         Rotater.Resume();
     }
 

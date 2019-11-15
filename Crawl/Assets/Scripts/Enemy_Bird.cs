@@ -12,23 +12,31 @@ public class Enemy_Bird : Enemy
     private void Start()
     {
         originSpeed = speed;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = LevelManager.Instance.GetPlayer();
         SelectSpecies();
         SetPosition();
     }
     private void Update()
     {
+<<<<<<< HEAD
+=======
+        if (isPaused)
+            speed = 0;
+        else if (isPaused == false)
+            speed = originSpeed;
+
+>>>>>>> fa136684f4ac2ace9d56350bbd9fbb97d0a8da3d
         transform.Translate(speed * direction,0,0);
     }
 
    
     public override void Pause()
     {
-        speed = 0;
+        isPaused = true;
     }
     public override void Resume()
     {
-        speed = originSpeed;
+        isPaused = false;
     }
 
 
@@ -37,7 +45,7 @@ public class Enemy_Bird : Enemy
         int dir = Random.Range(0, 100);
         
         float playerHeight = player.transform.position.y;
-        birdPos = playerHeight +300+ Random.Range(0, 200);
+        birdPos =300+ Random.Range(0, 200);
 
         if (dir <= 50)
         {

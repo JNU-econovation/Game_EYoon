@@ -15,7 +15,6 @@ public class Enemy_SpreadBullet : MonoBehaviour
     private void Start()
     {
         originSpeed = speed;
-       // damage = 
     }
     void Update()
     {

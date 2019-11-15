@@ -26,7 +26,10 @@ public class Enemy_UFO : Enemy
     private void Update()
     {
         float distance_y = transform.position.y - player.transform.position.y;
-
+        if (isPaused)
+            speed = 0;
+        else if (isPaused == false)
+            speed = originSpeed;
         transform.Translate(5 * direction, 0, 0);
         if(attack == false && distance_y < attackRange)
         {
@@ -50,11 +53,11 @@ public class Enemy_UFO : Enemy
     }
     public override void Pause()
     {
-        speed = 0;
+        isPaused = true;
     }
     public override void Resume()
     {
-        speed = originSpeed;
+        isPaused = false;
     }
     public override void SetPosition()
     {

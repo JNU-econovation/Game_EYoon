@@ -7,13 +7,12 @@ public class Enemy_Flymonster : Enemy
     GameObject player;
     [SerializeField] float downSpeed;
     [SerializeField] GameObject bullet;
-    [SerializeField] float sideMoveCycle; // 좌우 이동 변경 주기
+    float sideMoveCycle; // 좌우 이동 변경 주기
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     float distance_y;
     [SerializeField]float attackDelay;
     bool attack;
     bool sideMove = false;
-    bool isPause = false;
 
     private void Start()
     {
@@ -21,11 +20,23 @@ public class Enemy_Flymonster : Enemy
         player = LevelManager.Instance.GetPlayer();
         damage = GetComponent<Enemy_Ability>().GetDamage();
         stopPos = Random.Range(400, 750);
-        speed = -downSpeed;
         SetPosition();
     }
     private void Update()
     {
+
+        if (isPaused)
+        {
+            speed = 0;
+            speed_x = 0;
+        }
+        else if (isPaused == false)
+        {
+            speed = originSpeed;
+            speed_x = originSpeed_x;
+        }
+        //print(isPaused);
+
         distance_y = transform.position.y - player.transform.position.y;
         if(distance_y < stopPos)
         {
@@ -37,29 +48,21 @@ public class Enemy_Flymonster : Enemy
             if(transform.position.x < 96 || transform.position.x > 631)
             {
                 speed_x = speed_x * -1;
+                originSpeed_x = speed_x;
             }
             transform.Translate(speed_x,0,0);
            
         }
-        //else if(distance_y <= stopPos)
-        //{
-        //    speed = Player_AbilityManager.Instance.GetMoveSpeed();
-        //}
-        
-
-        transform.Translate(0, speed, 0);
+        transform.Translate(0, -speed, 0);
     }
     public override void Pause()
     {
-        speed_x = 0;
-        isPause = true;
-        speed = 0;
+        
+        isPaused = true;
     }
     public override void Resume()
     {
-        speed_x = originSpeed_x;
-        speed = originSpeed;
-        isPause = false;
+        isPaused = false;
     }
 
     public override void SetPosition()
@@ -71,7 +74,7 @@ public class Enemy_Flymonster : Enemy
 
     IEnumerator Attack()
     {
-        if (isPause == false)
+        if (isPaused == false)
         {
             attack = true;
             float distance_x = transform.position.x - player.transform.position.x;
