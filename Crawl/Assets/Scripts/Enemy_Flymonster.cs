@@ -7,6 +7,7 @@ public class Enemy_Flymonster : Enemy
     GameObject player;
     [SerializeField] float downSpeed;
     [SerializeField] GameObject bullet;
+    [SerializeField] int bulletCount;
     float sideMoveCycle; // 좌우 이동 변경 주기
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     float distance_y;
@@ -79,7 +80,7 @@ public class Enemy_Flymonster : Enemy
             attack = true;
             float distance_x = transform.position.x - player.transform.position.x;
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, 3, damage);
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, bulletCount, damage);
             yield return new WaitForSeconds(attackDelay);
             attack = false;
         }

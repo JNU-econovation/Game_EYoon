@@ -15,6 +15,7 @@ abstract public class Enemy : Singleton<Enemy>
     {
         originSpeed = speed;
         originSpeed_x = speed_x;
+        damage = GetComponent<Enemy_Ability>().GetDamage();
     }
    void OnEnable()
     {
@@ -31,7 +32,8 @@ abstract public class Enemy : Singleton<Enemy>
         {
             float trueDamage = Player_AbilityManager.Instance.DecreaseHP(damage);
             float reflectDamage = trueDamage * Player_AbilityManager.Instance.GetReflectDamage() / 100;
-            GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);          
+            GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);
+            //Destroy(gameObject);
         }
     }
     abstract public void Resume();
