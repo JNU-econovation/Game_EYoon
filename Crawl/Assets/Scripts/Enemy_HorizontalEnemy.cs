@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Bird : Enemy
+public class Enemy_HorizontalEnemy : Enemy
 {
-    float birdPos;
+    float enemyPos;
     int direction;
-    [SerializeField] Animator[] species;
     GameObject player;
     Quaternion quaternion = Quaternion.Euler(0, 180f, 0);
     private void Start()
     {
         originSpeed = speed;
         player = LevelManager.Instance.GetPlayer();
-        SelectSpecies();
         SetPosition();
     }
     private void Update()
@@ -42,24 +40,19 @@ public class Enemy_Bird : Enemy
         int dir = Random.Range(0, 100);
         
         float playerHeight = player.transform.position.y;
-        birdPos =300+ Random.Range(0, 200);
+        enemyPos = 50+ Random.Range(50, 800);
 
         if (dir <= 50)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
-            transform.position = new Vector2(796, birdPos + playerHeight);
+            transform.position = new Vector2(957, enemyPos + playerHeight);
             direction = -1;
         }
         else if ( 50 < dir && dir <= 100)
         {
-            transform.position = new Vector2(-76, birdPos + playerHeight);
+            GetComponent<SpriteRenderer>().flipX = true;
+            transform.position = new Vector2(-224, enemyPos + playerHeight);
             direction = 1;
         }
     }
-    void SelectSpecies()
-    {
-        int rand = Random.Range(1, 4);
-        print(rand);
-        GetComponent<Animator>().SetInteger("Species", rand);
-    }
+    
 }

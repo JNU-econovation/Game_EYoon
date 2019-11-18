@@ -22,7 +22,7 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (isPause == false)
             {
-                spawned_enemy.Add(Instantiate(enemys[4]));
+                spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
             }
             yield return new WaitForSeconds(cycleTime);
 
@@ -43,7 +43,7 @@ public class EnemyManager : Singleton<EnemyManager>
             i++;
             
         }
-        return 0;
+        return i;
     }
     public void Pause()
     {
