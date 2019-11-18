@@ -24,18 +24,26 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] float stamina;
     float maxHP = 1000;
     float maxStamina = 1000;
+    float rebirthHP;
+    float rebirth_hp_Percent = 0.2f;
     Player_Attack_Range player_Attack_Range;
     bool isCritical = false;
+    bool isRebirth;
     Player_Booster player_Booster;
+    Player_Shield player_Shield;
+    Player_Invincibility player_Invincibility;
     private void Start()
     {
         player_Attack_Range = GetComponentInChildren<Player_Attack_Range>();
         player_Booster = GetComponent<Player_Booster>();
+        player_Shield = GetComponent<Player_Shield>();
+        player_Invincibility = GetComponent<Player_Invincibility>();
     }
 
     private void Update()
     {
         moveSpeed += Time.deltaTime;
+        rebirthHP = maxHP * rebirth_hp_Percent;
     }
     public void Critical(float time)
     {
@@ -151,6 +159,13 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     {
         if (player_Booster.GetOnBooster())
             return 0;
+        if (player_Invincibility.GetIsInvincible())
+            return 0;
+        if(player_Shield.GetShieldCount() > 0)
+        {
+            player_Shield.Shield();
+            return 0;
+        }
         float rand = Random.Range(0, 100);
         if(rand <= avoidance)
         {
@@ -159,11 +174,36 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         else
         {
             HP -= (n - defense);
-            if (HP < 0)
-                HP = 0;
+            if (HP <= 0)
+            {
+                if (isRebirth)
+                {
+                    StartCoroutine(Rebirth());
+                }
+                else
+                {
+                    HP = 0;
+                }
+            }
             return n - defense;
         }
       
+    }
+    IEnumerator Rebirth()
+    {
+        yield return new WaitForSeconds(1.0f);
+        HP = rebirthHP;
+        isRebirth = false;
+    }
+    public void SetIsRebirth(bool temp)
+    {
+        isRebirth = temp;
+    }
+    public void Increase_RebirthHp_Percent(float n)
+    {
+        rebirth_hp_Percent += n;
+        if (rebirth_hp_Percent >= 1)
+            rebirth_hp_Percent = 1;
     }
     public void IncreaseMaxStamina(float n)
     {
@@ -181,6 +221,12 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         stamina -= n;
         if (stamina < 0)
             stamina = 0;
+    }
+    public void SetTargetNum(int n)
+    {
+        targetNum = n;
+        if (targetNum > maxTargetNum)
+            targetNum = maxTargetNum;
     }
     public void DecreaseMoveSpeed(float n)
     {
@@ -237,5 +283,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         reflectDamage += n;
         if (reflectDamage >= 100)
             reflectDamage = 100.0f;
+    }
+
+    public void InitializeMoveSpeed()
+    {
+        moveSpeed = 400;
     }
 }

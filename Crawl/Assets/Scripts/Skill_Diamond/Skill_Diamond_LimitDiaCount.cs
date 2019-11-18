@@ -15,18 +15,15 @@ public class Skill_Diamond_LimitDiaCount : Skill_Diamond
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            ItemManager.Instance.item_Diamond.DecreaseMaxCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            ItemManager.Instance.item_Diamond.DecreaseMaxCount((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            ItemManager.Instance.item_Diamond.DecreaseMaxCount((int)variation[2]);
         }
         skillUI.SetActive(false);
     }
