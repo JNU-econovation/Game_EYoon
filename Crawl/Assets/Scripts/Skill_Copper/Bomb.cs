@@ -32,7 +32,7 @@ public class Bomb : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "Enemy")
-        {
+        {           
             collider.GetComponent<Enemy_Ability>().DecreaseHP(damage);
             Destroy(gameObject);
         }

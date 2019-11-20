@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Magnetic : MonoBehaviour
 {
     bool isMagnet;
+    Player _player;
     Item_Copper item_Copper;
     Item_Silver item_Silver;
     Item_Gold item_Gold;
@@ -12,8 +13,11 @@ public class Player_Magnetic : MonoBehaviour
     Item_Ruby item_Ruby;
     public Collider2D[] items;
     public LayerMask layerMask;
+    float time;
+    float magnetTime;
     void Start()
     {
+        _player = GetComponent<Player>();
         StartCoroutine(OnMagnet());
     }
     IEnumerator OnMagnet()
@@ -45,19 +49,27 @@ public class Player_Magnetic : MonoBehaviour
     }
     private void Update()
     {
+        if (!_player.GetIsPause())
+        {
+            if (isMagnet)
+            {
+                time += Time.deltaTime;
+                if (time >= magnetTime)
+                {
+                    isMagnet = false;
+                    Window.Instance.UnMagnet();
+                }
+            }
+        }
         items = Physics2D.OverlapCircleAll(transform.position,  250.0f, layerMask, 0, 20);
     }
 
-    public void Magnet(float delayTime)
+    public void Magnet(float temp)
     {
         Window.Instance.Magnet();
+        time = 0;
+        magnetTime = temp;
         isMagnet = true;
-        StartCoroutine(Delay(delayTime));
     }
-    IEnumerator Delay(float delayTime)
-    {
-        yield return new WaitForSeconds(delayTime);
-        isMagnet = false;
-        Window.Instance.UnMagnet();
-    }
+    
 }

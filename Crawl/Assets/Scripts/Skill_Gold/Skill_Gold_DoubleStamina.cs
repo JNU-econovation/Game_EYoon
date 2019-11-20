@@ -15,18 +15,18 @@ public class Skill_Gold_DoubleStamina : Skill_Gold
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            float presentStamina = Player_AbilityManager.Instance.GetStamina();
+            Player_AbilityManager.Instance.SetStamina(presentStamina * variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            float presentStamina = Player_AbilityManager.Instance.GetStamina();
+            Player_AbilityManager.Instance.SetStamina(presentStamina * variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            float presentStamina = Player_AbilityManager.Instance.GetStamina();
+            Player_AbilityManager.Instance.SetStamina(presentStamina * variation[2]);
         }
         skillUI.SetActive(false);
     }

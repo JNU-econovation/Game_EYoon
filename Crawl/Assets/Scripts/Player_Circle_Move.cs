@@ -10,28 +10,21 @@ public class Player_Circle_Move : MonoBehaviour
     float speed;
     [SerializeField]float radius = 1;
     public GameObject player;
+    Player _player;
     private float runningTime = 0;
     private Vector2 newPos = new Vector2();
     float centerX;
     float centerY;
-    bool isPause;
     // Use this for initialization
     void Start()
     {
-       // player = GetComponentInParent<Player>().gameObject;         
+        player = GetComponentInParent<Player>().gameObject;
+        _player = player.GetComponent<Player>();
     }
     
-    public void Pause()
-    {
-        isPause = true;
-    }
-    public void Resume()
-    {
-        isPause = false;
-    }
     void Update()
     {
-        if (isPause)
+        if (_player.GetIsPause())
             speed = 0;
         else
             speed = Player_AbilityManager.Instance.GetAttackSpeed();

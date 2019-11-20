@@ -42,6 +42,7 @@ public class Skill_Ruby_Rebirth : Skill_Ruby
     }
     public override string GetSkillText()
     {
-        return "부활" + "(부활 시 체력 " + GetVariation() + ")";
+        float rebirthHP = Player_AbilityManager.Instance.GetRebirthHP();
+        return "부활" + "(부활 시 체력 " + rebirthHP + ")";
     }
 }

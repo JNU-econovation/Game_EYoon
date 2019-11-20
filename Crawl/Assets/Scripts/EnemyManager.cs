@@ -28,6 +28,13 @@ public class EnemyManager : Singleton<EnemyManager>
 
         }
     }
+    public void WeakEnemy(float n)
+    {
+        for(int i = 0; i < enemys.Length ;i++)
+        {
+            enemys[i].GetComponent<Enemy_Ability>().Weak(n);
+        }
+    }
     public int SelectEnemy()
     {
         float rand = Random.Range(0, 100);

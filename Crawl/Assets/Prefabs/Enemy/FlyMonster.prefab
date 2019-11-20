@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2069639942936024519}
   - component: {fileID: 5425701209976711690}
   - component: {fileID: 2614320955962528044}
+  - component: {fileID: 7241204320371888522}
   m_Layer: 12
   m_Name: FlyMonster
   m_TagString: Enemy
@@ -94,8 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  damage: 10
+  damage: 100
 --- !u!114 &5425701209976711690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downSpeed: 2
   bullet: {fileID: 6552717421484193807, guid: 95a85cb9d4b4f5f4ea36f689e16fa474, type: 3}
-  sideMoveCycle: 0
+  bulletCount: 0
   attackDelay: 2
 --- !u!61 &2614320955962528044
 BoxCollider2D:
@@ -138,3 +138,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 12.8}
   m_EdgeRadius: 0
+--- !u!114 &7241204320371888522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806787847336912346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b312811c027e6b47819e492898bc854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,25 +8,22 @@ public class Skill_Ruby_WeakEnemy : Skill_Ruby
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 0.2f, 0.3f, 0.4f };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            EnemyManager.Instance.WeakEnemy(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            EnemyManager.Instance.WeakEnemy(variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            EnemyManager.Instance.WeakEnemy(variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -56,6 +53,6 @@ public class Skill_Ruby_WeakEnemy : Skill_Ruby
     }
     public override string GetSkillText()
     {
-        return "적 스텟 약화" + "(" + GetVariation() + "%)";
+        return "적 스텟 약화" + "(" + (GetVariation() * 100) + "%)";
     }
 }

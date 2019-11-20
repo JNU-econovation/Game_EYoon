@@ -53,6 +53,6 @@ public class Skill_Diamond_IncreaseTargetNum : Skill_Diamond
     }
     public override string GetSkillText()
     {
-        return "적 타겟 수 증가" + "(" + GetVariation() + ")";
+        return "적 타겟 수" + "(" + GetVariation() + "개)";
     }
 }

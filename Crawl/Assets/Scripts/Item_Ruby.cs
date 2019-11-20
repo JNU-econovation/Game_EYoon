@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item_Ruby : Item
 {
     static int count = 0;
-    protected int maxCount = 10;
+    static int maxCount = 100;
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();

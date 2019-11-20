@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9144043929925060910}
   - component: {fileID: 9144043929925060911}
   - component: {fileID: 9144043929925060881}
+  - component: {fileID: 1465065840138581172}
   m_Layer: 12
   m_Name: SateliteMonster
   m_TagString: Enemy
@@ -95,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
   damage: 10
 --- !u!114 &9144043929925060911
 MonoBehaviour:
@@ -135,6 +135,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 12.8}
   m_EdgeRadius: 0
+--- !u!114 &1465065840138581172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144043929925060906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b312811c027e6b47819e492898bc854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9144043930529428832
 GameObject:
   m_ObjectHideFlags: 0

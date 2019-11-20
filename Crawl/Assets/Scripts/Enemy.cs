@@ -10,20 +10,23 @@ abstract public class Enemy : Singleton<Enemy>
     protected float speed_x = 1.5f;
     protected float originSpeed_x;
     protected bool isPaused = false;
-    
+    Enemy_Ability enemy_Ability;
+    public bool OnAttack;
     void Awake()
     {
+        enemy_Ability = GetComponent<Enemy_Ability>();
         originSpeed = speed;
         originSpeed_x = speed_x;
         damage = GetComponent<Enemy_Ability>().GetDamage();
     }
-   void OnEnable()
+    void OnEnable()
     {
         StartCoroutine(DestroySelf());
     }
+
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(6.0f);
+        yield return new WaitForSeconds(30.0f);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -33,8 +36,11 @@ abstract public class Enemy : Singleton<Enemy>
             float trueDamage = Player_AbilityManager.Instance.DecreaseHP(damage);
             float reflectDamage = trueDamage * Player_AbilityManager.Instance.GetReflectDamage() / 100;
             GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);
-            //Destroy(gameObject);
         }
+    }
+    public bool GetOnAttack()
+    {
+        return OnAttack;
     }
     abstract public void Resume();
     abstract public void Pause();

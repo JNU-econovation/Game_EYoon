@@ -15,6 +15,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] [Range(0, 1000)] float moveSpeed;
     [SerializeField] [Range(0, 5)] int targetNum;
     [SerializeField] float reflectDamage;
+    float criticalTime;
+    float time;
     float drain;
     float maxDrain = 30;
     int maxTargetNum = 5;
@@ -32,29 +34,44 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     Player_Booster player_Booster;
     Player_Shield player_Shield;
     Player_Invincibility player_Invincibility;
+    Player _player;
+    
     private void Start()
     {
+        rebirthHP = maxHP * rebirth_hp_Percent;
         player_Attack_Range = GetComponentInChildren<Player_Attack_Range>();
         player_Booster = GetComponent<Player_Booster>();
         player_Shield = GetComponent<Player_Shield>();
         player_Invincibility = GetComponent<Player_Invincibility>();
+        _player = GetComponent<Player>();
     }
 
     private void Update()
     {
-        moveSpeed += Time.deltaTime;
-        rebirthHP = maxHP * rebirth_hp_Percent;
+        if (!_player.GetIsPause())
+        {
+            moveSpeed += Time.deltaTime;          
+            DecreseStamina(Time.deltaTime / 3);
+            if (stamina == 0)
+                DecreaseHP(0.01f);
+            if (isCritical)
+            {
+                time += Time.deltaTime;
+                if (time >= criticalTime)
+                {
+                    isCritical = false;
+                }
+            }
+
+        }
     }
-    public void Critical(float time)
-    {
-        StartCoroutine(CriticalHit(time));
-    }
-    IEnumerator CriticalHit(float time)
+    public void Critical(float temp)
     {
         isCritical = true;
-        yield return new WaitForSeconds(time);
-        isCritical = false;
-    }   
+        criticalTime = temp;
+        time = 0;
+    }
+    
     public void Drain(float realAttack)
     {
         HP += realAttack * (drain / 100);
@@ -180,10 +197,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
                 {
                     StartCoroutine(Rebirth());
                 }
-                else
-                {
-                    HP = 0;
-                }
+                HP = 0;
             }
             return n - defense;
         }
@@ -191,7 +205,9 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     }
     IEnumerator Rebirth()
     {
+        _player.Pause();
         yield return new WaitForSeconds(1.0f);
+        _player.Resume();
         HP = rebirthHP;
         isRebirth = false;
     }
@@ -199,9 +215,14 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     {
         isRebirth = temp;
     }
+    public float GetRebirthHP()
+    {
+        return rebirthHP;
+    }
     public void Increase_RebirthHp_Percent(float n)
     {
         rebirth_hp_Percent += n;
+        rebirthHP = maxHP * rebirth_hp_Percent;
         if (rebirth_hp_Percent >= 1)
             rebirth_hp_Percent = 1;
     }

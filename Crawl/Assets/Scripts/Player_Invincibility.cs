@@ -4,43 +4,36 @@ using UnityEngine;
 
 public class Player_Invincibility : MonoBehaviour
 {
+    Player _player;
     float time = 0;
     bool isInvincible;
     float delayTime;
     float maxTime;
     void Start()
     {
-        StartCoroutine(Invincible());
-    }
-
-    IEnumerator Invincible()
-    {
-        while (true)
-        {
-            yield return null;
-            if (isInvincible)
-            {
-                if (time >= maxTime)
-                {
-                    isInvincible = false;
-                }
-
-            }
-        }
+        _player = GetComponent<Player>();
     }
     
     void Update()
     {
-        if (isInvincible)
-            time += Time.deltaTime;
-        else
-            time = 0;
+        if (!_player.GetIsPause())
+        {
+            if (isInvincible)
+            {
+                time += Time.deltaTime;
+            }
+            if (time >= maxTime)
+            {
+                isInvincible = false;
+            }
+        }
     }
 
-    public void OnInvincible(float time)
+    public void OnInvincible(float temp)
     {
         isInvincible = true;
-        maxTime = time;
+        time = 0;
+        maxTime = temp;
     }
     public bool GetIsInvincible()
     {
