@@ -4,6 +4,7 @@ using UnityEngine;
 
 abstract public class Skill : MonoBehaviour
 {
+    protected GameObject skillUI;
     protected float[] variation = new float[3];
     protected string skillText;
     // protected int skill_Count = 0;

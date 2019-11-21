@@ -21,7 +21,7 @@ public class ItemManager : Singleton<ItemManager>
     }
     public GameObject SelectItem()
     {
-        float rand = Random.Range(0, 100);
+        float rand = Random.Range(0.01f, 100);
         float sum = 0;
         int i = 0;
         while (i < itemWeight.Length)

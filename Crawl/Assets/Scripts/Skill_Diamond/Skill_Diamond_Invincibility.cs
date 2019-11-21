@@ -5,28 +5,28 @@ using UnityEngine;
 public class Skill_Diamond_Invincibility : Skill_Diamond
 {
     static int skill_Count = 0;
+    Player_Invincibility player_Invincibility;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
+        player_Invincibility = player.GetComponent<Player_Invincibility>();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 5, 7, 9 };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            player_Invincibility.OnInvincible(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            player_Invincibility.OnInvincible(variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            player_Invincibility.OnInvincible(variation[2]);
         }
         skillUI.SetActive(false);
     }

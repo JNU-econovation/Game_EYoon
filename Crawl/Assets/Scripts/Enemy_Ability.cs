@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class Enemy_Ability : MonoBehaviour
 {
-    [SerializeField] float HP;
+    float HP;
     [SerializeField] float damage;
     float maxHP = 100;
-    // Start is called before the first frame update
-   public float GetHp()
+    static float originMaxHP;
+    static float originDamage;
+    Enemy enemy;
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+        HP = maxHP;
+        originMaxHP = maxHP;
+        originDamage = damage;
+    }
+    public void Weak(float n)
+    {
+        maxHP = originMaxHP * (1 - n);
+        damage = originDamage * (1 - n);
+        if (HP >= maxHP)
+            HP = maxHP;
+        print(maxHP);
+    }
+    public float GetHp()
     {
         return HP;
     }
@@ -18,13 +35,13 @@ public class Enemy_Ability : MonoBehaviour
     }
     public void DecreaseHP(float damage)
     {
+        enemy.OnAttack = true;
         HP -= damage;
         if (HP <= 0)
         {
             HP = 0;
             Destroy(gameObject);
         }
-           
     }
     public void IncreaseHP(float heal)
     {

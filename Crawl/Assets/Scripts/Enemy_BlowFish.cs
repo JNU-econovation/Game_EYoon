@@ -43,8 +43,9 @@ public class Enemy_BlowFish : Enemy
             speed = 0;
             if (attack == false)
             {
-                StartCoroutine(Attack());
+
                 GetComponent<Animator>().SetBool("Attack", true);
+                StartCoroutine(Attack());
             }
             if (transform.position.x < 96 || transform.position.x > 631)
             {
@@ -82,8 +83,8 @@ public class Enemy_BlowFish : Enemy
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
             Enemy_AttackPattern.Instance.CircleShot(gameObject, bullet, bulletCount, damage);
             yield return new WaitForSeconds(attackDelay);
-            attack = false;
             GetComponent<Animator>().SetBool("Attack", false);
+            attack = false;
         }
     }
 }

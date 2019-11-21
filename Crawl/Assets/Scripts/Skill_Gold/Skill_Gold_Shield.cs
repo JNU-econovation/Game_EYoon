@@ -5,8 +5,11 @@ using UnityEngine;
 public class Skill_Gold_Shield : Skill_Gold
 {
     static int skill_Count = 0;
+    Player_Shield player_Shield;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
+        player_Shield = player.GetComponent<Player_Shield>();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 2, 3, 4 };
     }
@@ -15,15 +18,15 @@ public class Skill_Gold_Shield : Skill_Gold
         IncreaseCount();
         if (skill_Count < 3)
         {
-          
+            player_Shield.SetShieldCount((int)variation[0]);
         }
         else if (skill_Count < 5)
         {
-         
+            player_Shield.SetShieldCount((int)variation[1]);
         }
         else if (5 <= skill_Count)
         {
-           
+            player_Shield.SetShieldCount((int)variation[2]);
         }
         skillUI.SetActive(false);
     }

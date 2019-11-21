@@ -7,7 +7,7 @@ abstract public class Item : Singleton<Item>
     public int grade;
     public Text text;
     protected bool isMagent;
-    protected int get_jewerly_multiple = 1;
+    protected static int get_jewerly_multiple = 1;
     protected GameObject player;
     void Start()
     {

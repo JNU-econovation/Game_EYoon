@@ -10,10 +10,11 @@ public class Player_Move : MonoBehaviour
     Transform _transform;
     JoyStick joyStick;
     Player_Circle_Move player_Circle_Move;
-    bool isPause;
+    Player _player;
     float yPos;
     private void Start()
     {
+        _player = GetComponent<Player>();
         player_Circle_Move = GetComponentInChildren<Player_Circle_Move>();
         joyStick = GameObject.FindGameObjectWithTag("JoyStick").GetComponent<JoyStick>();
         _transform = transform;
@@ -23,16 +24,7 @@ public class Player_Move : MonoBehaviour
     {
         return moveSpeed;
     }
-    public void Pause()
-    {
-        isPause = true;
-        player_Circle_Move.Pause();
-    }
-    public void Resume()
-    {
-        isPause = false;
-        player_Circle_Move.Resume();
-    }
+
     void Update()
     {
         HandleInput();
@@ -41,7 +33,7 @@ public class Player_Move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isPause)
+        if (_player.GetIsPause())
             moveSpeed = 0;
         else
             moveSpeed = Player_AbilityManager.Instance.GetMoveSpeed();      

@@ -8,6 +8,7 @@ public class LevelManager : Singleton<LevelManager>
     GameObject player;
     Player_Move player_Move;
     Player_Bomb_Attack bomb_Attack;
+    Player _player;
     bool[] stage = new bool[3];
     float time = 0;
     public GameObject[] left_backGround;
@@ -16,6 +17,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         stage[0] = true;
         player = playerPrefab;
+        _player = player.GetComponent<Player>();
         //player = Instantiate(playerPrefab);
         player_Move = player.GetComponent<Player_Move>();
         bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
@@ -37,14 +39,14 @@ public class LevelManager : Singleton<LevelManager>
     public void Pause()
     {
         EnemyManager.Instance.Pause();
-        player_Move.Pause();
+        _player.Pause();
         bomb_Attack.Pause();
 
     }
     public void Resume()
     {
         EnemyManager.Instance.Resume();
-        player_Move.Resume();
+        _player.Resume();
         bomb_Attack.Resume();
     }
     public void ChangeStage()

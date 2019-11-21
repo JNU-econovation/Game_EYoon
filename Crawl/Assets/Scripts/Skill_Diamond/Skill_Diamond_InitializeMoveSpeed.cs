@@ -13,21 +13,7 @@ public class Skill_Diamond_InitializeMoveSpeed : Skill_Diamond
     public override void SkillFunction()
     {
         IncreaseCount();
-        if (skill_Count < 3)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
-        }
-        else if (skill_Count < 5)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
-        }
-        else if (5 <= skill_Count)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
-        }
+        Player_AbilityManager.Instance.InitializeMoveSpeed();
         skillUI.SetActive(false);
     }
     public override void LimitCount()

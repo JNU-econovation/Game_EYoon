@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item_Diamond : Item
 {
     static int count = 0;
-    protected int maxCount = 10;
+    static int maxCount = 100;
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -48,8 +48,8 @@ public class Item_Diamond : Item
     public override void DecreaseMaxCount(int n)
     {
         maxCount -= n;
-        if (maxCount <= 0)
-            maxCount = 0;
+        if (maxCount <= 1)
+            maxCount = 1;
     }
     public override void IncreaseMaxCount(int n)
     {

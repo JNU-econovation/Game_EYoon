@@ -13,21 +13,8 @@ public class Skill_Ruby_FullStamina : Skill_Ruby
     public override void SkillFunction()
     {
         IncreaseCount();
-        if (skill_Count < 3)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
-        }
-        else if (skill_Count < 5)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
-        }
-        else if (5 <= skill_Count)
-        {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
-        }
+        float maxStamina = Player_AbilityManager.Instance.GetMaxStamina();
+        Player_AbilityManager.Instance.SetStamina(maxStamina);
         skillUI.SetActive(false);
     }
     public override void LimitCount()

@@ -8,25 +8,22 @@ public class Skill_Ruby_IncreaseRebirthHP : Skill_Ruby
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 0.05f, 0.1f, 0.2f };
     }
     public override void SkillFunction()
     {
         IncreaseCount();
         if (skill_Count < 3)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[0]);
+            Player_AbilityManager.Instance.Increase_RebirthHp_Percent(variation[0]);
         }
         else if (skill_Count < 5)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[1]);
+            Player_AbilityManager.Instance.Increase_RebirthHp_Percent(variation[1]);
         }
         else if (5 <= skill_Count)
         {
-            float presentHP = Player_AbilityManager.Instance.GetHP();
-            Player_AbilityManager.Instance.SetHP(presentHP * variation[2]);
+            Player_AbilityManager.Instance.Increase_RebirthHp_Percent(variation[2]);
         }
         skillUI.SetActive(false);
     }
@@ -56,6 +53,6 @@ public class Skill_Ruby_IncreaseRebirthHP : Skill_Ruby
     }
     public override string GetSkillText()
     {
-        return "부활시 체력 증가" + "(" + GetVariation() + ")";
+        return "부활 시 체력 증가" + "(최대 체력의 " + GetVariation() + "%)";
     }
 }
