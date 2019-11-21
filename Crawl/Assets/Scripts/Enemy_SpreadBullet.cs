@@ -15,6 +15,7 @@ public class Enemy_SpreadBullet : MonoBehaviour
     private void Start()
     {
         originSpeed = speed;
+        StartCoroutine(Spread());
     }
     void Update()
     {
@@ -24,6 +25,7 @@ public class Enemy_SpreadBullet : MonoBehaviour
     IEnumerator Spread()
     {
         yield return new WaitForSeconds(delay);
-        Enemy_AttackPattern.Instance.CircleShot(gameObject,spreadBullet,count, damage);
+        Enemy_AttackPattern.Instance.QuarterCircleShot(gameObject,spreadBullet,count, damage);
+        Destroy(gameObject);
     }
 }

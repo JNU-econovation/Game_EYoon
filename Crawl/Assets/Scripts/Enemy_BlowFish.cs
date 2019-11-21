@@ -81,6 +81,7 @@ public class Enemy_BlowFish : Enemy
             attack = true;
             float distance_x = transform.position.x - player.transform.position.x;
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+            yield return new WaitForSeconds(0.2f);
             Enemy_AttackPattern.Instance.CircleShot(gameObject, bullet, bulletCount, damage);
             yield return new WaitForSeconds(attackDelay);
             GetComponent<Animator>().SetBool("Attack", false);

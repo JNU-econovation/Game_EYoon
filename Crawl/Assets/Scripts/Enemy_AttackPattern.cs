@@ -31,6 +31,15 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
 
         }
     }
+    public void QuarterCircleShot(GameObject enemy, GameObject bullet, int count, float damage)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            GameObject bullet0 = Instantiate(bullet, enemy.transform.position, Quaternion.Euler(0, 0, 45 + 360 / count * (i)));
+            bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+
+        }
+    }
     public void MultiShot(GameObject enemy, GameObject bullet, int count, float damage)//, float angle)
     {
         Vector3 pos = enemy.transform.position;

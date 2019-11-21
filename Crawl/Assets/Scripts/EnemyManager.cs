@@ -37,7 +37,7 @@ public class EnemyManager : Singleton<EnemyManager>
     }
     public int SelectEnemy()
     {
-        float rand = Random.Range(0, 100);
+        float rand = Random.Range(0.01f, 100);
         float sum = 0;
         int i = 0;
         while (i < enemyWeight.Length)
