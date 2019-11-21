@@ -5,13 +5,14 @@ using UnityEngine;
 abstract public class Enemy : Singleton<Enemy>
 {
     protected float damage;
-    protected float speed = 3.0f;
+    public float speed;
     protected float originSpeed;
     protected float speed_x = 1.5f;
     protected float originSpeed_x;
     protected bool isPaused = false;
     Enemy_Ability enemy_Ability;
     public bool OnAttack;
+    public float lifeTime;
     void Awake()
     {
         enemy_Ability = GetComponent<Enemy_Ability>();
@@ -26,7 +27,7 @@ abstract public class Enemy : Singleton<Enemy>
 
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collider)

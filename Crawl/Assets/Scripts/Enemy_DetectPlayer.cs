@@ -33,6 +33,12 @@ public class Enemy_DetectPlayer : MonoBehaviour
             }
             else
             {
+                float distY = player.transform.position.y - transform.position.y;
+                if(distY > 0)
+                {
+                    player_Attack.targetList.Remove(gameObject);
+                    break;
+                }
                 if (dist > radius)
                 {
                     player_Attack.targetList.Remove(gameObject);
