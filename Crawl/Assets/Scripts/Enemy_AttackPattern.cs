@@ -26,7 +26,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
     {
         for (int i = 0; i < count; i++)
         {
-            GameObject bullet0 = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 360 / count * (i)));
+            GameObject bullet0 = Instantiate(bullet, enemy.transform.position, Quaternion.Euler(0, 0, 360 / count * (i)));
             bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
 
         }

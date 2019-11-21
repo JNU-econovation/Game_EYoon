@@ -5,9 +5,9 @@ using UnityEngine;
 abstract public class Enemy : Singleton<Enemy>
 {
     protected float damage;
-    protected float speed = 3.0f;
+    public float speed = 3.0f;
     protected float originSpeed;
-    protected float speed_x = 1.5f;
+    public float speed_x = 1.5f;
     protected float originSpeed_x;
     protected bool isPaused = false;
     

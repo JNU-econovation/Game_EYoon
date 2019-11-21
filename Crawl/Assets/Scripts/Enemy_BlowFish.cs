@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Flymonster : Enemy
+public class Enemy_BlowFish : Enemy
 {
     GameObject player;
     [SerializeField] GameObject bullet;
@@ -10,13 +10,13 @@ public class Enemy_Flymonster : Enemy
     float sideMoveCycle; // 좌우 이동 변경 주기
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     float distance_y;
-    [SerializeField]float attackDelay;
+    [SerializeField] float attackDelay;
     bool attack;
     bool sideMove = false;
 
     private void Start()
     {
-       
+
         player = LevelManager.Instance.GetPlayer();
         damage = GetComponent<Enemy_Ability>().GetDamage();
         stopPos = Random.Range(400, 750);
@@ -38,7 +38,7 @@ public class Enemy_Flymonster : Enemy
         //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
-        if(distance_y < stopPos)
+        if (distance_y < stopPos)
         {
             speed = 0;
             if (attack == false)
@@ -46,19 +46,19 @@ public class Enemy_Flymonster : Enemy
                 StartCoroutine(Attack());
                 GetComponent<Animator>().SetBool("Attack", true);
             }
-            if(transform.position.x < 96 || transform.position.x > 631)
+            if (transform.position.x < 96 || transform.position.x > 631)
             {
                 speed_x = speed_x * -1;
                 originSpeed_x = speed_x;
             }
-            transform.Translate(speed_x,0,0);
-           
+            transform.Translate(speed_x, 0, 0);
+
         }
         transform.Translate(0, -speed, 0);
     }
     public override void Pause()
     {
-        
+
         isPaused = true;
     }
     public override void Resume()
@@ -80,12 +80,10 @@ public class Enemy_Flymonster : Enemy
             attack = true;
             float distance_x = transform.position.x - player.transform.position.x;
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, bulletCount, damage);
+            Enemy_AttackPattern.Instance.CircleShot(gameObject, bullet, bulletCount, damage);
             yield return new WaitForSeconds(attackDelay);
             attack = false;
             GetComponent<Animator>().SetBool("Attack", false);
         }
     }
-
- 
 }
