@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy_Sky_Chicken : Enemy
 {
     GameObject player;
-
     void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -18,7 +17,7 @@ public class Enemy_Sky_Chicken : Enemy
             speed = 0;
         else if (isPaused == false)
             speed = originSpeed;
-        transform.Translate(0, -speed, 0);
+        transform.Translate(0, -speed, 0);      
     }
 
     public override void Pause()

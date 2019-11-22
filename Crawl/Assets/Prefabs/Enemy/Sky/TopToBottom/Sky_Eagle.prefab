@@ -141,4 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   OnAttack: 0
-  lifeTime: 10
+  lifeTime: 100

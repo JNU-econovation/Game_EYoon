@@ -34,12 +34,12 @@ public class Enemy_Sky_Seagull : Enemy
         int xpos = Random.Range(0,2);
         if (xpos == 0)
         {
-            transform.rotation = new Quaternion(0, 1, 0, 0);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             transform.position = new Vector3(-100, ypos, 0);
         }           
         else
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.rotation = new Quaternion(0, 1, 0, 0);
             transform.position = new Vector3(820, ypos, 0);
         }
         
