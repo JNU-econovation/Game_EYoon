@@ -9,7 +9,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
     public void SingleShot(GameObject enemy, GameObject bullet, float angle, float damage)
     {
         Vector3 pos = enemy.transform.position;
-        GameObject bullet0 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
+        GameObject bullet0 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, -angle));
         bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
     }
     public IEnumerator RepeatShot(GameObject enemy, GameObject bullet, float angle, int count, float damage)

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy_Anchovies : Enemy
 {
     int direction;
-    [SerializeField] SpriteRenderer[] Anchovies;
     bool attack = false;
     GameObject player;
     // Start is called before the first frame update
@@ -15,7 +14,7 @@ public class Enemy_Anchovies : Enemy
         //player = GameObject.FindGameObjectWithTag("Player");
         SetPosition();
         originSpeed = speed;
-        damage = GetComponent<Enemy_Ability>().GetDamage();
+        damage = 0;
         player = LevelManager.Instance.GetPlayer();
         // 아직 getPlayer에서 현재 게임 플래이 중인 플래이어를 불러올수 없어 오류가생겨요
     }
@@ -53,10 +52,7 @@ public class Enemy_Anchovies : Enemy
         }
         else if (50 < dir && dir <= 100)
         {
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Anchovies[i].flipX = true;
-            }
+            transform.rotation = Quaternion.Euler(0,180,0);
             transform.position = new Vector2(-281, pos_y + playerHeight);
             direction = 1;
         }
