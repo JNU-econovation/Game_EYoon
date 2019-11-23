@@ -45,9 +45,6 @@ public class Enemy_SatelliteMonster : Enemy
 
     public override void SetPosition()
     {
-        int dir = Random.Range(135, 576);
-        float ypos = player.transform.position.y + 1000;
-        transform.position = new Vector3(dir,ypos,0);
     }
 
 }

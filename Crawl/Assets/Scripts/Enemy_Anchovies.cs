@@ -26,7 +26,7 @@ public class Enemy_Anchovies : Enemy
             speed = originSpeed;
         transform.Translate(5 * direction, 0, 0);
 
-        if (transform.position.x < -290 || transform.position.x > 811)
+        if (transform.position.x < -300 || transform.position.x > 811)
         {
             Destroy(gameObject);
         }

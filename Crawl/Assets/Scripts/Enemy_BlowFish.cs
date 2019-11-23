@@ -13,6 +13,7 @@ public class Enemy_BlowFish : Enemy
     [SerializeField] float attackDelay;
     bool attack;
     bool sideMove = false;
+    bool isBoss = false;
 
     private void Start()
     {
@@ -87,5 +88,9 @@ public class Enemy_BlowFish : Enemy
             GetComponent<Animator>().SetBool("Attack", false);
             attack = false;
         }
+    }
+    public void SetIsBossTrue()
+    {
+        isBoss = true;
     }
 }
