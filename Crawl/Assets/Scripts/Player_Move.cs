@@ -12,6 +12,7 @@ public class Player_Move : MonoBehaviour
     Player_Circle_Move player_Circle_Move;
     Player _player;
     float yPos;
+    bool OnBoss;
     private void Start()
     {
         _player = GetComponent<Player>();
@@ -27,6 +28,7 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
+        OnBoss = LevelManager.Instance.OnBoss;
         HandleInput();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 170.0f, 550.0f), transform.position.y, transform.position.z);
     }
@@ -49,7 +51,7 @@ public class Player_Move : MonoBehaviour
     {
         float h = joyStick.GetHorizontalValue();
         float v = joyStick.GetVerticalValue();
-        if (v <= 0)
+        if (!OnBoss && v <= 0)
             v = 0;
         yPos = v;
         Vector3 moveDir = new Vector3(h, v, 0).normalized;

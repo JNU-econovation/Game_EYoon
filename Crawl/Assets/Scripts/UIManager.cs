@@ -11,7 +11,7 @@ public class UIManager : Singleton<UIManager>
     Item[] item = new Item[5];
     SkillManager skillManager;
     public Text heightText;
-    float height;
+    public float height;
     float time = 0;
     GameObject player;
     void Start()

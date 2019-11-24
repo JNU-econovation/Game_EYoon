@@ -8,7 +8,7 @@ public class Pet : Singleton<Pet>
     float attack;
     float critical_hit;
     float critical_Percent;
-    float attackSpeed = 1;
+    float attackSpeed = 5;
     public GameObject[] bullet;
     public float[] bulletWeight;
     bool onPet;
@@ -63,6 +63,6 @@ public class Pet : Singleton<Pet>
     public void SetOnPet(bool temp)
     {
         onPet = temp;
-        spriteRenderer.sortingOrder = 3;
+        spriteRenderer.color = new Color(255,255,255,255);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item_Copper : Item
 {
     static int count = 0;
-    static int maxCount = 100;
+    static int maxCount = 1000;
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();

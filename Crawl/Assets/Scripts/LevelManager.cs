@@ -9,13 +9,14 @@ public class LevelManager : Singleton<LevelManager>
     Player_Move player_Move;
     Player_Bomb_Attack bomb_Attack;
     Player _player;
-    bool[] stage = new bool[3];
     float time = 0;
-    public GameObject[] left_backGround;
-    public GameObject[] right_backGround;
+    float height;
+    public int level;
+    public bool OnBoss;
+    public bool bossClear;
+    public GameObject[] boss;
     void Awake()
     {
-        stage[0] = true;
         player = playerPrefab;
         _player = player.GetComponent<Player>();
         //player = Instantiate(playerPrefab);
@@ -25,12 +26,114 @@ public class LevelManager : Singleton<LevelManager>
     }
     private void Start()
     {
+        StartCoroutine(LevelUp());
+        StartCoroutine(LevelUp2());
+        StartCoroutine(LevelUp3());
+        StartCoroutine(AppearBoss1());
+        StartCoroutine(AppearBoss2());
+        StartCoroutine(AppearBoss3());
     }
     void Update()
     {
         time += Time.deltaTime;
-    }
+        height = UIManager.Instance.height;
+        level = (int)(height / 1000);
+        if (OnBoss)
+        {
+            if (!bossClear && level == 0)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 19300.0f, 20000.0f), 0);
+            }
+            else if (!bossClear && level == 1)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 39300.0f, 40000.0f), 0);
+            }
+            else if (!bossClear && level == 2)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 59300.0f, 60000.0f), 0);
+            }
+        }
+        else
+        {
 
+        }
+        
+    }
+    IEnumerator LevelUp()
+    {
+        while (true)
+        {
+            yield return null;
+            if(level == 1)
+            {
+                OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator LevelUp2()
+    {
+        while (true)
+        {
+            yield return null;
+            if (level == 2)
+            {
+                OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator LevelUp3()
+    {
+        while (true)
+        {
+            yield return null;
+            if (level == 3)
+            {
+                OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator AppearBoss1()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 955)
+            {
+                OnBoss = true;
+                Instantiate(boss[0]);
+                break;
+            }           
+        }
+    }
+    IEnumerator AppearBoss2()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 1955)
+            {
+                OnBoss = true;
+                Instantiate(boss[1]);
+                break;
+            }
+        }
+    }
+    IEnumerator AppearBoss3()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 2955)
+            {
+                OnBoss = true;
+                Instantiate(boss[2]);
+                break;
+            }
+        }
+    }
     public GameObject GetPlayer()
     {
         return player;
@@ -49,32 +152,5 @@ public class LevelManager : Singleton<LevelManager>
         _player.Resume();
         bomb_Attack.Resume();
     }
-    public void ChangeStage()
-    {
-        for(int i = 0; i< stage.Length; i++)
-        {
-            if(stage[0])
-            {               
-                stage[0] = false;
-                stage[1] = true;
-                stage[2] = false;
-                break;
-            }
-            else if(stage[1])
-            {               
-                stage[0] = false;
-                stage[1] = false;
-                stage[2] = true;
-                break;
-            }
-            else
-            {
-
-            }
-        }
-    }
-    public bool[] GetStage()
-    {
-        return stage;
-    }
+    
 }
