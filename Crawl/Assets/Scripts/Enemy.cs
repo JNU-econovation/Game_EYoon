@@ -15,6 +15,7 @@ abstract public class Enemy : Singleton<Enemy>
     public float lifeTime;
     void Awake()
     {
+        
         enemy_Ability = GetComponent<Enemy_Ability>();
         originSpeed = speed;
         originSpeed_x = speed_x;

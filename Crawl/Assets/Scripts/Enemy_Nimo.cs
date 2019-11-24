@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_BlowFish : Enemy
+public class Enemy_Nimo : Enemy
 {
     GameObject player;
     [SerializeField] GameObject bullet;
@@ -13,7 +13,6 @@ public class Enemy_BlowFish : Enemy
     [SerializeField] float attackDelay;
     bool attack;
     bool sideMove = false;
-    bool isBoss = false;
 
     private void Start()
     {
@@ -45,7 +44,6 @@ public class Enemy_BlowFish : Enemy
             if (attack == false)
             {
 
-                GetComponent<Animator>().SetBool("Attack", true);
                 StartCoroutine(Attack());
             }
             if (transform.position.x < 96 || transform.position.x > 631)
@@ -80,17 +78,16 @@ public class Enemy_BlowFish : Enemy
         if (isPaused == false)
         {
             attack = true;
+            print("Fire");
             float distance_x = transform.position.x - player.transform.position.x;
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-            yield return new WaitForSeconds(0.2f);
-            Enemy_AttackPattern.Instance.CircleShot(gameObject, bullet, bulletCount, damage);
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
+                yield return new WaitForSeconds(0.2f);
+            }
             yield return new WaitForSeconds(attackDelay);
-            GetComponent<Animator>().SetBool("Attack", false);
             attack = false;
         }
-    }
-    public void SetIsBossTrue()
-    {
-        isBoss = true;
     }
 }
