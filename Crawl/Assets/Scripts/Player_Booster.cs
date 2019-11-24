@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Booster : MonoBehaviour
 {
     bool onBooster;
+    bool OnBoss;
     Player_Move player_Move;
     Player _player;
     float time = 0;
@@ -40,9 +41,10 @@ public class Player_Booster : MonoBehaviour
     }
     private void Update()
     {
+        OnBoss = LevelManager.Instance.OnBoss;
         if (!_player.GetIsPause())
         {
-            if (onBooster)
+            if (onBooster && !OnBoss)
             {
                 time += Time.deltaTime;
                 transform.Translate(0, 1000 * Time.deltaTime, 0);

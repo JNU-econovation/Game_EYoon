@@ -18,7 +18,7 @@ public class Player_Attack_Range : MonoBehaviour
         
         transform.localScale = new Vector3(attackRange, attackRange,1);
         circle.setRadius(attackRange * 45);
-        circle.transform.localScale = new Vector3(0.3f, 0.3f, 0);
+        circle.transform.localScale = new Vector3(0.2f, 0.2f, 0);
     }
     public float GetAttackRange()
     {

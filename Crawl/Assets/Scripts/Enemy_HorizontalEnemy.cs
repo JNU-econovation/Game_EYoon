@@ -40,7 +40,7 @@ public class Enemy_HorizontalEnemy : Enemy
         int dir = Random.Range(0, 100);
         
         float playerHeight = player.transform.position.y;
-        enemyPos = 50+ Random.Range(50, 800);
+        enemyPos = 50 + Random.Range(50, 800);
 
         if (dir <= 50)
         {

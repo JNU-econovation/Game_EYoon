@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camera_Move : MonoBehaviour
 {
     GameObject player;
+    bool OnBoss;
     void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -13,6 +14,10 @@ public class Camera_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(360, player.transform.position.y + 128, -0.01f); 
+        OnBoss = LevelManager.Instance.OnBoss;
+        if(!OnBoss)
+            transform.position = new Vector3(360, player.transform.position.y + 128, -0.01f);
+        else
+        { }
     }
 }
