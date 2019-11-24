@@ -34,9 +34,8 @@ public class UIManager : Singleton<UIManager>
    
     private void Update()
     {
-        height = (int)((player.transform.position.y - 400) / 20 );
+        height = (int)((player.transform.position.y - 400) / 20);
         heightText.text = height + "m";
-        print(player.transform.position.y);
     }
     public void SetCount(int grade, int n)
     {

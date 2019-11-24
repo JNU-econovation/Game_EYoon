@@ -30,6 +30,7 @@ public class UI_Background_Left : MonoBehaviour
         level = LevelManager.Instance.level;
         ChangeBackGround();
     }
+
     public void ChangeBackGround()
     {
         for (int i = 0; i < 3; i++)

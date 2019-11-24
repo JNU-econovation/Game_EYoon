@@ -13,6 +13,8 @@ public class LevelManager : Singleton<LevelManager>
     float height;
     public int level;
     public bool OnBoss;
+    public bool bossClear;
+    public GameObject[] boss;
     void Awake()
     {
         player = playerPrefab;
@@ -24,30 +26,111 @@ public class LevelManager : Singleton<LevelManager>
     }
     private void Start()
     {
-        StartCoroutine(AppearBoss());
+        StartCoroutine(LevelUp());
+        StartCoroutine(LevelUp2());
+        StartCoroutine(LevelUp3());
+        StartCoroutine(AppearBoss1());
+        StartCoroutine(AppearBoss2());
+        StartCoroutine(AppearBoss3());
     }
     void Update()
     {
         time += Time.deltaTime;
         height = UIManager.Instance.height;
         level = (int)(height / 1000);
-        if(OnBoss && level == 0)
+        if (OnBoss)
         {
-            player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 18300.0f, 19100.0f), 0);
+            if (!bossClear && level == 0)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 19300.0f, 20000.0f), 0);
+            }
+            else if (!bossClear && level == 1)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 39300.0f, 40000.0f), 0);
+            }
+            else if (!bossClear && level == 2)
+            {
+                player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 59300.0f, 60000.0f), 0);
+            }
         }
+        else
+        {
+
+        }
+        
     }
-    IEnumerator AppearBoss()
+    IEnumerator LevelUp()
     {
         while (true)
         {
             yield return null;
-            if (height >= 900 || height >= 1900 || height >= 2900)
-            {
-                OnBoss = true;
-            }
-            if (height >= 1000 || height >= 2000 || height >= 3000)
+            if(level == 1)
             {
                 OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator LevelUp2()
+    {
+        while (true)
+        {
+            yield return null;
+            if (level == 2)
+            {
+                OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator LevelUp3()
+    {
+        while (true)
+        {
+            yield return null;
+            if (level == 3)
+            {
+                OnBoss = false;
+                break;
+            }
+        }
+    }
+    IEnumerator AppearBoss1()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 955)
+            {
+                OnBoss = true;
+                Instantiate(boss[0]);
+                break;
+            }           
+        }
+    }
+    IEnumerator AppearBoss2()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 1955)
+            {
+                OnBoss = true;
+                Instantiate(boss[1]);
+                break;
+            }
+        }
+    }
+    IEnumerator AppearBoss3()
+    {
+        while (true)
+        {
+            yield return null;
+            if (height >= 2955)
+            {
+                OnBoss = true;
+                Instantiate(boss[2]);
+                break;
             }
         }
     }

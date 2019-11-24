@@ -44459,6 +44459,8 @@ MonoBehaviour:
   - {fileID: 1133911371}
   - {fileID: 1736159396}
   - {fileID: 1846480940}
+  heightText: {fileID: 0}
+  height: 0
 --- !u!114 &2111344103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44501,14 +44503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 394846646}
-  left_backGround:
-  - {fileID: 954526472}
-  - {fileID: 262607060}
-  - {fileID: 228350368}
-  right_backGround:
-  - {fileID: 651071899}
-  - {fileID: 1958550740}
-  - {fileID: 1786066353}
+  level: 0
+  OnBoss: 0
 --- !u!212 &2111344105
 SpriteRenderer:
   m_ObjectHideFlags: 0

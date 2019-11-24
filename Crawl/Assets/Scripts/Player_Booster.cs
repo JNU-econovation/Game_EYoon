@@ -34,9 +34,10 @@ public class Player_Booster : MonoBehaviour
             yield return null;
             if(time >= delayTime)
             {
-                onBooster = false;
-                break;
+                onBooster = false;                
             }
+            if (!onBooster)
+                break;
         }
     }
     private void Update()
@@ -49,6 +50,8 @@ public class Player_Booster : MonoBehaviour
                 time += Time.deltaTime;
                 transform.Translate(0, 1000 * Time.deltaTime, 0);
             }
+            if (OnBoss)
+                onBooster = false;
         }
        
     }
