@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8813299335874478127}
   - component: {fileID: 4803589180365405002}
   m_Layer: 12
-  m_Name: Marlin
+  m_Name: SpaceTrash
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 100
   damage: 10
 --- !u!114 &4803589180365405002
 MonoBehaviour:

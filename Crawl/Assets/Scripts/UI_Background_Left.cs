@@ -23,31 +23,9 @@ public class UI_Background_Left : MonoBehaviour
     void Update()
     {
         playerSpeed = player_Move.GetSpeed();
-        offset += Time.deltaTime;
+        offset += speed * Time.deltaTime * player_Move.GetYpos();
         meshRenderer.material.mainTextureOffset = new Vector2(0, offset);
-        level = LevelManager.Instance.level;
-        ChangeBackGround();
+        level = LevelManager.Instance.level;      
     }
-
-    public void ChangeBackGround()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            if (level == 0)
-            { 
-                meshRenderer.material = left_BackGround_Material[0];
-            }
-            else if (level == 1)
-            {
-                meshRenderer.material = left_BackGround_Material[1];
-            }
-            else
-            {
-                meshRenderer.material = left_BackGround_Material[2];
-            }
-        }
-
-
-
-    }
+   
 }

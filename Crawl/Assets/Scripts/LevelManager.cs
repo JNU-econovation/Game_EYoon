@@ -15,6 +15,13 @@ public class LevelManager : Singleton<LevelManager>
     public bool OnBoss;
     public bool bossClear;
     public GameObject[] boss;
+    public GameObject[] sea_Enemys;
+    public GameObject[] sky_Enemys;
+    public GameObject[] space_Enemys;
+    public GameObject[] left_BackGround;
+    public GameObject[] right_BackGround;
+    public Material[] right_BackGround_Material;
+    public Material[] left_BackGround_Material;
     void Awake()
     {
         player = playerPrefab;
@@ -38,26 +45,23 @@ public class LevelManager : Singleton<LevelManager>
         time += Time.deltaTime;
         height = UIManager.Instance.height;
         level = (int)(height / 1000);
+
         if (OnBoss)
         {
             if (!bossClear && level == 0)
             {
                 player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 19300.0f, 20000.0f), 0);
-            }
+            }          
             else if (!bossClear && level == 1)
             {
                 player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 39300.0f, 40000.0f), 0);
-            }
+            }       
             else if (!bossClear && level == 2)
             {
                 player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 59300.0f, 60000.0f), 0);
-            }
+            }           
         }
-        else
-        {
-
-        }
-        
+               
     }
     IEnumerator LevelUp()
     {
@@ -66,7 +70,13 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if(level == 1)
             {
+                bossClear = false;
                 OnBoss = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    left_BackGround[i].GetComponent<MeshRenderer>().material = left_BackGround_Material[1];
+                    right_BackGround[i].GetComponent<MeshRenderer>().material = right_BackGround_Material[1];
+                }
                 break;
             }
         }
@@ -78,7 +88,13 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if (level == 2)
             {
+                bossClear = false;
                 OnBoss = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    left_BackGround[i].GetComponent<MeshRenderer>().material = left_BackGround_Material[2];
+                    right_BackGround[i].GetComponent<MeshRenderer>().material = right_BackGround_Material[2];
+                }
                 break;
             }
         }
@@ -90,6 +106,7 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if (level == 3)
             {
+                bossClear = false;
                 OnBoss = false;
                 break;
             }
@@ -138,6 +155,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         return player;
     }
+
 
     public void Pause()
     {

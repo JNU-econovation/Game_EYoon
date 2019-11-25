@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -585009347
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6d9bf0c1fcfdd82409e268deb11d499b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -276,7 +276,10 @@ MonoBehaviour:
   lifeTime: 0
   stopPos: 600
   bullets: []
-  monsters: []
+  monsters:
+  - {fileID: 5983224757873147190, guid: f4bc5cd45a4e72846bc9ef0a33613e2c, type: 3}
+  - {fileID: 5112580075955567080, guid: d53ef5529819997488f959749f59a52c, type: 3}
+  - {fileID: 1650935537771593501, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   attackDelay: 2
   onAttack: 0
   spinSpeed: 0.2

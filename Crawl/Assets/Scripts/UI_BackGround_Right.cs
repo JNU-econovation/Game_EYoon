@@ -23,30 +23,9 @@ public class UI_BackGround_Right : MonoBehaviour
     void Update()
     {
         playerSpeed = player_Move.GetSpeed();
-        offset += Time.deltaTime * player_Move.GetYpos();
+        offset += speed * Time.deltaTime * player_Move.GetYpos();
         meshRenderer.material.mainTextureOffset = new Vector2(0, offset);
         level = LevelManager.Instance.level;
-        ChangeBackGround();
     }
-    public void ChangeBackGround()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            if (level == 0)
-            {
-                meshRenderer.material = right_BackGround_Material[0];
-            }
-            else if (level == 1)
-            {
-                meshRenderer.material = right_BackGround_Material[1];
-            }
-            else
-            {
-                meshRenderer.material = right_BackGround_Material[2];
-            }
-        }
-
-
-
-    }
+   
 }

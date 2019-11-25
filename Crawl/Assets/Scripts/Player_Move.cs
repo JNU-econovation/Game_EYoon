@@ -13,6 +13,7 @@ public class Player_Move : MonoBehaviour
     Player _player;
     float yPos;
     bool OnBoss;
+    bool bossClear;
     private void Start()
     {
         _player = GetComponent<Player>();
@@ -20,6 +21,18 @@ public class Player_Move : MonoBehaviour
         joyStick = GameObject.FindGameObjectWithTag("JoyStick").GetComponent<JoyStick>();
         _transform = transform;
         _moveVector = Vector3.zero;
+    }
+    public void DontGoDown_Boss1()
+    {
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 19300.0f, 100000.0f), 0);
+    }
+    public void DontGoDown_Boss2()
+    {
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 39300.0f, 100000.0f), 0);
+    }
+    public void DontGoDown_Boss3()
+    {
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 59300.0f, 100000.0f), 0);
     }
     public float GetSpeed()
     {
@@ -29,6 +42,7 @@ public class Player_Move : MonoBehaviour
     void Update()
     {
         OnBoss = LevelManager.Instance.OnBoss;
+        bossClear = LevelManager.Instance.bossClear;
         HandleInput();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 170.0f, 550.0f), transform.position.y, transform.position.z);
     }
@@ -51,7 +65,7 @@ public class Player_Move : MonoBehaviour
     {
         float h = joyStick.GetHorizontalValue();
         float v = joyStick.GetVerticalValue();
-        if (!OnBoss && v <= 0)
+        if ((bossClear || !OnBoss) && v <= 0)
             v = 0;
         yPos = v;
         Vector3 moveDir = new Vector3(h, v, 0).normalized;

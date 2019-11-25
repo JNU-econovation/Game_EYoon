@@ -82,7 +82,6 @@ public class Player_Attack : MonoBehaviour
             float damage = RealAttack();
             if (i >= targetList.Count)
                 break;
-            targetList[i].GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 255);
             targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
             if (isFire)
             {

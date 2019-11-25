@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] GameObject[] enemys;
+    [SerializeField] GameObject[] sea_Enemys;
+    [SerializeField] GameObject[] sky_Enemys;
+    [SerializeField] GameObject[] space_Enemys;
     [SerializeField] float[] enemyWeight;
     [SerializeField] float cycleTime;
     [SerializeField] List<GameObject> spawned_enemy = new List<GameObject>() ;
