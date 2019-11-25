@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2494799477896168807}
   - component: {fileID: 2494799477896168806}
   - component: {fileID: 2232435528541669001}
+  - component: {fileID: 7067127082600093728}
   m_Layer: 12
   m_Name: Boss_Phynics
   m_TagString: Enemy
@@ -336,11 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caad85866c76de340879cf29cbf504ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopPos: 600
-  hp: 1000
   speed: 3
   speed_x: 3
-  damage: 0
+  OnAttack: 0
+  lifeTime: 0
+  stopPos: 600
   bullets: []
   monsters:
   - {fileID: 3882285213180971415, guid: 85c0516921aef1749affac893471a387, type: 3}
@@ -349,3 +350,17 @@ MonoBehaviour:
   - {fileID: 264811461713219995, guid: 8e1b925a2d8455f47ab8ddb67f597327, type: 3}
   attackDelay: 2
   onAttack: 0
+--- !u!114 &7067127082600093728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494799477896168808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  damage: 10

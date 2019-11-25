@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4743310669276067317}
   - component: {fileID: 4743310669276067318}
   - component: {fileID: 4743310669276067319}
+  - component: {fileID: 4825095898100107478}
   m_Layer: 12
   m_Name: Boss_Kraken
   m_TagString: Enemy
@@ -114,11 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffbabfde886d1c4fb66f7a339f1db61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopPos: 600
-  hp: 1000
   speed: 3
   speed_x: 1.5
-  damage: 5
+  OnAttack: 0
+  lifeTime: 0
+  stopPos: 600
   bullets:
   - {fileID: 8599854496747723507, guid: 86e180d0583dc4846870012145ca1c97, type: 3}
   - {fileID: 705628902513633691, guid: d18345900cb501b4e99bfba2c552f674, type: 3}
@@ -351,3 +352,17 @@ PolygonCollider2D:
       - {x: 1.17, y: 0.34}
       - {x: 1.18, y: 0.35}
       - {x: 1.2099999, y: 0.35}
+--- !u!114 &4825095898100107478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743310669276067321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  damage: 10
