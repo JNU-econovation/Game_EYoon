@@ -131,13 +131,10 @@ public class Enemy_Boss_MotherShip : Enemy
     {
         throw new System.NotImplementedException();
     }
-<<<<<<< HEAD
 
-=======
     private void OnDisable()
     {
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);
     }
->>>>>>> f4a8c183b54c5030be948c34a8fd00839878b9d7
 }
