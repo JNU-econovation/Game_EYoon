@@ -23,7 +23,8 @@ abstract public class Enemy : Singleton<Enemy>
     }
     void OnEnable()
     {
-        StartCoroutine(DestroySelf());
+        if(!LevelManager.Instance.OnBoss)
+            StartCoroutine(DestroySelf());
     }
 
     IEnumerator DestroySelf()
