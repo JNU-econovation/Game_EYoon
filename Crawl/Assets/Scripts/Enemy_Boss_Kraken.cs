@@ -29,7 +29,7 @@ public class Enemy_Boss_Kraken : Enemy_Boss
         //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
-        if (distance_y < stopPos)
+        if (transform.position.y < 19900)
         {
             speed = 0;
             if (attack == false)
@@ -107,6 +107,6 @@ public class Enemy_Boss_Kraken : Enemy_Boss
     {
 
         float ypos = player.transform.position.y + 1000;
-        transform.position = new Vector3(360, ypos, 0);
+        transform.position = new Vector3(360, 19900+1000, 0);
     }
 }
