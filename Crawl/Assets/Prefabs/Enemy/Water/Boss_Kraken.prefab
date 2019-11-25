@@ -124,7 +124,7 @@ MonoBehaviour:
   - {fileID: 705628902513633691, guid: d18345900cb501b4e99bfba2c552f674, type: 3}
   - {fileID: 7613358609501136715, guid: 504fe463d49e5ff4795c86b22cca9774, type: 3}
   monsters:
-  - {fileID: 7171529069292317641, guid: a2d7a2ef8c31b704cb87cbed4cb4e44b, type: 3}
+  - {fileID: 7171529069292317641, guid: 3b6ac0a7e7c3cb04dbd9b4e5db607005, type: 3}
   - {fileID: 6189081048369220682, guid: 682b9321c9d6a394a969c269791533bd, type: 3}
   - {fileID: 6728297085475027057, guid: 5583c496f52463e4dbf83fac4dc6d4aa, type: 3}
   attackDelay: 2
