@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6908272967506738826}
   - component: {fileID: 6908272967506738825}
   - component: {fileID: 8657595615392449231}
+  - component: {fileID: 6358323479726387325}
   m_Layer: 12
   m_Name: Boss1
   m_TagString: Enemy
@@ -334,3 +335,29 @@ PolygonCollider2D:
       - {x: 1.17, y: 0.34}
       - {x: 1.18, y: 0.35}
       - {x: 1.2099999, y: 0.35}
+--- !u!114 &6358323479726387325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908272967506738830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b7422dd7f7bd64785efe682754ff8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 100, y: 100}
+  force: 0
+  itemWeight:
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  items:
+  - {fileID: 8842380338261678929, guid: 96a4f176cc0aef543ba514503fa4f0de, type: 3}
+  - {fileID: 5724366146165443629, guid: d21fa36b93dc56e49bf65c10d515666f, type: 3}
+  - {fileID: 6764924180443571577, guid: 449a0edb5c5287f46b2470eda46389d4, type: 3}
+  - {fileID: 1086886184880477101, guid: 1ee013b4f29bcbf439ad901316867cd2, type: 3}
+  - {fileID: 1872638473873296979, guid: 6afe66bc795113b42aaf4a0d27345a50, type: 3}
