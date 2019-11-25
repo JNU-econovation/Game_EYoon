@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Ability : MonoBehaviour
 {
-    float HP;
+    [SerializeField] float HP;
     [SerializeField] float damage;
     float maxHP = 100;
     static float originMaxHP;

@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Boss_Phynics : Enemy_Boss
+public class Enemy_Boss_Phynics : Enemy
 {
-
+    public float stopPos = 371;
+    protected GameObject player;
+    public GameObject[] bullets;
+    public GameObject[] monsters;
+    protected float distance_y;
+    protected bool attack = false;
+    public float attackDelay = 2.0f;
+    public bool onAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -112,5 +119,15 @@ public class Enemy_Boss_Phynics : Enemy_Boss
 
         float ypos = player.transform.position.y + 1000;
         transform.position = new Vector3(360, 40900, 0);
+    }
+
+    public override void Resume()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Pause()
+    {
+        throw new System.NotImplementedException();
     }
 }
