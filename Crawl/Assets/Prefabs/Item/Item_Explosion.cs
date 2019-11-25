@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item_Explosion : MonoBehaviour
+public class Item_Explosion : Singleton<Item_Explosion>
 {
     public Vector2 offset = Vector2.zero;
     public float force;
@@ -19,14 +19,13 @@ public class Item_Explosion : MonoBehaviour
         
     }
 
-    IEnumerator Explosion()
+    public void Explosion(Vector3 bossPos)
     {
-        yield return null;
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 15; i++)
         {
-            GameObject item = SelectItem();
-            Instantiate(item, transform.position,Quaternion.identity);
-            item.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.position.x, transform.position.y) + offset);
+            GameObject temp = Instantiate(SelectItem(), bossPos, Quaternion.identity);
+            float randX = Random.Range(-3, 3);
+            temp.GetComponent<Rigidbody2D>().AddForce(new Vector2(randX, 5) * force, ForceMode2D.Impulse);
         }
     }
     public GameObject SelectItem()
@@ -44,9 +43,5 @@ public class Item_Explosion : MonoBehaviour
             i++;
         }
         return items[0];
-    }
-    private void OnDisable()
-    {
-        StartCoroutine(Explosion());
     }
 }

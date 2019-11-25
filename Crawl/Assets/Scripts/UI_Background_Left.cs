@@ -11,8 +11,6 @@ public class UI_Background_Left : MonoBehaviour
     Player_Move player_Move;
     float playerSpeed;
     int level;
-    bool[] stage;
-    public bool left;
     public Material[] left_BackGround_Material;
     void Start()
     {
@@ -25,7 +23,7 @@ public class UI_Background_Left : MonoBehaviour
     void Update()
     {
         playerSpeed = player_Move.GetSpeed();
-        offset += speed * Time.deltaTime * player_Move.GetYpos();
+        offset += Time.deltaTime;
         meshRenderer.material.mainTextureOffset = new Vector2(0, offset);
         level = LevelManager.Instance.level;
         ChangeBackGround();
