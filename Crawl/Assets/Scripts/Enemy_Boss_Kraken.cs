@@ -126,4 +126,10 @@ public class Enemy_Boss_Kraken : Enemy
     {
         throw new System.NotImplementedException();
     }
+
+    private void OnDisable()
+    {
+        LevelManager.Instance.bossClear = true;
+        Item_Explosion.Instance.Explosion(transform.position);
+    }
 }

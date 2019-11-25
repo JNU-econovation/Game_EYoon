@@ -130,4 +130,9 @@ public class Enemy_Boss_Phynics : Enemy
     {
         throw new System.NotImplementedException();
     }
+    private void OnDisable()
+    {
+        LevelManager.Instance.bossClear = true;
+        Item_Explosion.Instance.Explosion(transform.position);
+    }
 }
