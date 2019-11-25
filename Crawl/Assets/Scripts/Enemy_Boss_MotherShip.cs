@@ -12,6 +12,7 @@ public class Enemy_Boss_MotherShip : Enemy
     protected bool attack = false;
     public float attackDelay = 2.0f;
     public bool onAttack = false;
+    [SerializeField] float spinSpeed = 0.2f;
     Transform image;
     // Start is called before the first frame update
     void Start()
