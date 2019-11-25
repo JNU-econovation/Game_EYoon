@@ -20509,9 +20509,9 @@ MonoBehaviour:
   OnBoss: 0
   bossClear: 0
   boss:
-  - {fileID: 6908272967506738830, guid: f1ee61b47f2fae647894e8cd67346a6e, type: 3}
-  - {fileID: 6455215697833268246, guid: 34032a0c8c5a1134cab4fb901ef6a214, type: 3}
-  - {fileID: 7958902112729422106, guid: fd0e319851ea28f409e2ad92ec27cd6a, type: 3}
+  - {fileID: 4743310669276067321, guid: 5bc6678dc2b096642b6880a67a24a495, type: 3}
+  - {fileID: 2494799477896168808, guid: d82682962212ec74b954723a4970967a, type: 3}
+  - {fileID: 2434698104742144367, guid: b9bf4ee87c4a70f40aa8f130841b47e0, type: 3}
 --- !u!114 &1094924851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20672,20 +20672,20 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 100
   - 0
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  cycleTime: 1
+  cycleTime: 5
   spawned_enemy: []
   spawnEnemy: {fileID: 0}
 --- !u!114 &1094924855

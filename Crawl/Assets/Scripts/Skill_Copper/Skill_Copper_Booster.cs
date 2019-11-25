@@ -10,7 +10,7 @@ public class Skill_Copper_Booster : Skill_Copper
     {
         player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 20, 4, 6};
+        variation = new float[] { 20, 20, 6};
         player_Booster = player.GetComponent<Player_Booster>();
     }
     public override void SkillFunction()

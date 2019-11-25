@@ -126,4 +126,5 @@ public class Enemy_Boss_Kraken : Enemy
     {
         throw new System.NotImplementedException();
     }
+
 }
