@@ -8,7 +8,7 @@ public class Skill_Silver_LimitSilverCount : Skill_Silver
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 1, 2, 3 };
     }
     public override void SkillFunction()
     {

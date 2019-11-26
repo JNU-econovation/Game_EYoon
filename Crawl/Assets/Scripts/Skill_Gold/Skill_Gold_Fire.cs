@@ -11,7 +11,7 @@ public class Skill_Gold_Fire : Skill_Gold
         player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         player_Attack = player.GetComponent<Player_Attack>();
-        variation = new float[] { 5, 7, 9 };
+        variation = new float[] { 2, 4, 5 };
     }
     public override void SkillFunction()
     {

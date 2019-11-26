@@ -11,7 +11,7 @@ public class Skill_Diamond_Invincibility : Skill_Diamond
         player = LevelManager.Instance.GetPlayer();
         player_Invincibility = player.GetComponent<Player_Invincibility>();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 5, 7, 9 };
+        variation = new float[] { 3, 4, 5 };
     }
     public override void SkillFunction()
     {

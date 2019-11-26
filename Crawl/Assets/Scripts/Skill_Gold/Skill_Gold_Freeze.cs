@@ -11,7 +11,7 @@ public class Skill_Gold_Freeze : Skill_Gold
         player = LevelManager.Instance.GetPlayer();
         player_Attack = player.GetComponent<Player_Attack>();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 5, 7, 9 };
+        variation = new float[] { 2, 4, 5 };
     }
     public override void SkillFunction()
     {

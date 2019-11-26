@@ -29,7 +29,6 @@ public class Item_Copper : Item
     }
     private void Update()
     {
-        print(remainCount);
         if (isMagent)
         {
             transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);

@@ -8,7 +8,7 @@ public class Skill_Diamond_LimitDiaCount : Skill_Diamond
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 2, 3, 4 };
+        variation = new float[] { 1, 2, 3 };
     }
     public override void SkillFunction()
     {

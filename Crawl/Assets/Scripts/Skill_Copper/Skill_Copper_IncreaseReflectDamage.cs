@@ -8,7 +8,7 @@ public class Skill_Copper_IncreaseReflectDamage : Skill_Copper
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 10, 20, 30 };
+        variation = new float[] { 5, 7, 9 };
     }
     public override void SkillFunction()
     {

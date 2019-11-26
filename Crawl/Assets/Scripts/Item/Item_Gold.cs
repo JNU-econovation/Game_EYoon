@@ -18,7 +18,7 @@ public class Item_Gold : Item
             count += get_jewerly_multiple;
             if (count >= maxCount)
             {
-                UIManager.Instance.OnSkillUI(1);
+                UIManager.Instance.OnSkillUI(3);
                 IncreaseMaxCount(5);
                 count = 0;
             }

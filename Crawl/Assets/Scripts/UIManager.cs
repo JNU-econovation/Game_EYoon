@@ -27,7 +27,7 @@ public class UIManager : Singleton<UIManager>
        
     public void OnSkillUI(int i)
     {
-        skillUI[i].gameObject.SetActive(true);       
+        skillUI[i-1].gameObject.SetActive(true);       
     }
       
    

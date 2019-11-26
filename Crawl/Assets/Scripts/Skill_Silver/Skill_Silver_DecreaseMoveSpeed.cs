@@ -8,7 +8,7 @@ public class Skill_Silver_DecreaseMoveSpeed : Skill_Silver
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 100, 200, 300 };
+        variation = new float[] { 40, 80, 120 };
     }
     public override void SkillFunction()
     {
