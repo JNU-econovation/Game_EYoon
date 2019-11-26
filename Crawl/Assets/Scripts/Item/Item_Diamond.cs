@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Item_Diamond : Item
 {
+    static int remainCount;
     static int count = 0;
-    static int maxCount = 100;
+    static int maxCount = 10;
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -14,8 +15,15 @@ public class Item_Diamond : Item
     {
         if (collider.gameObject.tag == "Player")
         {
-            IncreaseCount(get_jewerly_multiple);
-            UIManager.Instance.SetCount(4, count);
+            count += get_jewerly_multiple;
+            if (count >= maxCount)
+            {
+                UIManager.Instance.OnSkillUI(1);
+                IncreaseMaxCount(5);
+                count = 0;
+            }
+            remainCount = maxCount - count;
+            UIManager.Instance.SetCount(4, remainCount);
             Destroy(gameObject);
         }
     }
@@ -37,9 +45,9 @@ public class Item_Diamond : Item
         if (count >= maxCount)
         {
             UIManager.Instance.OnSkillUI(3);
-            count -= maxCount;
+            IncreaseMaxCount(5);
+            count = 0;
         }
-        
     }
     public override void ResetCount()
     {
@@ -62,5 +70,9 @@ public class Item_Diamond : Item
     public override void SetMaxCount(int n)
     {
         maxCount = n;
+    }
+    public override int GetRemainCount()
+    {
+        return remainCount;
     }
 }

@@ -23,7 +23,6 @@ public class UIManager : Singleton<UIManager>
         item[4] = new Item_Ruby();
         player = LevelManager.Instance.GetPlayer();
 
-
     }
        
     public void OnSkillUI(int i)

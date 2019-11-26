@@ -31,7 +31,7 @@ abstract public class Item : Singleton<Item>
         get_jewerly_multiple = n;
     }    
     abstract public void IncreaseCount(int n);
-
+    abstract public int GetRemainCount();
     abstract public int GetCount();
     abstract public int GetMaxCount();
     abstract public void SetMaxCount(int n);

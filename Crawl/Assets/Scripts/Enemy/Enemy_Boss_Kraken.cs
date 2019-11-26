@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Boss_Phynics : Enemy
+public class Enemy_Boss_Kraken : Enemy
 {
     public float stopPos = 371;
     protected GameObject player;
@@ -22,7 +22,7 @@ public class Enemy_Boss_Phynics : Enemy
     // Update is called once per frame
     void Update()
     {
-
+       
         if (isPaused)
         {
             speed = 0;
@@ -36,7 +36,7 @@ public class Enemy_Boss_Phynics : Enemy
         //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
-        if (transform.position.y < 39900)
+        if (transform.position.y < 19900)
         {
             speed = 0;
             if (attack == false)
@@ -44,14 +44,10 @@ public class Enemy_Boss_Phynics : Enemy
 
                 Attack();
             }
-            if (transform.position.x < 85 || transform.position.x > 635)
+            if (transform.position.x < 326 || transform.position.x > 394)
             {
                 speed_x = speed_x * -1;
                 originSpeed_x = speed_x;
-                if (GetComponent<SpriteRenderer>().flipX == true)
-                    GetComponent<SpriteRenderer>().flipX = false;
-                else
-                    GetComponent<SpriteRenderer>().flipX = true;
             }
             transform.Translate(speed_x, 0, 0);
 
@@ -76,21 +72,21 @@ public class Enemy_Boss_Phynics : Enemy
             case 3:
                 StartCoroutine(SpawnMonster());
                 break;
-
+            
 
         }
     }
     IEnumerator SpreadBullet()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 7), damage);
+        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3,7), damage);
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
     IEnumerator FireSpreadBullet()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 5), damage);
+        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1,5), damage);
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
@@ -108,7 +104,7 @@ public class Enemy_Boss_Phynics : Enemy
     IEnumerator SpawnMonster()
     {
         attack = true;
-        int rand = Random.Range(0, monsters.Length - 1);
+        int rand = Random.Range(0, monsters.Length-1);
         GameObject monster = Instantiate(monsters[rand]);
         yield return new WaitForSeconds(attackDelay);
         attack = false;
@@ -118,7 +114,7 @@ public class Enemy_Boss_Phynics : Enemy
     {
 
         float ypos = player.transform.position.y + 1000;
-        transform.position = new Vector3(360, 40900, 0);
+        transform.position = new Vector3(360, 19900+1000, 0);
     }
 
     public override void Resume()
@@ -130,8 +126,14 @@ public class Enemy_Boss_Phynics : Enemy
     {
         throw new System.NotImplementedException();
     }
+
     private void OnDisable()
     {
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        for(int i = 0;i< enemys.Length; i++)
+        {
+            Destroy(enemys[i]);
+        }
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);
     }

@@ -11,6 +11,7 @@ public class LevelManager : Singleton<LevelManager>
     Player _player;
     float time = 0;
     float height;
+    float p;
     public int level;
     public bool OnBoss;
     public bool bossClear;
@@ -64,7 +65,34 @@ public class LevelManager : Singleton<LevelManager>
     {
         while (true)
         {
-           
+            yield return null;
+            float color_R;
+            float color_G;
+            float color_B;
+            if (level % 3 == 0)
+            {
+                color_R = 255;
+                color_G = 0;
+                color_B = 0;
+            }else if(level % 3 == 1)
+            {
+                color_R = 0;
+                color_G = 255;
+                color_B = 0;
+            }
+            else
+            {
+                color_R = 0;
+                color_G = 0;
+                color_B = 255;
+            }
+            float hp = level * 200;
+            float damage = level * 20;
+            GameObject[] enemys = EnemyManager.Instance.enemys;
+            for(int i = 0; i < enemys.Length; i++)
+            {
+               
+            }
             
         }
     }

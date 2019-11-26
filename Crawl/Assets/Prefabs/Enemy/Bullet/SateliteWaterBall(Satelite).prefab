@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3770577862608553962}
   - component: {fileID: 7865907325314742033}
   m_Layer: 0
-  m_Name: WaterBall(Small) 1
+  m_Name: SateliteWaterBall(Satelite)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -585009347
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4db021400562d60499a8d7c50d9bc554, type: 3}
   m_Color: {r: 0, g: 1, b: 0.980212, a: 0.67058825}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d48c4b2b9655a47865a8335f18214c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 5
 --- !u!70 &7865907325314742033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

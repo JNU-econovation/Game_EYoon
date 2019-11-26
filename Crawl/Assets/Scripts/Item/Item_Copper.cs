@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Item_Copper : Item
 {
+    static int remainCount;
     static int count = 0;
-    static int maxCount = 1000;
+    static int maxCount = 10;
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -14,13 +15,21 @@ public class Item_Copper : Item
     {
         if (collider.gameObject.tag == "Player")
         {
-            IncreaseCount(get_jewerly_multiple);
-            UIManager.Instance.SetCount(1, count);
+            count += get_jewerly_multiple;
+            if (count >= maxCount)
+            {
+                UIManager.Instance.OnSkillUI(1);
+                IncreaseMaxCount(5);
+                count = 0;
+            }
+            remainCount = maxCount - count;
+            UIManager.Instance.SetCount(1, remainCount);
             Destroy(gameObject);
         }
     }
     private void Update()
     {
+        print(remainCount);
         if (isMagent)
         {
             transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);
@@ -55,12 +64,17 @@ public class Item_Copper : Item
         if(count >= maxCount)
         {
             UIManager.Instance.OnSkillUI(0);
-            count -= maxCount;
+            IncreaseMaxCount(5);
+            count = 0;
         }
         
     }
     public override void ResetCount()
     {
         count = 0;
+    }
+    public override int GetRemainCount()
+    {
+        return remainCount;
     }
 }

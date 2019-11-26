@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : Singleton<EnemyManager>
 {
-    [SerializeField] GameObject[] enemys;
+    public GameObject[] enemys;
     [SerializeField] GameObject[] sea_Enemys;
     [SerializeField] GameObject[] sky_Enemys;
     [SerializeField] GameObject[] space_Enemys;
@@ -38,7 +38,14 @@ public class EnemyManager : Singleton<EnemyManager>
                 {
                     enemys = space_Enemys;
                 }
-                spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                float rand = Random.Range(1, 4);
+                if (LevelManager.Instance.OnBoss)
+                    rand = 0;
+                for(int i = 0; i < rand; i++)
+                {
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                }
+                    
             }
             yield return new WaitForSeconds(cycleTime);
 

@@ -134,6 +134,11 @@ public class Enemy_Boss_MotherShip : Enemy
 
     private void OnDisable()
     {
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            Destroy(enemys[i]);
+        }
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);
     }
