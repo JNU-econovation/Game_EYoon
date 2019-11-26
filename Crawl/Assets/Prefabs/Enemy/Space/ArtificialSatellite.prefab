@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8890268736015517683}
   - component: {fileID: 4865703671542693014}
   - component: {fileID: 4958847981814985127}
+  - component: {fileID: 5705007981754277296}
   m_Layer: 12
   m_Name: ArtificialSatellite
   m_TagString: Enemy
@@ -271,3 +272,15 @@ PolygonCollider2D:
       - {x: -2.455, y: -1.88}
       - {x: -2.205, y: -1.73}
       - {x: -2.065, y: -1.66}
+--- !u!114 &5705007981754277296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983224757873147190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a33c74efd338f4493b9d8dcf1e4d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

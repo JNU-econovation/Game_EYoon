@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_BulletDamage : MonoBehaviour
 {
     float damage;
-    public float lifeTime;
+    public float lifeTime = 5;
     private void Start()
     {
         Destroy(gameObject, lifeTime);

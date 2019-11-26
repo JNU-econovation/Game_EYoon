@@ -61,24 +61,27 @@ public class Enemy_Boss_MotherShip : Enemy
     }
     void Attack()
     {
-        int rand = Random.Range(0, 4);
-        print(rand);
-        switch (rand)
+        if (isPaused == false)
         {
-            case 0:
-                StartCoroutine(SpreadBullet());
-                break;
-            case 1:
-                StartCoroutine(FireSpreadBullet());
-                break;
-            case 2:
-                StartCoroutine(FireSatelliteBullet());
-                break;
-            case 3:
-                StartCoroutine(SpawnMonster());
-                break;
+            int rand = Random.Range(0, 4);
+            print(rand);
+            switch (rand)
+            {
+                case 0:
+                    StartCoroutine(SpreadBullet());
+                    break;
+                case 1:
+                    StartCoroutine(FireSpreadBullet());
+                    break;
+                case 2:
+                    StartCoroutine(FireSatelliteBullet());
+                    break;
+                case 3:
+                    StartCoroutine(SpawnMonster());
+                    break;
 
 
+            }
         }
     }
     IEnumerator SpreadBullet()
@@ -124,12 +127,12 @@ public class Enemy_Boss_MotherShip : Enemy
 
     public override void Resume()
     {
-        throw new System.NotImplementedException();
+        isPaused = false;
     }
 
     public override void Pause()
     {
-        throw new System.NotImplementedException();
+        isPaused = true;
     }
 
     private void OnDisable()
@@ -141,9 +144,5 @@ public class Enemy_Boss_MotherShip : Enemy
         }
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);
-    }
-    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
-    {
-        throw new System.NotImplementedException();
     }
 }

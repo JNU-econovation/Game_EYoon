@@ -60,4 +60,8 @@ public class Enemy_Ability : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void SetDamage(float dam)
+    {
+        damage = dam;
+    }
 }
