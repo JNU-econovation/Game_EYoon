@@ -15,9 +15,6 @@ public class LevelManager : Singleton<LevelManager>
     public bool OnBoss;
     public bool bossClear;
     public GameObject[] boss;
-    public GameObject[] sea_Enemys;
-    public GameObject[] sky_Enemys;
-    public GameObject[] space_Enemys;
     public GameObject[] left_BackGround;
     public GameObject[] right_BackGround;
     public Material[] right_BackGround_Material;

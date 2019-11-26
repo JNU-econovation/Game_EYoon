@@ -13,6 +13,7 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] List<GameObject> spawned_enemy = new List<GameObject>() ;
     [SerializeField] GameObject spawnEnemy;
     bool isPause = false;
+    int level;
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,11 +26,27 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (isPause == false)
             {
+                if(level == 0)
+                {
+                    enemys = sea_Enemys;
+                }
+                else if(level == 1)
+                {
+                    enemys = sky_Enemys;
+                }
+                else
+                {
+                    enemys = space_Enemys;
+                }
                 spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
             }
             yield return new WaitForSeconds(cycleTime);
 
         }
+    }
+    private void Update()
+    {
+        level = LevelManager.Instance.level;
     }
     public void WeakEnemy(float n)
     {
