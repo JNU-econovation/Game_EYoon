@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4eed7a43b8bf74ba931fd0f4a6701a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenSprite: {fileID: 21300000, guid: a6eae2c8477948140b6140a09a232a8d, type: 3}
+  brokenSprite: {fileID: 21300000, guid: bd4c15d8f4fa617459562f47a5ecdf16, type: 3}
 --- !u!1 &3328403988235474524
 GameObject:
   m_ObjectHideFlags: 0

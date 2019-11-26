@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Enemy_Sky_Eagle : Enemy
 {
+    [SerializeField] GameObject bullet;
+    [SerializeField] int bulletCount;
     GameObject player;
     Animator animator;
     bool isAttack;
     bool isMade;
+    bool attack;
+    float distance_y;
     float time = 0;
-    public GameObject tornadoBullet;
+    float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     void Start()
     {
+        damage = GetComponent<Enemy_Ability>().GetDamage();
         animator = GetComponent<Animator>();
         player = LevelManager.Instance.GetPlayer();
         SetPosition();
@@ -34,8 +39,10 @@ public class Enemy_Sky_Eagle : Enemy
 
                 else
                 {
+                    float distance_x = transform.position.x - player.transform.position.x;
+                    float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+                    Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
                     animator.SetBool("IsAttack", true);
-                    Instantiate(tornadoBullet, transform.position, new Quaternion(1,0,0.3f,0));
                     isAttack = true;
                 }
             }
@@ -49,6 +56,23 @@ public class Enemy_Sky_Eagle : Enemy
             speed = 0;
         else if (isPaused == false)
             speed = originSpeed;
+        distance_y = transform.position.y - player.transform.position.y;
+        if (distance_y < stopPos)
+        {
+            speed = 0;
+            if (attack == false)
+            {
+
+                StartCoroutine(Attack());
+            }
+            if (transform.position.x < 96 || transform.position.x > 631)
+            {
+                speed_x = speed_x * -1;
+                originSpeed_x = speed_x;
+            }
+            transform.Translate(speed_x, 0, 0);
+
+        }
         transform.Translate(speed, -speed, 0);
        
     }
