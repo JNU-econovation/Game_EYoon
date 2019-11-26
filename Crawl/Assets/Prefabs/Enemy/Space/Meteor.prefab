@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4753411326420325264}
   - component: {fileID: 8343098010966793002}
   - component: {fileID: 2028047059202069645}
+  - component: {fileID: 6830572306000253230}
   m_Layer: 12
   m_Name: Meteor
   m_TagString: Enemy
@@ -171,3 +172,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6830572306000253230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112580075955567080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a33c74efd338f4493b9d8dcf1e4d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7080076226987157072}
   - component: {fileID: 8813299335874478127}
   - component: {fileID: 4803589180365405002}
+  - component: {fileID: 7800307596042757199}
   m_Layer: 12
   m_Name: SpaceTrash
   m_TagString: Enemy
@@ -149,5 +150,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b312811c027e6b47819e492898bc854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7800307596042757199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919729280359774954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a33c74efd338f4493b9d8dcf1e4d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
