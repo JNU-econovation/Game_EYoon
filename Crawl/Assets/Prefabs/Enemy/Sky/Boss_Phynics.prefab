@@ -343,9 +343,9 @@ MonoBehaviour:
   lifeTime: 0
   stopPos: 600
   bullets:
-  - {fileID: 1616508231755592856, guid: 76bf7fefcc5a67748905fd29728dfc4d, type: 3}
-  - {fileID: 104602958496106513, guid: 3733d87747529f445990386397ddf02c, type: 3}
-  - {fileID: 1701947526139874746, guid: c24186469b3685e43b70bad433badee0, type: 3}
+  - {fileID: 8599854496747723507, guid: 86e180d0583dc4846870012145ca1c97, type: 3}
+  - {fileID: 705628902513633691, guid: d18345900cb501b4e99bfba2c552f674, type: 3}
+  - {fileID: 7613358609501136715, guid: 504fe463d49e5ff4795c86b22cca9774, type: 3}
   monsters:
   - {fileID: 3882285213180971415, guid: 85c0516921aef1749affac893471a387, type: 3}
   - {fileID: 8192208896058266191, guid: 20efa3ed73020e646be0946bca546bfb, type: 3}

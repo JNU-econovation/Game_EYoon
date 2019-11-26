@@ -5,9 +5,10 @@ using UnityEngine;
 public class Enemy_BulletDamage : MonoBehaviour
 {
     float damage;
+    public float lifeTime;
     private void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, lifeTime);
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

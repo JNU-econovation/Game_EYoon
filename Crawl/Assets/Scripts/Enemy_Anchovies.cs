@@ -36,6 +36,10 @@ public class Enemy_Anchovies : Enemy
     {
         isPaused = true;
     }
+    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
+    {
+        throw new System.NotImplementedException();
+    }
     public override void Resume()
     {
         isPaused = false;

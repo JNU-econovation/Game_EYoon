@@ -45,6 +45,7 @@ abstract public class Enemy : Singleton<Enemy>
     {
         return OnAttack;
     }
+    abstract public void SetAbillity(float color_R,float color_G, float color_B, float hp, float damage, float bulletCount);
     abstract public void Resume();
     abstract public void Pause();
     abstract public void SetPosition();

@@ -72,7 +72,10 @@ public class Enemy_Flymonster : Enemy
         float ypos = player.transform.position.y + 1000;
         transform.position = new Vector3(dir, ypos, 0);
     }
-
+    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
+    {
+        throw new System.NotImplementedException();
+    }
     IEnumerator Attack()
     {
         if (isPaused == false)

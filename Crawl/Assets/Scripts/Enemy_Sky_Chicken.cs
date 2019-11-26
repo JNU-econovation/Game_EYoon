@@ -36,4 +36,9 @@ public class Enemy_Sky_Chicken : Enemy
         float ypos = player.transform.position.y + 1000;
         transform.position = new Vector3(dir, ypos, 0);
     }
+
+    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -44,4 +44,9 @@ public class Enemy_Sky_Pigeon : Enemy
         }
 
     }
+
+    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
+    {
+        throw new System.NotImplementedException();
+    }
 }

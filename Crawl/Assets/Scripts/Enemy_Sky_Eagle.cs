@@ -67,4 +67,9 @@ public class Enemy_Sky_Eagle : Enemy
         transform.position = new Vector3(-100, ypos, 0);
 
     }
+
+    public override void SetAbillity(float color_R, float color_G, float color_B, float hp, float damage, float bulletCount)
+    {
+        throw new System.NotImplementedException();
+    }
 }
