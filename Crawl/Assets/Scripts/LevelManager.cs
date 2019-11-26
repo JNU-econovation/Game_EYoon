@@ -60,6 +60,14 @@ public class LevelManager : Singleton<LevelManager>
         }
                
     }
+    IEnumerator ChangeEnemy_By_Level()
+    {
+        while (true)
+        {
+           
+            
+        }
+    }
     IEnumerator LevelUp()
     {
         while (true)
