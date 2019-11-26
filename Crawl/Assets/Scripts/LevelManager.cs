@@ -37,6 +37,7 @@ public class LevelManager : Singleton<LevelManager>
         StartCoroutine(AppearBoss1());
         StartCoroutine(AppearBoss2());
         StartCoroutine(AppearBoss3());
+        StartCoroutine(ChangeEnemy_By_Level());
     }
     void Update()
     {
@@ -88,11 +89,16 @@ public class LevelManager : Singleton<LevelManager>
             }
             float hp = level * 200;
             float damage = level * 20;
+
             GameObject[] enemys = EnemyManager.Instance.enemys;
-            for(int i = 0; i < enemys.Length; i++)
+            if(level >= 3)
             {
-               
+                for (int i = 0; i < enemys.Length; i++)
+                {
+                    enemys[i].GetComponent<Enemy_Space>().SetAbility(color_R, color_G, color_B, hp, damage);
+                }
             }
+           
             
         }
     }
