@@ -9,7 +9,6 @@ public class Player_Attack : MonoBehaviour
     float attackSpeed;
     int targetNum;
     float attack_range; // 실제 반지름 = range * 45
-    public Collider2D[] enemy_colliders;
     public LayerMask layerMask;
     bool[] isAttack = new bool[4];   
     bool isFire;
@@ -51,7 +50,6 @@ public class Player_Attack : MonoBehaviour
             }
         }
         attack_range = Player_AbilityManager.Instance.GetAttackRange();
-        enemy_colliders = Physics2D.OverlapCircleAll(transform.position, circle_Move.getRadius(), layerMask, 0, 20);
         
     }
 
@@ -83,6 +81,7 @@ public class Player_Attack : MonoBehaviour
             if (i >= targetList.Count)
                 break;
             targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
+            Player_AbilityManager.Instance.Drain(damage);
             if (isFire)
             {
                 StartCoroutine(Fire(targetList[i]));
@@ -160,10 +159,6 @@ public class Player_Attack : MonoBehaviour
         isFire = true;
     }
     
-    public Collider2D[] GetEnemyTarget()
-    {
-        return enemy_colliders;
-    }
     public float RealAttack()
     {
         float damage = Player_AbilityManager.Instance.GetAttack();
