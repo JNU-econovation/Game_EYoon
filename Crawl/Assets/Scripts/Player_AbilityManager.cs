@@ -205,6 +205,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
                 {
                     StartCoroutine(Rebirth());
                 }
+                else
+                {
+                    Manager.Instance.EndGame();
+                }
                 HP = 0;
             }
             return n - defense;

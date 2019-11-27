@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 50
   damage: 50
 --- !u!114 &7218174274531216983
 MonoBehaviour:
