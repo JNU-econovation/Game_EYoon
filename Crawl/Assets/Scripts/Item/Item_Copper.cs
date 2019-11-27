@@ -19,7 +19,7 @@ public class Item_Copper : Item
             if (count >= maxCount)
             {
                 UIManager.Instance.OnSkillUI(1);
-                IncreaseMaxCount(5);
+                IncreaseMaxCount(2);
                 count = 0;
             }
             remainCount = maxCount - count;
@@ -52,6 +52,8 @@ public class Item_Copper : Item
         maxCount -= n;
         if (maxCount <= 1)
             maxCount = 1;
+        remainCount = maxCount - count;
+        UIManager.Instance.SetCount(1, remainCount);
     }
     public override void IncreaseMaxCount(int n)
     {

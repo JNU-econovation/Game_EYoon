@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 abstract public class Enemy : Singleton<Enemy>
 {
     protected float damage;
@@ -13,6 +13,7 @@ abstract public class Enemy : Singleton<Enemy>
     Enemy_Ability enemy_Ability;
     public bool OnAttack;
     public float lifeTime;
+    public GameObject enemy_Damage;
     void Awake()
     {
         
@@ -40,6 +41,13 @@ abstract public class Enemy : Singleton<Enemy>
             float reflectDamage = trueDamage * Player_AbilityManager.Instance.GetReflectDamage() / 100;
             GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);
         }
+    }
+    public void ShowDamage(float damage, Color color)
+    {
+        GameObject hudText = Instantiate(enemy_Damage);
+        hudText.GetComponent<TextMeshPro>().color = color;
+        hudText.transform.position = transform.position + new Vector3(100, 100, 0);
+        hudText.GetComponent<Enemy_DamageText>().damage = damage;
     }
     public bool GetOnAttack()
     {

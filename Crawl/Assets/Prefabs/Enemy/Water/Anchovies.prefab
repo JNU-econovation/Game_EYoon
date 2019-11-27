@@ -99,6 +99,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &4420252438803703265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &8788075243161413603
 MonoBehaviour:
@@ -285,6 +287,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &6865719052956204593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &8273844560080411638
 MonoBehaviour:
@@ -471,6 +475,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &661563949508306812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &1047240458322575940
 MonoBehaviour:
@@ -657,6 +663,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &70928468006464322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &7106864370127317876
 MonoBehaviour:
@@ -843,6 +851,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &6708431427879479079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,6 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &5825322645170483179
 MonoBehaviour:
@@ -1029,6 +1039,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &3599737689250477721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &5381119091345427767
 MonoBehaviour:
@@ -1128,6 +1140,7 @@ GameObject:
   - component: {fileID: 7171529069292317636}
   - component: {fileID: 885344695646437642}
   - component: {fileID: 1239007046655772929}
+  - component: {fileID: 2116184391014418770}
   m_Layer: 12
   m_Name: Anchovies
   m_TagString: Enemy
@@ -1175,6 +1188,8 @@ MonoBehaviour:
   speed_x: 1.5
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
+    type: 3}
 --- !u!212 &885344695646437642
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1235,7 +1250,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  HP: 10
+  damage: 5
+--- !u!114 &2116184391014418770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171529069292317641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec99fbee4e1426499b68e227dc69211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
+    type: 3}
+  hudPos: {fileID: 0}
 --- !u!1 &7171529069728858971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1366,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &4838223040515324217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &8848248027167868053
 MonoBehaviour:
@@ -1521,6 +1554,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &775699365646506808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &249116275458256851
 MonoBehaviour:
@@ -1707,6 +1742,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &2522875697418271566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,6 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &6029579675126069461
 MonoBehaviour:
@@ -1893,6 +1930,7 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 0}
 --- !u!114 &1241731929641409849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +1943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
   damage: 5
 --- !u!114 &6018554027193299701
 MonoBehaviour:

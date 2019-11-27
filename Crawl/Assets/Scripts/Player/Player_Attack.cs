@@ -74,24 +74,30 @@ public class Player_Attack : MonoBehaviour
     }
     IEnumerator Attack_First_Enemy(int n)
     {
-        isAttack[0] = true;
-        for(int i = 0; i < n; i++)
+        try
         {
-            float damage = RealAttack();
-            if (i >= targetList.Count)
-                break;
-            targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
-            Player_AbilityManager.Instance.Drain(damage);
-            if (isFire)
+            isAttack[0] = true;
+            for (int i = 0; i < n; i++)
             {
-                StartCoroutine(Fire(targetList[i]));
+                float damage = RealAttack();
+                if (i >= targetList.Count)
+                    break;
+                targetList[i].GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255));
+                targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
+                
+                Player_AbilityManager.Instance.Drain(damage);
+                if (isFire)
+                {
+                    StartCoroutine(Fire(targetList[i]));
+                }
+                if (isFreeze)
+                {
+                    StartCoroutine(Freeze(targetList[i]));
+                }
+
             }
-            if (isFreeze)
-            {
-                StartCoroutine(Freeze(targetList[i]));
-            }
-            
         }
+        catch (ArgumentOutOfRangeException e) { }
         if (targetList.Count == 0)
         {
             isAttack[0] = false;
@@ -103,6 +109,7 @@ public class Player_Attack : MonoBehaviour
             yield return new WaitForSeconds(1 / attackSpeed);
             isAttack[0] = false;
         }
+        
        
     }
     
@@ -115,8 +122,10 @@ public class Player_Attack : MonoBehaviour
                 if (enemy != null)
                 {
                     float hp = enemy.GetComponent<Enemy_Ability>().GetHp();
-                    enemy.GetComponent<Enemy_Ability>().DecreaseHP(hp * 0.2f);
-                    Player_AbilityManager.Instance.Drain(hp * 0.2f);
+                    float damage = hp * 0.2f;
+                    enemy.GetComponent<Enemy_Ability>().DecreaseHP(damage);
+                    Player_AbilityManager.Instance.Drain(damage);
+                    enemy.GetComponent<Enemy>().ShowDamage(damage, new Color(255,0,0));
                 }
                 yield return new WaitForSeconds(1.0f);
             }

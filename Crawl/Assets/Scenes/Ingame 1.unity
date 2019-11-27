@@ -12492,6 +12492,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643448745}
   m_CullTransparentMesh: 0
+--- !u!1 &645367548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645367549}
+  - component: {fileID: 645367550}
+  m_Layer: 11
+  m_Name: HudPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &645367549
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645367548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1730619494}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 90, y: -107}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!212 &645367550
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645367548}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cf35119f7b53e1c419bb1c7cb3af6dda, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &650267769
 GameObject:
   m_ObjectHideFlags: 0
@@ -20773,11 +20857,11 @@ MonoBehaviour:
   - {fileID: 1650935537771593501, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   - {fileID: 5919729280359774954, guid: 410bbe68a338e3f45ab3ab9090bd7b31, type: 3}
   - {fileID: 5112580075955567080, guid: d53ef5529819997488f959749f59a52c, type: 3}
-  - {fileID: 5983224757873147190, guid: f4bc5cd45a4e72846bc9ef0a33613e2c, type: 3}
-  - {fileID: 5112580075955567080, guid: d53ef5529819997488f959749f59a52c, type: 3}
+  - {fileID: 8649991682226890490, guid: c639ba736634da1448e5f98ab9184c41, type: 3}
+  - {fileID: 3675973210530525467, guid: 3fc5808985821f04e9d0629a8fcbe06c, type: 3}
   enemyWeight:
-  - 15
-  - 15
+  - 0
+  - 30
   - 15
   - 15
   - 15
@@ -33891,6 +33975,7 @@ RectTransform:
   m_LocalScale: {x: 0.025, y: 0.025, z: 1}
   m_Children:
   - {fileID: 1372200230}
+  - {fileID: 645367549}
   m_Father: {fileID: 8622369420676396041}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33955,7 +34040,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -421199737
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -44492,7 +44577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3835a0d67c38ff045b927abe70501ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 4
+  attackRange: 5
 --- !u!50 &7297810245982041496
 Rigidbody2D:
   serializedVersion: 4
@@ -44725,7 +44810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cee4d1bb4b5d4499270c7e6c78c67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 100
+  attack: 10
   defense: 0
   avoidance: 0
   critical_Percentage: 0
@@ -44764,6 +44849,9 @@ MonoBehaviour:
   hpText: {fileID: 1727449279}
   hpImage: {fileID: 1345548974}
   staminaImage: {fileID: 1345481300}
+  player_Damage: {fileID: 1670606087646206790, guid: 470e247391978f447aeb0ed1ecf4d9b4,
+    type: 3}
+  hudPos: {fileID: 645367549}
 --- !u!114 &8622369420676396091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44776,7 +44864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1e4147e722c5346a96d9517c10e2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_colliders: []
   layerMask:
     serializedVersion: 2
     m_Bits: 4096
