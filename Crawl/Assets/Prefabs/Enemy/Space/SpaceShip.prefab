@@ -127,7 +127,7 @@ MonoBehaviour:
   OnAttack: 0
   lifeTime: 6
   firePos: 300
-  bullet: {fileID: 8599854496747723507, guid: 86e180d0583dc4846870012145ca1c97, type: 3}
+  bullet: {fileID: 8333289753172430098, guid: 7341cec118ba9404cb6b849878e6f72f, type: 3}
 --- !u!60 &2008318636814115809
 PolygonCollider2D:
   m_ObjectHideFlags: 0

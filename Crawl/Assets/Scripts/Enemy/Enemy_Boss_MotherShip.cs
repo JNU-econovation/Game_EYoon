@@ -6,7 +6,7 @@ public class Enemy_Boss_MotherShip : Enemy
 {
     public float stopPos = 371;
     protected GameObject player;
-    public GameObject[] bullets;
+    public GameObject bullet;
     public GameObject[] monsters;
     protected float distance_y;
     protected bool attack = false;
@@ -71,12 +71,9 @@ public class Enemy_Boss_MotherShip : Enemy
                     StartCoroutine(SpreadBullet());
                     break;
                 case 1:
-                    StartCoroutine(FireSpreadBullet());
+                    StartCoroutine(RepeatAttack());
                     break;
                 case 2:
-                    StartCoroutine(FireSatelliteBullet());
-                    break;
-                case 3:
                     StartCoroutine(SpawnMonster());
                     break;
 
@@ -87,28 +84,32 @@ public class Enemy_Boss_MotherShip : Enemy
     IEnumerator SpreadBullet()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 7), damage);
+        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, Random.Range(3, 7), damage);
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
-    IEnumerator FireSpreadBullet()
+    IEnumerator RepeatAttack()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 5), damage);
+        for (int i = 0; i < Random.Range(5, 10); i++)
+        {
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, Random.Range(1, 5), damage);
+            yield return new WaitForSeconds(0.2f);
+        }
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
 
-    IEnumerator FireSatelliteBullet()
-    {
-        attack = true;
-        float distance_x = transform.position.x - player.transform.position.x;
-        float distance_y = transform.position.y - player.transform.position.y;
-        float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullets[2], angle, damage);
-        yield return new WaitForSeconds(attackDelay);
-        attack = false;
-    }
+    //IEnumerator FireSatelliteBullet()
+    //{
+    //    attack = true;
+    //    float distance_x = transform.position.x - player.transform.position.x;
+    //    float distance_y = transform.position.y - player.transform.position.y;
+    //    float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+    //    Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
+    //    yield return new WaitForSeconds(attackDelay);
+    //    attack = false;
+    //}
     IEnumerator SpawnMonster()
     {
         attack = true;
