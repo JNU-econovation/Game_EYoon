@@ -38,7 +38,7 @@ public class EnemyManager : Singleton<EnemyManager>
                 {
                     enemys = space_Enemys;
                 }
-                float rand = Random.Range(1, 4);
+                float rand = Random.Range(1, 3);
                 if (LevelManager.Instance.OnBoss)
                     rand = 0;
                 for(int i = 0; i < rand; i++)

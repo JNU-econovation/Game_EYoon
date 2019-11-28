@@ -13,7 +13,6 @@ public class Enemy_Ability : MonoBehaviour
     private void Start()
     {
         enemy = GetComponent<Enemy>();
-        HP = maxHP;
         originMaxHP = maxHP;
         originDamage = damage;
     }

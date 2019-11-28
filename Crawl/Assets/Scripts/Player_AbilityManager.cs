@@ -35,7 +35,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     Player_Shield player_Shield;
     Player_Invincibility player_Invincibility;
     Player _player;
-    
+    Player_DamageText player_DamageText;
     private void Start()
     {
         rebirthHP = maxHP * rebirth_hp_Percent;
@@ -44,6 +44,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         player_Shield = GetComponent<Player_Shield>();
         player_Invincibility = GetComponent<Player_Invincibility>();
         _player = GetComponent<Player>();
+        player_DamageText = GetComponentInChildren<Player_DamageText>();
     }
 
     private void Update()
@@ -177,25 +178,36 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         if (player_Booster.GetOnBooster())
             return 0;
         if (player_Invincibility.GetIsInvincible())
+        {
+            Player_UIManager.Instance.TakeDamage(0);
             return 0;
+        } 
+            
         if(player_Shield.GetShieldCount() > 0)
         {
             player_Shield.Shield();
+            Player_UIManager.Instance.TakeDamage(0);
             return 0;
         }
         float rand = Random.Range(0, 100);
         if(rand <= avoidance)
         {
+            Player_UIManager.Instance.TakeDamage(0);
             return 0; //빗나감
         }
         else
         {
             HP -= (n - defense);
+            Player_UIManager.Instance.TakeDamage(n-defense);
             if (HP <= 0)
             {
                 if (isRebirth)
                 {
                     StartCoroutine(Rebirth());
+                }
+                else
+                {
+                    Manager.Instance.EndGame();
                 }
                 HP = 0;
             }

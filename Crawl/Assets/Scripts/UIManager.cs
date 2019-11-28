@@ -14,7 +14,7 @@ public class UIManager : Singleton<UIManager>
     public float height;
     float time = 0;
     GameObject player;
-  
+    public GameObject gameover_UI;
     void Start()
     {
         item[0] = new Item_Copper();

@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  HP: 10
+  damage: 5
 --- !u!114 &6728297085475027018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +132,8 @@ MonoBehaviour:
   speed_x: 1.5
   OnAttack: 0
   lifeTime: 6
+  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
+    type: 3}
 --- !u!114 &6728297085475027061
 MonoBehaviour:
   m_ObjectHideFlags: 0
