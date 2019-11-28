@@ -8,7 +8,7 @@ public class UI_GameOver : MonoBehaviour
     
     public Image backGround;
     public float alphaSpeed;
-    public GameObject texts;
+    public GameObject[] images;
     Color alpha;
     float time = 0;
     void Start()
@@ -24,11 +24,9 @@ public class UI_GameOver : MonoBehaviour
         backGround.color = alpha;
         if (time >= 1.5f)
         {
-            texts.SetActive(true);
-            int touchCount = Input.touchCount;
-            if(touchCount > 0 || Input.GetKeyDown(KeyCode.A))
+            for(int i = 0; i < images.Length; i++)
             {
-                SceneManager.LoadScene("Main");
+                images[i].SetActive(true);
             }
         }
     }

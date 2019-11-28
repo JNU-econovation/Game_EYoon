@@ -1140,7 +1140,6 @@ GameObject:
   - component: {fileID: 7171529069292317636}
   - component: {fileID: 885344695646437642}
   - component: {fileID: 1239007046655772929}
-  - component: {fileID: 2116184391014418770}
   m_Layer: 12
   m_Name: Anchovies
   m_TagString: Enemy
@@ -1252,21 +1251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   damage: 5
---- !u!114 &2116184391014418770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171529069292317641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec99fbee4e1426499b68e227dc69211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
-    type: 3}
-  hudPos: {fileID: 0}
 --- !u!1 &7171529069728858971
 GameObject:
   m_ObjectHideFlags: 0
