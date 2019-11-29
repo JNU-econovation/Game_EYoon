@@ -73,9 +73,6 @@ public class Enemy_Boss_Phynics : Enemy
                     StartCoroutine(FireSpreadBullet());
                     break;
                 case 2:
-                    StartCoroutine(FireSatelliteBullet());
-                    break;
-                case 3:
                     StartCoroutine(SpawnMonster());
                     break;
 
@@ -99,16 +96,7 @@ public class Enemy_Boss_Phynics : Enemy
         attack = false;
     }
 
-    IEnumerator FireSatelliteBullet()
-    {
-        attack = true;
-        float distance_x = transform.position.x - player.transform.position.x;
-        float distance_y = transform.position.y - player.transform.position.y;
-        float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullets[2], angle, damage);
-        yield return new WaitForSeconds(attackDelay);
-        attack = false;
-    }
+
     IEnumerator SpawnMonster()
     {
         attack = true;
