@@ -347,7 +347,6 @@ MonoBehaviour:
   bullets:
   - {fileID: 3941690603800373990, guid: 9e5a8276ce5e18040be356d63820ced7, type: 3}
   - {fileID: 9201086142042892680, guid: 2b44eceed25a74244922f0f375264c97, type: 3}
-  - {fileID: 7613358609501136715, guid: 504fe463d49e5ff4795c86b22cca9774, type: 3}
   monsters:
   - {fileID: 3882285213180971415, guid: 85c0516921aef1749affac893471a387, type: 3}
   - {fileID: 8192208896058266191, guid: 20efa3ed73020e646be0946bca546bfb, type: 3}

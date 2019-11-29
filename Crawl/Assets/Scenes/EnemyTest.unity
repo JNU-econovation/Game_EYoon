@@ -489,6 +489,7 @@ MonoBehaviour:
   - {fileID: 1106326575}
   heightText: {fileID: 230935627}
   height: 0
+  gameover_UI: {fileID: 0}
 --- !u!114 &12805026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44087,6 +44088,8 @@ MonoBehaviour:
   hpText: {fileID: 970687378}
   hpImage: {fileID: 1042068446}
   staminaImage: {fileID: 1382561781}
+  player_Damage: {fileID: 0}
+  hudPos: {fileID: 0}
 --- !u!114 &2108455469
 MonoBehaviour:
   m_ObjectHideFlags: 0
