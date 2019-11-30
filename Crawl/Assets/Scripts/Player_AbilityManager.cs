@@ -24,10 +24,11 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     float maxAvoidance = 80.0f;
     [SerializeField] float HP;
     [SerializeField] float stamina;
-    float maxHP = 100;
+    float maxHP = 1000;
     float maxStamina = 100;
     float rebirthHP;
     float rebirth_hp_Percent = 0.2f;
+    float staminaZeroTime = 0;
     Player_Attack_Range player_Attack_Range;
     bool isCritical = false;
     bool isRebirth;
@@ -47,14 +48,25 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         player_DamageText = GetComponentInChildren<Player_DamageText>();
     }
 
+    IEnumerator DecreaseHPByStamina()
+    {
+        while (true)
+        {
+            if(stamina == 0)
+            {
+                if(staminaZeroTime >= 1.0f)
+                    DecreaseHP(1f);
+            }
+            yield return null;
+        }
+    }
     private void Update()
     {
         if (!_player.GetIsPause())
         {
             moveSpeed += Time.deltaTime;          
             DecreseStamina(Time.deltaTime / 2);
-            if (stamina == 0)
-                DecreaseHP(0.01f);
+            staminaZeroTime += Time.deltaTime;
             if (isCritical)
             {
                 time += Time.deltaTime;
