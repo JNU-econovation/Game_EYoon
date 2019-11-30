@@ -8,7 +8,7 @@ public class Enemy_BulletDamage : MonoBehaviour
     public float lifeTime = 5;
     private void Start()
     {
-        Destroy(gameObject, lifeTime);
+        
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -18,7 +18,15 @@ public class Enemy_BulletDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void OnEnable()
+    {
+        StartCoroutine(DestroySelf());   
+    }
+    IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
     public void Setdamage(float dam)
     {
         damage = dam;

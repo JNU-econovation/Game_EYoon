@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1419403819066452175}
   - component: {fileID: 827832443298693153}
   - component: {fileID: 2348145734639886678}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Bullet_BlowFish
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -27,7 +27,8 @@ public class Enemy_Boss_MotherShip : Enemy
     void Update()
     {
         image.Rotate(0, 0, spinSpeed);
-       
+        image.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+
         if (isPaused)
         {
             speed = 0;
@@ -91,9 +92,12 @@ public class Enemy_Boss_MotherShip : Enemy
     IEnumerator RepeatAttack()
     {
         attack = true;
+
         for (int i = 0; i < Random.Range(5, 10); i++)
         {
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullet, Random.Range(1, 5), damage);
+            float distance_x = transform.position.x - player.transform.position.x;
+            float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+            Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
             yield return new WaitForSeconds(0.2f);
         }
         yield return new WaitForSeconds(attackDelay);
@@ -113,8 +117,11 @@ public class Enemy_Boss_MotherShip : Enemy
     IEnumerator SpawnMonster()
     {
         attack = true;
-        int rand = Random.Range(0, monsters.Length - 1);
-        GameObject monster = Instantiate(monsters[rand]);
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            int rand = Random.Range(0, monsters.Length - 1);
+            GameObject monster = Instantiate(monsters[rand]);
+        }
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
