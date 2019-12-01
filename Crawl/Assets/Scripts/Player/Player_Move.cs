@@ -9,6 +9,7 @@ public class Player_Move : MonoBehaviour
     Vector3 _moveVector;
     Transform _transform;
     JoyStick joyStick;
+    Player_Booster player_Booster;
     Player_Circle_Move player_Circle_Move;
     Player _player;
     float yPos;
@@ -18,6 +19,7 @@ public class Player_Move : MonoBehaviour
     {
         _player = GetComponent<Player>();
         player_Circle_Move = GetComponentInChildren<Player_Circle_Move>();
+        player_Booster = GetComponent<Player_Booster>();
         joyStick = GameObject.FindGameObjectWithTag("JoyStick").GetComponent<JoyStick>();
         _transform = transform;
         _moveVector = Vector3.zero;
@@ -65,6 +67,11 @@ public class Player_Move : MonoBehaviour
     {
         float h = joyStick.GetHorizontalValue();
         float v = joyStick.GetVerticalValue();
+        if (player_Booster.GetOnBooster())
+        {
+            v = 0;
+        }
+
         if ((bossClear || !OnBoss) && v <= 0)
             v = 0;
         yPos = v;

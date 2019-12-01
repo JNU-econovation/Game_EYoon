@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Manager : Singleton<Manager>
 {
     public GameObject[] objects;
@@ -11,18 +11,9 @@ public class Manager : Singleton<Manager>
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void EndGame()
     {
-        for(int i = 0; i < objects.Length; i++)
-        {
-            objects[i].SetActive(false);
-        }
         LevelManager.Instance.Pause();
-        UIManager.Instance.gameover_UI.SetActive(true);
+        SceneManager.LoadScene("GameOver");
     }
 }

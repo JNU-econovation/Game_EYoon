@@ -5,17 +5,38 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class UI_GameOver : MonoBehaviour
 {
-    
+    public Text bestScore;
+    public Text score;
     public Image backGround;
     public float alphaSpeed;
     public GameObject[] images;
     Color alpha;
     float time = 0;
+    static float height;
+    static float bestHeight;
     void Start()
     {
         alpha = backGround.color;
     }
+    /*
+    private void OnEnable()
+    {
+        height = UIManager.Instance.GetHeight();
+        bestHeight = UIManager.Instance.GetBestHeight();
+        score.text = height.ToString();
+        if(height >= bestHeight)
+        {
+            bestHeight = height;
+            UIManager.Instance.SetBestHeight(height);
+            bestScore.text = height.ToString();
+        }
 
+    }
+    */
+    public float GetBestHeight()
+    {
+        return bestHeight;
+    }
     // Update is called once per frame
     void Update()
     {

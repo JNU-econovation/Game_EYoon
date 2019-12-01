@@ -28,7 +28,6 @@ public class Enemy_DamageText : MonoBehaviour
         alpha.a = Mathf.Lerp(alpha.a, 0, Time.deltaTime * alphaSpeed);
         damageText.color = alpha;
 
-
     }
 
     void DestroyObject()
