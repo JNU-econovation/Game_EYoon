@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8008277378684000765}
   - component: {fileID: 739992760800005341}
   - component: {fileID: 5315649548195374397}
-  - component: {fileID: 2260080680325513800}
+  - component: {fileID: 4596005358565670750}
   m_Layer: 0
-  m_Name: Air Slash 2 100x100
+  m_Name: Bullet_Eagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ PolygonCollider2D:
       - {x: 0.11, y: -0.48}
       - {x: 0.16, y: -0.42}
       - {x: 0.24, y: -0.26999998}
---- !u!114 &2260080680325513800
+--- !u!114 &4596005358565670750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7065807116595169142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0622de069749a4e8646157a31d7cab, type: 3}
+  m_Script: {fileID: 11500000, guid: fe26d4111402024479a1ebc3b4d90b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5

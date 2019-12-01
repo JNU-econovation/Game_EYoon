@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3151299960477946512}
   - component: {fileID: 1138094881512705632}
-  - component: {fileID: 9120408449709822397}
   - component: {fileID: 5599880287567353892}
   - component: {fileID: 1498674946670405855}
+  - component: {fileID: 1304515495283702778}
   m_Layer: 0
   m_Name: WaterBall(Small)
   m_TagString: Untagged
@@ -82,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9120408449709822397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8599854496747723507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0622de069749a4e8646157a31d7cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5599880287567353892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +111,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00028686525, y: -0.000012207031}
   m_Size: {x: 12.584308, y: 12.699927}
   m_Direction: 0
+--- !u!114 &1304515495283702778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599854496747723507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe26d4111402024479a1ebc3b4d90b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

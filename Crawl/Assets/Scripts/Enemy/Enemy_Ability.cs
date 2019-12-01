@@ -39,6 +39,12 @@ public class Enemy_Ability : MonoBehaviour
         if (HP <= 0)
         {
             HP = 0;
+            if (LevelManager.Instance.level == 0)
+                EffectManager.Instance.SpawnWaterDeath(transform);
+            else if (LevelManager.Instance.level == 1)
+                EffectManager.Instance.SpawnSkyDeath(transform);
+            else if (LevelManager.Instance.level >= 2)
+                EffectManager.Instance.SpawnSpaceDeath(transform);
             Destroy(gameObject);
         }
     }
@@ -56,6 +62,12 @@ public class Enemy_Ability : MonoBehaviour
         else if(HP <= 0)
         {
             HP = 0;
+            if (LevelManager.Instance.level == 0)
+                EffectManager.Instance.SpawnWaterDeath(transform);
+            else if (LevelManager.Instance.level == 1)
+                EffectManager.Instance.SpawnSkyDeath(transform);
+            else if (LevelManager.Instance.level >= 2)
+                EffectManager.Instance.SpawnSpaceDeath(transform);
             Destroy(gameObject);
         }
     }

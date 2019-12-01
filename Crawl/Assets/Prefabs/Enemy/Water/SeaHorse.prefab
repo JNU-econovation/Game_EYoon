@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8403220584485686564}
   - component: {fileID: 8403220584485686565}
   - component: {fileID: 8403220584485686566}
-  - component: {fileID: 8403220584485686571}
   - component: {fileID: 8403220584485686570}
   - component: {fileID: 8403220584485686569}
   - component: {fileID: 2633363127947867521}
+  - component: {fileID: 2784225078980557899}
   m_Layer: 12
   m_Name: SeaHorse
   m_TagString: Enemy
@@ -103,32 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &8403220584485686571
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8403220584485686567}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.044050515, y: -0.02200228}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 2.68}
-    newSize: {x: 1.6, y: 2.68}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1154436, y: 2.195929}
-  m_EdgeRadius: 0
 --- !u!114 &8403220584485686570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +150,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b312811c027e6b47819e492898bc854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &2784225078980557899
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403220584485686567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 2.68}
+    newSize: {x: 1.6, y: 2.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42, y: -0.03}
+      - {x: 0.44, y: 0.099999994}
+      - {x: 0.52, y: 0.089999996}
+      - {x: 0.61, y: 0.17999999}
+      - {x: 0.61, y: 0.32999998}
+      - {x: 0.59, y: 0.38}
+      - {x: 0.53, y: 0.37}
+      - {x: 0.34, y: 0.29}
+      - {x: 0.28, y: 0.53999996}
+      - {x: 0.34, y: 0.52}
+      - {x: 0.42, y: 0.58}
+      - {x: 0.44, y: 0.68}
+      - {x: 0.22, y: 0.96}
+      - {x: 0.26999998, y: 1.04}
+      - {x: 0.26999998, y: 1.11}
+      - {x: 0.22, y: 1.13}
+      - {x: 0.06, y: 1.13}
+      - {x: 0.01, y: 1.15}
+      - {x: -0.089999996, y: 1.15}
+      - {x: -0.12, y: 1.09}
+      - {x: -0.26999998, y: 1.15}
+      - {x: -0.32999998, y: 1.15}
+      - {x: -0.35, y: 1.12}
+      - {x: -0.35999998, y: 0.82}
+      - {x: -0.39999998, y: 0.78999996}
+      - {x: -0.45999998, y: 0.71}
+      - {x: -0.45999998, y: 0.57}
+      - {x: -0.39, y: 0.51}
+      - {x: -0.45, y: 0.35}
+      - {x: -0.59999996, y: 0.39}
+      - {x: -0.64, y: 0.32999998}
+      - {x: -0.64, y: 0.16}
+      - {x: -0.55, y: 0.08}
+      - {x: -0.47, y: 0}
+      - {x: -0.44, y: -0.37}
+      - {x: -0.42, y: -0.45}
+      - {x: -0.29999998, y: -0.78}
+      - {x: -0.31, y: -0.93}
+      - {x: -0.22, y: -1.0799999}
+      - {x: -0.099999994, y: -1.16}
+      - {x: 0.04, y: -1.16}
+      - {x: 0.12, y: -1.14}
+      - {x: 0.26999998, y: -0.93}
+      - {x: 0.32999998, y: -0.59}
+      - {x: 0.42, y: -0.39}

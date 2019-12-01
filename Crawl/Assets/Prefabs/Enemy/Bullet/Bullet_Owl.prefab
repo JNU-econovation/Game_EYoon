@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3006842405583503385}
   - component: {fileID: 8843753834678965685}
   - component: {fileID: 8961581515558893602}
-  - component: {fileID: 6758274544450600883}
   - component: {fileID: 3730039277547615515}
+  - component: {fileID: 5543456214867011952}
   m_Layer: 0
-  m_Name: yellowBar
+  m_Name: Bullet_Owl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,18 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
---- !u!114 &6758274544450600883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8657402659710426183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0622de069749a4e8646157a31d7cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &3730039277547615515
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +124,16 @@ PolygonCollider2D:
       - {x: 0.53499997, y: -2.5149999}
       - {x: 0.53499997, y: 2.375}
       - {x: -0.295, y: 2.375}
+--- !u!114 &5543456214867011952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8657402659710426183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe26d4111402024479a1ebc3b4d90b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

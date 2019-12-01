@@ -2,29 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_UFO_bullet : MonoBehaviour
+abstract public class Enemy_UFO_bullet : MonoBehaviour
 {
-    
-    float speed = 5;
-    float originSpeed;
+    public float speed = 5;
+    protected float originSpeed;
+    protected bool isPaused = false;
     // Update is called once per frame
-    private void Start()
+    private void Awake()
     {
-        originSpeed = speed;        
+        originSpeed = speed;
     }
     void Update()
     {
         transform.Translate(0,-speed,0);
     }
 
-    public void Stop()
-    {
-        speed = 0;
-    }
+    abstract public void Stop();
 
-    public void Resume()
-    {
-        speed = originSpeed;
-    }
+    abstract public void Resume();
+ 
     
 }

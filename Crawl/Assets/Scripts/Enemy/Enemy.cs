@@ -31,7 +31,14 @@ abstract public class Enemy : Singleton<Enemy>
     IEnumerator DestroySelf()
     {
         yield return new WaitForSeconds(lifeTime);
+        if (LevelManager.Instance.level == 0)
+            EffectManager.Instance.SpawnWaterDeath(transform);
+        else if (LevelManager.Instance.level == 1)
+            EffectManager.Instance.SpawnSkyDeath(transform);
+        else if (LevelManager.Instance.level >= 2)
+            EffectManager.Instance.SpawnSpaceDeath(transform);
         Destroy(gameObject);
+        
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

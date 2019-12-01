@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 525989515258154956}
   - component: {fileID: 5405960195269476099}
   m_Layer: 0
-  m_Name: SpreadWaterBall 1
+  m_Name: SpreadFireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
