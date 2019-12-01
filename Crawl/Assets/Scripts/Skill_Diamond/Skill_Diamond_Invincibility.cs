@@ -56,6 +56,10 @@ public class Skill_Diamond_Invincibility : Skill_Diamond
     }
     public override string GetSkillText()
     {
-        return "무적" + "(" + GetVariation() + "초)";
+        return "무적";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "초";
     }
 }

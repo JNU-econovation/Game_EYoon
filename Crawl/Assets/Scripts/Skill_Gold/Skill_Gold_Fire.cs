@@ -56,6 +56,10 @@ public class Skill_Gold_Fire : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "적 불태우기" + " (" + GetVariation() + "초)";
+        return "적 불태우기";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "초";
     }
 }

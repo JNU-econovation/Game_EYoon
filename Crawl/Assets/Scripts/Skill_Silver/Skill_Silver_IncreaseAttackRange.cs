@@ -53,6 +53,10 @@ public class Skill_Silver_IncreaseAttackRange : Skill_Silver
     }
     public override string GetSkillText()
     {
-        return "사거리 증가" + "(" + GetVariation() + ")";
+        return "사거리 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation();
     }
 }

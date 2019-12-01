@@ -58,6 +58,10 @@ public class Skill_Diamond_IncreaseRubyPercent : Skill_Diamond
     }
     public override string GetSkillText()
     {
-        return "루비 확률 증가" + "(" + GetVariation() + "%)";
+        return "루비 확률 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

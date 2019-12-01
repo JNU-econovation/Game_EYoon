@@ -57,6 +57,10 @@ public class Skill_Copper_Booster : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "부스터" + " (" + GetVariation() + "초)";
+        return "부스터";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "초";
     }
 }

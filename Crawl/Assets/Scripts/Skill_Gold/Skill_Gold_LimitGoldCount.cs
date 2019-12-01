@@ -53,6 +53,10 @@ public class Skill_Gold_LimitGoldCount : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "금 제한 개수 하락" + "(" + GetVariation() + ")";
+        return "금 뽑기 개수 하락";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "개";
     }
 }

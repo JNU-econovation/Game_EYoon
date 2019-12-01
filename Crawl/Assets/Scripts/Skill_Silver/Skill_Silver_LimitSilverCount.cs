@@ -53,6 +53,10 @@ public class Skill_Silver_LimitSilverCount : Skill_Silver
     }
     public override string GetSkillText()
     {
-        return "은 제한 개수 하락" + "(" + GetVariation() + ")";
+        return "은 뽑기 개수 하락";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "개";
     }
 }

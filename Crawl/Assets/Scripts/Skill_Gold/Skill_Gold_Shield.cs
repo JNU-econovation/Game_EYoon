@@ -56,6 +56,10 @@ public class Skill_Gold_Shield : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "쉴드 " + "(" + GetVariation() + "회)";
+        return "보호막";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "회";
     }
 }

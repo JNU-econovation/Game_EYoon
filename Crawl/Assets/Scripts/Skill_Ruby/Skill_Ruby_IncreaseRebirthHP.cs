@@ -53,6 +53,10 @@ public class Skill_Ruby_IncreaseRebirthHP : Skill_Ruby
     }
     public override string GetSkillText()
     {
-        return "부활 시 체력 증가" + "(최대 체력의 " + GetVariation() + "%)";
+        return "부활 시 체력 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "최대 체력 " + GetVariation() + "%";
     }
 }

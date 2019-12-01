@@ -44,4 +44,8 @@ public class Skill_Diamond_InitializeMoveSpeed : Skill_Diamond
     {
         return "이동 속도 초기화";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

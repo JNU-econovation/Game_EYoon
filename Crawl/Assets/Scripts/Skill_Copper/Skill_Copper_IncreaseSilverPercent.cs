@@ -57,6 +57,10 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "은 확률 증가" + "(" + GetVariation() + "%)";
+        return "은 확률 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

@@ -45,4 +45,8 @@ public class Skill_Gold_SelectDiamond : Skill_Gold
     {
         return "다이아 뽑기 1회";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

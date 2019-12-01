@@ -59,6 +59,10 @@ public class Skill_Gold_IncreaseDefense : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "방어력 증가" + "(현재의 " + GetVariation() + "%)";
+        return "방어력 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "현재 " + GetVariation() + "%";
     }
 }

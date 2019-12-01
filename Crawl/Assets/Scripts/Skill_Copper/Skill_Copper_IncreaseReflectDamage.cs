@@ -54,6 +54,10 @@ public class Skill_Copper_IncreaseReflectDamage : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "반사 데미지 증가" + "(" + GetVariation() + "%)";
+        return "반사데미지 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

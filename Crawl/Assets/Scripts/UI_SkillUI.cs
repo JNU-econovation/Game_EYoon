@@ -5,9 +5,12 @@ using UnityEngine;
 public class UI_SkillUI : MonoBehaviour
 {
     List<UI_SkillButton> skillButtons = new List<UI_SkillButton>();
+    GameObject[] slots;
     [SerializeField] int jewerlyNum;
     private void Awake()
     {
+        slots = GameObject.FindGameObjectsWithTag("Slot");
+       
         UI_SkillButton[] buttons = GetComponentsInChildren<UI_SkillButton>();
         foreach (var button in buttons)
         {
@@ -17,6 +20,10 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].SetActive(true);
+        }
         LevelManager.Instance.Pause();
         ChooseSkill();
     }

@@ -42,6 +42,10 @@ public class Skill_Ruby_Pet : Skill_Ruby
     }
     public override string GetSkillText()
     {
-        return "같은 스텟의 펫 소환";
+        return "펫 소환";
+    }
+    public override string GetSkillFigure()
+    {
+        return "";
     }
 }

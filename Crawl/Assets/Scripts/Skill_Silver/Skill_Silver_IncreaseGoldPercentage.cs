@@ -59,6 +59,10 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
 
     public override string GetSkillText()
     {
-        return "금 확률 증가" + "(" + GetVariation() + "%)";
+        return "금 확률 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

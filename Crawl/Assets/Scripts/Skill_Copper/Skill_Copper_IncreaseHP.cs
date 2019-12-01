@@ -54,6 +54,10 @@ public class Skill_Copper_IncreaseHP : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "체력 증가" + "(" + GetVariation() + ")";
+        return "체력 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation();
     }
 }

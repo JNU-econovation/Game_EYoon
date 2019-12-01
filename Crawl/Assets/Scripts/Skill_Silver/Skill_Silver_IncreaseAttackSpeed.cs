@@ -53,6 +53,10 @@ public class Skill_Silver_IncreaseAttackSpeed : Skill_Silver
     }
     public override string GetSkillText()
     {
-        return "공격 속도 증가" + "(" + GetVariation() + ")";
+        return "공격 속도 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation();
     }
 }

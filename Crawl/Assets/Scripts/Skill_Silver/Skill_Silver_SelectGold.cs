@@ -45,4 +45,8 @@ public class Skill_Silver_SelectGold : Skill_Silver
     {
         return "금 뽑기 1회";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

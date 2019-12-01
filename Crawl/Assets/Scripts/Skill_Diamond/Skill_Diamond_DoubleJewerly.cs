@@ -53,6 +53,10 @@ public class Skill_Diamond_DoubleJewerly : Skill_Diamond
     }
     public override string GetSkillText()
     {
-        return "보석 획득량 증가" + "(" + GetVariation() + "배)";
+        return "보석 획득량 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "배";
     }
 }

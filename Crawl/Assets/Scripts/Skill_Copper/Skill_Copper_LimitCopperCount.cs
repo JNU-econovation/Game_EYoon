@@ -53,6 +53,10 @@ public class Skill_Copper_LimitCopperCount : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "동 뽑기 개수 하락" + "(" + GetVariation() + ")";
+        return "동 뽑기 개수 하락";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "개";
     }
 }

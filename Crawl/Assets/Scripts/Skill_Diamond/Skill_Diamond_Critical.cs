@@ -54,6 +54,10 @@ public class Skill_Diamond_Critical : Skill_Diamond
     }
     public override string GetSkillText()
     {
-        return "공격시 치명타" + "(" + GetVariation() + "초)";
+        return "공격시 치명타";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "초";
     }
 }

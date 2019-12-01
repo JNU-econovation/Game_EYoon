@@ -45,4 +45,8 @@ public class Skill_Copper_SelectSilver : Skill_Copper
     {
         return "은 뽑기 1회";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

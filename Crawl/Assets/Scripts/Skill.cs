@@ -7,6 +7,7 @@ abstract public class Skill : MonoBehaviour
     protected GameObject skillUI;
     protected float[] variation = new float[3];
     protected string skillText;
+    protected string skillFigure;
     // protected int skill_Count = 0;
     protected GameObject player;
     private void Start()
@@ -32,4 +33,5 @@ abstract public class Skill : MonoBehaviour
     abstract public void SkillFunction();
 
     abstract public string GetSkillText();
+    abstract public string GetSkillFigure();
 }

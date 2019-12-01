@@ -58,6 +58,10 @@ public class Skill_Gold_IncreaseDiaPercent : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "다이아 확률 증가" + "(" + GetVariation() + "%)";
+        return "다이아 확률 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

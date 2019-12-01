@@ -9,11 +9,14 @@ public class UI_SkillButton : MonoBehaviour
     public GameObject slot0;
     float slot0_Pos;
     public Text skillText;
+    public Text skillFigure;
     UI_SkillText ui_SkillText;
+    UI_SkillFigure uI_SkillFigure;
     bool isSkillChosen;
     bool isStop;
     private void Awake()
     {
+        uI_SkillFigure = skillFigure.GetComponent<UI_SkillFigure>();
         ui_SkillText = skillText.GetComponent<UI_SkillText>();
         UI_Slot[] ui_slots = GetComponentsInChildren<UI_Slot>();
         foreach (var slot in ui_slots)
@@ -33,12 +36,18 @@ public class UI_SkillButton : MonoBehaviour
             {
                
                 float distance = Mathf.Abs(slots[skillNum].transform.localPosition.y - slot0_Pos);              
-                if (distance <= 20.0f)
+                if (distance <= 30.0f)
                 {
                     isStop = true;
                     slots[skillNum].transform.localPosition = new Vector3(0, 0, 0);
                     slots[skillNum].OnButton();
-                    ui_SkillText.SetText(slots[skillNum].GetComponent<Skill>().GetSkillText());                   
+                    for(int i = 0;i< slots.Count; i++)
+                    {
+                        if (i != skillNum)
+                            slots[i].gameObject.SetActive(false);
+                    }
+                    ui_SkillText.SetText(slots[skillNum].GetComponent<Skill>().GetSkillText());
+                    uI_SkillFigure.SetText(slots[skillNum].GetComponent<Skill>().GetSkillFigure());
                     isSkillChosen = false;
                 }
             }

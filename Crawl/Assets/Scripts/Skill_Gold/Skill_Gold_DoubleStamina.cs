@@ -56,6 +56,10 @@ public class Skill_Gold_DoubleStamina : Skill_Gold
     }
     public override string GetSkillText()
     {
-        return "스태미나 증가" + "(현재의 " + GetVariation() + "배)";
+        return "스태미나 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "현재 " + GetVariation() + "배";
     }
 }

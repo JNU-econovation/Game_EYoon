@@ -53,6 +53,10 @@ public class Skill_Silver_IncreaseAvoidance : Skill_Silver
     }
     public override string GetSkillText()
     {
-        return "회피율 증가" + "(" + GetVariation() + "%)";
+        return "회피율 증가";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "%";
     }
 }

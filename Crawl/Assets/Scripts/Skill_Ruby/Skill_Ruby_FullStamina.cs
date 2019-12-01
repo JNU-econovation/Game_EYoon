@@ -45,4 +45,8 @@ public class Skill_Ruby_FullStamina : Skill_Ruby
     {
         return "스태미나 모두 회복";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

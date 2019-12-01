@@ -45,4 +45,8 @@ public class Skill_Diamond_SelectRuby : Skill_Diamond
     {
         return "루비 뽑기 1회";
     }
+    public override string GetSkillFigure()
+    {
+        return "";
+    }
 }

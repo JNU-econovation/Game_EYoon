@@ -15,6 +15,7 @@ public class UI_Slot : MonoBehaviour
     UI_SkillButton uI_SkillButton;
     private void Start()
     {
+        gameObject.SetActive(true);
         button = GetComponent<Button>();
         skill = GetComponent<Skill>();
         uI_SkillButton = GetComponentInParent<UI_SkillButton>();

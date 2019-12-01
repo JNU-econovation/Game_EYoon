@@ -57,6 +57,10 @@ public class Skill_Copper_BombAttack : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "폭탄 공격" + "(" + GetVariation() + "회)";
+        return "폭탄 공격";
+    }
+    public override string GetSkillFigure()
+    {
+        return "" + GetVariation() + "회";
     }
 }
