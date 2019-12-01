@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7660845341113590405}
   - component: {fileID: 5629556581545082485}
-  - component: {fileID: 4573778740887773608}
   - component: {fileID: 891050623416379441}
   - component: {fileID: 6472141633643613273}
+  - component: {fileID: 1264150449669072299}
   m_Layer: 0
-  m_Name: Bulllet
+  m_Name: Bullet_Phynics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4573778740887773608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3941690603800373990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0622de069749a4e8646157a31d7cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &891050623416379441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,3 +260,16 @@ PolygonCollider2D:
       - {x: -0.055, y: 2.23}
       - {x: -0.055, y: 2.4099998}
       - {x: -0.085, y: 3.11}
+--- !u!114 &1264150449669072299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941690603800373990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe26d4111402024479a1ebc3b4d90b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

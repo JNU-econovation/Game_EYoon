@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3406606323980354929}
   - component: {fileID: 807916449687280001}
-  - component: {fileID: 8822318369708672604}
   - component: {fileID: 5281558575207239621}
   - component: {fileID: 7347001541399915027}
+  - component: {fileID: 6749315179726400081}
   m_Layer: 0
-  m_Name: Bulllet
+  m_Name: Bullet_SpaceShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8822318369708672604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333289753172430098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0622de069749a4e8646157a31d7cab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5281558575207239621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +128,16 @@ PolygonCollider2D:
       - {x: 0.275, y: -1.5}
       - {x: 0.275, y: 1.4599999}
       - {x: 0.125, y: 1.73}
+--- !u!114 &6749315179726400081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333289753172430098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe26d4111402024479a1ebc3b4d90b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

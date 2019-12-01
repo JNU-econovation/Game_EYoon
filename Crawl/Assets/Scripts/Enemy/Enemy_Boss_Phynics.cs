@@ -84,14 +84,22 @@ public class Enemy_Boss_Phynics : Enemy
     IEnumerator SpreadBullet()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 7), damage);
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 7), damage);
+            yield return new WaitForSeconds(0.3f);
+        }
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
     IEnumerator FireSpreadBullet()
     {
         attack = true;
-        Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 5), damage);
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 5), damage);
+            yield return new WaitForSeconds(0.3f);
+        }
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
