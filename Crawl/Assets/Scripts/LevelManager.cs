@@ -42,7 +42,7 @@ public class LevelManager : Singleton<LevelManager>
     void Update()
     {
         time += Time.deltaTime;
-        height = UIManager.Instance.height;
+        height = UIManager.Instance.GetHeight();
         level = (int)(height / 1000);
 
         if (OnBoss)

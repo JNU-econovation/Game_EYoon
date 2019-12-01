@@ -46,6 +46,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         player_Invincibility = GetComponent<Player_Invincibility>();
         _player = GetComponent<Player>();
         player_DamageText = GetComponentInChildren<Player_DamageText>();
+        StartCoroutine(DecreaseHPByStamina());
     }
 
     IEnumerator DecreaseHPByStamina()
@@ -55,7 +56,11 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
             if(stamina == 0)
             {
                 if(staminaZeroTime >= 1.0f)
+                {
+                    staminaZeroTime = 0;
                     DecreaseHP(1f);
+                }
+                    
             }
             yield return null;
         }
