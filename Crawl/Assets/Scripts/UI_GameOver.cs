@@ -18,7 +18,7 @@ public class UI_GameOver : MonoBehaviour
     {
         alpha = backGround.color;
     }
-
+    /*
     private void OnEnable()
     {
         height = UIManager.Instance.GetHeight();
@@ -32,6 +32,7 @@ public class UI_GameOver : MonoBehaviour
         }
 
     }
+    */
     public float GetBestHeight()
     {
         return bestHeight;

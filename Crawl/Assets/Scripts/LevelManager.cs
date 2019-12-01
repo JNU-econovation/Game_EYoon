@@ -15,6 +15,7 @@ public class LevelManager : Singleton<LevelManager>
     public int level;
     public bool OnBoss;
     public bool bossClear;
+    public bool isPause;
     public GameObject[] boss;
     public GameObject[] left_BackGround;
     public GameObject[] right_BackGround;
@@ -201,13 +202,14 @@ public class LevelManager : Singleton<LevelManager>
         EnemyManager.Instance.Pause();
         _player.Pause();
         bomb_Attack.Pause();
-
+        isPause = true;
     }
     public void Resume()
     {
         EnemyManager.Instance.Resume();
         _player.Resume();
         bomb_Attack.Resume();
+        isPause = false;
     }
     
 }

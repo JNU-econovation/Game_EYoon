@@ -67,6 +67,11 @@ public class Player_Move : MonoBehaviour
     {
         float h = joyStick.GetHorizontalValue();
         float v = joyStick.GetVerticalValue();
+        if (player_Booster.GetOnBooster())
+        {
+            v = 0;
+        }
+
         if ((bossClear || !OnBoss) && v <= 0)
             v = 0;
         yPos = v;
@@ -80,7 +85,6 @@ public class Player_Move : MonoBehaviour
     }
     public void Move()
     {
-        if(!player_Booster.GetOnBooster())
-            _transform.Translate(_moveVector * moveSpeed * Time.deltaTime);
+        _transform.Translate(_moveVector * moveSpeed * Time.deltaTime);
     }
 }
