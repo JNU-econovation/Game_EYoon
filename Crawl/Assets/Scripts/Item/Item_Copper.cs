@@ -15,6 +15,7 @@ public class Item_Copper : Item
     {
         if (collider.gameObject.tag == "Player")
         {
+            SoundManager.Instance.PlayItemSound();
             count += get_jewerly_multiple;
             if (count >= maxCount)
             {
