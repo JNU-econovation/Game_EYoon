@@ -8,6 +8,7 @@ public class LevelManager : Singleton<LevelManager>
     GameObject player;
     Player_Move player_Move;
     Player_Bomb_Attack bomb_Attack;
+    Player_Attack_Range player_Attack_Range;
     Player _player;
     float time = 0;
     float height;
@@ -28,7 +29,7 @@ public class LevelManager : Singleton<LevelManager>
         //player = Instantiate(playerPrefab);
         player_Move = player.GetComponent<Player_Move>();
         bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
-        
+        player_Attack_Range = player.GetComponentInChildren<Player_Attack_Range>();
     }
     private void Start()
     {
@@ -61,10 +62,10 @@ public class LevelManager : Singleton<LevelManager>
                 player.transform.position = new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, 59300.0f, 60000.0f), 0);
             }           
         }
-               
     }
     IEnumerator ChangeEnemy_By_Level()
     {
+        int k = 0;
         while (true)
         {
             yield return null;
@@ -73,20 +74,20 @@ public class LevelManager : Singleton<LevelManager>
             float color_B;
             if (level % 3 == 0)
             {
-                color_R = 255;
+                color_R = 55 + k;
                 color_G = 0;
                 color_B = 0;
             }else if(level % 3 == 1)
             {
                 color_R = 0;
-                color_G = 255;
+                color_G = 55 + k;
                 color_B = 0;
             }
             else
             {
                 color_R = 0;
                 color_G = 0;
-                color_B = 255;
+                color_B = 55 + k;
             }
             float hp = level * 200;
             float damage = level * 20;
@@ -99,8 +100,10 @@ public class LevelManager : Singleton<LevelManager>
                     enemys[i].GetComponent<Enemy_Space>().SetAbility(color_R, color_G, color_B, hp, damage);
                 }
             }
-           
-            
+            k += 30;
+            if (k >= 200)
+                k = 200;
+
         }
     }
     IEnumerator LevelUp()
@@ -160,6 +163,7 @@ public class LevelManager : Singleton<LevelManager>
             if (height >= 955)
             {
                 OnBoss = true;
+                player_Attack_Range.tempRange = player_Attack_Range.GetAttackRange();
                 Instantiate(boss[0]);
                 break;
             }           

@@ -21,10 +21,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     float maxDrain = 30;
     int maxTargetNum = 5;
     float maxAttackSpeed = 5;
-    float maxAvoidance = 80.0f;
+    float maxAvoidance = 60.0f;
     [SerializeField] float HP;
     [SerializeField] float stamina;
-    float maxHP = 1000;
+    float maxHP = 100;
     float maxStamina = 100;
     float rebirthHP;
     float rebirth_hp_Percent = 0.2f;

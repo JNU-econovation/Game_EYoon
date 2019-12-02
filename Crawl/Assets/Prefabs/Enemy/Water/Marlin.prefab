@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  damage: 5
+  damage: 10
 --- !u!114 &5002044455669337578
 MonoBehaviour:
   m_ObjectHideFlags: 0

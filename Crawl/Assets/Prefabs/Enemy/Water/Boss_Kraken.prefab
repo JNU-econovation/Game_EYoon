@@ -367,4 +367,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
-  damage: 10
+  damage: 20

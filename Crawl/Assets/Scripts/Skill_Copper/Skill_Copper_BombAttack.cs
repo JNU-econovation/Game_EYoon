@@ -5,6 +5,8 @@ using UnityEngine;
 public class Skill_Copper_BombAttack : Skill_Copper
 {
     static int skill_Count = 0;
+    static int count = 0;
+    int maxCount = 5;
     Player_Bomb_Attack bomb_Attack;
     private void Start()
     {
@@ -15,7 +17,16 @@ public class Skill_Copper_BombAttack : Skill_Copper
     }
     public override void SkillFunction()
     {        
-        IncreaseCount();       
+        IncreaseCount();
+        count++;
+        if (count >= maxCount)
+        {
+            count = maxCount;
+            Bomb.Instance.IncreaseDamage(10);
+        }
+        bomb_Attack.ThrowBomb(count);
+        
+        /*
         if (skill_Count < 3)
         {
             bomb_Attack.ThrowBomb((int)variation[0]);
@@ -27,7 +38,7 @@ public class Skill_Copper_BombAttack : Skill_Copper
         else if (5 <= skill_Count)
         {
             bomb_Attack.ThrowBomb((int)variation[2]);
-        }
+        }*/
         skillUI.SetActive(false);
     }
   
@@ -61,6 +72,6 @@ public class Skill_Copper_BombAttack : Skill_Copper
     }
     public override string GetSkillFigure()
     {
-        return "" + GetVariation() + "회";
+        return "" + count + "회";
     }
 }

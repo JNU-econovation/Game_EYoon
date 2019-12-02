@@ -19677,17 +19677,17 @@ PrefabInstance:
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.4198113
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.7411765
+      value: 0.5202432
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.7411765
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458063, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -19703,17 +19703,17 @@ PrefabInstance:
     - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.4198113
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.7411765
+      value: 0.5202432
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.7411765
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -23633,9 +23633,9 @@ MonoBehaviour:
   - {fileID: 244346198692116984, guid: a406a2f88bb870f4bb32d2d2c7241b6b, type: 3}
   - {fileID: 2180284236890626630, guid: 0e214f29d8d140d41b56fcb8d7bcfeb7, type: 3}
   itemWeight:
-  - 0
-  - 0
   - 100
+  - 0
+  - 0
   - 0
   - 0
   item_Copper: {fileID: 0}
@@ -23767,15 +23767,15 @@ MonoBehaviour:
   - {fileID: 3882285213180971415, guid: 85c0516921aef1749affac893471a387, type: 3}
   - {fileID: 548512769018673043, guid: 9fd982e0efea16f43b3652488aa1893f, type: 3}
   space_Enemys:
-  - {fileID: 5983224757873147190, guid: f4bc5cd45a4e72846bc9ef0a33613e2c, type: 3}
+  - {fileID: 6716983394755140116, guid: bc9da1705eab0e940853dc5f8e479455, type: 3}
   - {fileID: 1650935537771593501, guid: b2935fe869126814090f09b28263f6f1, type: 3}
   - {fileID: 5919729280359774954, guid: 410bbe68a338e3f45ab3ab9090bd7b31, type: 3}
   - {fileID: 5112580075955567080, guid: d53ef5529819997488f959749f59a52c, type: 3}
   - {fileID: 8649991682226890490, guid: c639ba736634da1448e5f98ab9184c41, type: 3}
   - {fileID: 3675973210530525467, guid: 3fc5808985821f04e9d0629a8fcbe06c, type: 3}
   enemyWeight:
-  - 0
-  - 30
+  - 15
+  - 15
   - 15
   - 15
   - 15
@@ -23798,11 +23798,11 @@ MonoBehaviour:
   offset: {x: 0, y: 0}
   force: 30
   itemWeight:
+  - 77.78
   - 20
-  - 20
-  - 20
-  - 20
-  - 20
+  - 2
+  - 0.2
+  - 0.02
   items:
   - {fileID: 8842380338261678929, guid: 96a4f176cc0aef543ba514503fa4f0de, type: 3}
   - {fileID: 5724366146165443629, guid: d21fa36b93dc56e49bf65c10d515666f, type: 3}
@@ -49335,6 +49335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 5
+  tempRange: 0
 --- !u!50 &7297810245982041496
 Rigidbody2D:
   serializedVersion: 4
@@ -49569,9 +49570,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 10
   defense: 0
-  avoidance: 0
-  critical_Percentage: 0
-  critical_Hit: 357
+  avoidance: 5
+  critical_Percentage: 5
+  critical_Hit: 150
   attackRange: 0
   attackSpeed: 1
   moveSpeed: 300

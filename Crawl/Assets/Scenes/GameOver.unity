@@ -277,6 +277,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1043412245
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 16
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+--- !u!84 &1408182440
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 16
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+--- !u!84 &1495588307
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 16
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1921491681
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +455,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &2018302158
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 512
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 16
+  m_MipMap: 0
+  m_GenerateMips: 0
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1050064777509946298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,7 +6767,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e31d53590dab1ad409c9795f462872fb, type: 2}
+  m_Material: {fileID: 2100000, guid: ae7cff74ca1d7dc4f8352c999bd00b77, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -6648,7 +6776,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e6b257df1fc170045a0326da420438e7, type: 2}
+    m_Font: {fileID: 12800000, guid: dee7c584088b7054785b7b830cc58957, type: 2}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -6695,12 +6823,12 @@ MonoBehaviour:
   SoftFontTextureCase: 0
   customCharacters: 
   eShader: {fileID: 7200000, guid: 07390d8d94046e34a80885a3db0019bd, type: 3}
-  SoftMaterial: {fileID: 2100000, guid: e31d53590dab1ad409c9795f462872fb, type: 2}
+  SoftMaterial: {fileID: 2100000, guid: ae7cff74ca1d7dc4f8352c999bd00b77, type: 2}
   faceOptions:
     use: 0
     useOld: 0
     r_mainTexture: {fileID: 0}
-    mainTexture: {fileID: 2800000, guid: 0a87001368eda6f4da80544644b1b9f1, type: 3}
+    mainTexture: {fileID: 2800000, guid: 2e6de6dd9cfd9fe4e8b4fab601fcdfcd, type: 3}
     r_combinedTexture: {fileID: 0}
     outputUV:
     - X: 0
@@ -7278,7 +7406,7 @@ MonoBehaviour:
     csOptions:
       use: 1
       useOld: 0
-      r_mainTexture: {fileID: 0}
+      r_mainTexture: {fileID: 1495588307}
       blur: 24
       color: {r: 1, g: 0, b: 0, a: 1}
       blurOld: 0
@@ -8016,7 +8144,7 @@ MonoBehaviour:
     strOptions:
       use: 1
       useOld: 0
-      r_mainTexture: {fileID: 0}
+      r_mainTexture: {fileID: 2018302158}
       size: 2
       sizeOld: 2
       pos: 1
@@ -8060,8 +8188,8 @@ MonoBehaviour:
     bevOptions:
       use: 1
       useOld: 0
-      r_mainTexture: {fileID: 0}
-      r_shadowTexture: {fileID: 0}
+      r_mainTexture: {fileID: 1043412245}
+      r_shadowTexture: {fileID: 1408182440}
       size: 13
       sizeOld: 2
       depth: 500
@@ -8688,7 +8816,7 @@ MonoBehaviour:
     use: 1
     useOld: 1
     r_mainTexture: {fileID: 0}
-    r_shadowTexture: {fileID: 0}
+    r_shadowTexture: {fileID: 1408182440}
     size: 13
     sizeOld: 13
     depth: 500
@@ -9469,9 +9597,9 @@ MonoBehaviour:
     scale: 100
     gradPosition: 2
   SourceMaterial: {fileID: 0}
-  FolderGUID: 993265e7044076d49a004b3580474588
+  FolderGUID: dd87c18dccdfee5418645c7474e60cbe
   SourceFont: {fileID: 12800000, guid: 4f77abc1086d71744b33d570ba76e9c2, type: 3}
-  SoftFont: {fileID: 12800000, guid: e6b257df1fc170045a0326da420438e7, type: 2}
+  SoftFont: {fileID: 12800000, guid: dee7c584088b7054785b7b830cc58957, type: 2}
 --- !u!222 &1050064778814866877
 CanvasRenderer:
   m_ObjectHideFlags: 0
