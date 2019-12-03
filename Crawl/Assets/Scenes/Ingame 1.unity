@@ -23774,12 +23774,12 @@ MonoBehaviour:
   - {fileID: 8649991682226890490, guid: c639ba736634da1448e5f98ab9184c41, type: 3}
   - {fileID: 3675973210530525467, guid: 3fc5808985821f04e9d0629a8fcbe06c, type: 3}
   enemyWeight:
-  - 15
-  - 15
-  - 15
-  - 15
-  - 15
-  - 25
+  - 0
+  - 0
+  - 0
+  - 0
+  - 100
+  - 0
   cycleTime: 3
   spawned_enemy: []
   spawnEnemy: {fileID: 0}

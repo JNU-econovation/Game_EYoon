@@ -12714,8 +12714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592af2627eb27d4478e7426c9b257f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bestScore: {fileID: 1050064777509946300}
-  score: {fileID: 1050064779270823480}
+  bestScore_Text: {fileID: 1050064777509946300}
+  score_Text: {fileID: 1050064779270823480}
   backGround: {fileID: 5452318824856022648}
   alphaSpeed: 0.002
   images:

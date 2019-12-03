@@ -11,8 +11,7 @@ public class UIManager : Singleton<UIManager>
     Item[] item = new Item[5];
     SkillManager skillManager;
     public Text heightText;
-    static float height = 0;
-    static float bestHeight;
+    float height = 0;
     float time = 0;
     GameObject player;
     public GameObject gameover_UI;
@@ -24,7 +23,6 @@ public class UIManager : Singleton<UIManager>
         item[3] = new Item_Diamond();
         item[4] = new Item_Ruby();
         player = LevelManager.Instance.GetPlayer();
-        bestHeight = gameover_UI.GetComponent<UI_GameOver>().GetBestHeight();
         StartCoroutine(Change_JewerlyTextColor());
     }
        
@@ -60,14 +58,6 @@ public class UIManager : Singleton<UIManager>
         jewerlyCountText[grade - 1].text = n.ToString();        
     }
 
-    public float GetBestHeight()
-    {
-        return bestHeight;
-    }
-    public void SetBestHeight(float n)
-    {
-        bestHeight = n;
-    }
     public float GetHeight()
     {
         return height;

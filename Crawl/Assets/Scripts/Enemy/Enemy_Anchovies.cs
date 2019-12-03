@@ -24,7 +24,7 @@ public class Enemy_Anchovies : Enemy
             speed = 0;
         else if (isPaused == false)
             speed = originSpeed;
-        transform.Translate(5 * direction, 0, 0);
+        transform.Translate(speed * direction, 0, 0);
 
         if (transform.position.x < -300 || transform.position.x > 811)
         {

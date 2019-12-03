@@ -26,7 +26,6 @@ public class LevelManager : Singleton<LevelManager>
     {
         player = playerPrefab;
         _player = player.GetComponent<Player>();
-        //player = Instantiate(playerPrefab);
         player_Move = player.GetComponent<Player_Move>();
         bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
         player_Attack_Range = player.GetComponentInChildren<Player_Attack_Range>();
