@@ -6,6 +6,7 @@ public class Player_Shield : MonoBehaviour
 {
     bool isShield;
     static int shieldCount;
+    public GameObject shield;
 
     public void Shield()
     {
@@ -21,5 +22,11 @@ public class Player_Shield : MonoBehaviour
     public int GetShieldCount()
     {
         return shieldCount;
+    }
+    public IEnumerator ShieldEffect()
+    {
+        shield.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        shield.SetActive(false);
     }
 }

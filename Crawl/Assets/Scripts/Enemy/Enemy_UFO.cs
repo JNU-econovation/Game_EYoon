@@ -27,7 +27,10 @@ public class Enemy_UFO : Enemy
     {
         float distance_y = transform.position.y - player.transform.position.y;
         if (isPaused)
+        {
             speed = 0;
+            num = savedNum;
+        }
         else if (isPaused == false)
             speed = originSpeed;
         transform.Translate(5 * direction, 0, 0);
@@ -54,6 +57,7 @@ public class Enemy_UFO : Enemy
     public override void Pause()
     {
         isPaused = true;
+        savedNum = num;
     }
     public override void Resume()
     {

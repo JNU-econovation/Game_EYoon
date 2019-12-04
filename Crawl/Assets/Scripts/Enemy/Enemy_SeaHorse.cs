@@ -60,6 +60,7 @@ public class Enemy_SeaHorse : Enemy
     {
 
         isPaused = true;
+        savedNum = num;
     }
     public override void Resume()
     {

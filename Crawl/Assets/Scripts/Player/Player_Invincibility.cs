@@ -9,6 +9,7 @@ public class Player_Invincibility : MonoBehaviour
     bool isInvincible;
     float delayTime;
     float maxTime;
+    [SerializeField] GameObject Invincibility;
     void Start()
     {
         _player = GetComponent<Player>();
@@ -21,10 +22,12 @@ public class Player_Invincibility : MonoBehaviour
             if (isInvincible)
             {
                 time += Time.deltaTime;
+                Invincibility.SetActive(true);
             }
             if (time >= maxTime)
             {
                 isInvincible = false;
+                Invincibility.SetActive(false);
             }
         }
     }

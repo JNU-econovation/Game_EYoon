@@ -15,17 +15,23 @@ public class Enemy_Sky_Seagull : Enemy
     void Update()
     {
         if (isPaused)
+        {
             speed = 0;
+            DestroyControll();
+        }
         else if (isPaused == false)
             speed = originSpeed;
         transform.Translate(speed, 0, 0);
     }
     public override void Pause()
-    {       
+    {
+        isPaused = true;
+        savedNum = num;
     }
 
     public override void Resume()
-    { 
+    {
+        isPaused = false;
     }
 
     public override void SetPosition()

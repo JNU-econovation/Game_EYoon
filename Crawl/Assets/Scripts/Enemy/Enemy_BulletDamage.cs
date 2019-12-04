@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy_BulletDamage : MonoBehaviour
 {
     float damage;
-    public float lifeTime = 5;
     private void Start()
     {
         
@@ -18,15 +17,7 @@ public class Enemy_BulletDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnEnable()
-    {
-        StartCoroutine(DestroySelf());   
-    }
-    IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
-    }
+
     public void Setdamage(float dam)
     {
         damage = dam;

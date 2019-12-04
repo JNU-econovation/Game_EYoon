@@ -6,6 +6,7 @@ public class Player_Booster : MonoBehaviour
 {
     bool onBooster;
     bool OnBoss;
+    [SerializeField] GameObject booster;
     Player_Move player_Move;
     Player _player;
     float time = 0;
@@ -49,7 +50,10 @@ public class Player_Booster : MonoBehaviour
             {
                 time += Time.deltaTime;
                 transform.Translate(0, 1000 * Time.deltaTime, 0);
+                booster.SetActive(true);
             }
+            else
+                booster.SetActive(false);
             if (OnBoss)
                 onBooster = false;
         }

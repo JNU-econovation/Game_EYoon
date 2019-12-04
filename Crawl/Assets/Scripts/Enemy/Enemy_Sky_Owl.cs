@@ -29,6 +29,7 @@ public class Enemy_Sky_Owl : Enemy
         {
             speed = 0;
             speed_x = 0;
+            DestroyControll();
         }
         else if (isPaused == false)
         {
@@ -60,6 +61,7 @@ public class Enemy_Sky_Owl : Enemy
     {
 
         isPaused = true;
+        savedNum = num;
     }
     public override void Resume()
     {

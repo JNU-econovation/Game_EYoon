@@ -115,6 +115,7 @@ public class Player_Attack : MonoBehaviour
     
     IEnumerator Fire(GameObject enemy)
     {
+        GameObject fire = EffectManager.Instance.Fire(enemy.transform);
         while (true)
         {
             if (isFire)
@@ -133,10 +134,13 @@ public class Player_Attack : MonoBehaviour
                 break;
             yield return null;
         }
+        Destroy(fire);
       
     }
     IEnumerator Freeze(GameObject enemy)
     {
+       GameObject freeze = EffectManager.Instance.Freeze(enemy.transform);
+        enemy.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 140);
         while (true)
         {
             yield return null;
@@ -153,6 +157,8 @@ public class Player_Attack : MonoBehaviour
                 }
             }
         }
+        Destroy(freeze);
+        enemy.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
             
     }
     public void OnFreeze(float n)

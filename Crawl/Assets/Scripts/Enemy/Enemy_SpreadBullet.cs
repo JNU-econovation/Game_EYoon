@@ -20,8 +20,9 @@ public class Enemy_SpreadBullet : Enemy_UFO_bullet
     void Update()
     {
         transform.Translate(0, -speed, 0);
-        if(isPaused == true)
+        if (isPaused == true)
         {
+            time = presentTime;
             num = savedDelay;
         }
     }
@@ -39,13 +40,16 @@ public class Enemy_SpreadBullet : Enemy_UFO_bullet
 
     public override void Stop()
     {
-        isPaused = true;
+        presentTime = time;
         speed = 0;
         savedDelay = num;
+        isPaused = true;
+
     }
 
     public override void Resume()
     {
+        
         speed = originSpeed;
         isPaused = false;
     }

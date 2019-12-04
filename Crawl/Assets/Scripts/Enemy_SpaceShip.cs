@@ -25,7 +25,10 @@ public class Enemy_SpaceShip : Enemy
     {
         distance_y = transform.position.y - player.transform.position.y;
         if (isPaused)
+        {
             speed = 0;
+            num = savedNum;
+        }
         else if (isPaused == false)
             speed = originSpeed;
 
@@ -55,6 +58,7 @@ public class Enemy_SpaceShip : Enemy
     public override void Pause()
     {
         isPaused = true;
+        savedNum = num;
     }
 
     public override void Resume()

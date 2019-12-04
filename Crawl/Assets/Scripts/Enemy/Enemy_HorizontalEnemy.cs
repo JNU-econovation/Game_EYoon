@@ -17,7 +17,10 @@ public class Enemy_HorizontalEnemy : Enemy
     private void Update()
     {
         if (isPaused)
+        {
             speed = 0;
+            DestroyControll();
+        }
         else if (isPaused == false)
             speed = originSpeed;
 
@@ -28,6 +31,7 @@ public class Enemy_HorizontalEnemy : Enemy
     public override void Pause()
     {
         isPaused = true;
+        savedNum = num;
     }
     public override void Resume()
     {

@@ -21,7 +21,10 @@ public class Enemy_SpaceShuttle : Enemy
     void Update()
     {
         if (isPaused)
+        {
             speed = 0;
+            num = savedNum;
+        }
         else if (isPaused == false)
             speed = originSpeed;
 
@@ -30,6 +33,7 @@ public class Enemy_SpaceShuttle : Enemy
     public override void Pause()
     {
         isPaused = true;
+        savedNum = num;
     }
 
     public override void Resume()

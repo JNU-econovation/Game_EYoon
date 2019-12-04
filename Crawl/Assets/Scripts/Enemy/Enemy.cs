@@ -14,6 +14,8 @@ abstract public class Enemy : Singleton<Enemy>
     public bool OnAttack;
     public float lifeTime;
     public GameObject enemy_Damage;
+    protected int savedNum = 0;
+    protected int num;
     void Awake()
     {
         
@@ -21,16 +23,29 @@ abstract public class Enemy : Singleton<Enemy>
         originSpeed = speed;
         originSpeed_x = speed_x;
         damage = GetComponent<Enemy_Ability>().GetDamage();
+        //DestroyControll();
     }
     void OnEnable()
     {
         if(!LevelManager.Instance.OnBoss)
             StartCoroutine(DestroySelf());
     }
-
+   public void DestroyControll()
+    {
+        
+            if (isPaused == true)
+            {
+                num = savedNum;
+            }
+        
+    }
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(lifeTime);
+        while ( num < 10)
+        {
+            yield return new WaitForSeconds(lifeTime / 10);
+            num += 1; ;
+        }
         if (LevelManager.Instance.level == 0)
             EffectManager.Instance.SpawnWaterDeath(transform);
         else if (LevelManager.Instance.level == 1)

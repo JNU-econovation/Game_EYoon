@@ -27,23 +27,26 @@ public class Enemy_Sky_Eagle : Enemy
     {
         while (true)
         {
-            yield return null;
-            if (time >= 3.0f)
+            if (isPaused == false)
             {
-                time = 0;
-                if (isAttack)
+                yield return null;
+                if (time >= 3.0f)
                 {
-                    isAttack = false;
-                    animator.SetBool("IsAttack", false);
-                }
+                    time = 0;
+                    if (isAttack)
+                    {
+                        isAttack = false;
+                        animator.SetBool("IsAttack", false);
+                    }
 
-                else
-                {
-                    float distance_x = transform.position.x - player.transform.position.x;
-                    float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-                    Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
-                    animator.SetBool("IsAttack", true);
-                    isAttack = true;
+                    else
+                    {
+                        float distance_x = transform.position.x - player.transform.position.x;
+                        float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+                        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
+                        animator.SetBool("IsAttack", true);
+                        isAttack = true;
+                    }
                 }
             }
         }
@@ -53,7 +56,10 @@ public class Enemy_Sky_Eagle : Enemy
     {
         time += Time.deltaTime;
         if (isPaused)
+        {
             speed = 0;
+            DestroyControll();
+        }
         else if (isPaused == false)
             speed = originSpeed;
         distance_y = transform.position.y - player.transform.position.y;
@@ -78,10 +84,13 @@ public class Enemy_Sky_Eagle : Enemy
     }
     public override void Pause()
     {
+        isPaused = true;
+        savedNum = num;
     }
 
     public override void Resume()
     {
+        isPaused = false;
     }
 
     public override void SetPosition()

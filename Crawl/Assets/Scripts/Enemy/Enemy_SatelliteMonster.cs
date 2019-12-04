@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_SatelliteMonster : Enemy
+public class Enemy_SatelliteMonster : Enemy_UFO_bullet
 {
     GameObject player;
     Enemy_SatelliteBulletRotater Rotater;
@@ -13,38 +13,32 @@ public class Enemy_SatelliteMonster : Enemy
     {
         Rotater = GetComponentInChildren<Enemy_SatelliteBulletRotater>();
         player = LevelManager.Instance.GetPlayer();
-        damage = GetComponent<Enemy_Ability>().GetDamage();
-        SetPosition();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPaused)
-            speed = 0;
-        else if (isPaused == false)
-            speed = originSpeed;
-        transform.Translate(0,-speed,0);
-        distance = player.transform.position.y - transform.position.y;
-        if(distance > 650)
+        transform.Translate(0, -speed, 0);
+        if (isPaused == true)
         {
-            Destroy(gameObject);
+            time = presentTime;
         }
     }
-   
-    public override void Pause()
-    {
-        isPaused = true;
-        Rotater.Stop();
-    }
+
+
     public override void Resume()
     {
         isPaused = false;
+        speed = originSpeed;
         Rotater.Resume();
     }
 
-    public override void SetPosition()
+
+
+    public override void Stop()
     {
+        speed = 0;
+        presentTime = time;
+        Rotater.Stop();
     }
-    
 }

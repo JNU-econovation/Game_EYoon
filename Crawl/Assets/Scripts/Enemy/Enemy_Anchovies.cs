@@ -21,7 +21,10 @@ public class Enemy_Anchovies : Enemy
     private void Update()
     {
         if (isPaused)
+        {
             speed = 0;
+            DestroyControll();
+        }
         else if (isPaused == false)
             speed = originSpeed;
         transform.Translate(5 * direction, 0, 0);
@@ -35,6 +38,7 @@ public class Enemy_Anchovies : Enemy
     public override void Pause()
     {
         isPaused = true;
+        savedNum = num;
     }
   
     public override void Resume()

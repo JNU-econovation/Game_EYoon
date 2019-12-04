@@ -11,6 +11,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
         Vector3 pos = enemy.transform.position;
         GameObject bullet0 = Instantiate(bullet, pos, Quaternion.Euler(0, 0, -angle));
         bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+        bullets.Add(bullet0);
     }
     public IEnumerator RepeatShot(GameObject enemy, GameObject bullet, float angle, int count, float damage)
     {
@@ -19,6 +20,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
         {
             GameObject bullet0 =Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
             bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+            bullets.Add(bullet0);
             yield return new WaitForSeconds(delay);
         }
     }
@@ -28,7 +30,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
         {
             GameObject bullet0 = Instantiate(bullet, enemy.transform.position, Quaternion.Euler(0, 0, 360 / count * (i)));
             bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
-
+            bullets.Add(bullet0);
         }
     }
     public void QuarterCircleShot(GameObject enemy, GameObject bullet, int count, float damage)
@@ -37,6 +39,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
         {
             GameObject bullet0 = Instantiate(bullet, enemy.transform.position, Quaternion.Euler(0, 0, 45 + 360 / count * (i)));
             bullet0.GetComponent<Enemy_BulletDamage>().Setdamage(damage);
+            bullets.Add(bullet0);
 
         }
     }
@@ -88,10 +91,7 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
         {
             if (bullets[i] != null)
             {
-                if (bullets[i].GetComponent<Enemy_SatelliteMonster>() == null)
                     bullets[i].GetComponent<Enemy_UFO_bullet>().Stop();
-                else
-                    bullets[i].GetComponent<Enemy_SatelliteMonster>().Pause();
             }
             
         }

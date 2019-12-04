@@ -30,6 +30,7 @@ public class Enemy_BlowFish : Enemy
         {
             speed = 0;
             speed_x = 0;
+            num = savedNum;
         }
         else if (isPaused == false)
         {
@@ -62,6 +63,7 @@ public class Enemy_BlowFish : Enemy
     {
 
         isPaused = true;
+        savedNum = num;
     }
     public override void Resume()
     {

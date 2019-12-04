@@ -202,6 +202,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         if(player_Shield.GetShieldCount() > 0)
         {
             player_Shield.Shield();
+            player_Shield.ShieldEffect();
             Player_UIManager.Instance.TakeDamage(0);
             return 0;
         }

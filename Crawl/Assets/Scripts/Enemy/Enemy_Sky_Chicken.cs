@@ -14,7 +14,10 @@ public class Enemy_Sky_Chicken : Enemy
     void Update()
     {
         if (isPaused)
+        {
             speed = 0;
+            DestroyControll();
+        }
         else if (isPaused == false)
             speed = originSpeed;
         transform.Translate(0, -speed, 0);      
@@ -22,12 +25,13 @@ public class Enemy_Sky_Chicken : Enemy
 
     public override void Pause()
     {
-
+        isPaused = true;
+        savedNum = num;
     }
 
     public override void Resume()
     {
-
+        isPaused = false;
     }
 
     public override void SetPosition()
