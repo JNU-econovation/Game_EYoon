@@ -11,7 +11,7 @@ public class Skill_Silver_Magnet : Skill_Silver
         player = LevelManager.Instance.GetPlayer();
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         player_Magnetic = player.GetComponent<Player_Magnetic>();
-        variation = new float[] { 2, 4, 5};
+        variation = new float[] { 2, 3, 5};
     }
     public override void SkillFunction()
     {

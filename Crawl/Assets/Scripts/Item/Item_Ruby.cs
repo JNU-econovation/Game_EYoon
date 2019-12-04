@@ -13,6 +13,7 @@ public class Item_Ruby : Item
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        SoundManager.Instance.PlayItemSound();
         if (collider.gameObject.tag == "Player")
         {
             count += get_jewerly_multiple;

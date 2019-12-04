@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class UI_GameOver : MonoBehaviour
+public class UI_GameOver : Singleton<UI_GameOver>
 {
-    public Text bestScore;
-    public Text score;
+    public Text bestScore_Text;
+    public Text score_Text;
     public Image backGround;
     public float alphaSpeed;
     public GameObject[] images;
@@ -18,26 +18,16 @@ public class UI_GameOver : MonoBehaviour
     {
         alpha = backGround.color;
     }
-    /*
-    private void OnEnable()
-    {
-        height = UIManager.Instance.GetHeight();
-        bestHeight = UIManager.Instance.GetBestHeight();
-        score.text = height.ToString();
-        if(height >= bestHeight)
-        {
-            bestHeight = height;
-            UIManager.Instance.SetBestHeight(height);
-            bestScore.text = height.ToString();
-        }
+    
 
-    }
-    */
-    public float GetBestHeight()
+    private void Awake()
     {
-        return bestHeight;
+        height = Manager.Instance.GetHeight();
+        bestHeight = Manager.Instance.GetBestHeight();
+        score_Text.text = ((int)height).ToString();
+        bestScore_Text.text = ((int)bestHeight).ToString();
     }
-    // Update is called once per frame
+    
     void Update()
     {
         time += Time.deltaTime;

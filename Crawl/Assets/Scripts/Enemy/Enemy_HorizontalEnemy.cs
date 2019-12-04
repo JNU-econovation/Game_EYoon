@@ -10,6 +10,7 @@ public class Enemy_HorizontalEnemy : Enemy
     Quaternion quaternion = Quaternion.Euler(0, 180f, 0);
     private void Start()
     {
+        speed = Random.Range(4, 7);
         originSpeed = speed;
         player = LevelManager.Instance.GetPlayer();
         SetPosition();

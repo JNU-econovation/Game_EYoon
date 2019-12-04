@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Bomb : Singleton<Bomb>
 {
     float speed = 400;
-    public float damage;
+    static public float damage;
     float lifeTime = 5.0f;
     bool isPause;
     void Start()
@@ -38,7 +38,10 @@ public class Bomb : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+    public void IncreaseDamage(float n)
+    {
+        damage += n;
+    }
     public void Pause()
     {
         isPause = true;

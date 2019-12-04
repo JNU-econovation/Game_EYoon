@@ -63,7 +63,6 @@ public class Enemy_Boss_Phynics : Enemy
         if (isPaused == false)
         {
             int rand = Random.Range(0, 4);
-            print(rand);
             switch (rand)
             {
                 case 0:
@@ -84,9 +83,9 @@ public class Enemy_Boss_Phynics : Enemy
     IEnumerator SpreadBullet()
     {
         attack = true;
-        for (int i = 0; i < Random.Range(1, 3); i++)
+        for (int i = 0; i < 1; i++)
         {
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 7), damage);
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[0], Random.Range(3, 6), damage);
             yield return new WaitForSeconds(0.3f);
         }
         yield return new WaitForSeconds(attackDelay);
@@ -95,9 +94,9 @@ public class Enemy_Boss_Phynics : Enemy
     IEnumerator FireSpreadBullet()
     {
         attack = true;
-        for (int i = 0; i < Random.Range(1, 3); i++)
+        for (int i = 0; i < 1; i++)
         {
-            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 5), damage);
+            Enemy_AttackPattern.Instance.MultiShot(gameObject, bullets[1], Random.Range(1, 4), damage);
             yield return new WaitForSeconds(0.3f);
         }
         yield return new WaitForSeconds(attackDelay);
@@ -108,7 +107,7 @@ public class Enemy_Boss_Phynics : Enemy
         attack = true;
         float distance_x = transform.position.x - player.transform.position.x;
         float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-        for (int i = 0; i < Random.Range(1, 3); i++)
+        for (int i = 0; i < 1; i++)
         {
             Enemy_AttackPattern.Instance.SingleShot(gameObject, bullets[1], angle, damage);
             yield return new WaitForSeconds(0.4f);

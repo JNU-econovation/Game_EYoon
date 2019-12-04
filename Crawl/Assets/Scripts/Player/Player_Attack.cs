@@ -82,6 +82,7 @@ public class Player_Attack : MonoBehaviour
                 float damage = RealAttack();
                 if (i >= targetList.Count)
                     break;
+                SoundManager.Instance.PlayAttackSound();
                 targetList[i].GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255,255));
                 targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
                 

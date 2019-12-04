@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &8788075243161413603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &8273844560080411638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,8 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &1047240458322575940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,8 +680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &7106864370127317876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +855,8 @@ MonoBehaviour:
   speed_x: 0
   OnAttack: 0
   lifeTime: 6
-  enemy_Damage: {fileID: 0}
+  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
+    type: 3}
 --- !u!114 &6708431427879479079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,8 +869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &5825322645170483179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,8 +1058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &5381119091345427767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,9 +1143,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7171529069292317637}
-  - component: {fileID: 7171529069292317636}
   - component: {fileID: 885344695646437642}
-  - component: {fileID: 1239007046655772929}
+  - component: {fileID: 5065811647909833249}
+  - component: {fileID: 9134691503478866870}
   m_Layer: 12
   m_Name: Anchovies
   m_TagString: Enemy
@@ -1176,24 +1177,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7171529069292317636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171529069292317641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448a61ab5a8776d4fb307cc2eca4c728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  speed_x: 1.5
-  OnAttack: 0
-  lifeTime: 6
-  enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
-    type: 3}
 --- !u!212 &885344695646437642
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1242,7 +1225,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1239007046655772929
+--- !u!114 &5065811647909833249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171529069292317641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448a61ab5a8776d4fb307cc2eca4c728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  speed_x: 1.5
+  OnAttack: 0
+  lifeTime: 10
+  enemy_Damage: {fileID: 0}
+--- !u!114 &9134691503478866870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1254,8 +1254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
-  damage: 5
+  HP: 0
+  damage: 0
 --- !u!1 &7171529069728858971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,8 +1369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &8848248027167868053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,8 +1558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &249116275458256851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,8 +1747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &6029579675126069461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,8 +1936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  damage: 5
+  HP: 10
+  damage: 4
 --- !u!114 &6018554027193299701
 MonoBehaviour:
   m_ObjectHideFlags: 0

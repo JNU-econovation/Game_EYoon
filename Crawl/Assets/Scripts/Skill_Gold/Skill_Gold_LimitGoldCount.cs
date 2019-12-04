@@ -8,7 +8,7 @@ public class Skill_Gold_LimitGoldCount : Skill_Gold
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 1, 2, 3 };
+        variation = new float[] { 3, 6, 9 };
     }
     public override void SkillFunction()
     {
