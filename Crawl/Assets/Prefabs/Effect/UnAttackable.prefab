@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 290722378771729208}
   - component: {fileID: 8734528779078779355}
   m_Layer: 0
-  m_Name: ball-783953_1920 1
+  m_Name: UnAttackable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &290722378771729208
 Transform:
   m_ObjectHideFlags: 0

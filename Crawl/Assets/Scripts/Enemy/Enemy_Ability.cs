@@ -75,4 +75,8 @@ public class Enemy_Ability : MonoBehaviour
     {
         damage = dam;
     }
+    public float GetMaxHp()
+    {
+        return maxHP;
+    }
 }
