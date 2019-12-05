@@ -12854,6 +12854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnAttackable
       objectReference: {fileID: 0}
+    - target: {fileID: 7422272915554467532, guid: ba942a73444d80f4cbe49ba41ca81ec5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 290722378771729208, guid: ba942a73444d80f4cbe49ba41ca81ec5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12908,6 +12913,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290722378771729208, guid: ba942a73444d80f4cbe49ba41ca81ec5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 290722378771729208, guid: ba942a73444d80f4cbe49ba41ca81ec5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba942a73444d80f4cbe49ba41ca81ec5, type: 3}
@@ -16471,12 +16486,12 @@ PrefabInstance:
     - target: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 560
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
         type: 3}
@@ -16522,6 +16537,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2be63889fcdbcc046b535ddbf690cda0, type: 3}
@@ -50398,6 +50423,7 @@ MonoBehaviour:
   moveSpeed: 300
   targetNum: 1
   reflectDamage: 0
+  rebirthEffect: {fileID: 0}
   HP: 100
   stamina: 100
 --- !u!114 &8622369420676396089

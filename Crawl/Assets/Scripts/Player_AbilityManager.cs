@@ -15,6 +15,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     [SerializeField] [Range(0, 1000)] float moveSpeed;
     [SerializeField] [Range(0, 5)] int targetNum;
     [SerializeField] float reflectDamage;
+    [SerializeField] GameObject rebirthEffect;
     float criticalTime;
     float time;
     float drain;
@@ -37,8 +38,10 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     Player_Invincibility player_Invincibility;
     Player _player;
     Player_DamageText player_DamageText;
+    GameObject player;
     private void Start()
     {
+        player = LevelManager.Instance.GetPlayer();
         rebirthHP = maxHP * rebirth_hp_Percent;
         player_Attack_Range = GetComponentInChildren<Player_Attack_Range>();
         player_Booster = GetComponent<Player_Booster>();
@@ -237,11 +240,15 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     }
     IEnumerator Rebirth()
     {
+        rebirthEffect.SetActive(true);
+        player.GetComponent<SpriteRenderer>().color = new Color(255,255,255,162);
         _player.Pause();
         yield return new WaitForSeconds(1.0f);
         _player.Resume();
         HP = rebirthHP;
         isRebirth = false;
+        player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+        rebirthEffect.SetActive(false);
     }
     public void SetIsRebirth(bool temp)
     {
