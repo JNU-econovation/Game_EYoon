@@ -20,41 +20,60 @@ public class EnemyManager : Singleton<EnemyManager>
         StartCoroutine(SpawnEnemy());
         //StartCoroutine(PauseTest());
     }
+    private void Update()
+    {
+        level = LevelManager.Instance.level;
+        if (level == 0)
+        {
+            enemys = sea_Enemys;
+        }
+        else if (level == 1)
+        {
+            enemys = sky_Enemys;
+        }
+        else
+        {
+            enemys = space_Enemys;
+        }
+
+    }
     IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            if (isPause == false)
+            //if (isPause == false)
+            //{
+            //    if(level == 0)
+            //    {
+            //        enemys = sea_Enemys;
+            //    }
+            //    else if(level == 1)
+            //    {
+            //        enemys = sky_Enemys;
+            //    }
+            //    else
+            //    {
+            //        enemys = space_Enemys;
+            //    }
+            //    float rand = Random.Range(1, 3);
+            //    if (LevelManager.Instance.OnBoss)
+            //        rand = 0;
+            //    for(int i = 0; i < rand; i++)
+            //    {
+            //        spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+            //    }
+
+            //}
+            if (isPause == false && LevelManager.Instance.OnBoss == false)
             {
-                if(level == 0)
-                {
-                    enemys = sea_Enemys;
-                }
-                else if(level == 1)
-                {
-                    enemys = sky_Enemys;
-                }
-                else
-                {
-                    enemys = space_Enemys;
-                }
-                float rand = Random.Range(1, 3);
-                if (LevelManager.Instance.OnBoss)
-                    rand = 0;
-                for(int i = 0; i < rand; i++)
-                {
                     spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
-                }
-                    
+                
             }
             yield return new WaitForSeconds(cycleTime);
 
         }
     }
-    private void Update()
-    {
-        level = LevelManager.Instance.level;
-    }
+ 
     public void WeakEnemy(float n)
     {
         for(int i = 0; i < enemys.Length ;i++)
