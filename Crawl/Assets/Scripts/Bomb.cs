@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bomb : Singleton<Bomb>
 {
     float speed = 400;
-    static public float damage;
+    static public float damage = 10;
     float lifeTime = 5.0f;
     bool isPause;
     void Start()
@@ -33,14 +33,19 @@ public class Bomb : Singleton<Bomb>
     {
         if (collider.tag == "Enemy")
         {
-            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255));
+            SoundManager.Instance.PlayBombSound();
+            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255, 255));
             collider.GetComponent<Enemy_Ability>().DecreaseHP(damage);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     public void IncreaseDamage(float n)
     {
         damage += n;
+    }
+    public float GetDamage()
+    {
+        return damage;
     }
     public void Pause()
     {

@@ -3,29 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class UI_GameOver : Singleton<UI_GameOver>
 {
-    public Text bestScore_Text;
-    public Text score_Text;
+    public TextMeshPro bestScore_Text;
+    public TextMeshPro score_Text;
     public Image backGround;
     public float alphaSpeed;
     public GameObject[] images;
     Color alpha;
     float time = 0;
     static float height;
-    static float bestHeight;
+    static int bestHeight;
     void Start()
     {
+        Screen.SetResolution(720, 1280, true);
         alpha = backGround.color;
+        bestHeight = Manager.Instance.GetBestHeight();
     }
     
 
     private void Awake()
     {
         height = Manager.Instance.GetHeight();
-        bestHeight = Manager.Instance.GetBestHeight();
-        score_Text.text = ((int)height).ToString();
-        bestScore_Text.text = ((int)bestHeight).ToString();
+        if(height > bestHeight)
+        {
+            bestHeight = (int)height;
+            PlayerPrefs.SetInt("HighScore", bestHeight);
+        }
+        PlayerPrefs.GetInt("HighScore", bestHeight);
+        score_Text.text = ((int)height).ToString()+"m";
+        bestScore_Text.text = bestHeight.ToString() + "m";
     }
     
     void Update()

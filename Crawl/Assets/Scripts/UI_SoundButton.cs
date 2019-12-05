@@ -15,6 +15,7 @@ public class UI_SoundButton : MonoBehaviour
 
     public void OnClick()
     {
+        SoundManager.Instance.PlayClickSound();
         if (onSound) // 사운드 오프
         {
             image.sprite = soundOff;

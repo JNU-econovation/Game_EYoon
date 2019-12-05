@@ -22,6 +22,7 @@ public class UI_Pause : MonoBehaviour
     }
     public void Onclick()
     {
+        SoundManager.Instance.PlayClickSound();
         gameObject.SetActive(false);
         LevelManager.Instance.Resume();
     }

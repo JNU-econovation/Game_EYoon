@@ -6,6 +6,7 @@ public class UIManager : Singleton<UIManager>
 {
   
     public Text[] jewerlyCountText;
+    public Text avoidText;
     public GameObject[] skillUI;   
     bool onSkill;
     Item[] item = new Item[5];

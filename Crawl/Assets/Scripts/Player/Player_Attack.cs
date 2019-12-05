@@ -13,6 +13,7 @@ public class Player_Attack : MonoBehaviour
     bool[] isAttack = new bool[4];   
     bool isFire;
     bool isFreeze;
+    bool canAttack;
     float attackTime;
     float fireTime;
     float time1;
@@ -31,6 +32,7 @@ public class Player_Attack : MonoBehaviour
     {
         if (!_player.GetIsPause())
         {
+            canAttack = true;
             attackTime += Time.deltaTime;
             if (isFreeze)
             {
@@ -48,6 +50,10 @@ public class Player_Attack : MonoBehaviour
                     isFire = false;
                 }
             }
+        }
+        else
+        {
+            canAttack = false;
         }
         attack_range = Player_AbilityManager.Instance.GetAttackRange();
         
@@ -67,7 +73,7 @@ public class Player_Attack : MonoBehaviour
             {
                 n = targetList.Count;
             }
-            if (!isAttack[0])
+            if (!isAttack[0] && canAttack)
                 StartCoroutine(Attack_First_Enemy(n));
             yield return null;
         }

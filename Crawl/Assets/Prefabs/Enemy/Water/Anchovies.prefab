@@ -98,7 +98,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &4420252438803703265
@@ -287,7 +287,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &6865719052956204593
@@ -476,7 +476,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &661563949508306812
@@ -665,7 +665,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &70928468006464322
@@ -854,7 +854,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &6708431427879479079
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &3599737689250477721
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &4838223040515324217
@@ -1543,7 +1543,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &775699365646506808
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &2522875697418271566
@@ -1921,7 +1921,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &1241731929641409849

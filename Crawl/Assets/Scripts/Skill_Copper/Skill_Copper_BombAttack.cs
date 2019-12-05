@@ -72,6 +72,6 @@ public class Skill_Copper_BombAttack : Skill_Copper
     }
     public override string GetSkillFigure()
     {
-        return "" + count + "회";
+        return "" + (count + 1) + "회       데미지 " + Bomb.Instance.GetDamage();
     }
 }
