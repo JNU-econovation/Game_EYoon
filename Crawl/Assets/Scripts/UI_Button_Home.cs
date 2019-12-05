@@ -7,7 +7,6 @@ public class UI_Button_Home : MonoBehaviour
 {
     public void Onclick()
     {
-        SoundManager.Instance.PlayClickSound();
         SceneManager.LoadScene("Main");
     }
 }

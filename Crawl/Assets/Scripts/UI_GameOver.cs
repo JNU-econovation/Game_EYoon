@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class UI_GameOver : Singleton<UI_GameOver>
 {
-    public Text bestScore_Text;
-    public Text score_Text;
+    public TextMeshPro bestScore_Text;
+    public TextMeshPro score_Text;
     public Image backGround;
     public float alphaSpeed;
     public GameObject[] images;
@@ -16,6 +17,7 @@ public class UI_GameOver : Singleton<UI_GameOver>
     static int bestHeight;
     void Start()
     {
+        Screen.SetResolution(720, 1280, true);
         alpha = backGround.color;
         bestHeight = Manager.Instance.GetBestHeight();
     }
@@ -30,8 +32,8 @@ public class UI_GameOver : Singleton<UI_GameOver>
             PlayerPrefs.SetInt("HighScore", bestHeight);
         }
         PlayerPrefs.GetInt("HighScore", bestHeight);
-        score_Text.text = ((int)height).ToString();
-        bestScore_Text.text = bestHeight.ToString();
+        score_Text.text = ((int)height).ToString()+"m";
+        bestScore_Text.text = bestHeight.ToString() + "m";
     }
     
     void Update()

@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class UI_Main : MonoBehaviour
 {
     int rand;
     int i = 700;
     int j = 300;
-    public Text tapToStart;
+    public TextMeshPro tapToStart;
     public GameObject[] dolphin;
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(720, 1280, true);
         rand = Random.Range(0, 2);
         StartCoroutine(OnandOffText());
       //  StartCoroutine(SpawnDolphin());
