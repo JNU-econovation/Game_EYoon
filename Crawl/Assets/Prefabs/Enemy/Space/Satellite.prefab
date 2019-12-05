@@ -99,7 +99,7 @@ MonoBehaviour:
   speed: 5
   speed_x: 1.5
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 0}
 --- !u!114 &8457689356608299217
 MonoBehaviour:

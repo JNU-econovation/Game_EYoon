@@ -854,7 +854,7 @@ MonoBehaviour:
   speed: 0
   speed_x: 0
   OnAttack: 0
-  lifeTime: 6
+  lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
 --- !u!114 &6708431427879479079

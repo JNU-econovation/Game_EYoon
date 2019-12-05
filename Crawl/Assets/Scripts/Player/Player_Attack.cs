@@ -31,6 +31,7 @@ public class Player_Attack : MonoBehaviour
     {
         if (!_player.GetIsPause())
         {
+            
             attackTime += Time.deltaTime;
             if (isFreeze)
             {
@@ -48,6 +49,10 @@ public class Player_Attack : MonoBehaviour
                     isFire = false;
                 }
             }
+        }
+        else
+        {
+            isAttack[0] = true;
         }
         attack_range = Player_AbilityManager.Instance.GetAttackRange();
         
