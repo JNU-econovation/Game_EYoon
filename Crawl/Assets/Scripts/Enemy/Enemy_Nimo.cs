@@ -80,7 +80,6 @@ public class Enemy_Nimo : Enemy
         if (isPaused == false)
         {
             attack = true;
-            print("Fire");
             float distance_x = transform.position.x - player.transform.position.x;
             float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
             for (int i = 0; i < bulletCount; i++)

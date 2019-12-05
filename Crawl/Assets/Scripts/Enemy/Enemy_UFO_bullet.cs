@@ -25,8 +25,6 @@ abstract public class Enemy_UFO_bullet : MonoBehaviour
         while (time < 10)
         {
             yield return new WaitForSeconds(lifeTime / 10);
-            print(time);
-            print(isPaused);
             time += 1; ;
         }
         Destroy(gameObject);

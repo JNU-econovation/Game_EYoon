@@ -8,6 +8,8 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource attackAudioSource;
     public AudioSource skillAudioSource;
     public AudioSource avoidAudioSource;
+    public AudioSource clickAudioSource;
+    public AudioSource bombAudioSource;
     // public AudioSource itemAudioSource;
     public AudioClip itemSound;
     public AudioClip attackSound;
@@ -20,7 +22,22 @@ public class SoundManager : Singleton<SoundManager>
     }
     public void PlayAttackSound()
     {
-        attackAudioSource.clip = attackSound;
         attackAudioSource.Play();
+    }
+    public void PlayClickSound()
+    {
+        clickAudioSource.Play();
+    }
+    public void PlayAvoidSound()
+    {
+        avoidAudioSource.Play();
+    }
+    public void PlayBombSound()
+    {
+        bombAudioSource.Play();
+    }
+    public void PlaySkillSound()
+    {
+        skillAudioSource.Play();
     }
 }

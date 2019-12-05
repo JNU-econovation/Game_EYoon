@@ -42,4 +42,8 @@ public class Player_Invincibility : MonoBehaviour
     {
         return isInvincible;
     }
+    public void SetIsInvincible(bool t)
+    {
+        isInvincible = t;
+    }
 }

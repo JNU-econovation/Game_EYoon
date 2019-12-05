@@ -8,18 +8,23 @@ public class Manager : Singleton<Manager>
     public GameObject[] objects;
     public GameObject player;
     static float height;
-    static float bestHeight;
+    static int bestHeight;
+    private void Start()
+    {
+        PlayerPrefs.GetInt("HighScore", bestHeight);
+    }
     public void EndGame()
     {
         height = UIManager.Instance.GetHeight();
         if(height > bestHeight)
         {
-            bestHeight = height;
+            bestHeight = (int)height;
         }
+        PlayerPrefs.SetInt("HighScore", bestHeight);
         LevelManager.Instance.Pause();
         SceneManager.LoadScene("GameOver");
     }
-    public float GetBestHeight()
+    public int GetBestHeight()
     {
         return bestHeight;
     }
@@ -27,4 +32,5 @@ public class Manager : Singleton<Manager>
     {
         return height;
     }
+
 }

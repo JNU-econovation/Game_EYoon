@@ -19,15 +19,16 @@ public class Player_Attack_Range : MonoBehaviour
     {
         if (LevelManager.Instance.OnBoss)
         {
-            attackRange = 8;
+            attackRange = 15;
         }
         else
         {
             attackRange = tempRange;
         }
         transform.localScale = new Vector3(attackRange, attackRange,1);
-        circle.setRadius(attackRange * 45);
+        circle.setRadius(attackRange * 26.25f);
     }
+   
     public float GetAttackRange()
     {
         return attackRange;

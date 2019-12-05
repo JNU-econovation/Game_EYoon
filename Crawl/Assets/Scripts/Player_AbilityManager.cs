@@ -209,6 +209,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         float rand = Random.Range(0, 100);
         if(rand <= avoidance)
         {
+            UIManager.Instance.avoidText.GetComponent<UI_AvoidText>().Avoid();
+            SoundManager.Instance.PlayAvoidSound();
             Player_UIManager.Instance.TakeDamage(0);
             return 0; //빗나감
         }

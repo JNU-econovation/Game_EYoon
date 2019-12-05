@@ -6,10 +6,14 @@ public class LevelManager : Singleton<LevelManager>
 {
     public GameObject playerPrefab;
     GameObject player;
+    SpriteRenderer player_SpriteRenderer;
     Player_Move player_Move;
     Player_Bomb_Attack bomb_Attack;
     Player_Attack_Range player_Attack_Range;
     Player _player;
+    Player_Animation player_Animation;
+    public Animator[] player_Anim;
+    public Sprite[] player_Sprite;
     float time = 0;
     float height;
     float p;
@@ -25,10 +29,12 @@ public class LevelManager : Singleton<LevelManager>
     void Awake()
     {
         player = playerPrefab;
+        player_SpriteRenderer = player.GetComponent<SpriteRenderer>();
         _player = player.GetComponent<Player>();
         player_Move = player.GetComponent<Player_Move>();
         bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
         player_Attack_Range = player.GetComponentInChildren<Player_Attack_Range>();
+        player_Animation = player.GetComponent<Player_Animation>();
     }
     private void Start()
     {
@@ -112,6 +118,8 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if(level == 1)
             {
+                player_Animation.SetAnimator(player_Anim[1]);
+                player_SpriteRenderer.sprite = player_Sprite[1];
                 bossClear = false;
                 OnBoss = false;
                 for (int i = 0; i < 3; i++)
@@ -130,6 +138,8 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if (level == 2)
             {
+                player_Animation.SetAnimator(player_Anim[2]);
+                player_SpriteRenderer.sprite = player_Sprite[2];
                 bossClear = false;
                 OnBoss = false;
                 for (int i = 0; i < 3; i++)

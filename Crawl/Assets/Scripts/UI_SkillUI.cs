@@ -7,8 +7,11 @@ public class UI_SkillUI : MonoBehaviour
     List<UI_SkillButton> skillButtons = new List<UI_SkillButton>();
     GameObject[] slots;
     [SerializeField] int jewerlyNum;
+    Player_Invincibility player_Invincibility;
     private void Awake()
     {
+        GameObject player = LevelManager.Instance.GetPlayer();
+        player_Invincibility = player.GetComponent<Player_Invincibility>();
         slots = GameObject.FindGameObjectsWithTag("Slot");
        
         UI_SkillButton[] buttons = GetComponentsInChildren<UI_SkillButton>();
@@ -20,6 +23,7 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        SoundManager.Instance.PlaySkillSound();
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].SetActive(true);
@@ -48,6 +52,11 @@ public class UI_SkillUI : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         ChooseSkill();
+    }
+    void Disable()
+    {
+        SoundManager.Instance.skillAudioSource.mute = true;
+        player_Invincibility.OnInvincible(0.5f);
     }
 }
 

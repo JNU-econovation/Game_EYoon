@@ -8,6 +8,7 @@ public class UI_PauseButton : MonoBehaviour
 
     public void OnClick()
     {
+        SoundManager.Instance.PlayClickSound();
         ui_pause.SetActive(true);
         LevelManager.Instance.Pause();
        // gameObject.SetActive(false);

@@ -13,19 +13,25 @@ public class UI_GameOver : Singleton<UI_GameOver>
     Color alpha;
     float time = 0;
     static float height;
-    static float bestHeight;
+    static int bestHeight;
     void Start()
     {
         alpha = backGround.color;
+        bestHeight = Manager.Instance.GetBestHeight();
     }
     
 
     private void Awake()
     {
         height = Manager.Instance.GetHeight();
-        bestHeight = Manager.Instance.GetBestHeight();
+        if(height > bestHeight)
+        {
+            bestHeight = (int)height;
+            PlayerPrefs.SetInt("HighScore", bestHeight);
+        }
+        PlayerPrefs.GetInt("HighScore", bestHeight);
         score_Text.text = ((int)height).ToString();
-        bestScore_Text.text = ((int)bestHeight).ToString();
+        bestScore_Text.text = bestHeight.ToString();
     }
     
     void Update()
