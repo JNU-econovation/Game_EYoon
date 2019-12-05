@@ -10,6 +10,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource avoidAudioSource;
     public AudioSource clickAudioSource;
     public AudioSource bombAudioSource;
+    public AudioSource damageAudioSource;
     // public AudioSource itemAudioSource;
     public AudioClip itemSound;
     public AudioClip attackSound;
@@ -39,5 +40,9 @@ public class SoundManager : Singleton<SoundManager>
     public void PlaySkillSound()
     {
         skillAudioSource.Play();
+    }
+    public void PlayDamageSound()
+    {
+        damageAudioSource.Play();
     }
 }

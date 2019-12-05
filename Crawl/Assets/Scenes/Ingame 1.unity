@@ -4895,7 +4895,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -8796,7 +8796,7 @@ GameObject:
   - component: {fileID: 398830423}
   - component: {fileID: 398830422}
   m_Layer: 0
-  m_Name: EnemySound
+  m_Name: DamageSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8826,8 +8826,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: ead48eb569c3e964ca5b285040391fbf, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -17034,9 +17034,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: b4d14a29c1660e94c97ce424e6835425, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.554
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23867,10 +23867,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAudioSource: {fileID: 233719024}
   attackAudioSource: {fileID: 1361307394}
-  skillAudioSource: {fileID: 0}
+  skillAudioSource: {fileID: 792967009}
   avoidAudioSource: {fileID: 2125334628}
   clickAudioSource: {fileID: 1478528057}
   bombAudioSource: {fileID: 1815912862}
+  damageAudioSource: {fileID: 398830422}
   itemSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   attackSound: {fileID: 8300000, guid: bb6cdd13aeb95f743847b1cd460889bc, type: 3}
   bombSound: {fileID: 0}
@@ -30531,9 +30532,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.129
+  m_audioClip: {fileID: 8300000, guid: 59d8620d87bc41f418aebea59b3c2f9b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.607
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50030,7 +50031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 10
   defense: 0
-  avoidance: 100
+  avoidance: 10
   critical_Percentage: 5
   critical_Hit: 150
   attackRange: 0

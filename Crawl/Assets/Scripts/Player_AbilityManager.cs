@@ -216,6 +216,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         }
         else
         {
+            SoundManager.Instance.PlayDamageSound();
             HP -= (n - defense);
             Player_UIManager.Instance.TakeDamage(n-defense);
             if (HP <= 0)
