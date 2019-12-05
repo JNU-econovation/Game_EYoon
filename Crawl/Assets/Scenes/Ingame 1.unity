@@ -1725,6 +1725,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65405284}
   m_CullTransparentMesh: 0
+--- !u!1 &67044177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3926434643066089026, guid: 2be63889fcdbcc046b535ddbf690cda0,
+    type: 3}
+  m_PrefabInstance: {fileID: 748162025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &67044178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2185663358334103732, guid: 2be63889fcdbcc046b535ddbf690cda0,
@@ -50423,7 +50429,7 @@ MonoBehaviour:
   moveSpeed: 300
   targetNum: 1
   reflectDamage: 0
-  rebirthEffect: {fileID: 0}
+  rebirthEffect: {fileID: 67044177}
   HP: 100
   stamina: 100
 --- !u!114 &8622369420676396089
