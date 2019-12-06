@@ -52,4 +52,5 @@ public class ItemManager : Singleton<ItemManager>
         }
         itemWeight = weight;
     }
+
 }

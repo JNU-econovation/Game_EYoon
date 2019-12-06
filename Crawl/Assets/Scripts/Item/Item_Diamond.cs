@@ -53,6 +53,7 @@ public class Item_Diamond : Item
     public override void ResetCount()
     {
         count = 0;
+        maxCount = 10;
     }
     public override void DecreaseMaxCount(int n)
     {

@@ -74,6 +74,7 @@ public class Item_Copper : Item
     public override void ResetCount()
     {
         count = 0;
+        maxCount = 10;
     }
     public override int GetRemainCount()
     {

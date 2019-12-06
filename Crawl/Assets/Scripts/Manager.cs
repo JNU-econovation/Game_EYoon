@@ -13,8 +13,17 @@ public class Manager : Singleton<Manager>
     {
         PlayerPrefs.GetInt("HighScore", bestHeight);
     }
+    public void ResetCount()
+    {
+        ItemManager.Instance.item_Copper.ResetCount();
+        ItemManager.Instance.item_Silver.ResetCount();
+        ItemManager.Instance.item_Gold.ResetCount();
+        ItemManager.Instance.item_Diamond.ResetCount();
+        ItemManager.Instance.item_Ruby.ResetCount();
+    }
     public void EndGame()
     {
+        ResetCount();
         height = UIManager.Instance.GetHeight();
         if(height > bestHeight)
         {

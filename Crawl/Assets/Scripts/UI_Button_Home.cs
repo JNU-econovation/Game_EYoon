@@ -7,6 +7,7 @@ public class UI_Button_Home : MonoBehaviour
 {
     public void Onclick()
     {
+        Manager.Instance.ResetCount();
         SceneManager.LoadScene("Main");
     }
 }

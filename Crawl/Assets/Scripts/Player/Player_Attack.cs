@@ -33,7 +33,6 @@ public class Player_Attack : MonoBehaviour
         if (!_player.GetIsPause())
         {
             canAttack = true;
-            attackTime += Time.deltaTime;
             if (isFreeze)
             {
                 time1 += Time.deltaTime;

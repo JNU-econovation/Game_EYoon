@@ -38,6 +38,7 @@ public class Item_Silver : Item
     public override void ResetCount()
     {
         count = 0;
+        maxCount = 10;
     }
 
     public override int GetMaxCount()
