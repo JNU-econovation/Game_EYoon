@@ -11,6 +11,7 @@ public class Enemy_SpaceShip : Enemy
     float distance_y;
     [SerializeField] float firePos;
     bool attack;
+    bool turn = false;
     [SerializeField] GameObject bullet;
     // Start is called before the first frame update
     void Start()
@@ -37,10 +38,14 @@ public class Enemy_SpaceShip : Enemy
             if (attack == false)
                 Attack();
 
-            if(transform.position.x < 360)
-                transform.rotation = Quaternion.Euler(0, 0, Random.Range(-90,-170));
-            else
-                transform.rotation = Quaternion.Euler(0, 0, Random.Range(90, 170));
+            if (turn == false)
+            {
+                if (transform.position.x < 360)
+                    transform.rotation = Quaternion.Euler(0, 0, Random.Range(-90, -170));
+                else if (transform.position.x >= 360)
+                    transform.rotation = Quaternion.Euler(0, 0, Random.Range(90, 170));
+                turn = true;
+            }
 
 
         }

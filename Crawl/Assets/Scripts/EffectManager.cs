@@ -5,7 +5,7 @@ using UnityEngine;
 public class EffectManager : Singleton<EffectManager>
 {
     GameObject player;
-    [SerializeField] GameObject[] effects; // 0 = 물 타입 죽음 1 = 하늘 타임 죽음 2 = 우주 타입 죽음 3 = 얼리기 4 = 불태우기
+    [SerializeField] GameObject[] effects; // 0 = 물 타입 죽음 1 = 하늘 타임 죽음 2 = 우주 타입 죽음 3 = 얼리기 4 = 불태우기 5 = 
     GameObject freeze;
     GameObject fire;
     // Start is called before the first frame update

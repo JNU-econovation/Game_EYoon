@@ -6,7 +6,7 @@ public class Player_Shield : MonoBehaviour
 {
     bool isShield;
     static int shieldCount;
-    public GameObject shield;
+    public GameObject shield; //쉴드, 무적, 
 
     public void Shield()
     {
