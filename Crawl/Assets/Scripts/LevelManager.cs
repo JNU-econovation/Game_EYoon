@@ -118,6 +118,7 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if(level == 1)
             {
+                EnemyManager.Instance.ChangeEnemy2();
                 player_Animation.SetAnimator(player_Anim[1]);
                 player_SpriteRenderer.sprite = player_Sprite[1];
                 bossClear = false;
@@ -138,6 +139,7 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if (level == 2)
             {
+                EnemyManager.Instance.ChangeEnemy3();
                 player_Animation.SetAnimator(player_Anim[2]);
                 player_SpriteRenderer.sprite = player_Sprite[2];
                 bossClear = false;

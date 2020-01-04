@@ -9,7 +9,7 @@ abstract public class Item : Singleton<Item>
     protected bool isMagent;
     protected static int get_jewerly_multiple = 1;
     protected GameObject player;
-    void Start()
+    void Awake()
     {
         StartCoroutine(DestroySelf());
     }

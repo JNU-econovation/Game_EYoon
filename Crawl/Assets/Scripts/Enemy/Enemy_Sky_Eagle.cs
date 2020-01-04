@@ -66,11 +66,6 @@ public class Enemy_Sky_Eagle : Enemy
         if (distance_y < stopPos)
         {
             speed = 0;
-            if (attack == false)
-            {
-
-                StartCoroutine(Attack());
-            }
             if (transform.position.x < 96 || transform.position.x > 631)
             {
                 speed_x = speed_x * -1;

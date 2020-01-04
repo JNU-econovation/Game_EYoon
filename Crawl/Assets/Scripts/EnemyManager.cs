@@ -17,57 +17,28 @@ public class EnemyManager : Singleton<EnemyManager>
     // Start is called before the first frame update
     private void Start()
     {
+        ChangeEnemy1();
         StartCoroutine(SpawnEnemy());
         //StartCoroutine(PauseTest());
     }
-    private void Update()
-    {
-        level = LevelManager.Instance.level;
-        if (level == 0)
-        {
-            enemys = sea_Enemys;
-        }
-        else if (level == 1)
-        {
-            enemys = sky_Enemys;
-        }
-        else
-        {
-            enemys = space_Enemys;
-        }
 
-    }
     IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            //if (isPause == false)
-            //{
-            //    if(level == 0)
-            //    {
-            //        enemys = sea_Enemys;
-            //    }
-            //    else if(level == 1)
-            //    {
-            //        enemys = sky_Enemys;
-            //    }
-            //    else
-            //    {
-            //        enemys = space_Enemys;
-            //    }
-            //    float rand = Random.Range(1, 3);
-            //    if (LevelManager.Instance.OnBoss)
-            //        rand = 0;
-            //    for(int i = 0; i < rand; i++)
-            //    {
-            //        spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
-            //    }
-
-            //}
+           
             if (isPause == false && LevelManager.Instance.OnBoss == false)
             {
+                int rand = Random.Range(1, 3);
+                if (rand == 1)
+                {
                     spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
-                
+                }
+                else
+                {
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                }
             }
             yield return new WaitForSeconds(cycleTime);
 
@@ -97,6 +68,18 @@ public class EnemyManager : Singleton<EnemyManager>
             
         }
         return i;
+    }
+    public void ChangeEnemy1()
+    {
+        enemys = sea_Enemys;
+    }
+    public void ChangeEnemy2()
+    {
+        enemys = sky_Enemys;
+    }
+    public void ChangeEnemy3()
+    {
+        enemys = space_Enemys;
     }
     public void Pause()
     {
