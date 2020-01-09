@@ -22,7 +22,7 @@ public class Enemy_Boss_Kraken : Enemy
     // Update is called once per frame
     void Update()
     {
-       
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
@@ -30,10 +30,10 @@ public class Enemy_Boss_Kraken : Enemy
         }
         else if (isPaused == false)
         {
+            time += Time.deltaTime;
             speed = originSpeed;
             speed_x = originSpeed_x;
         }
-        //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
         if (transform.position.y < 19900)
@@ -59,7 +59,6 @@ public class Enemy_Boss_Kraken : Enemy
         if (isPaused == false)
         {
             int rand = Random.Range(0, 4);
-            print(rand);
             switch (rand)
             {
                 case 0:
@@ -120,22 +119,12 @@ public class Enemy_Boss_Kraken : Enemy
         transform.position = new Vector3(360, 19900+1000, 0);
     }
 
-    public override void Resume()
-    {
-        isPaused = false;
-    }
-
-    public override void Pause()
-    {
-        isPaused = true;
-    }
-
     private void OnDisable()
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0;i< enemys.Length; i++)
         {
-            Destroy(enemys[i]);
+            enemys[i].SetActive(false);
         }
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);

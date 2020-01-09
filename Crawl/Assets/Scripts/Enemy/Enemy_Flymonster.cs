@@ -24,7 +24,7 @@ public class Enemy_Flymonster : Enemy
     }
     private void Update()
     {
-
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
@@ -32,10 +32,10 @@ public class Enemy_Flymonster : Enemy
         }
         else if (isPaused == false)
         {
+            time += Time.deltaTime;
             speed = originSpeed;
             speed_x = originSpeed_x;
         }
-        //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
         if(distance_y < stopPos)
@@ -55,15 +55,6 @@ public class Enemy_Flymonster : Enemy
            
         }
         transform.Translate(0, -speed, 0);
-    }
-    public override void Pause()
-    {
-        
-        isPaused = true;
-    }
-    public override void Resume()
-    {
-        isPaused = false;
     }
 
     public override void SetPosition()

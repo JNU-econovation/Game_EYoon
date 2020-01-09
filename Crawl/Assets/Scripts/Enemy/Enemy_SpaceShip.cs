@@ -25,13 +25,16 @@ public class Enemy_SpaceShip : Enemy
     void Update()
     {
         distance_y = transform.position.y - player.transform.position.y;
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
-            num = savedNum;
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
 
         if (distance_y < firePos)
         {
@@ -60,18 +63,7 @@ public class Enemy_SpaceShip : Enemy
         float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
         Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
     }
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-
-    public override void Resume()
-    {
-        isPaused = false;
-    }
-
-   
+ 
 
     public override void SetPosition()
     {

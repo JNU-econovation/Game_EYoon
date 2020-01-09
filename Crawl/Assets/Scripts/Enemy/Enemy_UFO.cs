@@ -26,13 +26,16 @@ public class Enemy_UFO : Enemy
     private void Update()
     {
         float distance_y = transform.position.y - player.transform.position.y;
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
-            num = savedNum;
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
         transform.Translate(5 * direction, 0, 0);
         if(attack == false && distance_y < attackRange)
         {
@@ -54,15 +57,7 @@ public class Enemy_UFO : Enemy
         yield return new WaitForSeconds(attackDelay);
         attack = false;
     }
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-    public override void Resume()
-    {
-        isPaused = false;
-    }
+
     public override void SetPosition()
     {
         int dir = Random.Range(0, 100);

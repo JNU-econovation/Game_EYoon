@@ -13,25 +13,17 @@ public class Enemy_Meteor : Enemy
 
     void Update()
     {
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
-            speed = 0;
-            num = savedNum;
+            speed = 0;        
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
         transform.Translate(0, -speed, 0);
-    }
-
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-
-    public override void Resume()
-    {
-        isPaused = false;
     }
 
     public override void SetPosition()

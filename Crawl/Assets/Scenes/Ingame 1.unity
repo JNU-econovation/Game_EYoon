@@ -24074,7 +24074,7 @@ MonoBehaviour:
   - 15
   - 15
   - 15
-  cycleTime: 3
+  cycleTime: 2
   spawned_enemy: []
   spawnEnemy: {fileID: 0}
 --- !u!114 &1094924855
@@ -24132,12 +24132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c28e0c28245644fa7615a8aa27880e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effects:
-  - {fileID: 5805962077259987317, guid: 805ff75206620ec40bdf562f2516f57f, type: 3}
-  - {fileID: 819677072559650185, guid: a5da051c0fbac57439bcf62186ee979c, type: 3}
-  - {fileID: 8586782799421165009, guid: dd715d9480b37dd43abc5bbe50b05294, type: 3}
-  - {fileID: 5857819850033972760, guid: 9cb22401c50fb0d4087fdcf5df6ca5de, type: 3}
-  - {fileID: 184704063867525834, guid: aca7cdc8039f1134ba577fe8e01f28bf, type: 3}
+  water_death_effect: {fileID: 5805962077259987317, guid: 805ff75206620ec40bdf562f2516f57f,
+    type: 3}
+  sky_death_effect: {fileID: 819677072559650185, guid: a5da051c0fbac57439bcf62186ee979c,
+    type: 3}
+  space_death_effect: {fileID: 8586782799421165009, guid: dd715d9480b37dd43abc5bbe50b05294,
+    type: 3}
+  freeze_effect: {fileID: 5857819850033972760, guid: 9cb22401c50fb0d4087fdcf5df6ca5de,
+    type: 3}
+  fire_effect: {fileID: 184704063867525834, guid: aca7cdc8039f1134ba577fe8e01f28bf,
+    type: 3}
 --- !u!114 &1094924858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50430,8 +50434,8 @@ MonoBehaviour:
   targetNum: 1
   reflectDamage: 0
   rebirthEffect: {fileID: 67044177}
-  HP: 100
-  stamina: 100
+  HP: 10000
+  stamina: 10000
 --- !u!114 &8622369420676396089
 MonoBehaviour:
   m_ObjectHideFlags: 0

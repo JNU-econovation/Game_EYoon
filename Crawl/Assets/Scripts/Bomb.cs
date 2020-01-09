@@ -7,10 +7,7 @@ public class Bomb : Singleton<Bomb>
     float speed = 400;
     static public float damage = 10;
     float lifeTime = 5.0f;
-    bool isPause;
-    void Start()
-    {
-    }
+
     void OnEnable()
     {
         StartCoroutine(DestroySelf(lifeTime));
@@ -23,12 +20,9 @@ public class Bomb : Singleton<Bomb>
 
     private void Update()
     {
-        if (isPause)
-            speed = 0;
-        else
-            speed = 400;
         transform.Translate(0, speed * Time.deltaTime, 0);
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "Enemy")
@@ -49,10 +43,10 @@ public class Bomb : Singleton<Bomb>
     }
     public void Pause()
     {
-        isPause = true;
+        speed = 0;
     } 
     public void Resume()
     {
-        isPause = false;
+        speed = 400;
     }
 }

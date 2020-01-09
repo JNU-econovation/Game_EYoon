@@ -15,11 +15,10 @@ public class Manager : Singleton<Manager>
     }
     public void ResetCount()
     {
-        ItemManager.Instance.item_Copper.ResetCount();
-        ItemManager.Instance.item_Silver.ResetCount();
-        ItemManager.Instance.item_Gold.ResetCount();
-        ItemManager.Instance.item_Diamond.ResetCount();
-        ItemManager.Instance.item_Ruby.ResetCount();
+        for(int i = 0; i < 5; i++)
+        {
+            ItemManager.Instance.items[i].GetComponent<Item>().ResetCount();
+        }
     }
     public void EndGame()
     {

@@ -24,19 +24,18 @@ public class Enemy_Sky_Owl : Enemy
     }
     private void Update()
     {
-
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
             speed_x = 0;
-            DestroyControll();
         }
-        else if (isPaused == false)
+        else
         {
+            time += Time.deltaTime;
             speed = originSpeed;
             speed_x = originSpeed_x;
         }
-        //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
         if (distance_y < stopPos)
@@ -56,16 +55,6 @@ public class Enemy_Sky_Owl : Enemy
 
         }
         transform.Translate(0, -speed, 0);
-    }
-    public override void Pause()
-    {
-
-        isPaused = true;
-        savedNum = num;
-    }
-    public override void Resume()
-    {
-        isPaused = false;
     }
 
     public override void SetPosition()

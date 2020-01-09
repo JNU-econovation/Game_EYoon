@@ -17,13 +17,14 @@ public class Enemy_Storm : Enemy
     // Update is called once per frame
     void Update()
     {
-
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
             speed = 0;
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
-           
-
+        }
         transform.Translate(0, -speed, 0);
         distance = player.transform.position.y - transform.position.y;
         if (distance > 650)
@@ -31,19 +32,7 @@ public class Enemy_Storm : Enemy
             Destroy(gameObject);
         }
     }
-  
-    public override void Pause()
-    {
-        isPaused = true;
-    }
-    public override void Resume()
-    {
-        isPaused = false;
-    }
-
-
-
-
+ 
     public override void SetPosition()
     {
         int dir = Random.Range(135, 576);

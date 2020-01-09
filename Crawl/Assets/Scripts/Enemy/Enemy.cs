@@ -9,50 +9,43 @@ abstract public class Enemy : Singleton<Enemy>
     protected float originSpeed;
     public float speed_x = 1.5f;
     protected float originSpeed_x;
-    protected bool isPaused = false;
+    public bool isPaused;
     Enemy_Ability enemy_Ability;
     public bool OnAttack;
     public float lifeTime;
+    protected float time = 0;
     public GameObject enemy_Damage;
-    protected int savedNum = 0;
-    protected int num;
+
     void Awake()
-    {
-        
+    {       
         enemy_Ability = GetComponent<Enemy_Ability>();
         originSpeed = speed;
         originSpeed_x = speed_x;
         damage = GetComponent<Enemy_Ability>().GetDamage();
-        //DestroyControll();
+
     }
     void OnEnable()
     {
-        if(!LevelManager.Instance.OnBoss)
+        if (!LevelManager.Instance.OnBoss)
             StartCoroutine(DestroySelf());
     }
-   public void DestroyControll()
-    {
-        
-            if (isPaused == true)
-            {
-                num = savedNum;
-            }
-        
-    }
+
     IEnumerator DestroySelf()
     {
-        while ( num < 10)
+        while (true)
         {
-            yield return new WaitForSeconds(lifeTime / 10);
-            num += 1; ;
+            yield return null;
+            if(time >= lifeTime)
+            {
+                if (LevelManager.Instance.level == 0)
+                    EffectManager.Instance.SpawnWaterDeath(transform);
+                else if (LevelManager.Instance.level == 1)
+                    EffectManager.Instance.SpawnSkyDeath(transform);
+                else if (LevelManager.Instance.level >= 2)
+                    EffectManager.Instance.SpawnSpaceDeath(transform);
+                Destroy(gameObject);
+            }
         }
-        if (LevelManager.Instance.level == 0)
-            EffectManager.Instance.SpawnWaterDeath(transform);
-        else if (LevelManager.Instance.level == 1)
-            EffectManager.Instance.SpawnSkyDeath(transform);
-        else if (LevelManager.Instance.level >= 2)
-            EffectManager.Instance.SpawnSpaceDeath(transform);
-        Destroy(gameObject);
         
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -74,8 +67,6 @@ abstract public class Enemy : Singleton<Enemy>
     public bool GetOnAttack()
     {
         return OnAttack;
-    }
-    abstract public void Resume();
-    abstract public void Pause();
+    }   
     abstract public void SetPosition();
 }

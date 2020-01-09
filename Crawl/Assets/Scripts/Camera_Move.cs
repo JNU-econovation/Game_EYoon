@@ -17,7 +17,6 @@ public class Camera_Move : MonoBehaviour
         OnBoss = LevelManager.Instance.OnBoss;
         if(!OnBoss)
             transform.position = new Vector3(360, player.transform.position.y + 128, -0.01f);
-        else
-        { }
+        else { }
     }
 }

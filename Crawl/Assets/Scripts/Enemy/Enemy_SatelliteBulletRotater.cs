@@ -10,6 +10,9 @@ public class Enemy_SatelliteBulletRotater : MonoBehaviour
     float originSpeed;
     [SerializeField] float r;
     bool rotate = false;
+    bool isPaused;
+    float time = 0;
+    public float lifeTime;
     private void Start()
     {
         originSpeed = speed;
@@ -23,26 +26,28 @@ public class Enemy_SatelliteBulletRotater : MonoBehaviour
         StartRotate();
         
     }
+
     private void Update()
     {
-        if(rotate == true)
+        isPaused = EnemyManager.Instance.isPause;
+        if (isPaused)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = originSpeed;
+        }
+        if (rotate == true)
         {
             transform.Rotate(0, 0, speed);
         }
+
     }
 
     void StartRotate()
     {
         rotate = true;  
-    }
-
-    public void Stop()
-    {
-        speed = 0;
-    }
-    public void Resume()
-    {
-        speed = originSpeed;
     }
 }
 

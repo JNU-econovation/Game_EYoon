@@ -5,70 +5,26 @@ using UnityEngine;
 public class EnemyManager : Singleton<EnemyManager>
 {
     public GameObject[] enemys;
-    [SerializeField] GameObject[] sea_Enemys;
-    [SerializeField] GameObject[] sky_Enemys;
-    [SerializeField] GameObject[] space_Enemys;
+    public GameObject[] sea_Enemys;
+    public GameObject[] sky_Enemys;
+    public GameObject[] space_Enemys;
     [SerializeField] float[] enemyWeight;
     [SerializeField] float cycleTime;
-    [SerializeField] List<GameObject> spawned_enemy = new List<GameObject>() ;
     [SerializeField] GameObject spawnEnemy;
-    bool isPause = false;
+    public bool isPause = false;
     int level;
-    // Start is called before the first frame update
     private void Start()
     {
+        enemys = sea_Enemys;
         StartCoroutine(SpawnEnemy());
-        //StartCoroutine(PauseTest());
     }
-    private void Update()
-    {
-        level = LevelManager.Instance.level;
-        if (level == 0)
-        {
-            enemys = sea_Enemys;
-        }
-        else if (level == 1)
-        {
-            enemys = sky_Enemys;
-        }
-        else
-        {
-            enemys = space_Enemys;
-        }
 
-    }
     IEnumerator SpawnEnemy()
     {
         while (true)
-        {
-            //if (isPause == false)
-            //{
-            //    if(level == 0)
-            //    {
-            //        enemys = sea_Enemys;
-            //    }
-            //    else if(level == 1)
-            //    {
-            //        enemys = sky_Enemys;
-            //    }
-            //    else
-            //    {
-            //        enemys = space_Enemys;
-            //    }
-            //    float rand = Random.Range(1, 3);
-            //    if (LevelManager.Instance.OnBoss)
-            //        rand = 0;
-            //    for(int i = 0; i < rand; i++)
-            //    {
-            //        spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
-            //    }
-
-            //}
-            if (isPause == false && LevelManager.Instance.OnBoss == false)
-            {
-                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
-                
-            }
+        {        
+            if(!LevelManager.Instance.OnBoss || !isPause)
+                Instantiate(enemys[SelectEnemy()]);
             yield return new WaitForSeconds(cycleTime);
 
         }
@@ -78,7 +34,9 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         for(int i = 0; i < enemys.Length ;i++)
         {
-            enemys[i].GetComponent<Enemy_Ability>().Weak(n);
+            sea_Enemys[i].GetComponent<Enemy_Ability>().Weak(n);
+            sky_Enemys[i].GetComponent<Enemy_Ability>().Weak(n);
+            space_Enemys[i].GetComponent<Enemy_Ability>().Weak(n);
         }
     }
     public int SelectEnemy()
@@ -100,33 +58,11 @@ public class EnemyManager : Singleton<EnemyManager>
     }
     public void Pause()
     {
-        for(int i = 0; i < spawned_enemy.Count; i++)
-        {
-            if(spawned_enemy[i] != null)
-                spawned_enemy[i].GetComponent<Enemy>().Pause();
-        }
-        Enemy_AttackPattern.Instance.Pause();
         isPause = true;
     }
     public void Resume()
-    {
-        for (int i = 0; i < spawned_enemy.Count; i++)
-        {
-            if (spawned_enemy[i] != null)
-                spawned_enemy[i].GetComponent<Enemy>().Resume();
-        }
-        Enemy_AttackPattern.Instance.Resume();
+    {     
         isPause = false;
-    }
-    IEnumerator PauseTest()
-    {
-        yield return new WaitForSeconds(5);
-        Pause();
-    }
-    IEnumerator ResumeTest()
-    {
-        yield return new WaitForSeconds(10);
-        Resume();
     }
 
 

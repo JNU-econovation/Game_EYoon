@@ -152,12 +152,12 @@ public class Player_Attack : MonoBehaviour
             yield return null;
             if (enemy != null)
             {
-                enemy.GetComponent<Enemy>().Pause();
+                enemy.GetComponent<Enemy>().isPaused = true;
                 if(!isFreeze)
                 {
                     if (enemy != null)
                     {
-                        enemy.GetComponent<Enemy>().Resume();
+                        enemy.GetComponent<Enemy>().isPaused = false;
                         break;
                     }                   
                 }

@@ -7,11 +7,6 @@ public class Enemy_Boss_UI : MonoBehaviour
 {
     [SerializeField] Image hpImage;
     [SerializeField] Text hpText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

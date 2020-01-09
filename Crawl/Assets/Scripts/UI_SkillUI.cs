@@ -23,12 +23,12 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        LevelManager.Instance.Pause();
         SoundManager.Instance.PlaySkillSound();
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].SetActive(true);
-        }
-        LevelManager.Instance.Pause();
+        }        
         ChooseSkill();
     }
     private void OnDisable()

@@ -20,25 +20,18 @@ public class Enemy_SpaceShuttle : Enemy
     // Update is called once per frame
     void Update()
     {
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
-            num = savedNum;
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
 
         transform.Translate(0, speed, 0);
-    }
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-
-    public override void Resume()
-    {
-        isPaused = false;
     }
 
     public override void SetPosition()

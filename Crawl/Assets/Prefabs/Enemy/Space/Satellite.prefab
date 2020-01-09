@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: d482b256240943e44a14874dece0a180, type: 3}
-  m_Color: {r: 0, g: 255, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91810b0badee8e4988681451b841b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 40
-  damage: 40
+  HP: 100
+  damage: 100
 --- !u!114 &5600604699789597620
 MonoBehaviour:
   m_ObjectHideFlags: 0

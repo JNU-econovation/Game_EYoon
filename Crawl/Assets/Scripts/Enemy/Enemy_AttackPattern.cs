@@ -85,29 +85,6 @@ public class Enemy_AttackPattern : Singleton<Enemy_AttackPattern>
             
         
     }
-   public void Pause()
-    {
-        for(int i = 0; i < bullets.Count; i++)
-        {
-            if (bullets[i] != null)
-            {
-                    bullets[i].GetComponent<Enemy_UFO_bullet>().Stop();
-            }
-            
-        }
-    }
-    public void Resume()
-    {
-        for (int i = 0; i < bullets.Count; i++)
-        {
-            if (bullets[i] != null)
-            {
-                if (bullets[i].GetComponent<Enemy_SatelliteMonster>() == null)
-                    bullets[i].GetComponent<Enemy_UFO_bullet>().Resume();
-                else
-                    bullets[i].GetComponent<Enemy_SatelliteMonster>().Resume();
-            }
-
-        }
-    }
+  
+    
 }

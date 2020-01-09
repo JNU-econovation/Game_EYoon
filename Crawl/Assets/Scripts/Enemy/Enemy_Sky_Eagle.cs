@@ -6,16 +6,18 @@ public class Enemy_Sky_Eagle : Enemy
 {
     [SerializeField] GameObject bullet;
     [SerializeField] int bulletCount;
+    [SerializeField] float attackDelay;
     GameObject player;
     Animator animator;
     bool isAttack;
     bool isMade;
     bool attack;
     float distance_y;
-    float time = 0;
+    float attackTime = 0;
     float stopPos; //몬스터가 플래이어로부터 멈추는 거리
     void Start()
     {
+        originSpeed = speed;
         damage = GetComponent<Enemy_Ability>().GetDamage();
         animator = GetComponent<Animator>();
         player = LevelManager.Instance.GetPlayer();
@@ -25,43 +27,44 @@ public class Enemy_Sky_Eagle : Enemy
 
     IEnumerator Attack()
     {
-        while (true)
+        if (isPaused == false)
         {
-            if (isPaused == false)
+            if (attackTime >= 3.0f)
             {
-                yield return null;
-                if (time >= 3.0f)
+                attackTime = 0;
+                if (isAttack)
                 {
-                    time = 0;
-                    if (isAttack)
-                    {
-                        isAttack = false;
-                        animator.SetBool("IsAttack", false);
-                    }
-
-                    else
-                    {
-                        float distance_x = transform.position.x - player.transform.position.x;
-                        float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-                        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
-                        animator.SetBool("IsAttack", true);
-                        isAttack = true;
-                    }
+                    isAttack = false;
+                    animator.SetBool("IsAttack", false);
                 }
+
+                else
+                {
+                    float distance_x = transform.position.x - player.transform.position.x;
+                    float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+                    Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
+                    animator.SetBool("IsAttack", true);
+                    isAttack = true;
+                }
+
             }
         }
+        yield return null;
     }
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
-            DestroyControll();
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
         distance_y = transform.position.y - player.transform.position.y;
         if (distance_y < stopPos)
         {
@@ -82,17 +85,7 @@ public class Enemy_Sky_Eagle : Enemy
         transform.Translate(speed, -speed, 0);
        
     }
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-
-    public override void Resume()
-    {
-        isPaused = false;
-    }
-
+   
     public override void SetPosition()
     {
         float dir = Random.Range(135, 576);

@@ -14,25 +14,19 @@ public class Enemy_Sky_Pigeon : Enemy
     // Update is called once per frame
     void Update()
     {
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
-        {
+        {           
             speed = 0;
-            DestroyControll();
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
         transform.Translate(speed, 0, 0);
     }
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
 
-    public override void Resume()
-    {
-        isPaused = false;
-    }
 
     public override void SetPosition()
     {

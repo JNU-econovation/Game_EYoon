@@ -19,26 +19,15 @@ public class Enemy_SatelliteMonster : Enemy_UFO_bullet
     void Update()
     {
         transform.Translate(0, -speed, 0);
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused == true)
         {
-            time = presentTime;
+            speed = 0;
         }
-    }
-
-
-    public override void Resume()
-    {
-        isPaused = false;
-        speed = originSpeed;
-        Rotater.Resume();
-    }
-
-
-
-    public override void Stop()
-    {
-        speed = 0;
-        presentTime = time;
-        Rotater.Stop();
+        else
+        {
+            time += Time.deltaTime;
+            speed = originSpeed;
+        }
     }
 }

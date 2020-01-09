@@ -19,7 +19,6 @@ public class Enemy_Boss_MotherShip : Enemy
     {
         player = LevelManager.Instance.GetPlayer();
         image = transform.GetChild(0);
-        print(image.name);
         SetPosition();
     }
 
@@ -28,7 +27,7 @@ public class Enemy_Boss_MotherShip : Enemy
     {
         image.Rotate(0, 0, spinSpeed);
         image.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
-
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
@@ -36,10 +35,10 @@ public class Enemy_Boss_MotherShip : Enemy
         }
         else if (isPaused == false)
         {
+            time += Time.deltaTime;
             speed = originSpeed;
             speed_x = originSpeed_x;
         }
-        //print(isPaused);
 
         distance_y = transform.position.y - player.transform.position.y;
         if (transform.position.y < 59900)
@@ -133,22 +132,12 @@ public class Enemy_Boss_MotherShip : Enemy
         transform.position = new Vector3(360, 60900, 0);
     }
 
-    public override void Resume()
-    {
-        isPaused = false;
-    }
-
-    public override void Pause()
-    {
-        isPaused = true;
-    }
-
     private void OnDisable()
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemys.Length; i++)
         {
-            Destroy(enemys[i]);
+            enemys[i].SetActive(false);
         }
         LevelManager.Instance.bossClear = true;
         Item_Explosion.Instance.Explosion(transform.position);

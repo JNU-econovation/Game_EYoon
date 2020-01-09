@@ -20,10 +20,15 @@ public class Enemy_SpreadBullet : Enemy_UFO_bullet
     void Update()
     {
         transform.Translate(0, -speed, 0);
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused == true)
         {
-            time = presentTime;
-            num = savedDelay;
+            speed = 0;
+        }
+        else
+        {
+            time += Time.deltaTime;
+            speed = originSpeed;
         }
     }
 
@@ -38,19 +43,4 @@ public class Enemy_SpreadBullet : Enemy_UFO_bullet
         Destroy(gameObject);
     }
 
-    public override void Stop()
-    {
-        presentTime = time;
-        speed = 0;
-        savedDelay = num;
-        isPaused = true;
-
-    }
-
-    public override void Resume()
-    {
-        
-        speed = originSpeed;
-        isPaused = false;
-    }
 }

@@ -7,26 +7,29 @@ public class Enemy_Anchovies : Enemy
     int direction;
     bool attack = false;
     GameObject player;
-    // Start is called before the first frame update
+
     private void Start()
     {
         player = LevelManager.Instance.GetPlayer();
-        //player = GameObject.FindGameObjectWithTag("Player");
         SetPosition();
         originSpeed = speed;
         damage = 0;
         player = LevelManager.Instance.GetPlayer();
-        // 아직 getPlayer에서 현재 게임 플래이 중인 플래이어를 불러올수 없어 오류가생겨요
+
     }
     private void Update()
     {
+        isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
             speed = 0;
-            DestroyControll();
         }
-        else if (isPaused == false)
+        else
+        {
+            time += Time.deltaTime;
             speed = originSpeed;
+        }
+
         transform.Translate(speed * direction, 0, 0);
 
         if (transform.position.x < -300 || transform.position.x > 811)
@@ -34,17 +37,7 @@ public class Enemy_Anchovies : Enemy
             Destroy(gameObject);
         }
     }
-    
-    public override void Pause()
-    {
-        isPaused = true;
-        savedNum = num;
-    }
-  
-    public override void Resume()
-    {
-        isPaused = false;
-    }
+
     public override void SetPosition()
     {
         int dir = Random.Range(0, 100);
