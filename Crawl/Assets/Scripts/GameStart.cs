@@ -17,7 +17,8 @@ public class GameStart : MonoBehaviour
         int touchCount = Input.touchCount;
         if (touchCount > 0 || Input.GetKeyDown(KeyCode.A))
         {
-            SceneManager.LoadScene("InGame 1");
+            //SceneManager.LoadScene("InGame 1");
+            Loading.LoadScene("InGame 1");
         }
     }
 }

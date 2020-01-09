@@ -15,16 +15,38 @@ public class EnemyManager : Singleton<EnemyManager>
     int level;
     private void Start()
     {
+<<<<<<< HEAD
         enemys = sea_Enemys;
+=======
+        ChangeEnemy1();
+>>>>>>> 75cf88a30bdfa28637f3ffc3deb5b6d007dcf14a
         StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy()
     {
         while (true)
+<<<<<<< HEAD
         {        
             if(!LevelManager.Instance.OnBoss || !isPause)
                 Instantiate(enemys[SelectEnemy()]);
+=======
+        {
+           
+            if (isPause == false && LevelManager.Instance.OnBoss == false)
+            {
+                int rand = Random.Range(1, 3);
+                if (rand == 1)
+                {
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                }
+                else
+                {
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                    spawned_enemy.Add(Instantiate(enemys[SelectEnemy()]));
+                }
+            }
+>>>>>>> 75cf88a30bdfa28637f3ffc3deb5b6d007dcf14a
             yield return new WaitForSeconds(cycleTime);
 
         }
@@ -55,6 +77,18 @@ public class EnemyManager : Singleton<EnemyManager>
             
         }
         return i;
+    }
+    public void ChangeEnemy1()
+    {
+        enemys = sea_Enemys;
+    }
+    public void ChangeEnemy2()
+    {
+        enemys = sky_Enemys;
+    }
+    public void ChangeEnemy3()
+    {
+        enemys = space_Enemys;
     }
     public void Pause()
     {
