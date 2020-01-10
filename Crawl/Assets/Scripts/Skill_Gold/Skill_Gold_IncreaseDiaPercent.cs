@@ -8,7 +8,7 @@ public class Skill_Gold_IncreaseDiaPercent : Skill_Gold
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 5, 10, 15 };
+        variation = new float[] { 10, 20, 30 };
     }
     public override void SkillFunction()
     {

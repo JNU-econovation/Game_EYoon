@@ -25,8 +25,8 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     float maxAvoidance = 60.0f;
     [SerializeField] float HP;
     [SerializeField] float stamina;
-    float maxHP = 10000;
-    float maxStamina = 10000;
+    float maxHP = 100;
+    float maxStamina = 100;
     float rebirthHP;
     float rebirth_hp_Percent = 0.2f;
     float staminaZeroTime = 0;
@@ -72,7 +72,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     {
         if (!_player.GetIsPause())
         {
-            moveSpeed += Time.deltaTime;          
+            moveSpeed += Time.deltaTime/3;          
             DecreseStamina(Time.deltaTime / 2);
             staminaZeroTime += Time.deltaTime;
             if (isCritical)

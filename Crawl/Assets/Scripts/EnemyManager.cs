@@ -25,9 +25,14 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         while (true)
 
-        {        
-            if(!LevelManager.Instance.OnBoss || !isPause)
-                Instantiate(enemys[SelectEnemy()]);
+        {
+            if (!LevelManager.Instance.OnBoss && !isPause)
+            {
+                for (int i = 0; i < Random.Range(1, 3); i++)
+                {
+                    Instantiate(enemys[SelectEnemy()]);
+                }
+            }
 
             yield return new WaitForSeconds(cycleTime);
 

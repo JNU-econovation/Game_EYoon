@@ -24251,8 +24251,8 @@ MonoBehaviour:
   - 15
   - 15
   cycleTime: 2
-  spawned_enemy: []
   spawnEnemy: {fileID: 0}
+  isPause: 0
 --- !u!114 &1094924855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50930,7 +50930,7 @@ MonoBehaviour:
   attack: 10
   defense: 0
   avoidance: 10
-  critical_Percentage: 5
+  critical_Percentage: 20
   critical_Hit: 150
   attackRange: 0
   attackSpeed: 1
@@ -50938,8 +50938,8 @@ MonoBehaviour:
   targetNum: 1
   reflectDamage: 0
   rebirthEffect: {fileID: 67044177}
-  HP: 10000
-  stamina: 10000
+  HP: 100
+  stamina: 100
 --- !u!114 &8622369420676396089
 MonoBehaviour:
   m_ObjectHideFlags: 0

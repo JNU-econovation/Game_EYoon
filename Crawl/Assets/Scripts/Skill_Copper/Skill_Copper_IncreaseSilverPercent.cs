@@ -8,7 +8,7 @@ public class Skill_Copper_IncreaseSilverPercent : Skill_Copper
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 5, 10, 15 };
+        variation = new float[] { 15, 20, 25 };
     }
     public override void SkillFunction()
     {
