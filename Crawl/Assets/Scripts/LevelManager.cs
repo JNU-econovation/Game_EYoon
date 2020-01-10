@@ -118,11 +118,9 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if(level == 1)
             {
-<<<<<<< HEAD
+
                 EnemyManager.Instance.enemys = EnemyManager.Instance.sky_Enemys;
-=======
-                EnemyManager.Instance.ChangeEnemy2();
->>>>>>> 75cf88a30bdfa28637f3ffc3deb5b6d007dcf14a
+
                 player_Animation.SetAnimator(player_Anim[1]);
                 player_SpriteRenderer.sprite = player_Sprite[1];
                 bossClear = false;
@@ -143,11 +141,10 @@ public class LevelManager : Singleton<LevelManager>
             yield return null;
             if (level == 2)
             {
-<<<<<<< HEAD
+
                 EnemyManager.Instance.enemys = EnemyManager.Instance.space_Enemys;
-=======
-                EnemyManager.Instance.ChangeEnemy3();
->>>>>>> 75cf88a30bdfa28637f3ffc3deb5b6d007dcf14a
+
+
                 player_Animation.SetAnimator(player_Anim[2]);
                 player_SpriteRenderer.sprite = player_Sprite[2];
                 bossClear = false;
