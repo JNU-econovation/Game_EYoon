@@ -8,11 +8,7 @@ public class Manager : Singleton<Manager>
     public GameObject[] objects;
     public GameObject player;
     static float height;
-    static int bestHeight;
-    private void Start()
-    {
-        PlayerPrefs.GetInt("HighScore", bestHeight);
-    }
+
     public void ResetCount()
     {
         for(int i = 0; i < 5; i++)
@@ -24,17 +20,16 @@ public class Manager : Singleton<Manager>
     {
         ResetCount();
         height = UIManager.Instance.GetHeight();
-        if(height > bestHeight)
+        if (height > PlayerPrefs.GetInt("HighScore"))
         {
-            bestHeight = (int)height;
+            PlayerPrefs.SetInt("HighScore", (int)height);
         }
-        PlayerPrefs.SetInt("HighScore", bestHeight);
         LevelManager.Instance.Pause();
         SceneManager.LoadScene("GameOver");
     }
     public int GetBestHeight()
     {
-        return bestHeight;
+        return PlayerPrefs.GetInt("HighScore");
     }
     public float GetHeight()
     {

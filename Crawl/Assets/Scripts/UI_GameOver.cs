@@ -14,26 +14,22 @@ public class UI_GameOver : Singleton<UI_GameOver>
     Color alpha;
     float time = 0;
     static float height;
-    static int bestHeight;
     void Start()
     {
         Screen.SetResolution(720, 1280, true);
         alpha = backGround.color;
-        bestHeight = Manager.Instance.GetBestHeight();
     }
     
 
     private void Awake()
     {
         height = Manager.Instance.GetHeight();
-        if(height > bestHeight)
+        if(height > PlayerPrefs.GetInt("HighScore"))
         {
-            bestHeight = (int)height;
-            PlayerPrefs.SetInt("HighScore", bestHeight);
+            PlayerPrefs.SetInt("HighScore", (int)height);
         }
-        PlayerPrefs.GetInt("HighScore", bestHeight);
         score_Text.text = ((int)height).ToString()+"m";
-        bestScore_Text.text = bestHeight.ToString() + "m";
+        bestScore_Text.text = PlayerPrefs.GetInt("HighScore").ToString() + "m";
     }
     
     void Update()

@@ -8,6 +8,6 @@ public class UI_Button_Retry : MonoBehaviour
 
     public void Onclick()
     {
-        SceneManager.LoadScene("InGame 1");
+        Loading.LoadScene("InGame 1");
     }
 }

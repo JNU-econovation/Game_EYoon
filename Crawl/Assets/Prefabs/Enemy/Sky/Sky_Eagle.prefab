@@ -141,14 +141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb812e70a518c14084e4deeca5ded2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  speed_x: 1.5
+  speed: 2
+  speed_x: 3
+  isPaused: 0
   OnAttack: 0
   lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
+  firePos: 350
   bullet: {fileID: 7065807116595169142, guid: 869d9f431d573cf4cbe6f2dacdc9dc07, type: 3}
-  bulletCount: 2
 --- !u!60 &5983687776615024993
 PolygonCollider2D:
   m_ObjectHideFlags: 0
