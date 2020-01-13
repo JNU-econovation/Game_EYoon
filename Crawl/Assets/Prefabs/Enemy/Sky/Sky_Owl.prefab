@@ -143,12 +143,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   speed_x: 1.5
+  isPaused: 0
   OnAttack: 0
   lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
-  bullet: {fileID: 8657402659710426183, guid: f7d835fdf028d8647958207967b531af, type: 3}
-  bulletCount: 2
+  bullet: {fileID: 5934311049211575655, guid: f7d835fdf028d8647958207967b531af, type: 3}
+  bulletCount: 3
   attackDelay: 2
 --- !u!60 &865894336048292229
 PolygonCollider2D:

@@ -8,7 +8,7 @@ public class Skill_Silver_IncreaseMaxHP : Skill_Silver
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 10, 20, 30 };
+        variation = new float[] { 20, 40, 60 };
     }
     public override void SkillFunction()
     {

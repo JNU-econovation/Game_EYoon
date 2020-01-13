@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 05e49b539d7ca8f46a420a69dac5f75d, type: 3}
-  m_Color: {r: 0, g: 0, b: 255, a: 1}
+  m_Color: {r: 255, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
-  damage: 100
+  damage: 60
 --- !u!114 &3749145808890370915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   speed_x: 1.5
+  isPaused: 0
   OnAttack: 0
   lifeTime: 10
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,

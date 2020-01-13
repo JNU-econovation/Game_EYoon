@@ -8,7 +8,7 @@ public class Skill_Silver_IncreaseAttackRange : Skill_Silver
     private void Start()
     {
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
-        variation = new float[] { 0.2f, 0.3f, 0.4f};
+        variation = new float[] { 0.5f, 1f, 1.5f};
     }
     public override void SkillFunction()
     {

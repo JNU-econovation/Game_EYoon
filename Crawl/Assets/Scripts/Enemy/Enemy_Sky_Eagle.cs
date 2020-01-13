@@ -4,57 +4,27 @@ using UnityEngine;
 
 public class Enemy_Sky_Eagle : Enemy
 {
-    [SerializeField] GameObject bullet;
-    [SerializeField] int bulletCount;
-    [SerializeField] float attackDelay;
+    float enemyPos;
+    int direction;
     GameObject player;
-    Animator animator;
-    bool isAttack;
-    bool isMade;
-    bool attack;
+    Quaternion quaternion = Quaternion.Euler(0, 180f, 0);
     float distance_y;
-    float attackTime = 0;
-    float stopPos; //몬스터가 플래이어로부터 멈추는 거리
+    [SerializeField] float firePos;
+    bool attack = false;
+    bool turn = false;
+    [SerializeField] GameObject bullet;
+    // Start is called before the first frame update
     void Start()
     {
-        originSpeed = speed;
-        damage = GetComponent<Enemy_Ability>().GetDamage();
-        animator = GetComponent<Animator>();
         player = LevelManager.Instance.GetPlayer();
         SetPosition();
-        StartCoroutine(Attack());
+
     }
 
-    IEnumerator Attack()
-    {
-        if (isPaused == false)
-        {
-            if (attackTime >= 3.0f)
-            {
-                attackTime = 0;
-                if (isAttack)
-                {
-                    isAttack = false;
-                    animator.SetBool("IsAttack", false);
-                }
-
-                else
-                {
-                    float distance_x = transform.position.x - player.transform.position.x;
-                    float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
-                    Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
-                    animator.SetBool("IsAttack", true);
-                    isAttack = true;
-                }
-
-            }
-        }
-        yield return null;
-    }
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        distance_y = transform.position.y - player.transform.position.y;
         isPaused = EnemyManager.Instance.isPause;
         if (isPaused)
         {
@@ -65,28 +35,45 @@ public class Enemy_Sky_Eagle : Enemy
             time += Time.deltaTime;
             speed = originSpeed;
         }
-        distance_y = transform.position.y - player.transform.position.y;
-        if (distance_y < stopPos)
-        {
-            speed = 0;
-            if (transform.position.x < 96 || transform.position.x > 631)
-            {
-                speed_x = speed_x * -1;
-                originSpeed_x = speed_x;
-            }
-            transform.Translate(speed_x, 0, 0);
 
+        if (distance_y < firePos && attack == false && transform.position.x >-110 && transform.position.x<811 )
+        {
+                StartCoroutine(Attack());
+            
         }
-        transform.Translate(speed, -speed, 0);
-       
-    }
+
+        transform.Translate(speed_x, -speed, 0);
    
+
+    }
+    IEnumerator Attack()
+    {
+        attack = true;
+        GetComponent<Animator>().SetBool("IsAttack", true);
+        float distance_x = transform.position.x - player.transform.position.x;
+        float angle = Mathf.Atan2(distance_x, distance_y) * Mathf.Rad2Deg;
+        Enemy_AttackPattern.Instance.SingleShot(gameObject, bullet, angle, damage);
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<Animator>().SetBool("IsAttack", false);
+    }
+
+
     public override void SetPosition()
     {
-        float dir = Random.Range(135, 576);
-        float ypos = player.transform.position.y + 1000;
-        transform.position = new Vector3(-100, ypos, 0);
+        int rand = Random.Range(1, 3);
+        float playerHeight = player.transform.position.y;
+        if (rand == 1)
+        {
+            transform.position = new Vector2(-300, Random.Range(1100, 1400) + playerHeight);
+        }
+
+        else if (rand == 2)
+        {
+            transform.position = new Vector2(1020, Random.Range(1100, 1400) + playerHeight);
+            speed_x = -speed_x;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
 
     }
-    
+
 }
