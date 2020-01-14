@@ -27,6 +27,7 @@ public class Manager : Singleton<Manager>
     {
         ResetCount();
         height = UIManager.Instance.GetHeight();
+        PlayerPrefs.SetInt("Height", (int)height);
         if (height > PlayerPrefs.GetInt("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore", (int)height);

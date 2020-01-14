@@ -28,7 +28,7 @@ public class LevelManager : Singleton<LevelManager>
     public Material[] left_BackGround_Material;
     void Awake()
     {
-        player = playerPrefab;
+        player = GameObject.FindGameObjectWithTag("Player");
         player_SpriteRenderer = player.GetComponent<SpriteRenderer>();
         _player = player.GetComponent<Player>();
         player_Move = player.GetComponent<Player_Move>();

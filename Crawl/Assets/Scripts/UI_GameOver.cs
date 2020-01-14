@@ -23,11 +23,7 @@ public class UI_GameOver : Singleton<UI_GameOver>
 
     private void Awake()
     {
-        height = Manager.Instance.GetHeight();
-        if(height > PlayerPrefs.GetInt("HighScore"))
-        {
-            PlayerPrefs.SetInt("HighScore", (int)height);
-        }
+        height = PlayerPrefs.GetInt("Height");
         score_Text.text = ((int)height).ToString()+"m";
         bestScore_Text.text = PlayerPrefs.GetInt("HighScore").ToString() + "m";
     }
