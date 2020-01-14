@@ -6,8 +6,13 @@ public class Camera_Move : MonoBehaviour
 {
     GameObject player;
     bool OnBoss;
+    private void Awake()
+    {
+        Screen.SetResolution(720, 1280, true);
+    }
     void Start()
     {
+        
         player = LevelManager.Instance.GetPlayer();
     }
 

@@ -34,6 +34,12 @@ public class Item_Diamond : Item
         {
             transform.Translate((player.transform.position - transform.position).normalized * Time.deltaTime * 500);
         }
+        if (!LevelManager.Instance.isPause)
+        {
+            time += Time.deltaTime;
+        }
+        if (time >= 7.0f)
+            Destroy(gameObject);
     }
     public override int GetCount()
     {
