@@ -97,7 +97,7 @@ MonoBehaviour:
   speed: 5
   spreadBullet: {fileID: 3854389944115917021, guid: 1d7beeffe2a81994997045f07449d0ef,
     type: 3}
-  count: 5
+  count: 3
 --- !u!114 &525989515258154956
 MonoBehaviour:
   m_ObjectHideFlags: 0
