@@ -18,6 +18,8 @@ public class UIManager : Singleton<UIManager>
     public GameObject gameover_UI;
     public GameObject[] bossClear_SKill;
     public GameObject[] bossApproach_Text;
+    public GameObject panel;
+    public GameObject joyStick;
     void Start()
     {
         item[0] = new Item_Copper();

@@ -8,7 +8,6 @@ public class Player_Move : MonoBehaviour
     public bool isMoving;
     Vector3 _moveVector;
     Transform _transform;
-    public GameObject joyStick_Obj;
     Player_Booster player_Booster;
     Player_Circle_Move player_Circle_Move;
     Player _player;

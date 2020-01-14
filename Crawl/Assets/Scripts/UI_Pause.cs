@@ -24,6 +24,8 @@ public class UI_Pause : MonoBehaviour
     {
         SoundManager.Instance.PlayClickSound();
         gameObject.SetActive(false);
+        UIManager.Instance.panel.SetActive(true);
+        UIManager.Instance.joyStick.SetActive(true);
         LevelManager.Instance.Resume();
     }
 }
