@@ -14,7 +14,8 @@ public class Enemy_Boss_MotherShip : Enemy
     public bool onAttack = false;
     [SerializeField] float spinSpeed = 0.2f;
     Transform image;
-    // Start is called before the first frame update
+
+    
     void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -22,7 +23,7 @@ public class Enemy_Boss_MotherShip : Enemy
         SetPosition();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         image.Rotate(0, 0, spinSpeed);
@@ -140,6 +141,6 @@ public class Enemy_Boss_MotherShip : Enemy
             enemys[i].SetActive(false);
         }
         LevelManager.Instance.bossClear = true;
-        Item_Explosion.Instance.Explosion(transform.position);
+        UIManager.Instance.OnSkill_BossClear(2);
     }
 }

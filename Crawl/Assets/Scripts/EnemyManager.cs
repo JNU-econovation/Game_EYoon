@@ -15,25 +15,13 @@ public class EnemyManager : Singleton<EnemyManager>
     int level;
     private void Start()
     {
-<<<<<<< HEAD
         enemys = sea_Enemys;
-=======
-
-        enemys = sea_Enemys;
-
->>>>>>> 7a48060acd16bcc0cc17bf4c394a53db6452ebbb
         StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy()
     {
         while (true)
-<<<<<<< HEAD
-        {        
-            if(!LevelManager.Instance.OnBoss || !isPause)
-                Instantiate(enemys[SelectEnemy()]);        
-=======
-
         {
             if (!LevelManager.Instance.OnBoss && !isPause)
             {
@@ -42,8 +30,6 @@ public class EnemyManager : Singleton<EnemyManager>
                     Instantiate(enemys[SelectEnemy()]);
                 }
             }
-
->>>>>>> 7a48060acd16bcc0cc17bf4c394a53db6452ebbb
             yield return new WaitForSeconds(cycleTime);
         }
     }

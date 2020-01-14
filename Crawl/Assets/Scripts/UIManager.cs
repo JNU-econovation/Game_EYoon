@@ -16,6 +16,7 @@ public class UIManager : Singleton<UIManager>
     float time = 0;
     GameObject player;
     public GameObject gameover_UI;
+    public GameObject[] bossClear_SKill;
     void Start()
     {
         item[0] = new Item_Copper();
@@ -66,5 +67,15 @@ public class UIManager : Singleton<UIManager>
     public void SetHeight(float n)
     {
         height = n;
+    }
+
+    public void OnSkill_BossClear(int n)
+    {
+        StartCoroutine(Delay(n));
+    }
+    IEnumerator Delay(int n)
+    {
+        yield return new WaitForSeconds(1);
+        bossClear_SKill[n].SetActive(true);
     }
 }
