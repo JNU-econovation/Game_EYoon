@@ -29843,6 +29843,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 916970663}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &902076720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902076716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881658cc352895f4bbf9ad77fd78f13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 1753388039}
+  handle: {fileID: 1615367248}
+  canMove: 0
 --- !u!1 &902247322
 GameObject:
   m_ObjectHideFlags: 0
@@ -30337,7 +30352,7 @@ PrefabInstance:
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -30357,12 +30372,12 @@ PrefabInstance:
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110
+      value: 146
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -30409,6 +30424,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: JoyStick
       objectReference: {fileID: 0}
+    - target: {fileID: 3881087803815115468, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_Sprite
@@ -30430,10 +30450,20 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458063, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087804030458063, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -30461,10 +30491,25 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 3881087803815115471, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803815115471, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458062, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881087803549984438, guid: ec536a7718376554185e4a856d5ae230,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -35340,6 +35385,7 @@ GameObject:
   - component: {fileID: 1094924856}
   - component: {fileID: 1094924857}
   - component: {fileID: 1094924858}
+  - component: {fileID: 1094924855}
   m_Layer: 0
   m_Name: Service
   m_TagString: Service
@@ -35629,6 +35675,19 @@ MonoBehaviour:
   cycleTime: 2
   spawnEnemy: {fileID: 0}
   isPause: 0
+--- !u!114 &1094924855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094924847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f8de9ecf4b3824f94435807f24f435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joyStick: {fileID: 902076716}
 --- !u!114 &1094924856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54534,6 +54593,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a0704c6da5fe4aa02cdf5e4666146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1615367248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3881087804030458063, guid: ec536a7718376554185e4a856d5ae230,
+    type: 3}
+  m_PrefabInstance: {fileID: 916970663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1620054966
 GameObject:
   m_ObjectHideFlags: 0
@@ -74299,7 +74364,7 @@ RectTransform:
   - {fileID: 672765516}
   - {fileID: 1165157039}
   m_Father: {fileID: 4987757818911268474}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -75017,8 +75082,8 @@ RectTransform:
   - {fileID: 520477381}
   - {fileID: 991017241}
   - {fileID: 4987757818965172124}
-  - {fileID: 1887581556}
   - {fileID: 4987757817775827510}
+  - {fileID: 1887581556}
   - {fileID: 4987757819134053273}
   - {fileID: 4987757817345079353}
   - {fileID: 945422742}
@@ -75605,6 +75670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
+  joyStick_Obj: {fileID: 902076716}
 --- !u!1 &8622369420676396087
 GameObject:
   m_ObjectHideFlags: 0

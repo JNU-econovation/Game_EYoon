@@ -8,7 +8,9 @@ public class Player_Move : MonoBehaviour
     public bool isMoving;
     Vector3 _moveVector;
     Transform _transform;
+    public GameObject joyStick_Obj;
     JoyStick joyStick;
+    JoyStick_Main joyStick_Main;
     Player_Booster player_Booster;
     Player_Circle_Move player_Circle_Move;
     Player _player;
@@ -21,6 +23,7 @@ public class Player_Move : MonoBehaviour
         player_Circle_Move = GetComponentInChildren<Player_Circle_Move>();
         player_Booster = GetComponent<Player_Booster>();
         joyStick = GameObject.FindGameObjectWithTag("JoyStick").GetComponent<JoyStick>();
+        joyStick_Main = joyStick_Obj.GetComponent<JoyStick_Main>();
         _transform = transform;
         _moveVector = Vector3.zero;
     }
@@ -45,7 +48,8 @@ public class Player_Move : MonoBehaviour
     {
         OnBoss = LevelManager.Instance.OnBoss;
         bossClear = LevelManager.Instance.bossClear;
-        HandleInput();
+        if(joyStick_Main.canMove)
+            HandleInput();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 170.0f, 550.0f), transform.position.y, transform.position.z);
     }
 
