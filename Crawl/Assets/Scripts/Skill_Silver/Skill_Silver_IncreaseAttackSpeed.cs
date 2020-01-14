@@ -10,6 +10,10 @@ public class Skill_Silver_IncreaseAttackSpeed : Skill_Silver
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 0.2f, 0.3f, 0.4f };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

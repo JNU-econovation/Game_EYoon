@@ -13,6 +13,10 @@ public class Skill_Gold_Fire : Skill_Gold
         player_Attack = player.GetComponent<Player_Attack>();
         variation = new float[] { 2, 3, 5 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

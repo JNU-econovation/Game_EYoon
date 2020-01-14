@@ -18,5 +18,5 @@ abstract public class Skill_Copper : Skill
      * 폭탄 공격
      * 부스터
      * */
-   
+      
 }

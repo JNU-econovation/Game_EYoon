@@ -10,6 +10,10 @@ public class Skill_Copper_IncreaseCriticalPercent : Skill_Copper
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 5, 7, 10 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         

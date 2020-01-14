@@ -11,6 +11,10 @@ public class Skill_Copper_SelectSilver : Skill_Copper
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 1, 2, 3 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

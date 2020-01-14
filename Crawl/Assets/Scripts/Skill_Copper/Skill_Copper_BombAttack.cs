@@ -15,6 +15,11 @@ public class Skill_Copper_BombAttack : Skill_Copper
         bomb_Attack = player.GetComponent<Player_Bomb_Attack>();
         variation = new float[] { 1, 2, 3 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+        count = 0;
+    }
     public override void SkillFunction()
     {        
         IncreaseCount();

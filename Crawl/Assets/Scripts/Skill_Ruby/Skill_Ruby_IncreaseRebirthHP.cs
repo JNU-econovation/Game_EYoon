@@ -10,6 +10,10 @@ public class Skill_Ruby_IncreaseRebirthHP : Skill_Ruby
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 0.05f, 0.1f, 0.2f };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

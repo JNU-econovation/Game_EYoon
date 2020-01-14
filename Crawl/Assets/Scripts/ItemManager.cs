@@ -53,4 +53,9 @@ public class ItemManager : Singleton<ItemManager>
         itemWeight = weight;
     }
 
+    public void InitializeValue()
+    {
+        Item.Instance.SetMultiple(1);
+
+    }
 }

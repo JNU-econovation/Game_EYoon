@@ -10,6 +10,10 @@ public class Skill_Silver_IncreaseAttackRange : Skill_Silver
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 0.5f, 1f, 1.5f};
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

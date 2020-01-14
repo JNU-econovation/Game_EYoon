@@ -10,6 +10,10 @@ public class Skill_Gold_IncreaseDefense : Skill_Gold
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 10, 20, 30 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();
