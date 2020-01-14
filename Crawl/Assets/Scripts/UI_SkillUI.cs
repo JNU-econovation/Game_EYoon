@@ -39,7 +39,7 @@ public class UI_SkillUI : MonoBehaviour
     {
         joyStick.SetActive(true);
         panel.SetActive(true);
-        SoundManager.Instance.skillAudioSource.mute = true;
+        SoundManager.Instance.skillAudioSource.Stop();
         player_Invincibility.Skill_end_Invince(0.5f);
         for (int j = 0; j < skillButtons.Count; j++)
         {

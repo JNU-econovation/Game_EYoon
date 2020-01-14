@@ -5,14 +5,14 @@ using UnityEngine;
 public class Player_AbilityManager : Singleton<Player_AbilityManager>
 {
     float realAttack;
-    [SerializeField] [Range(0, 100)] float attack;
-    [SerializeField] [Range(0, 100)] float defense;
-    [SerializeField] [Range(0, 100)] float avoidance;
+    [SerializeField] [Range(0, 5000)] float attack;
+    [SerializeField] [Range(0, 90)] float defense;
+    [SerializeField] [Range(0, 80)] float avoidance;
     [SerializeField] [Range(0, 100)] float critical_Percentage;
     [SerializeField] [Range(100, 1000)] float critical_Hit;
     [SerializeField] [Range(0, 100)] float attackRange;
     [SerializeField] float attackSpeed = 1;
-    [SerializeField] [Range(0, 1000)] float moveSpeed;
+    [SerializeField] [Range(0, 10000)] float moveSpeed;
     [SerializeField] [Range(0, 5)] int targetNum;
     [SerializeField] float reflectDamage;
     [SerializeField] GameObject rebirthEffect;
@@ -22,7 +22,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
     float maxDrain = 30;
     int maxTargetNum = 5;
     float maxAttackSpeed = 5;
-    float maxAvoidance = 60.0f;
+    float maxAvoidance = 80.0f;
     [SerializeField] float HP;
     [SerializeField] float stamina;
     float maxHP = 100;
@@ -61,7 +61,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
                 if(staminaZeroTime >= 1.0f)
                 {
                     staminaZeroTime = 0;
-                    DecreaseHP(1f);
+                    DecreaseHP(1);
                 }
                     
             }
@@ -220,8 +220,11 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
         else
         {
             SoundManager.Instance.PlayDamageSound();
-            HP -= (n - defense);
-            Player_UIManager.Instance.TakeDamage(n-defense);
+            float damage = n - defense;
+            if (damage < 0)
+                damage = 0;
+            HP -= damage;
+            Player_UIManager.Instance.TakeDamage(damage);
             if (HP <= 0)
             {
                 if (isRebirth)
@@ -234,7 +237,7 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
                 }
                 HP = 0;
             }
-            return n - defense;
+            return damage;
         }
       
     }

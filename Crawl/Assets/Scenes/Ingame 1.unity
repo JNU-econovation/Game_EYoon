@@ -8253,7 +8253,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.226
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18471,26 +18471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6e5912b84283d43a00ad585fe037b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
-  joyStick_Main: {fileID: 0}
 --- !u!1 &523426065
 GameObject:
   m_ObjectHideFlags: 0
@@ -27120,7 +27100,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4d14a29c1660e94c97ce424e6835425, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.554
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -35783,27 +35763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f8de9ecf4b3824f94435807f24f435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joyStick: {fileID: 0}
-  joystick_Main: {fileID: 0}
-  isTouched: 0
 --- !u!114 &1094924856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76023,7 +75982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 10
   defense: 0
-  avoidance: 10
+  avoidance: 0
   critical_Percentage: 20
   critical_Hit: 150
   attackRange: 0
