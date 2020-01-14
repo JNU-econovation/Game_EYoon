@@ -12,14 +12,13 @@ public class Enemy_Boss_Kraken : Enemy
     protected bool attack = false;
     public float attackDelay = 2.0f;
     public bool onAttack = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         player = LevelManager.Instance.GetPlayer();
         SetPosition();
     }
 
-    // Update is called once per frame
     void Update()
     {
         isPaused = EnemyManager.Instance.isPause;
@@ -127,6 +126,6 @@ public class Enemy_Boss_Kraken : Enemy
             enemys[i].SetActive(false);
         }
         LevelManager.Instance.bossClear = true;
-        Item_Explosion.Instance.Explosion(transform.position);
+        UIManager.Instance.OnSkill_BossClear(0);
     }
 }

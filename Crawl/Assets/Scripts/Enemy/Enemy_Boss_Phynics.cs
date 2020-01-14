@@ -12,7 +12,7 @@ public class Enemy_Boss_Phynics : Enemy
     protected bool attack = false;
     public float attackDelay = 2.0f;
     public bool onAttack = false;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         player = LevelManager.Instance.GetPlayer();
@@ -141,6 +141,6 @@ public class Enemy_Boss_Phynics : Enemy
             enemys[i].SetActive(false);
         }
         LevelManager.Instance.bossClear = true;
-        Item_Explosion.Instance.Explosion(transform.position);
+        UIManager.Instance.OnSkill_BossClear(1);
     }
 }
