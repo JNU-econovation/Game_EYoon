@@ -10,15 +10,19 @@ public class Loading : MonoBehaviour
 
 
 
-    [SerializeField]
-
+    [SerializeField] Image[] progressBars;
     Image progressBar;
+    [SerializeField] GameObject[] loadings;
+    int rand;
 
 
 
-    private void Start()
+    private void Awake()
 
     {
+        rand = Random.Range(0, 3);
+        loadings[rand].SetActive(true);
+        
 
         StartCoroutine(LoadScene());
 
@@ -41,7 +45,7 @@ public class Loading : MonoBehaviour
     IEnumerator LoadScene()
 
     {
-
+        progressBar = progressBars[rand];
         yield return null;
 
 
