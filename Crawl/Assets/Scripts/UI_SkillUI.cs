@@ -8,6 +8,8 @@ public class UI_SkillUI : MonoBehaviour
     GameObject[] slots;
     [SerializeField] int jewerlyNum;
     Player_Invincibility player_Invincibility;
+    public GameObject panel;
+    public GameObject joyStick;
     private void Awake()
     {
         GameObject player = LevelManager.Instance.GetPlayer();
@@ -23,6 +25,8 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        joyStick.SetActive(false);
+        panel.SetActive(false);
         LevelManager.Instance.Pause();
         SoundManager.Instance.PlaySkillSound();
         for (int i = 0; i < slots.Length; i++)
@@ -33,6 +37,10 @@ public class UI_SkillUI : MonoBehaviour
     }
     private void OnDisable()
     {
+        joyStick.SetActive(true);
+        panel.SetActive(true);
+        SoundManager.Instance.skillAudioSource.mute = true;
+        player_Invincibility.Skill_end_Invince(0.5f);
         for (int j = 0; j < skillButtons.Count; j++)
         {
             skillButtons[j].SetIsStop(false);
@@ -53,10 +61,9 @@ public class UI_SkillUI : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         ChooseSkill();
     }
-    void Disable()
-    {
-        SoundManager.Instance.skillAudioSource.mute = true;
-        player_Invincibility.OnInvincible(0.5f);
-    }
+    
+        
+    
+
 }
 

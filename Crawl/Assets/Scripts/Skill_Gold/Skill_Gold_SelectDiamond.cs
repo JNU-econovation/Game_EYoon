@@ -14,8 +14,8 @@ public class Skill_Gold_SelectDiamond : Skill_Gold
     public override void SkillFunction()
     {
         IncreaseCount();
-        skillUI_Diamond.SetActive(true);
         skillUI.SetActive(false);
+        skillUI_Diamond.SetActive(true);     
     }
     public override void LimitCount()
     {

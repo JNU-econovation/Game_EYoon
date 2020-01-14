@@ -14,8 +14,8 @@ public class Skill_Silver_SelectGold : Skill_Silver
     public override void SkillFunction()
     {
         IncreaseCount();
-        skillUI_Gold.SetActive(true);
         skillUI.SetActive(false);
+        skillUI_Gold.SetActive(true);       
     }
     public override void LimitCount()
     {

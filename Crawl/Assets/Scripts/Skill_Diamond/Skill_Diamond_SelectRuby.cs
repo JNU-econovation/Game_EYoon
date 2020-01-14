@@ -14,8 +14,9 @@ public class Skill_Diamond_SelectRuby : Skill_Diamond
     public override void SkillFunction()
     {
         IncreaseCount();
-        skillUI_Ruby.SetActive(true);
         skillUI.SetActive(false);
+        skillUI_Ruby.SetActive(true);
+        
     }
     public override void LimitCount()
     {

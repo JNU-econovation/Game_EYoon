@@ -14,8 +14,8 @@ public class Skill_Copper_SelectSilver : Skill_Copper
     public override void SkillFunction()
     {
         IncreaseCount();
-        skillUI_Silver.SetActive(true);
         skillUI.SetActive(false);
+        skillUI_Silver.SetActive(true);       
     }
     public override void LimitCount()
     {
