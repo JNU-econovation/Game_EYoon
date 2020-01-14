@@ -9,10 +9,8 @@ abstract public class Item : Singleton<Item>
     protected bool isMagent;
     protected static int get_jewerly_multiple = 1;
     protected GameObject player;
-    void Awake()
-    {
-        StartCoroutine(DestroySelf());
-    }
+    protected float time = 0;
+
     public void Magnet()
     {
         isMagent = true;
@@ -20,11 +18,6 @@ abstract public class Item : Singleton<Item>
     public void UnMagnet()
     {
         isMagent = false;
-    }
-    IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(4.0f);
-        Destroy(gameObject);
     }
     public void SetMultiple(int n)
     {
