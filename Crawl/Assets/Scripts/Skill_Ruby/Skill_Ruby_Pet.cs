@@ -10,6 +10,10 @@ public class Skill_Ruby_Pet : Skill_Ruby
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 2, 3, 4 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

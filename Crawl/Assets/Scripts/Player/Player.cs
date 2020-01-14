@@ -22,4 +22,10 @@ public class Player : MonoBehaviour
     {
         isPause = false;
     }
+
+    public void InitializeValue()
+    {
+        GetComponent<Player_Shield>().SetShieldCount(0);
+
+    }
 }

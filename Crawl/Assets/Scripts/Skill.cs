@@ -34,4 +34,5 @@ abstract public class Skill : MonoBehaviour
 
     abstract public string GetSkillText();
     abstract public string GetSkillFigure();
+    abstract public void InitializeValue();
 }

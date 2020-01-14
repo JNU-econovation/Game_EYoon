@@ -10,6 +10,10 @@ public class Skill_Copper_IncreaseStamina : Skill_Copper
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 20, 40, 60 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

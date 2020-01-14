@@ -13,6 +13,10 @@ public class Skill_Diamond_Invincibility : Skill_Diamond
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 3, 6, 9 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

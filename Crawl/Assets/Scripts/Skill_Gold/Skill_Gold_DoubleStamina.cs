@@ -10,6 +10,10 @@ public class Skill_Gold_DoubleStamina : Skill_Gold
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 1.2f, 1.4f, 2f };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

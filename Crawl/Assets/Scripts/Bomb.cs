@@ -41,6 +41,10 @@ public class Bomb : Singleton<Bomb>
     {
         return damage;
     }
+    public void SetDamage(int n)
+    {
+        damage = n;
+    }
     public void Pause()
     {
         speed = 0;

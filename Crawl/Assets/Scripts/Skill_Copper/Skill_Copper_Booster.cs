@@ -13,6 +13,10 @@ public class Skill_Copper_Booster : Skill_Copper
         variation = new float[] { 2, 3, 5};
         player_Booster = player.GetComponent<Player_Booster>();
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

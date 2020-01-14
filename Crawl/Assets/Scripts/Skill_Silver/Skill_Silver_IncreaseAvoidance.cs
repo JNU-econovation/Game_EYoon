@@ -10,6 +10,10 @@ public class Skill_Silver_IncreaseAvoidance : Skill_Silver
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 5, 7, 9 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();

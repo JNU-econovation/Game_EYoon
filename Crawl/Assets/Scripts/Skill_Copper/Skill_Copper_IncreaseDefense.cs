@@ -10,6 +10,10 @@ public class Skill_Copper_IncreaseDefense : Skill_Copper
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 3f, 6f, 9f };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
 

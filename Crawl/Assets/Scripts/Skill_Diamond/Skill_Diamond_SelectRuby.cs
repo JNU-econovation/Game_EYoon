@@ -11,6 +11,10 @@ public class Skill_Diamond_SelectRuby : Skill_Diamond
         skillUI = GetComponentInParent<UI_SkillUI>().gameObject;
         variation = new float[] { 2, 3, 4 };
     }
+    public override void InitializeValue()
+    {
+        skill_Count = 0;
+    }
     public override void SkillFunction()
     {
         IncreaseCount();
