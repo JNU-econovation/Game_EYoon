@@ -175,6 +175,7 @@ public class LevelManager : Singleton<LevelManager>
             {
                 OnBoss = true;
                 player_Attack_Range.tempRange = player_Attack_Range.GetAttackRange();
+                UIManager.Instance.OnBossApproach_Text(0);
                 Instantiate(boss[0]);
                 break;
             }           
@@ -188,6 +189,7 @@ public class LevelManager : Singleton<LevelManager>
             if (height >= 1955)
             {
                 OnBoss = true;
+                UIManager.Instance.OnBossApproach_Text(1);
                 Instantiate(boss[1]);
                 break;
             }
@@ -201,6 +203,7 @@ public class LevelManager : Singleton<LevelManager>
             if (height >= 2955)
             {
                 OnBoss = true;
+                UIManager.Instance.OnBossApproach_Text(2);
                 Instantiate(boss[2]);
                 break;
             }

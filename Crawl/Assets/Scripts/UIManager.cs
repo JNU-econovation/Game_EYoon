@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     GameObject player;
     public GameObject gameover_UI;
     public GameObject[] bossClear_SKill;
+    public GameObject[] bossApproach_Text;
     void Start()
     {
         item[0] = new Item_Copper();
@@ -77,5 +78,9 @@ public class UIManager : Singleton<UIManager>
     {
         yield return new WaitForSeconds(1);
         bossClear_SKill[n].SetActive(true);
+    }
+    public void OnBossApproach_Text(int n)
+    {
+        bossApproach_Text[n].SetActive(true);
     }
 }
