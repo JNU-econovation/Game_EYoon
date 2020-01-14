@@ -23,10 +23,14 @@ public class Player_Shield : MonoBehaviour
     {
         return shieldCount;
     }
-    public IEnumerator ShieldEffect()
+    public IEnumerator Effect()
     {
         shield.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         shield.SetActive(false);
+    }
+    public void ShieldEffect()
+    {
+        StartCoroutine(Effect());
     }
 }
