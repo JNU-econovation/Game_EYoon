@@ -28,10 +28,27 @@ public class Skill_Silver_IncreaseGoldPercentage : Skill_Silver
             itemWeight[2] += variation[1];
             itemWeight[1] -= variation[1];
         }
-        else if (5 <= skill_Count)
+        else
         {
             itemWeight[2] += variation[2];
             itemWeight[1] -= variation[2];
+        }
+        if (itemWeight[0] < 0)
+        {
+            itemWeight[2] += -itemWeight[0];
+            itemWeight[0] = 0;
+        }
+        if(itemWeight[1] < 0)
+        {
+            itemWeight[2] += -itemWeight[1];
+            itemWeight[1] = 0;
+        }
+        float sum = 0;
+        for (int i = 0; i < 5; i++)
+            sum += itemWeight[i];
+        if (sum >= 100)
+        {
+            itemWeight[2] -= (sum - 100);
         }
         ItemManager.Instance.SetItemWeight(itemWeight);
         skillUI.SetActive(false);

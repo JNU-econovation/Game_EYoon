@@ -8,7 +8,7 @@ public class Pet : Singleton<Pet>
     float attack;
     float critical_hit;
     float critical_Percent;
-    float attackSpeed = 5;
+    float attackSpeed = 3;
     public GameObject[] bullet;
     public float[] bulletWeight;
     bool onPet;
