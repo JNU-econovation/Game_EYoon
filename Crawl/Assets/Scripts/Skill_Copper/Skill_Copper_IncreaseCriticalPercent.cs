@@ -59,7 +59,7 @@ public class Skill_Copper_IncreaseCriticalPercent : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "치명타확률 증가";
+        return "치명타 확률 증가";
     }
     public override string GetSkillFigure()
     {

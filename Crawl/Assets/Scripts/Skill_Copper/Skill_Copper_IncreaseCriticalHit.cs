@@ -58,7 +58,7 @@ public class Skill_Copper_IncreaseCriticalHit : Skill_Copper
     }
     public override string GetSkillText()
     {
-        return "치명타피해 증가";
+        return "치명타 피해 증가";
     }
     public override string GetSkillFigure()
     {
