@@ -219,5 +219,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 200
   alphaSpeed: 15
-  lifeTime: 1
+  lifeTime: 2
   damage: 0

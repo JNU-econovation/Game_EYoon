@@ -79,4 +79,8 @@ public class Enemy_Ability : MonoBehaviour
     {
         return maxHP;
     }
+    public void Fire()
+    {
+
+    }
 }

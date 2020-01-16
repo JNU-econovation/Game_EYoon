@@ -14,8 +14,10 @@ abstract public class Enemy : Singleton<Enemy>
     public bool OnAttack;
     public float lifeTime;
     protected float time = 0;
+    public float savedSpeed;
+    public float savedSpeed_x;
     public GameObject enemy_Damage;
-
+    public bool stop;
     void Awake()
     {       
         enemy_Ability = GetComponent<Enemy_Ability>();
@@ -29,7 +31,7 @@ abstract public class Enemy : Singleton<Enemy>
         if (!LevelManager.Instance.OnBoss)
             StartCoroutine(DestroySelf());
     }
-
+  
     IEnumerator DestroySelf()
     {
         while (true)
@@ -57,11 +59,14 @@ abstract public class Enemy : Singleton<Enemy>
             GetComponent<Enemy_Ability>().DecreaseHP(reflectDamage);
         }
     }
-    public void ShowDamage(float damage, Color color)
+    public void ShowDamage(float damage, Color color, int a)
     {
         GameObject hudText = Instantiate(enemy_Damage);
         hudText.GetComponent<TextMeshPro>().color = color;
-        hudText.transform.position = transform.position + new Vector3(100, 100, 0);
+        if(a == 1)
+            hudText.transform.position = transform.position + new Vector3(0, 100, 0);
+        else
+            hudText.transform.position = transform.position + new Vector3(100, 100, 0);
         hudText.GetComponent<Enemy_DamageText>().damage = damage;
     }
     public bool GetOnAttack()

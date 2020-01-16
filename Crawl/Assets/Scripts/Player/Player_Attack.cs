@@ -11,8 +11,8 @@ public class Player_Attack : MonoBehaviour
     float attack_range; // 실제 반지름 = range * 45
     public LayerMask layerMask;
     bool[] isAttack = new bool[4];   
-    bool isFire;
-    bool isFreeze;
+    public bool isFire;
+    public bool isFreeze;
     bool canAttack;
     float attackTime;
     float fireTime;
@@ -36,8 +36,10 @@ public class Player_Attack : MonoBehaviour
             if (isFreeze)
             {
                 time1 += Time.deltaTime;
+                EnemyManager.Instance.isPause = true;
                 if (time1 >= freezeTime)
                 {
+                    EnemyManager.Instance.isPause = false;
                     isFreeze = false;
                 }
             }
@@ -88,18 +90,10 @@ public class Player_Attack : MonoBehaviour
                 if (i >= targetList.Count)
                     break;
                 SoundManager.Instance.PlayAttackSound();
-                targetList[i].GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255,255));
+                targetList[i].GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255,255), 0);
                 targetList[i].GetComponent<Enemy_Ability>().DecreaseHP(damage);
                 
-                Player_AbilityManager.Instance.Drain(damage);
-                if (isFire)
-                {
-                    StartCoroutine(Fire(targetList[i]));
-                }
-                if (isFreeze)
-                {
-                    StartCoroutine(Freeze(targetList[i]));
-                }
+                Player_AbilityManager.Instance.Drain(damage);               
 
             }
         }
@@ -118,55 +112,7 @@ public class Player_Attack : MonoBehaviour
         
        
     }
-    
-    IEnumerator Fire(GameObject enemy)
-    {
-        GameObject fire = EffectManager.Instance.Fire(enemy.transform);
-        while (true)
-        {
-            if (isFire)
-            {
-                if (enemy != null)
-                {
-                    float hp = enemy.GetComponent<Enemy_Ability>().GetHp();
-                    float damage = hp * 0.2f;
-                    enemy.GetComponent<Enemy_Ability>().DecreaseHP(damage);
-                    Player_AbilityManager.Instance.Drain(damage);
-                    enemy.GetComponent<Enemy>().ShowDamage(damage, new Color(255,0,0));
-                }
-                yield return new WaitForSeconds(1.0f);
-            }
-            else
-                break;
-            yield return null;
-        }
-        Destroy(fire);
-      
-    }
-    IEnumerator Freeze(GameObject enemy)
-    {
-       GameObject freeze = EffectManager.Instance.Freeze(enemy.transform);
-        enemy.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255, 140);
-        while (true)
-        {
-            yield return null;
-            if (enemy != null)
-            {
-                enemy.GetComponent<Enemy>().isPaused = true;
-                if(!isFreeze)
-                {
-                    if (enemy != null)
-                    {
-                        enemy.GetComponent<Enemy>().isPaused = false;
-                        break;
-                    }                   
-                }
-            }
-        }
-        Destroy(freeze);
-        enemy.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
-            
-    }
+       
     public void OnFreeze(float n)
     {
         time1 = 0;

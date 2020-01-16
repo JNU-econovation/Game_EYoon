@@ -28,7 +28,7 @@ public class Bomb : Singleton<Bomb>
         if (collider.tag == "Enemy")
         {
             SoundManager.Instance.PlayBombSound();
-            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255, 255));
+            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255, 255), 0);
             collider.GetComponent<Enemy_Ability>().DecreaseHP(damage);
             gameObject.SetActive(false);
         }

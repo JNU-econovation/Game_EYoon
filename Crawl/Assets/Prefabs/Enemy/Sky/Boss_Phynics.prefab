@@ -339,6 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b312811c027e6b47819e492898bc854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire: {fileID: 0}
+  freeze: {fileID: 0}
 --- !u!114 &2232435528541669001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,10 +355,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   speed_x: 3
+  isPaused: 0
   OnAttack: 0
   lifeTime: 0
+  savedSpeed: 0
+  savedSpeed_x: 0
   enemy_Damage: {fileID: 2312000694442366679, guid: 2664daf749e5aa04aa6d43e3c6a460a7,
     type: 3}
+  stop: 0
   stopPos: 600
   bullets:
   - {fileID: 3941690603800373990, guid: 9e5a8276ce5e18040be356d63820ced7, type: 3}

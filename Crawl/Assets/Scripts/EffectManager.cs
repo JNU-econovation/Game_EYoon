@@ -5,11 +5,11 @@ using UnityEngine;
 public class EffectManager : Singleton<EffectManager>
 {
     GameObject player;
-    [SerializeField] GameObject water_death_effect;
-    [SerializeField] GameObject sky_death_effect;
-    [SerializeField] GameObject space_death_effect;
-    [SerializeField] GameObject freeze_effect;
-    [SerializeField] GameObject fire_effect;
+    public GameObject water_death_effect;
+    public GameObject sky_death_effect;
+    public GameObject space_death_effect;
+    public GameObject freeze_effect;
+    public GameObject fire_effect;
     GameObject freeze;
     GameObject fire;
 
@@ -32,7 +32,9 @@ public class EffectManager : Singleton<EffectManager>
     }
     public GameObject Freeze(Transform enemy)
     {
-        freeze = Instantiate(freeze_effect, enemy.position, Quaternion.Euler(0, 0, 0));
+        freeze_effect.SetActive(true);
+        freeze = freeze_effect;
+        freeze.transform.position = enemy.position;
         freeze.transform.parent = enemy.transform;
         return freeze;
     }
@@ -42,7 +44,9 @@ public class EffectManager : Singleton<EffectManager>
     }
     public GameObject Fire(Transform enemy)
     {
-        fire = Instantiate(fire_effect, enemy.position, Quaternion.Euler(0, 0, 0));
+        fire_effect.SetActive(true);
+        fire = fire_effect;
+        fire.transform.position = enemy.position;
         fire.transform.parent = enemy.transform;
         return fire;
         

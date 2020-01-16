@@ -31,7 +31,7 @@ public class Pet_Bullet : MonoBehaviour
             float rand = Random.Range(0.01f, 100);
             if (rand <= critical_Percent)
                 damage = damage * critical_hit / 100;
-            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255));
+            collider.GetComponent<Enemy>().ShowDamage(damage, new Color(255, 255, 255), 0);
             collider.GetComponent<Enemy_Ability>().DecreaseHP(damage);
             Destroy(gameObject);
         }
