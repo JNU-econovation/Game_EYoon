@@ -20,5 +20,9 @@ public class GameStart : MonoBehaviour
             //SceneManager.LoadScene("InGame 1");
             Loading.LoadScene("InGame 1");
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

@@ -40,5 +40,9 @@ public class UI_GameOver : Singleton<UI_GameOver>
                 images[i].SetActive(true);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

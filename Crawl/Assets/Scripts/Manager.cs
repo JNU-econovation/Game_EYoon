@@ -43,5 +43,12 @@ public class Manager : Singleton<Manager>
     {
         return height;
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
 }
