@@ -149,6 +149,10 @@ public class LevelManager : Singleton<LevelManager>
                     left_BackGround[i].GetComponent<MeshRenderer>().material = left_BackGround_Material[2];
                     right_BackGround[i].GetComponent<MeshRenderer>().material = right_BackGround_Material[2];
                 }
+                for (int i = 0; i < EnemyManager.Instance.enemys.Length; i++)
+                {
+                    EnemyManager.Instance.enemys[i].GetComponent<Enemy_Space>().SetAbility(255, 255, 255, 100, 60);
+                }
                 break;
             }
         }
