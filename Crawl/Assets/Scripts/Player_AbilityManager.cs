@@ -61,7 +61,20 @@ public class Player_AbilityManager : Singleton<Player_AbilityManager>
                 if(staminaZeroTime >= 1.0f)
                 {
                     staminaZeroTime = 0;
-                    DecreaseHP(1);
+                    HP -= 1;
+                    Player_UIManager.Instance.TakeDamage(1);
+                    if (HP <= 0)
+                    {
+                        if (isRebirth)
+                        {
+                            StartCoroutine(Rebirth());
+                        }
+                        else
+                        {
+                            Manager.Instance.EndGame();
+                        }
+                        HP = 0;
+                    }
                 }
                     
             }
